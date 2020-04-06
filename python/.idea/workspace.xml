@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/emacs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0001.two-sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0002.add-two-numbers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0011.container-with-most-water.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0015.3sum-closet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0015.3sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0018.4sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0026.remove-duplicates-from-sorted-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0027.remove-element.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0031.next-permutation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0033.search-in-rotated-sorted-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0035.search-insert-position.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0039.combination-sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0040.combination-sum-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0053.maximum-subarray.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0066.plus-one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0067.add-binary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0088.merge-sorted-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0118.pascals-triangle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0119.pascals-triangle-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0121.best-time-to-buy-and-sell-stock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0122.best-time-to-buy-and-sell-stock-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0123.best-time-to-buy-and-sell-stock-iii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0167.two-sum-ii-input-array-is-sorted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0169.majority-element.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0188.best-time-to-buy-and-sell-stock-iv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0189.rotate-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0216.combination-sum-iii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0217.contains-duplicate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0218.contains-duplicate-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0268.missing-number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0283.move-zeroes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/2.addTwoNumbers.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../src/2.addTwoNumbers.cc" afterDir="false" />
-    </list>
+    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,8 +59,8 @@
         <entry file="file://$PROJECT_DIR$/0216.combination-sum-iii.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="522">
-                <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+              <first_editor relative-caret-position="486">
+                <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -394,12 +356,12 @@
       <workItem from="1586054900043" duration="96000" />
       <workItem from="1586055079911" duration="554000" />
       <workItem from="1586056514872" duration="36937000" />
-      <workItem from="1586144125738" duration="30209000" />
+      <workItem from="1586144125738" duration="30460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67796000" />
+    <option name="totallyTimeSpent" value="68047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1159" y="0" width="1401" height="1440" extended-state="4" />
@@ -852,8 +814,8 @@
     <entry file="file://$PROJECT_DIR$/0216.combination-sum-iii.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="522">
-            <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <first_editor relative-caret-position="486">
+            <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>
