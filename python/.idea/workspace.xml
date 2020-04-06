@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/emacs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0001.two-sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0002.add-two-numbers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0011.container-with-most-water.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0015.3sum-closet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0015.3sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0018.4sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0026.remove-duplicates-from-sorted-array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0027.remove-element.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0031.next-permutation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0033.search-in-rotated-sorted-array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0035.search-insert-position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0039.combination-sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0040.combination-sum-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0053.maximum-subarray.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0066.plus-one.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0067.add-binary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0088.merge-sorted-array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0118.pascals-triangle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0119.pascals-triangle-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0121.best-time-to-buy-and-sell-stock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0122.best-time-to-buy-and-sell-stock-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0123.best-time-to-buy-and-sell-stock-iii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0167.two-sum-ii-input-array-is-sorted.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0169.majority-element.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0188.best-time-to-buy-and-sell-stock-iv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0189.rotate-array.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0216.combination-sum-iii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0217.contains-duplicate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0218.contains-duplicate-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0268.missing-number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0283.move-zeroes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/2.addTwoNumbers.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../src/2.addTwoNumbers.cc" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="558">
+                <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/0039.combination-sum.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="360">
+                <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/0040.combination-sum-ii.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="72">
+                <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/0216.combination-sum-iii.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="522">
+                <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>[k]</find>
+      <find>search</find>
+      <find>Bina</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/0066.plus-one.py" />
+        <option value="$PROJECT_DIR$/0088.merge-sorted-array.py" />
+        <option value="$PROJECT_DIR$/.idea/0118.pascals-triangle.py" />
+        <option value="$PROJECT_DIR$/0118.pascals-triangle.py" />
+        <option value="$PROJECT_DIR$/0119.pascals-triangle-ii.py" />
+        <option value="$PROJECT_DIR$/0053.maximum-subarray.py" />
+        <option value="$PROJECT_DIR$/0122.best-time-to-buy-and-sell-stock-iii.py" />
+        <option value="$PROJECT_DIR$/0121.best-time-to-buy-and-sell-stock.py" />
+        <option value="$PROJECT_DIR$/0122.best-time-to-buy-and-sell-stock-ii.py" />
+        <option value="$PROJECT_DIR$/0123.best-time-to-buy-and-sell-stock-iii.py" />
+        <option value="$PROJECT_DIR$/0123.best-time-to-buy-and-sell-stock-iv.py" />
+        <option value="$PROJECT_DIR$/0167.two-sum-ii-input-array-is-sorted.py" />
+        <option value="$PROJECT_DIR$/0169.majority-element.py" />
+        <option value="$PROJECT_DIR$/0189.rotate-array.py" />
+        <option value="$PROJECT_DIR$/0217.contains-duplicate.py" />
+        <option value="$PROJECT_DIR$/0218.contains-duplicate-ii.py" />
+        <option value="$PROJECT_DIR$/0268.missing-number.py" />
+        <option value="$PROJECT_DIR$/0283.move-zeroes.py" />
+        <option value="$PROJECT_DIR$/0011.container-with-most-water.py" />
+        <option value="$PROJECT_DIR$/0015.3sum.py" />
+        <option value="$PROJECT_DIR$/0015.3sum-closet.py" />
+        <option value="$PROJECT_DIR$/0018.4sum.py" />
+        <option value="$PROJECT_DIR$/0031.next-permutation.py" />
+        <option value="$PROJECT_DIR$/0033.search-in-rotated-sorted-array.py" />
+        <option value="$PROJECT_DIR$/0035.search-insert-position.py" />
+        <option value="$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py" />
+        <option value="$PROJECT_DIR$/0039.combination-sum.py" />
+        <option value="$PROJECT_DIR$/0040.combination-sum-ii.py" />
+        <option value="$PROJECT_DIR$/0216.combination-sum-iii.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="1159" />
+    <option name="width" value="1401" />
+    <option name="height" value="1440" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LeetCodePyRock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="NBKnowledgePane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.0216.combination-sum-iii">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="0034.find-first-and-last-position-of-element-in-sorted-array" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="0035.search-insert-position" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0035.search-insert-position.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="0039.combination-sum" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0039.combination-sum.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="0040.combination-sum-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0040.combination-sum-ii.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="0216.combination-sum-iii" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0216.combination-sum-iii.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.0216.combination-sum-iii" />
+        <item itemvalue="Python.0040.combination-sum-ii" />
+        <item itemvalue="Python.0039.combination-sum" />
+        <item itemvalue="Python.0034.find-first-and-last-position-of-element-in-sorted-array" />
+        <item itemvalue="Python.0035.search-insert-position" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="" />
+      <created>1586054896493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586054896493</updated>
+      <workItem from="1586054900043" duration="96000" />
+      <workItem from="1586055079911" duration="554000" />
+      <workItem from="1586056514872" duration="36937000" />
+      <workItem from="1586144125738" duration="30209000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="67796000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1159" y="0" width="1401" height="1440" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.22181283" />
+      <window_info id="TODO" order="1" side_tool="true" weight="0.32962722" />
+      <window_info id="FindBugs-IDEA" order="2" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
+      <window_info id="CheckStyle" order="3" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.32831916" />
+      <window_info id="Jenkins" order="9" sideWeight="0.50053364" weight="0.32897317" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49676377" visible="true" weight="0.25635275" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.69983816" weight="0.39760837" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Redis Servers" order="6" side_tool="true" weight="0.32867646" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.3001618" side_tool="true" weight="0.39760837" />
+      <window_info anchor="bottom" id="Consul" order="8" sideWeight="0.500327" side_tool="true" weight="0.39760837" />
+      <window_info anchor="bottom" id="Json Parser" order="9" sideWeight="0.5016351" side_tool="true" weight="0.29970104" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016351" side_tool="true" weight="0.29970104" />
+      <window_info anchor="bottom" id="Regex Tester" order="11" sideWeight="0.49901897" weight="0.32884902" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tail" order="13" />
+      <window_info anchor="bottom" id="REST Client" order="14" weight="0.32932934" />
+      <window_info anchor="bottom" id="Sequence" order="15" />
+      <window_info anchor="bottom" id="LuaCheck" order="16" show_stripe_button="false" weight="0.32932934" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="17" sideWeight="0.636436" visible="true" weight="0.3586156" />
+      <window_info active="true" anchor="bottom" id="Iedis Console" order="18" sideWeight="0.49960223" weight="0.3298969" />
+      <window_info anchor="bottom" id="Job test results" order="19" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24979457" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="LuaJ" order="5" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.49942595" weight="0.32856005" />
+      <window_info anchor="right" id="Leiningen" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="RestServices" order="11" />
+      <window_info anchor="right" id="REPL" order="12" side_tool="true" />
+      <window_info anchor="right" id="Runtime Info" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven" order="14" />
+      <window_info anchor="right" id="Key Promoter X" order="15" show_stripe_button="false" weight="0.32955536" />
+      <window_info anchor="right" id="make" order="16" show_stripe_button="false" weight="0.32995737" />
+      <window_info anchor="right" x="0" y="0" width="211" height="880" id="Documentation" order="17" sideWeight="0.50555557" side_tool="true" weight="0.2125" />
+      <window_info anchor="right" id="Jupyter" order="18" sideWeight="0.6886887" side_tool="true" visible="true" weight="0.21801706" />
+      <window_info anchor="right" id="SciView" order="19" sideWeight="0.3113113" weight="0.21770833" />
+      <window_info anchor="right" id="Favorites" order="20" sideWeight="0.50160086" side_tool="true" weight="0.32831916" />
+      <window_info anchor="right" id="Structure" order="21" side_tool="true" weight="0.24983649" />
+      <window_info anchor="right" id="Database Changes" order="22" show_stripe_button="false" sideWeight="0.50053364" side_tool="true" weight="0.35775018" />
+      <window_info anchor="right" id="Word Book" order="23" sideWeight="0.50057405" side_tool="true" weight="0.32856005" />
+      <window_info anchor="right" id="Redis Explorer" order="24" />
+      <window_info anchor="right" id="Mongo Explorer" order="25" sideWeight="0.4994664" weight="0.35775018" />
+      <window_info anchor="right" id="Jms Messenger" order="26" sideWeight="0.49839914" weight="0.32874918" />
+      <window_info anchor="right" id="R Packages" order="27" />
+      <window_info anchor="right" id="Scheme.REPL" order="28" side_tool="true" />
+      <window_info anchor="right" id="R Graphics" order="29" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0088.merge-sorted-array.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0283.move-zeroes.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0011.container-with-most-water.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0015.3sum.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0031.next-permutation.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0118_pascals_triangle.coverage" NAME="0118.pascals-triangle Coverage Results" MODIFIED="1586085225694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0121_best_time_to_buy_and_sell_stock.coverage" NAME="0121.best-time-to-buy-and-sell-stock Coverage Results" MODIFIED="1586101133768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0066_plus_one.coverage" NAME="0066.plus-one Coverage Results" MODIFIED="1586060315481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0053_maximum_subarray.coverage" NAME="0053.maximum-subarray Coverage Results" MODIFIED="1586088062893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0218_contains_duplicate_ii.coverage" NAME="0218.contains-duplicate-ii Coverage Results" MODIFIED="1586151102403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0167_two_sum_ii_input_array_is_sorted.coverage" NAME="0167.two-sum-ii-input-array-is-sorted Coverage Results" MODIFIED="1586148320002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0123_best_time_to_buy_and_sell_stock_iv.coverage" NAME="0123.best-time-to-buy-and-sell-stock-iv Coverage Results" MODIFIED="1586103054452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0169_majority_element.coverage" NAME="0169.majority-element Coverage Results" MODIFIED="1586148677849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0034_find_first_and_last_position_of_element_in_sorted_array.coverage" NAME="0034.find-first-and-last-position-of-element-in-sorted-array Coverage Results" MODIFIED="1586169060789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0040_combination_sum_ii.coverage" NAME="0040.combination-sum-ii Coverage Results" MODIFIED="1586176730161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0015_3sum.coverage" NAME="0015.3sum Coverage Results" MODIFIED="1586159300339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0033_search_in_rotated_sorted_array.coverage" NAME="0033.search-in-rotated-sorted-array Coverage Results" MODIFIED="1586166866177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0018_4sum.coverage" NAME="0018.4sum Coverage Results" MODIFIED="1586163434140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0268_missing_number.coverage" NAME="0268.missing-number Coverage Results" MODIFIED="1586151779783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0035_search_insert_position.coverage" NAME="0035.search-insert-position Coverage Results" MODIFIED="1586167727812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0039_combination_sum.coverage" NAME="0039.combination-sum Coverage Results" MODIFIED="1586170229209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0015_3sum_closet.coverage" NAME="0015.3sum-closet Coverage Results" MODIFIED="1586161478666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0088_merge_sorted_array.coverage" NAME="0088.merge-sorted-array Coverage Results" MODIFIED="1586084081625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0119_pascals_triangle_ii.coverage" NAME="0119.pascals-triangle-ii Coverage Results" MODIFIED="1586086582403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0189_rotate_array.coverage" NAME="0189.rotate-array Coverage Results" MODIFIED="1586149952417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0283_move_zeroes.coverage" NAME="0283.move-zeroes Coverage Results" MODIFIED="1586153409928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0011_container_with_most_water.coverage" NAME="0011.container-with-most-water Coverage Results" MODIFIED="1586156278528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0123_best_time_to_buy_and_sell_stock_iii.coverage" NAME="0123.best-time-to-buy-and-sell-stock-iii Coverage Results" MODIFIED="1586102651918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0122_best_time_to_buy_and_sell_stock_ii.coverage" NAME="0122.best-time-to-buy-and-sell-stock-ii Coverage Results" MODIFIED="1586101399040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0031_next_permutation.coverage" NAME="0031.next-permutation Coverage Results" MODIFIED="1586166013882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0216_combination_sum_iii.coverage" NAME="0216.combination-sum-iii Coverage Results" MODIFIED="1586177255230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/0067.add-binary.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="22" selection-start-line="22" selection-end-line="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0066.plus-one.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="504">
+            <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0053.maximum-subarray.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="645">
+            <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+          </first_editor>
+          <second_editor relative-caret-position="-111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/355628705/builtins.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="258">
+            <caret line="3671" column="8" selection-start-line="3671" selection-start-column="8" selection-end-line="3671" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/355628705/numpy/core/_multiarray_umath.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="258">
+            <caret line="11337" column="8" selection-start-line="11337" selection-start-column="8" selection-end-line="11337" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0088.merge-sorted-array.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="552">
+            <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="57" selection-end-column="21" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0118.pascals-triangle.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="486">
+            <caret line="27" column="18" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="27" selection-end-column="18" />
+            <folding>
+              <element signature="e#226#235#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0119.pascals-triangle-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="504">
+            <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <folding>
+              <element signature="e#225#236#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0121.best-time-to-buy-and-sell-stock.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="984">
+            <caret line="76" column="27" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="76" selection-end-column="27" />
+            <folding>
+              <element signature="e#225#236#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0122.best-time-to-buy-and-sell-stock-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="678">
+            <caret line="54" column="11" lean-forward="true" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0123.best-time-to-buy-and-sell-stock-iii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="756">
+            <caret line="46" column="34" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="46" selection-end-column="34" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0188.best-time-to-buy-and-sell-stock-iv.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0001.two-sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0167.two-sum-ii-input-array-is-sorted.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="321">
+            <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0169.majority-element.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="288">
+            <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <folding>
+              <element signature="e#226#235#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0189.rotate-array.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="393">
+            <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <folding>
+              <element signature="e#226#235#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0217.contains-duplicate.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="414">
+            <caret line="26" column="20" selection-start-line="20" selection-start-column="7" selection-end-line="26" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0218.contains-duplicate-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="432">
+            <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0268.missing-number.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="486">
+            <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <folding>
+              <element signature="e#226#235#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0283.move-zeroes.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="378">
+            <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0011.container-with-most-water.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="429">
+            <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <folding>
+              <element signature="e#226#235#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0015.3sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="684">
+            <caret line="77" column="67" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="77" selection-end-column="67" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0015.3sum-closet.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="539">
+            <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0018.4sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="446">
+            <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0033.search-in-rotated-sorted-array.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="342">
+            <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0031.next-permutation.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="468">
+            <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          </first_editor>
+          <second_editor relative-caret-position="-54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0035.search-insert-position.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="515">
+            <caret line="58" column="66" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="58" selection-end-column="66" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0034.find-first-and-last-position-of-element-in-sorted-array.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="558">
+            <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0039.combination-sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="360">
+            <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0040.combination-sum-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="72">
+            <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0216.combination-sum-iii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="522">
+            <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>copyright</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7 (CONTROL-1.1.35) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Erlang 22</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
