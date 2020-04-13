@@ -6,12 +6,9 @@
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
 
-import os
-import sys
-import traceback
-
 
 class ListNode:
+
     def __init__(self, x):
         self.val = x
         self.next = None
@@ -28,3 +25,26 @@ class ListNode:
 
     def __str__(self):
         return "Node[{}]-{}".format(self.val, self.next)
+
+
+class TrieNode(object):
+    """
+    前缀树
+    """
+
+    # Initialize your data structure here.
+    def __init__(self):
+        self.is_string = False
+        self.leaves = {}
+
+    # Inserts a word into the trie.
+    def insert(self, word):
+        cur = self
+        for c in word:
+            if not c in cur.leaves:
+                cur.leaves[c] = TrieNode()
+            cur = cur.leaves[c]
+        cur.is_string = True
+
+    def __repr__(self):
+        return "TrieNode[{}]{} ".format("->".join(self.leaves.keys()),self.is_string)
