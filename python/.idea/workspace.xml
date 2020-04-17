@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0120.triangle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0152.maximum-product-subarray.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0153.find-minimum-in-rotated-sorted-array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0154.find-minimum-in-rotated-sorted-array-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0495.teemo-attacking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0542.01-matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0162.find-peak-element.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0209.minimum-size-subarray-sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0228.summary-ranges.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0229.majority-element-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0238.product-of-array-except-self.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0287.find-the-duplicate-number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0445.add-two-numbers.py" beforeDir="false" afterPath="$PROJECT_DIR$/0445.add-two-numbers-ii.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,25 +28,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0120.triangle.py">
+        <entry file="file://$PROJECT_DIR$/0228.summary-ranges.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="432">
-                <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <first_editor relative-caret-position="234">
+                <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               </first_editor>
-              <second_editor />
+              <second_editor relative-caret-position="-18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0152.maximum-product-subarray.py">
+        <entry file="file://$PROJECT_DIR$/0229.majority-element-ii.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="702">
-                <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <first_editor relative-caret-position="270">
+                <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
                 <folding>
-                  <element signature="e#225#253#0" expanded="true" />
+                  <element signature="e#225#243#0" expanded="true" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -57,37 +55,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0035.search-insert-position.py">
+        <entry file="file://$PROJECT_DIR$/0238.product-of-array-except-self.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
               <first_editor relative-caret-position="270">
-                <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+                <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               </first_editor>
               <second_editor relative-caret-position="-54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0153.find-minimum-in-rotated-sorted-array.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="485">
-                <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-              </first_editor>
-              <second_editor relative-caret-position="-19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/0154.find-minimum-in-rotated-sorted-array-ii.py">
+        <entry file="file://$PROJECT_DIR$/0287.find-the-duplicate-number.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="270">
-                <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <first_editor relative-caret-position="414">
+                <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               </first_editor>
-              <second_editor />
+              <second_editor relative-caret-position="-126" />
             </state>
           </provider>
         </entry>
@@ -119,10 +105,12 @@
       <find>&quot;</find>
       <find>binar</find>
       <find>rota</find>
+      <find>xrange</find>
     </findStrings>
     <replaceStrings>
       <replace>end2</replace>
       <replace>col</replace>
+      <replace>range</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -131,12 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/0216.combination-sum-iii.py" />
-        <option value="$PROJECT_DIR$/0003.longest-substring-without-repeating-characters.py" />
-        <option value="$PROJECT_DIR$/0072.edit-distance.py" />
-        <option value="$PROJECT_DIR$/0041.first-missing-positive.py" />
-        <option value="$PROJECT_DIR$/0028.implement-strstr.py" />
-        <option value="$PROJECT_DIR$/0030.substring-with-concatenation-of-all-words.py" />
         <option value="$PROJECT_DIR$/0055.jump-game.py" />
         <option value="$PROJECT_DIR$/0022.generate-parentheses.py" />
         <option value="$PROJECT_DIR$/0017.letter-combinations-of-a-phone-number.py" />
@@ -182,6 +164,12 @@
         <option value="$PROJECT_DIR$/0152.maximum-product-subarray.py" />
         <option value="$PROJECT_DIR$/0153.find-minimum-in-rotated-sorted-array.py" />
         <option value="$PROJECT_DIR$/0154.find-minimum-in-rotated-sorted-array-ii.py" />
+        <option value="$PROJECT_DIR$/0162.find-peak-element.py" />
+        <option value="$PROJECT_DIR$/0209.minimum-size-subarray-sum.py" />
+        <option value="$PROJECT_DIR$/0228.summary-ranges.py" />
+        <option value="$PROJECT_DIR$/0229.majority-element-ii.py" />
+        <option value="$PROJECT_DIR$/0238.product-of-array-except-self.py" />
+        <option value="$PROJECT_DIR$/0287.find-the-duplicate-number.py" />
       </list>
     </option>
   </component>
@@ -198,6 +186,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="NBKnowledgePane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -210,8 +200,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="NBKnowledgePane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.0154.find-minimum-in-rotated-sorted-array-ii">
+  <component name="RunManager" selected="Python.0287.find-the-duplicate-number">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -271,7 +259,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="0120.triangle" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0209.minimum-size-subarray-sum" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -284,7 +272,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0120.triangle.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0209.minimum-size-subarray-sum.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -293,7 +281,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0152.maximum-product-subarray" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0228.summary-ranges" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -306,7 +294,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0152.maximum-product-subarray.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0228.summary-ranges.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -315,7 +303,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0153.find-minimum-in-rotated-sorted-array" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0229.majority-element-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,7 +316,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0153.find-minimum-in-rotated-sorted-array.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0229.majority-element-ii.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -337,7 +325,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0154.find-minimum-in-rotated-sorted-array-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0238.product-of-array-except-self" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -350,7 +338,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0154.find-minimum-in-rotated-sorted-array-ii.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0238.product-of-array-except-self.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -359,7 +347,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0495.teemo-attacking" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0287.find-the-duplicate-number" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -372,7 +360,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0495.teemo-attacking.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0287.find-the-duplicate-number.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -401,11 +389,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.0154.find-minimum-in-rotated-sorted-array-ii" />
-        <item itemvalue="Python.0153.find-minimum-in-rotated-sorted-array" />
-        <item itemvalue="Python.0152.maximum-product-subarray" />
-        <item itemvalue="Python.0120.triangle" />
-        <item itemvalue="Python.0495.teemo-attacking" />
+        <item itemvalue="Python.0287.find-the-duplicate-number" />
+        <item itemvalue="Python.0238.product-of-array-except-self" />
+        <item itemvalue="Python.0229.majority-element-ii" />
+        <item itemvalue="Python.0228.summary-ranges" />
+        <item itemvalue="Python.0209.minimum-size-subarray-sum" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +421,8 @@
       <workItem from="1586782779443" duration="9024000" />
       <workItem from="1586869283432" duration="5627000" />
       <workItem from="1586876507099" duration="258000" />
-      <workItem from="1586920854680" duration="14931000" />
+      <workItem from="1586920854680" duration="15030000" />
+      <workItem from="1587040132920" duration="7822000" />
     </task>
     <task id="LOCAL-00001" summary="increase stack &amp; DP">
       <created>1586876329909</created>
@@ -442,11 +431,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586876329909</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="dp &amp; BFS &amp; binary search">
+      <created>1586963075073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963075073</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191839000" />
+    <option name="totallyTimeSpent" value="199760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1208" y="0" width="1352" height="1440" extended-state="4" />
@@ -581,7 +577,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="increase stack &amp; DP" />
-    <option name="LAST_COMMIT_MESSAGE" value="increase stack &amp; DP" />
+    <MESSAGE value="dp &amp; BFS &amp; binary search" />
+    <option name="LAST_COMMIT_MESSAGE" value="dp &amp; BFS &amp; binary search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -670,7 +667,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0287_find_the_duplicate_number.coverage" NAME="0287.find-the-duplicate-number Coverage Results" MODIFIED="1587047466316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0228_summary_ranges.coverage" NAME="0228.summary-ranges Coverage Results" MODIFIED="1587043854154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0151_reverse_words_in_a_string.coverage" NAME="0151.reverse-words-in-a-string Coverage Results" MODIFIED="1586530269087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0162_find_peak_element.coverage" NAME="0162.find-peak-element Coverage Results" MODIFIED="1587041297624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0118_pascals_triangle.coverage" NAME="0118.pascals-triangle Coverage Results" MODIFIED="1586085225694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0028_implement_strstr.coverage" NAME="0028.implement-strstr Coverage Results" MODIFIED="1586354085203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0079_word_search.coverage" NAME="0079.word-search Coverage Results" MODIFIED="1586697664088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -687,6 +687,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0495_teemo_attacking.coverage" NAME="0495.teemo-attacking Coverage Results" MODIFIED="1586954519317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0018_4sum.coverage" NAME="0018.4sum Coverage Results" MODIFIED="1586163434140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0268_missing_number.coverage" NAME="0268.missing-number Coverage Results" MODIFIED="1586151779783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0229_majority_element_ii.coverage" NAME="0229.majority-element-ii Coverage Results" MODIFIED="1587046034810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0064_minimum_path_sum.coverage" NAME="0064.minimum-path-sum Coverage Results" MODIFIED="1586675624379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0123_best_time_to_buy_and_sell_stock_iii.coverage" NAME="0123.best-time-to-buy-and-sell-stock-iii Coverage Results" MODIFIED="1586102651918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0153_find_minimum_in_rotated_sorted_array.coverage" NAME="0153.find-minimum-in-rotated-sorted-array Coverage Results" MODIFIED="1586962141613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -696,6 +697,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0031_next_permutation.coverage" NAME="0031.next-permutation Coverage Results" MODIFIED="1586166013882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0216_combination_sum_iii.coverage" NAME="0216.combination-sum-iii Coverage Results" MODIFIED="1586177255230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0017_letter_combinations_of_a_phone_number.coverage" NAME="0017.letter-combinations-of-a-phone-number Coverage Results" MODIFIED="1586440430442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0238_product_of_array_except_self.coverage" NAME="0238.product-of-array-except-self Coverage Results" MODIFIED="1587046433439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0007_reverse_integer.coverage" NAME="0007.reverse-integer Coverage Results" MODIFIED="1586531595885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0080_remove_duplicates_from_sorted_array_ii.coverage" NAME="0080.remove-duplicates-from-sorted-array-ii Coverage Results" MODIFIED="1586705172434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0212_word_search_ii.coverage" NAME="0212.word-search-ii Coverage Results" MODIFIED="1586702011179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -715,6 +717,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0022_generate_parentheses.coverage" NAME="0022.generate-parentheses Coverage Results" MODIFIED="1586438145538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0154_find_minimum_in_rotated_sorted_array_ii.coverage" NAME="0154.find-minimum-in-rotated-sorted-array-ii Coverage Results" MODIFIED="1586962748963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0041_first_missing_positive.coverage" NAME="0041.first-missing-positive Coverage Results" MODIFIED="1586266926052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0209_minimum_size_subarray_sum.coverage" NAME="0209.minimum-size-subarray-sum Coverage Results" MODIFIED="1587042464230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0542_01_matrix.coverage" NAME="0542.01-matrix Coverage Results" MODIFIED="1586953163449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0035_search_insert_position.coverage" NAME="0035.search-insert-position Coverage Results" MODIFIED="1586167727812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0030_substring_with_concatenation_of_all_words.coverage" NAME="0030.substring-with-concatenation-of-all-words Coverage Results" MODIFIED="1586356851169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -745,72 +748,6 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0072_edit_distance.coverage" NAME="0072.edit-distance Coverage Results" MODIFIED="1586181146552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/0055.jump-game.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="550">
-            <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-            <folding>
-              <marker date="1586359616265" expanded="true" signature="1135:1351" ph="..." />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0030.substring-with-concatenation-of-all-words.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="704">
-            <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-            <folding>
-              <element signature="e#226#235#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0028.implement-strstr.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="682">
-            <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0151.reverse-words-in-a-string.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="684">
-            <caret line="40" selection-start-line="40" selection-end-line="40" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0007.reverse-integer.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="234">
-            <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="29" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0009.palindrome-number.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="360">
-            <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0234.palindrome-linked-list.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1237,43 +1174,106 @@
     <entry file="file://$PROJECT_DIR$/0152.maximum-product-subarray.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="702">
-            <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <first_editor relative-caret-position="684">
+            <caret line="39" selection-start-line="39" selection-end-line="39" />
             <folding>
               <element signature="e#225#253#0" expanded="true" />
             </folding>
           </first_editor>
-          <second_editor />
+          <second_editor relative-caret-position="-18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0035.search-insert-position.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="270">
-            <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <first_editor relative-caret-position="324">
+            <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           </first_editor>
-          <second_editor relative-caret-position="-54" />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0153.find-minimum-in-rotated-sorted-array.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="485">
+          <first_editor relative-caret-position="504">
             <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           </first_editor>
-          <second_editor relative-caret-position="-19" />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0154.find-minimum-in-rotated-sorted-array-ii.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="270">
-            <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <first_editor relative-caret-position="306">
+            <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0162.find-peak-element.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0209.minimum-size-subarray-sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="270">
+            <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0228.summary-ranges.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="234">
+            <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          </first_editor>
+          <second_editor relative-caret-position="-18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0229.majority-element-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="270">
+            <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <folding>
+              <element signature="e#225#243#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0238.product-of-array-except-self.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="270">
+            <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          </first_editor>
+          <second_editor relative-caret-position="-54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0287.find-the-duplicate-number.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="414">
+            <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
         </state>
       </provider>
     </entry>
