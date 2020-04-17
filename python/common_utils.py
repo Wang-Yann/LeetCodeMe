@@ -26,6 +26,12 @@ class ListNode:
     def __str__(self):
         return "Node[{}]-{}".format(self.val, self.next)
 
+    def __lt__(self, other):
+        if  not (self and other) :
+            return False
+        return self.val<other.val
+
+
 
 class TrieNode(object):
     """
