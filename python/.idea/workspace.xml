@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0162.find-peak-element.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0209.minimum-size-subarray-sum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0228.summary-ranges.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0229.majority-element-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0238.product-of-array-except-self.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0287.find-the-duplicate-number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0061.rotate-list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0082.remove-duplicates-from-sorted-list-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0083.remove-duplicates-from-sorted-list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0086.partition-list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0092.reverse-linked-list-ii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0143.reorder-list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common_utils.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,53 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0228.summary-ranges.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="234">
-                <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-              </first_editor>
-              <second_editor relative-caret-position="-18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0229.majority-element-ii.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="270">
-                <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-                <folding>
-                  <element signature="e#225#243#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0238.product-of-array-except-self.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="270">
-                <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              </first_editor>
-              <second_editor relative-caret-position="-54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/0287.find-the-duplicate-number.py">
+        <entry file="file://$PROJECT_DIR$/0143.reorder-list.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="414">
-                <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+              <first_editor relative-caret-position="581">
+                <caret line="38" column="25" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="38" selection-end-column="25" />
               </first_editor>
-              <second_editor relative-caret-position="-126" />
+              <second_editor relative-caret-position="-103" />
             </state>
           </provider>
         </entry>
@@ -106,6 +69,7 @@
       <find>binar</find>
       <find>rota</find>
       <find>xrange</find>
+      <find>rotateRight</find>
     </findStrings>
     <replaceStrings>
       <replace>end2</replace>
@@ -119,12 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/0055.jump-game.py" />
-        <option value="$PROJECT_DIR$/0022.generate-parentheses.py" />
-        <option value="$PROJECT_DIR$/0017.letter-combinations-of-a-phone-number.py" />
-        <option value="$PROJECT_DIR$/0046.permutations.py" />
-        <option value="$PROJECT_DIR$/0047.permutations-ii.py" />
-        <option value="$PROJECT_DIR$/0151.reverse-words-in-a-string.py" />
         <option value="$PROJECT_DIR$/0007.reverse-integer.py" />
         <option value="$PROJECT_DIR$/0009.palindrome-number.py" />
         <option value="$PROJECT_DIR$/0234.palindrome-linked-list.py" />
@@ -148,7 +106,6 @@
         <option value="$PROJECT_DIR$/0090.subsets-ii.py" />
         <option value="$PROJECT_DIR$/0784.letter-case-permutation.py" />
         <option value="$PROJECT_DIR$/0079.word-search.py" />
-        <option value="$PROJECT_DIR$/common_utils.py" />
         <option value="$PROJECT_DIR$/0212.word-search-ii.py" />
         <option value="$PROJECT_DIR$/0080.remove-duplicates-from-sorted-array-ii.py" />
         <option value="$PROJECT_DIR$/0355.design-twitter.py" />
@@ -170,6 +127,13 @@
         <option value="$PROJECT_DIR$/0229.majority-element-ii.py" />
         <option value="$PROJECT_DIR$/0238.product-of-array-except-self.py" />
         <option value="$PROJECT_DIR$/0287.find-the-duplicate-number.py" />
+        <option value="$PROJECT_DIR$/0061.rotate-list.py" />
+        <option value="$PROJECT_DIR$/0082.remove-duplicates-from-sorted-list-ii.py" />
+        <option value="$PROJECT_DIR$/0083.remove-duplicates-from-sorted-list.py" />
+        <option value="$PROJECT_DIR$/0086.partition-list.py" />
+        <option value="$PROJECT_DIR$/common_utils.py" />
+        <option value="$PROJECT_DIR$/0092.reverse-linked-list-ii.py" />
+        <option value="$PROJECT_DIR$/0143.reorder-list.py" />
       </list>
     </option>
   </component>
@@ -186,9 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="NBKnowledgePane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,6 +161,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="NBKnowledgePane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,10 +184,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -239,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.0287.find-the-duplicate-number">
+  <component name="RunManager" selected="Python.0143.reorder-list">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -259,7 +223,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="0209.minimum-size-subarray-sum" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0082.remove-duplicates-from-sorted-list-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -272,7 +236,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0209.minimum-size-subarray-sum.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0082.remove-duplicates-from-sorted-list-ii.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -281,7 +245,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0228.summary-ranges" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0083.remove-duplicates-from-sorted-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -294,7 +258,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0228.summary-ranges.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0083.remove-duplicates-from-sorted-list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -303,7 +267,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0229.majority-element-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0086.partition-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,7 +280,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0229.majority-element-ii.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0086.partition-list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -325,7 +289,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0238.product-of-array-except-self" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0092.reverse-linked-list-ii" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -338,7 +302,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0238.product-of-array-except-self.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0092.reverse-linked-list-ii.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -347,7 +311,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0287.find-the-duplicate-number" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0143.reorder-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -360,7 +324,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0287.find-the-duplicate-number.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0143.reorder-list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -389,11 +353,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.0287.find-the-duplicate-number" />
-        <item itemvalue="Python.0238.product-of-array-except-self" />
-        <item itemvalue="Python.0229.majority-element-ii" />
-        <item itemvalue="Python.0228.summary-ranges" />
-        <item itemvalue="Python.0209.minimum-size-subarray-sum" />
+        <item itemvalue="Python.0143.reorder-list" />
+        <item itemvalue="Python.0086.partition-list" />
+        <item itemvalue="Python.0092.reverse-linked-list-ii" />
+        <item itemvalue="Python.0083.remove-duplicates-from-sorted-list" />
+        <item itemvalue="Python.0082.remove-duplicates-from-sorted-list-ii" />
       </list>
     </recent_temporary>
   </component>
@@ -422,7 +386,8 @@
       <workItem from="1586869283432" duration="5627000" />
       <workItem from="1586876507099" duration="258000" />
       <workItem from="1586920854680" duration="15030000" />
-      <workItem from="1587040132920" duration="7822000" />
+      <workItem from="1587040132920" duration="7922000" />
+      <workItem from="1587177439180" duration="23412000" />
     </task>
     <task id="LOCAL-00001" summary="increase stack &amp; DP">
       <created>1586876329909</created>
@@ -438,11 +403,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586963075073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="array &amp; binary search">
+      <created>1587047971453</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587047971453</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199760000" />
+    <option name="totallyTimeSpent" value="223272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1208" y="0" width="1352" height="1440" extended-state="4" />
@@ -456,11 +428,11 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.32831916" />
+      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.32766274" />
       <window_info id="Jenkins" order="9" sideWeight="0.50053364" weight="0.32897317" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965416" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49697885" visible="true" weight="0.25018397" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49630177" visible="true" weight="0.48417956" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.69983816" weight="0.397351" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -468,7 +440,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.3001618" side_tool="true" weight="0.39760837" />
       <window_info anchor="bottom" id="Consul" order="8" sideWeight="0.500327" side_tool="true" weight="0.39760837" />
       <window_info anchor="bottom" id="Json Parser" order="9" sideWeight="0.5016351" side_tool="true" weight="0.29970104" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030211" side_tool="true" weight="0.30792227" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5036982" side_tool="true" weight="0.25018397" />
       <window_info anchor="bottom" id="Regex Tester" order="11" sideWeight="0.49901897" weight="0.32884902" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Tail" order="13" />
@@ -578,7 +550,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="increase stack &amp; DP" />
     <MESSAGE value="dp &amp; BFS &amp; binary search" />
-    <option name="LAST_COMMIT_MESSAGE" value="dp &amp; BFS &amp; binary search" />
+    <MESSAGE value="array &amp; binary search" />
+    <option name="LAST_COMMIT_MESSAGE" value="array &amp; binary search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,6 +636,41 @@
           <line>22</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0061.rotate-list.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0082.remove-duplicates-from-sorted-list-ii.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0092.reverse-linked-list-ii.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0092.reverse-linked-list-ii.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0092.reverse-linked-list-ii.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0143.reorder-list.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0143.reorder-list.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -671,10 +679,12 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0228_summary_ranges.coverage" NAME="0228.summary-ranges Coverage Results" MODIFIED="1587043854154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0151_reverse_words_in_a_string.coverage" NAME="0151.reverse-words-in-a-string Coverage Results" MODIFIED="1586530269087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0162_find_peak_element.coverage" NAME="0162.find-peak-element Coverage Results" MODIFIED="1587041297624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0086_partition_list.coverage" NAME="0086.partition-list Coverage Results" MODIFIED="1587223596294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0118_pascals_triangle.coverage" NAME="0118.pascals-triangle Coverage Results" MODIFIED="1586085225694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0028_implement_strstr.coverage" NAME="0028.implement-strstr Coverage Results" MODIFIED="1586354085203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0079_word_search.coverage" NAME="0079.word-search Coverage Results" MODIFIED="1586697664088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0084_largest_rectangle_in_histogram.coverage" NAME="0084.largest-rectangle-in-histogram Coverage Results" MODIFIED="1586791911207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0082_remove_duplicates_from_sorted_list_ii.coverage" NAME="0082.remove-duplicates-from-sorted-list-ii Coverage Results" MODIFIED="1587188307554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0054_spiral_matrix.coverage" NAME="0054.spiral-matrix Coverage Results" MODIFIED="1586604687549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0167_two_sum_ii_input_array_is_sorted.coverage" NAME="0167.two-sum-ii-input-array-is-sorted Coverage Results" MODIFIED="1586148320002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0123_best_time_to_buy_and_sell_stock_iv.coverage" NAME="0123.best-time-to-buy-and-sell-stock-iv Coverage Results" MODIFIED="1586103054452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -699,7 +709,9 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0017_letter_combinations_of_a_phone_number.coverage" NAME="0017.letter-combinations-of-a-phone-number Coverage Results" MODIFIED="1586440430442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0238_product_of_array_except_self.coverage" NAME="0238.product-of-array-except-self Coverage Results" MODIFIED="1587046433439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0007_reverse_integer.coverage" NAME="0007.reverse-integer Coverage Results" MODIFIED="1586531595885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0143_reorder_list.coverage" NAME="0143.reorder-list Coverage Results" MODIFIED="1587224795422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0080_remove_duplicates_from_sorted_array_ii.coverage" NAME="0080.remove-duplicates-from-sorted-array-ii Coverage Results" MODIFIED="1586705172434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0092_reverse_linked_list_ii.coverage" NAME="0092.reverse-linked-list-ii Coverage Results" MODIFIED="1587223286319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0212_word_search_ii.coverage" NAME="0212.word-search-ii Coverage Results" MODIFIED="1586702011179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0121_best_time_to_buy_and_sell_stock.coverage" NAME="0121.best-time-to-buy-and-sell-stock Coverage Results" MODIFIED="1586101133768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0066_plus_one.coverage" NAME="0066.plus-one Coverage Results" MODIFIED="1586060315481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -735,10 +747,12 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0078_subsets.coverage" NAME="0078.subsets Coverage Results" MODIFIED="1586692468107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0980_unique_paths_iii.coverage" NAME="0980.unique-paths-iii Coverage Results" MODIFIED="1586620462582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0355_design_twitter.coverage" NAME="0355.design-twitter Coverage Results" MODIFIED="1586787408205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0083_remove_duplicates_from_sorted_list.coverage" NAME="0083.remove-duplicates-from-sorted-list Coverage Results" MODIFIED="1587188461083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0047_permutations_ii.coverage" NAME="0047.permutations-ii Coverage Results" MODIFIED="1586444287323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0085_maximal_rectangle.coverage" NAME="0085.maximal-rectangle Coverage Results" MODIFIED="1586872465216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0003_longest_substring_without_repeating_characters.coverage" NAME="0003.longest-substring-without-repeating-characters Coverage Results" MODIFIED="1586180559488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$16_03_intersection_lcci.coverage" NAME="16.03.intersection-lcci Coverage Results" MODIFIED="1586672033869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrackingTheCodingInterview_6" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0061_rotate_list.coverage" NAME="0061.rotate-list Coverage Results" MODIFIED="1587186290482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0073_set_matrix_zeroes.coverage" NAME="0073.set-matrix-zeroes Coverage Results" MODIFIED="1586676647110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0057_insert_interval.coverage" NAME="0057.insert-interval Coverage Results" MODIFIED="1586613983017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0062_unique_paths.coverage" NAME="0062.unique-paths Coverage Results" MODIFIED="1586615887267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -748,92 +762,6 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0072_edit_distance.coverage" NAME="0072.edit-distance Coverage Results" MODIFIED="1586181146552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/0234.palindrome-linked-list.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1149">
-            <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-            <folding>
-              <element signature="e#226#235#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0887.super-egg-drop.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="427">
-            <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0045.jump-game-ii.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="252">
-            <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0054.spiral-matrix.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="324">
-            <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-            <folding>
-              <element signature="e#226#235#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0056.merge-intervals.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="216">
-            <caret line="12" selection-start-line="12" selection-end-line="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0057.insert-interval.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1008">
-            <caret line="56" column="18" selection-start-line="35" selection-start-column="8" selection-end-line="56" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0059.spiral-matrix-ii.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="540">
-            <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0062.unique-paths.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="288">
-            <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0063.unique-paths-ii.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1061,16 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common_utils.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="173">
-            <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          </first_editor>
-          <second_editor relative-caret-position="-115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0002.add-two-numbers.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1237,43 +1155,133 @@
     <entry file="file://$PROJECT_DIR$/0228.summary-ranges.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="234">
-            <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <first_editor relative-caret-position="252">
+            <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           </first_editor>
-          <second_editor relative-caret-position="-18" />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0229.majority-element-ii.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="270">
-            <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <first_editor relative-caret-position="252">
+            <caret line="15" selection-start-line="15" selection-end-line="15" />
             <folding>
               <element signature="e#225#243#0" expanded="true" />
             </folding>
           </first_editor>
-          <second_editor />
+          <second_editor relative-caret-position="-18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0238.product-of-array-except-self.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="270">
+          <first_editor relative-caret-position="324">
             <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           </first_editor>
-          <second_editor relative-caret-position="-54" />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/0287.find-the-duplicate-number.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="414">
-            <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <first_editor relative-caret-position="342">
+            <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0011.container-with-most-water.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="378">
+            <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0061.rotate-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="285">
+            <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           </first_editor>
           <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0082.remove-duplicates-from-sorted-list-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="647">
+            <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          </first_editor>
+          <second_editor relative-caret-position="-55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0083.remove-duplicates-from-sorted-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="432">
+            <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2019.1/system/python_stubs/355628705/builtins.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="441">
+            <caret line="477" column="4" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="720">
+            <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0092.reverse-linked-list-ii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="401">
+            <caret line="57" selection-start-line="57" selection-end-line="57" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0086.partition-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="144">
+            <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0143.reorder-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="581">
+            <caret line="38" column="25" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="38" selection-end-column="25" />
+          </first_editor>
+          <second_editor relative-caret-position="-103" />
         </state>
       </provider>
     </entry>

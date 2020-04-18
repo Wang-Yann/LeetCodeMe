@@ -23,14 +23,27 @@ class ListNode:
             node_list[i].next = node_list[i + 1]
         return node_list[0]
 
-    def __str__(self):
-        return "Node[{}]-{}".format(self.val, self.next)
+    @classmethod
+    def initList(cls, data):
+        if not data:
+            return None
+        head = cls(data[0])
+        r = head
+        p = head
+        for i in data[1:]:
+            node = ListNode(i)
+            p.next = node
+            p = p.next
+        return r
+
+    def __repr__(self):
+        if self:
+            return "{} -> {}".format(self.val, repr(self.next))
 
     def __lt__(self, other):
-        if  not (self and other) :
+        if not (self and other):
             return False
-        return self.val<other.val
-
+        return self.val < other.val
 
 
 class TrieNode(object):
@@ -53,4 +66,4 @@ class TrieNode(object):
         cur.is_string = True
 
     def __repr__(self):
-        return "TrieNode[{}]{} ".format("->".join(self.leaves.keys()),self.is_string)
+        return "TrieNode[{}]{} ".format("->".join(self.leaves.keys()), self.is_string)
