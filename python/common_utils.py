@@ -96,7 +96,8 @@ class Node:
 
     def __repr__(self):
         if self:
-            return "{}[>{}] -> {}".format(self.val, self.random.val if self.random else None, repr(self.next))
+            return "{}[>{}] -> {}".format(self.val, self.random.val if self.random else None,
+                                          repr(self.next))
 
 
 class DoubleListNode:
@@ -128,7 +129,7 @@ class DoubleWithChildNode:
 
         if not list_list:
             return None
-        node_dict = collections.defaultdict(lambda:cls(None))
+        node_dict = collections.defaultdict(lambda: cls(None))
         m, n = len(list_list), len(list_list[0])
         for i in range(m):
             length_row = len(list_list[i])
@@ -166,3 +167,77 @@ class DoubleWithChildNode:
             if self.child:
                 res += "[Child]{}".format(repr(self.child))
             return res
+
+
+DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+
+class UnionFind:
+    def __init__(self, grid):
+        m, n = len(grid), len(grid[0])
+        self.count = 0
+        self.parent = [-1] * m * n
+        self.rank = [0] * m * n
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    self.parent[i * n + j] = i * n + j
+                    self.count += 1
+
+    def find(self, i):
+        if self.parent[i] != i:
+            self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
+
+    def union(self, x, y):
+        """make sure rank(root_x)>=rank(root_y)"""
+        root_x = self.find(x)
+        root_y = self.find(y)
+        if root_x != root_y:
+            if self.rank[root_x] < self.rank[root_y]:
+                root_x, root_y = root_y, root_x
+            self.parent[root_y] = root_x
+            if self.rank[root_x] == self.rank[root_y]:
+                self.rank[root_x] += 1
+            self.count -= 1
+
+    def getCout(self):
+        return self.count
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+    def __repr__(self):
+        if self:
+            if self.left or self.right:
+                return "[{}-{}-{}]".format(repr(self.left), self.val, repr(self.right))
+            else:
+                return "{}".format(self.val)
+        else:
+            return ""
+
+    @classmethod
+    def initTreeSimple(cls, data, relations_l, relations_r):
+
+        if not data:
+            return []
+        node_list = []
+        for node_val in data:
+            if node_val is not None:
+                node_list.append(cls(node_val))
+            else:
+                node_list.append(None)
+        for root_idx, l_idx in relations_l:
+            node_list[root_idx].left = node_list[l_idx]
+        for root_idx, r_idx in relations_r:
+            node_list[root_idx].right = node_list[r_idx]
+        return node_list[0]
+
+    def __lt__(self, other):
+        if not (self and other):
+            return False
+        return self.val < other.val
