@@ -129,7 +129,7 @@ class DoubleWithChildNode:
 
         if not list_list:
             return None
-        node_dict = collections.defaultdict(lambda: cls(None))
+        node_dict = collections.defaultdict(lambda:cls(None))
         m, n = len(list_list), len(list_list[0])
         for i in range(m):
             length_row = len(list_list[i])
@@ -173,6 +173,7 @@ DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
 
 class UnionFind:
+
     def __init__(self, grid):
         m, n = len(grid), len(grid[0])
         self.count = 0
@@ -206,6 +207,7 @@ class UnionFind:
 
 
 class TreeNode:
+
     def __init__(self, x):
         self.val = x
         self.left = None
@@ -213,12 +215,28 @@ class TreeNode:
 
     def __repr__(self):
         if self:
-            if self.left or self.right:
-                return "[{}-{}-{}]".format(repr(self.left), self.val, repr(self.right))
-            else:
-                return "{}".format(self.val)
+            serial = []
+            queue = [self]
+
+            while queue:
+                cur = queue[0]
+
+                if cur:
+                    serial.append(cur.val)
+                    queue.append(cur.left)
+                    queue.append(cur.right)
+                else:
+                    serial.append("#")
+
+                queue = queue[1:]
+
+            while serial[-1] == "#":
+                serial.pop()
+
+            return repr(serial)
+
         else:
-            return ""
+            return None
 
     @classmethod
     def initTreeSimple(cls, data, relations_l, relations_r):

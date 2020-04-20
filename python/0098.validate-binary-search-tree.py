@@ -10,6 +10,7 @@ from common_utils import TreeNode
 
 
 class Solution:
+
     def isValidBST(self, root: TreeNode) -> bool:
         """
         乍一看，这是一个平凡的问题。只需要遍历整棵树，检查 node.right.val > node.val
@@ -20,7 +21,8 @@ class Solution:
         """
 
         def isValidRecursive(node, lower=float("-inf"), upper=float("inf")):
-            if not node: return True
+            if not node:
+                return True
             val = node.val
             if val <= lower or val >= upper:
                 return False
@@ -31,6 +33,20 @@ class Solution:
             return True
 
         return isValidRecursive(root)
+
+
+class Solution2(object):
+
+    def isValidBST(self, root):
+        return self.isValidBSTRecu(root, float("-inf"), float("inf"))
+
+    def isValidBSTRecu(self, root, low, high):
+        if root is None:
+            return True
+
+        return low < root.val and root.val < high \
+               and self.isValidBSTRecu(root.left, low, root.val) \
+               and self.isValidBSTRecu(root.right, root.val, high)
 
 
 if __name__ == '__main__':

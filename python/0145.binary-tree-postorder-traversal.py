@@ -12,6 +12,7 @@ from common_utils import TreeNode
 
 
 class Solution1:
+
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
 
@@ -26,8 +27,8 @@ class Solution1:
         return res
 
 
-class Solution:
-    """迭代　稍负责"""
+class Solution0:
+    """迭代　稍复杂"""
 
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         """
@@ -41,7 +42,8 @@ class Solution:
         当前经过节点的右子节点是上一次访问的节点。
         若不满足上述情况，说明是从左孩子回溯到根节点，需要先访问根节点的右孩子，root = root.right
         """
-        if not root: return []
+        if not root:
+            return []
         res = []  ## //用于存放访问顺序
         stack = []  ## //存放结点，用于回溯
         pre, cur = None, root  ## //记录之前访问过的结点
@@ -58,6 +60,28 @@ class Solution:
                 cur = cur.right  ## //访问当前结点的右孩子
 
         return res
+
+
+class Solution:
+    """
+    迭代　标记法
+    TODO
+    """
+
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        result, stack = [], [(root, False)]
+        while stack:
+            root, is_visited = stack.pop()
+            if root is None:
+                continue
+            if is_visited:
+                result.append(root.val)
+            else:
+                stack.append((root, True))
+                stack.append((root.right, False))
+                stack.append((root.left, False))
+
+        return result
 
 
 if __name__ == '__main__':

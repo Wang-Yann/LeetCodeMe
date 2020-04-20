@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0138.copy-list-with-random-pointer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0141.linked-list-cycle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0142.linked-list-cycle-ii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0147.insertion-sort-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0148.sort-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0160.intersection-of-two-linked-lists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0203.remove-linked-list-elements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0206.reverse-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0237.delete-node-in-a-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0328.odd-even-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0430.flatten-a-multilevel-doubly-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0466.count-the-repetitions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0707.design-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0725.split-linked-list-in-parts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0817.linked-list-components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0876.middle-of-the-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1019.next-greater-node-in-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1171.remove-zero-sum-consecutive-nodes-from-linked-list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1290.convert-binary-number-in-a-linked-list-to-integer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/100.same-tree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/101.symmetric-tree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/104.maximum-depth-of-binary-tree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/99.recover-binary-search-tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0098.validate-binary-search-tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/0098.validate-binary-search-tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0145.binary-tree-postorder-traversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/0145.binary-tree-postorder-traversal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common_utils.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,26 +32,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1019.next-greater-node-in-linked-list.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="288">
-                <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-                <folding>
-                  <element signature="e#226#249#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-126" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1171.remove-zero-sum-consecutive-nodes-from-linked-list.py">
+        <entry file="file://$PROJECT_DIR$/99.recover-binary-search-tree.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
               <first_editor relative-caret-position="321">
-                <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+                <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               </first_editor>
               <second_editor relative-caret-position="-126" />
             </state>
@@ -72,14 +44,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1290.convert-binary-number-in-a-linked-list-to-integer.py">
+        <entry file="file://$PROJECT_DIR$/104.maximum-depth-of-binary-tree.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="360">
-                <caret line="21" column="23" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="21" selection-end-column="23" />
-                <folding>
-                  <element signature="e#226#242#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="324">
+                <caret line="18" column="75" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="18" selection-end-column="75" />
               </first_editor>
               <second_editor />
             </state>
@@ -132,12 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/0079.subsets-ii.py" />
-        <option value="$PROJECT_DIR$/0090.subsets-ii.py" />
-        <option value="$PROJECT_DIR$/0784.letter-case-permutation.py" />
-        <option value="$PROJECT_DIR$/0079.word-search.py" />
-        <option value="$PROJECT_DIR$/0212.word-search-ii.py" />
-        <option value="$PROJECT_DIR$/0080.remove-duplicates-from-sorted-array-ii.py" />
         <option value="$PROJECT_DIR$/0355.design-twitter.py" />
         <option value="$PROJECT_DIR$/0081.search-in-rotated-sorted-array-ii.py" />
         <option value="$PROJECT_DIR$/0084.largest-rectangle-in-histogram.py" />
@@ -175,7 +138,6 @@
         <option value="$PROJECT_DIR$/0206.reverse-linked-list.py" />
         <option value="$PROJECT_DIR$/0328.odd-even-linked-list.py" />
         <option value="$PROJECT_DIR$/0430.flatten-a-multilevel-doubly-linked-list.py" />
-        <option value="$PROJECT_DIR$/common_utils.py" />
         <option value="$PROJECT_DIR$/0707.design-linked-list.py" />
         <option value="$PROJECT_DIR$/0725.split-linked-list-in-parts.py" />
         <option value="$PROJECT_DIR$/0817.linked-list-components.py" />
@@ -183,12 +145,19 @@
         <option value="$PROJECT_DIR$/1019.next-greater-node-in-linked-list.py" />
         <option value="$PROJECT_DIR$/1171.remove-zero-sum-consecutive-nodes-from-linked-list.py" />
         <option value="$PROJECT_DIR$/1290.convert-binary-number-in-a-linked-list-to-integer.py" />
+        <option value="$PROJECT_DIR$/0145.binary-tree-postorder-traversal.py" />
+        <option value="$PROJECT_DIR$/0098.validate-binary-search-tree.py" />
+        <option value="$PROJECT_DIR$/100.same-tree.py" />
+        <option value="$PROJECT_DIR$/101.symmetric-tree.py" />
+        <option value="$PROJECT_DIR$/common_utils.py" />
+        <option value="$PROJECT_DIR$/99.recover-binary-search-tree.py" />
+        <option value="$PROJECT_DIR$/104.maximum-depth-of-binary-tree.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="1394" />
-    <option name="width" value="1166" />
+    <option name="x" value="1284" />
+    <option name="width" value="1276" />
     <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -199,7 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="NBKnowledgePane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,8 +179,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="NBKnowledgePane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,10 +202,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -252,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.1290.convert-binary-number-in-a-linked-list-to-integer">
+  <component name="RunManager" selected="Python.104.maximum-depth-of-binary-tree">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -272,7 +241,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="0817.linked-list-components" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0145.binary-tree-postorder-traversal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -285,7 +254,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0817.linked-list-components.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0145.binary-tree-postorder-traversal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,7 +263,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0876.middle-of-the-linked-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="100.same-tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,7 +276,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0876.middle-of-the-linked-list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/100.same-tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -316,7 +285,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1019.next-greater-node-in-linked-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="101.symmetric-tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -329,7 +298,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1019.next-greater-node-in-linked-list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/101.symmetric-tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,7 +307,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1171.remove-zero-sum-consecutive-nodes-from-linked-list" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="104.maximum-depth-of-binary-tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -351,7 +320,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1171.remove-zero-sum-consecutive-nodes-from-linked-list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/104.maximum-depth-of-binary-tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -360,7 +329,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1290.convert-binary-number-in-a-linked-list-to-integer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="99.recover-binary-search-tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -373,7 +342,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1290.convert-binary-number-in-a-linked-list-to-integer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/99.recover-binary-search-tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -402,11 +371,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.1290.convert-binary-number-in-a-linked-list-to-integer" />
-        <item itemvalue="Python.1171.remove-zero-sum-consecutive-nodes-from-linked-list" />
-        <item itemvalue="Python.1019.next-greater-node-in-linked-list" />
-        <item itemvalue="Python.0876.middle-of-the-linked-list" />
-        <item itemvalue="Python.0817.linked-list-components" />
+        <item itemvalue="Python.104.maximum-depth-of-binary-tree" />
+        <item itemvalue="Python.99.recover-binary-search-tree" />
+        <item itemvalue="Python.101.symmetric-tree" />
+        <item itemvalue="Python.100.same-tree" />
+        <item itemvalue="Python.0145.binary-tree-postorder-traversal" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +406,8 @@
       <workItem from="1586920854680" duration="15030000" />
       <workItem from="1587040132920" duration="7922000" />
       <workItem from="1587177439180" duration="23658000" />
-      <workItem from="1587265862811" duration="46108000" />
+      <workItem from="1587265862811" duration="46319000" />
+      <workItem from="1587386382708" duration="6152000" />
     </task>
     <task id="LOCAL-00001" summary="increase stack &amp; DP">
       <created>1586876329909</created>
@@ -467,17 +437,24 @@
       <option name="project" value="LOCAL" />
       <updated>1587224855657</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Linked List">
+      <created>1587314474008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587314474008</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269626000" />
+    <option name="totallyTimeSpent" value="275989000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1394" y="0" width="1166" height="1440" extended-state="4" />
+    <frame x="1284" y="0" width="1276" height="1440" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.23156089" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.23119122" />
       <window_info id="TODO" order="1" side_tool="true" weight="0.32962722" />
       <window_info id="FindBugs-IDEA" order="2" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
       <window_info id="CheckStyle" order="3" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
@@ -485,7 +462,7 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.32766274" />
+      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.19592476" />
       <window_info id="Jenkins" order="9" sideWeight="0.50053364" weight="0.32897317" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965416" />
@@ -507,7 +484,6 @@
       <window_info active="true" anchor="bottom" id="Database Console" order="17" sideWeight="0.636436" visible="true" weight="0.3586156" />
       <window_info active="true" anchor="bottom" id="Iedis Console" order="18" sideWeight="0.49960223" weight="0.3298969" />
       <window_info anchor="bottom" id="Job test results" order="19" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32975364" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24979457" />
@@ -538,6 +514,7 @@
       <window_info anchor="right" id="R Packages" order="27" />
       <window_info anchor="right" id="Scheme.REPL" order="28" side_tool="true" />
       <window_info anchor="right" id="R Graphics" order="29" />
+      <window_info anchor="right" id="Coverage" order="30" side_tool="true" weight="0.32975364" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994664" weight="0.17690058" />
@@ -795,6 +772,11 @@
           <line>62</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/99.recover-binary-search-tree.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -804,6 +786,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0725_split_linked_list_in_parts.coverage" NAME="0725.split-linked-list-in-parts Coverage Results" MODIFIED="1587306990772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0086_partition_list.coverage" NAME="0086.partition-list Coverage Results" MODIFIED="1587223596294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0118_pascals_triangle.coverage" NAME="0118.pascals-triangle Coverage Results" MODIFIED="1586085225694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$100_same_tree.coverage" NAME="100.same-tree Coverage Results" MODIFIED="1587390832896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0079_word_search.coverage" NAME="0079.word-search Coverage Results" MODIFIED="1586697664088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0054_spiral_matrix.coverage" NAME="0054.spiral-matrix Coverage Results" MODIFIED="1586604687549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0167_two_sum_ii_input_array_is_sorted.coverage" NAME="0167.two-sum-ii-input-array-is-sorted Coverage Results" MODIFIED="1586148320002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -819,6 +802,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0238_product_of_array_except_self.coverage" NAME="0238.product-of-array-except-self Coverage Results" MODIFIED="1587046433439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0007_reverse_integer.coverage" NAME="0007.reverse-integer Coverage Results" MODIFIED="1586531595885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0707_design_linked_list.coverage" NAME="0707.design-linked-list Coverage Results" MODIFIED="1587306392986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$104_maximum_depth_of_binary_tree.coverage" NAME="104.maximum-depth-of-binary-tree Coverage Results" MODIFIED="1587395126926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0080_remove_duplicates_from_sorted_array_ii.coverage" NAME="0080.remove-duplicates-from-sorted-array-ii Coverage Results" MODIFIED="1586705172434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0141_linked_list_cycle.coverage" NAME="0141.linked-list-cycle Coverage Results" MODIFIED="1587274662496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0876_middle_of_the_linked_list.coverage" NAME="0876.middle-of-the-linked-list Coverage Results" MODIFIED="1587309685622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -851,8 +835,10 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0085_maximal_rectangle.coverage" NAME="0085.maximal-rectangle Coverage Results" MODIFIED="1586872465216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0003_longest_substring_without_repeating_characters.coverage" NAME="0003.longest-substring-without-repeating-characters Coverage Results" MODIFIED="1586180559488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0061_rotate_list.coverage" NAME="0061.rotate-list Coverage Results" MODIFIED="1587186290482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$101_symmetric_tree.coverage" NAME="101.symmetric-tree Coverage Results" MODIFIED="1587391276456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0062_unique_paths.coverage" NAME="0062.unique-paths Coverage Results" MODIFIED="1586615887267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0234_palindrome_linked_list.coverage" NAME="0234.palindrome-linked-list Coverage Results" MODIFIED="1586534639776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$99_recover_binary_search_tree.coverage" NAME="99.recover-binary-search-tree Coverage Results" MODIFIED="1587394739120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0046_permutations.coverage" NAME="0046.permutations Coverage Results" MODIFIED="1586442895933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0328_odd_even_linked_list.coverage" NAME="0328.odd-even-linked-list Coverage Results" MODIFIED="1587288474820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0287_find_the_duplicate_number.coverage" NAME="0287.find-the-duplicate-number Coverage Results" MODIFIED="1587047466316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -884,6 +870,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0121_best_time_to_buy_and_sell_stock.coverage" NAME="0121.best-time-to-buy-and-sell-stock Coverage Results" MODIFIED="1586101133768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$1290_convert_binary_number_in_a_linked_list_to_integer.coverage" NAME="1290.convert-binary-number-in-a-linked-list-to-integer Coverage Results" MODIFIED="1587314385078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0138_copy_list_with_random_pointer.coverage" NAME="0138.copy-list-with-random-pointer Coverage Results" MODIFIED="1587274186171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0145_binary_tree_postorder_traversal.coverage" NAME="0145.binary-tree-postorder-traversal Coverage Results" MODIFIED="1587386990269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0053_maximum_subarray.coverage" NAME="0053.maximum-subarray Coverage Results" MODIFIED="1586088062893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0120_triangle.coverage" NAME="0120.triangle Coverage Results" MODIFIED="1586956637724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0147_insertion_sort_list.coverage" NAME="0147.insertion-sort-list Coverage Results" MODIFIED="1587278835205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -904,67 +891,6 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0072_edit_distance.coverage" NAME="0072.edit-distance Coverage Results" MODIFIED="1586181146552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/0078.subsets.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="228">
-            <caret line="52" column="61" lean-forward="true" selection-start-line="52" selection-start-column="61" selection-end-line="52" selection-end-column="61" />
-            <folding>
-              <element signature="e#226#260#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0081.search-in-rotated-sorted-array-ii.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="198">
-            <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0001.two-sum.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0002.add-two-numbers.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="216">
-            <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0042.trapping-rain-water.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="144">
-            <caret line="8" selection-start-line="8" selection-end-line="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0084.largest-rectangle-in-histogram.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="112">
-            <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-end-line="15" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0085.maximal-rectangle.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1344,26 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common_utils.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="763">
-            <caret line="114" column="23" lean-forward="true" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0707.design-linked-list.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="342">
-            <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0725.split-linked-list-in-parts.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1403,34 +1309,114 @@
     <entry file="file://$PROJECT_DIR$/1019.next-greater-node-in-linked-list.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="288">
-            <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <first_editor relative-caret-position="594">
+            <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
             <folding>
               <element signature="e#226#249#0" expanded="true" />
             </folding>
           </first_editor>
-          <second_editor relative-caret-position="-126" />
+          <second_editor relative-caret-position="-36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1171.remove-zero-sum-consecutive-nodes-from-linked-list.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="321">
-            <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <first_editor relative-caret-position="882">
+            <caret line="49" selection-start-line="49" selection-end-line="49" />
           </first_editor>
-          <second_editor relative-caret-position="-126" />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1290.convert-binary-number-in-a-linked-list-to-integer.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="360">
-            <caret line="21" column="23" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="21" selection-end-column="23" />
+          <first_editor relative-caret-position="666">
+            <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0145.binary-tree-postorder-traversal.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="597">
+            <caret line="89" column="46" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="46" />
             <folding>
-              <element signature="e#226#242#0" expanded="true" />
+              <element signature="e#220#243#0" expanded="true" />
             </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0098.validate-binary-search-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="566">
+            <caret line="55" column="46" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="46" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/101.symmetric-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="327">
+            <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          </first_editor>
+          <second_editor relative-caret-position="-15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="572">
+            <caret line="238" column="23" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="23" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/100.same-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="270">
+            <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0707.design-linked-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-2034">
+            <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/99.recover-binary-search-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="321">
+            <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/104.maximum-depth-of-binary-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="324">
+            <caret line="18" column="75" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="18" selection-end-column="75" />
           </first_editor>
           <second_editor />
         </state>
