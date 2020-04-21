@@ -7,7 +7,7 @@
 # @Version       : alpha-1.0
 import collections
 
-
+DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 class ListNode:
 
     def __init__(self, x):
@@ -169,7 +169,38 @@ class DoubleWithChildNode:
             return res
 
 
-DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+class TreeNodeWithNext:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+
+    def __repr__(self):
+        if self:
+            serial = []
+            queue = [self]
+
+            while queue:
+                cur = queue[0]
+
+                if cur:
+                    serial.append(cur.val)
+                    queue.append(cur.left)
+                    queue.append(cur.right)
+                else:
+                    serial.append("#")
+
+                queue = queue[1:]
+
+            while serial[-1] == "#":
+                serial.pop()
+
+            return repr(serial)
+        else:
+            return None
+
+
 
 
 class UnionFind:
@@ -208,10 +239,10 @@ class UnionFind:
 
 class TreeNode:
 
-    def __init__(self, x):
+    def __init__(self, x,left=None,right=None):
         self.val = x
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
 
     def __repr__(self):
         if self:
