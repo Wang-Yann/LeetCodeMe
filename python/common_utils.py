@@ -8,6 +8,8 @@
 import collections
 
 DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+
 class ListNode:
 
     def __init__(self, x):
@@ -129,7 +131,7 @@ class DoubleWithChildNode:
 
         if not list_list:
             return None
-        node_dict = collections.defaultdict(lambda:cls(None))
+        node_dict = collections.defaultdict(lambda: cls(None))
         m, n = len(list_list), len(list_list[0])
         for i in range(m):
             length_row = len(list_list[i])
@@ -170,7 +172,8 @@ class DoubleWithChildNode:
 
 
 class TreeNodeWithNext:
-    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None,
+                 next: 'Node' = None):
         self.val = val
         self.left = left
         self.right = right
@@ -199,8 +202,6 @@ class TreeNodeWithNext:
             return repr(serial)
         else:
             return None
-
-
 
 
 class UnionFind:
@@ -239,7 +240,7 @@ class UnionFind:
 
 class TreeNode:
 
-    def __init__(self, x,left=None,right=None):
+    def __init__(self, x, left=None, right=None):
         self.val = x
         self.left = left
         self.right = right
@@ -290,3 +291,35 @@ class TreeNode:
         if not (self and other):
             return False
         return self.val < other.val
+
+    @classmethod
+    def initPreOrder(cls, data_list):
+        """Encodes a tree to a single string.
+
+        :type root: TreeNode
+        :rtype: str
+        """
+
+        def rebuild(l):
+            val = l.pop(0)
+            if val is None:
+                return None
+            root = TreeNode(val)
+            root.left = rebuild(l)
+            root.right = rebuild(l)
+            return root
+
+        return rebuild(data_list)
+
+
+class TreeNodeWithChildren:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+    def __repr__(self):
+        if self:
+            if self.children:
+                return "{}[{}]".format(self.val, [repr(x) for x in self.children])
+            else:
+                return "{}[]".format(self.val)
