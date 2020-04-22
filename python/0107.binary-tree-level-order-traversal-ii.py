@@ -24,8 +24,7 @@ class Solution:
                 levelOrderTraversalRecursive(node.left, level + 1)
             if node.right:
                 levelOrderTraversalRecursive(node.right, level + 1)
-            if len(res) == level:
-                res.append([])
+
 
         levelOrderTraversalRecursive(root, 0)
         return res[::-1]
