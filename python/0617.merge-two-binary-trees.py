@@ -17,7 +17,7 @@ class Solution:
             return t1
         t1.val += t2.val
         t1.left = self.mergeTrees(t1.left, t2.left)
-        t2.right = self.mergeTrees(t1.right, t2.right)
+        t1.right = self.mergeTrees(t1.right, t2.right)
         return t1
 
 
