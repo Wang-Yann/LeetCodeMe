@@ -288,6 +288,7 @@
       <workItem from="1586792060168" duration="74000" />
       <workItem from="1586870157112" duration="15000" />
       <workItem from="1587048026697" duration="27000" />
+      <workItem from="1587651597825" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="Array &amp; DP">
       <created>1586182980068</created>
@@ -386,14 +387,14 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="875" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1587048032128" />
-    <state x="938" y="547" key="com.intellij.ide.util.TipDialog" timestamp="1586870157644">
+    <state x="938" y="547" key="com.intellij.ide.util.TipDialog" timestamp="1587651605770">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="938" y="547" key="com.intellij.ide.util.TipDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1586870157644" />
-    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog" timestamp="1586349972198">
+    <state x="938" y="547" key="com.intellij.ide.util.TipDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1587651605770" />
+    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog" timestamp="1587651620364">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1586349972198" />
+    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1587651620364" />
     <state x="944" y="335" key="run.anything.popup" timestamp="1586054495899">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
