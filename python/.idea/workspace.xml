@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="Tree &amp; SwordToOffer2">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/rock.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0726.number-of-atoms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0844.backspace-string-compare.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0856.score-of-parentheses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0880.decoded-string-at-index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/24.fan-zhuan-lian-biao-lcof.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/0641.design-circular-dueue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0862.shortest-subarray-with-sum-at-least-k.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/17.09.get-kth-magic-number-lcci.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,62 +28,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0232.implement-queue-using-stacks.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="360">
-                <caret line="21" selection-start-line="21" selection-end-line="21" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0225.implement-stack-using-queues.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="1548">
-                <caret line="86" selection-start-line="52" selection-start-column="4" selection-end-line="86" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/15.er-jin-zhi-zhong-1de-ge-shu-lcof.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="540">
-                <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0726.number-of-atoms.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="343">
-                <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-                <folding>
-                  <element signature="e#225#243#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-126" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0844.backspace-string-compare.py">
+        <entry file="file://$PROJECT_DIR$/0641.design-circular-dueue.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
               <first_editor relative-caret-position="396">
-                <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+                <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               </first_editor>
               <second_editor relative-caret-position="-126" />
             </state>
@@ -95,23 +40,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0856.score-of-parentheses.py">
+        <entry file="file://$PROJECT_DIR$/0862.shortest-subarray-with-sum-at-least-k.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="378">
-                <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0880.decoded-string-at-index.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="378">
-                <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <first_editor relative-caret-position="396">
+                <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+                <folding>
+                  <element signature="e#225#243#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -119,14 +55,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/24.fan-zhuan-lian-biao-lcof.py">
+        <entry file="file://$PROJECT_DIR$/17.09.get-kth-magic-number-lcci.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="378">
-                <caret line="22" column="19" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="19" />
-                <folding>
-                  <element signature="e#226#242#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="414">
+                <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               </first_editor>
               <second_editor />
             </state>
@@ -134,13 +67,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common_utils.py">
+        <entry file="file://$PROJECT_DIR$/0622.design-circular-queue.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="337">
-                <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-              </first_editor>
-              <second_editor relative-caret-position="-5" />
+              <first_editor relative-caret-position="-108" />
+              <second_editor relative-caret-position="-108" />
             </state>
           </provider>
         </entry>
@@ -156,9 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>[k]</find>
-      <find>search</find>
-      <find>Bina</find>
       <find>end1</find>
       <find>row</find>
       <find>bina</find>
@@ -184,6 +112,11 @@
       <find>constr</find>
       <find>multiplicity</find>
       <find>reverseList</find>
+      <find>//</find>
+      <find>;</find>
+      <find>circularDeque</find>
+      <find>递归</find>
+      <find>丑</find>
     </findStrings>
     <replaceStrings>
       <replace>end2</replace>
@@ -191,6 +124,7 @@
       <replace>range</replace>
       <replace>None</replace>
       <replace>multi_times</replace>
+      <replace>#</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -202,9 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/0117.populating-next-right-pointers-in-each-node-ii.py" />
-        <option value="$PROJECT_DIR$/0173.binary-search-tree-iterator.py" />
-        <option value="$PROJECT_DIR$/0501.find-mode-in-binary-search-tree.py" />
         <option value="$PROJECT_DIR$/0513.find-bottom-left-tree-value.py" />
         <option value="$PROJECT_DIR$/0515.find-largest-value-in-each-tree-row.py" />
         <option value="$PROJECT_DIR$/0107.binary-tree-level-order-traversal-ii.py" />
@@ -253,6 +184,9 @@
         <option value="$PROJECT_DIR$/0880.decoded-string-at-index.py" />
         <option value="$PROJECT_DIR$/common_utils.py" />
         <option value="$PROJECT_DIR$/CodingInterviews_2/24.fan-zhuan-lian-biao-lcof.py" />
+        <option value="$PROJECT_DIR$/0641.design-circular-dueue.py" />
+        <option value="$PROJECT_DIR$/0862.shortest-subarray-with-sum-at-least-k.py" />
+        <option value="$PROJECT_DIR$/17.09.get-kth-magic-number-lcci.py" />
       </list>
     </option>
   </component>
@@ -269,9 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="NBKnowledgePane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,10 +215,18 @@
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="CodingInterviews_2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LeetCodePyRock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="CrackingTheCodingInterview_6" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="NBKnowledgePane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,10 +247,10 @@
     <property name="settings.editor.selected.configurable" value="plugins.junitgenerator.application" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -327,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.24.fan-zhuan-lian-biao-lcof">
+  <component name="RunManager" selected="Python.17.09.get-kth-magic-number-lcci">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -369,29 +308,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0844.backspace-string-compare" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0844.backspace-string-compare.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="0856.score-of-parentheses" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0641.design-circular-dueue" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -404,7 +321,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0856.score-of-parentheses.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0641.design-circular-dueue.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -413,7 +330,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="0880.decoded-string-at-index" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="0862.shortest-subarray-with-sum-at-least-k" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -426,7 +343,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0880.decoded-string-at-index.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0862.shortest-subarray-with-sum-at-least-k.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="17.09.get-kth-magic-number-lcci" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CrackingTheCodingInterview_6/17.09.get-kth-magic-number-lcci.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -477,11 +416,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.17.09.get-kth-magic-number-lcci" />
+        <item itemvalue="Python.0862.shortest-subarray-with-sum-at-least-k" />
+        <item itemvalue="Python.0641.design-circular-dueue" />
         <item itemvalue="Python.24.fan-zhuan-lian-biao-lcof" />
         <item itemvalue="Python.0206.reverse-linked-list" />
-        <item itemvalue="Python.0880.decoded-string-at-index" />
-        <item itemvalue="Python.0856.score-of-parentheses" />
-        <item itemvalue="Python.0844.backspace-string-compare" />
       </list>
     </recent_temporary>
   </component>
@@ -520,7 +459,8 @@
       <workItem from="1587651607098" duration="8794000" />
       <workItem from="1587730857000" duration="10976000" />
       <workItem from="1587791573628" duration="22046000" />
-      <workItem from="1587902939092" duration="10969000" />
+      <workItem from="1587902939092" duration="11198000" />
+      <workItem from="1587989369810" duration="6105000" />
     </task>
     <task id="LOCAL-00001" summary="increase stack &amp; DP">
       <created>1586876329909</created>
@@ -599,11 +539,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587830554601</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Stack">
+      <created>1587917091547</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587917091547</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349531000" />
+    <option name="totallyTimeSpent" value="355865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1280" height="1440" extended-state="4" />
@@ -1126,12 +1073,14 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0148_sort_list.coverage" NAME="0148.sort-list Coverage Results" MODIFIED="1587280752646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$05_ti_huan_kong_ge_lcof.coverage" NAME="05.ti-huan-kong-ge-lcof Coverage Results" MODIFIED="1587571011684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0123_best_time_to_buy_and_sell_stock_iv.coverage" NAME="0123.best-time-to-buy-and-sell-stock-iv Coverage Results" MODIFIED="1586103054452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0862_shortest_subarray_with_sum_at_least_k.coverage" NAME="0862.shortest-subarray-with-sum-at-least-k Coverage Results" MODIFIED="1587994301723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0445_add_two_numbers.coverage" NAME="0445.add-two-numbers Coverage Results" MODIFIED="1586870713668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0116_populating_next_right_pointers_in_each_node.coverage" NAME="0116.populating-next-right-pointers-in-each-node Coverage Results" MODIFIED="1587476889352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0203_remove_linked_list_elements.coverage" NAME="0203.remove-linked-list-elements Coverage Results" MODIFIED="1587284062785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$14_i_jian_sheng_zi_lcof.coverage" NAME="14-i.jian-sheng-zi-lcof Coverage Results" MODIFIED="1587744932940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0034_find_first_and_last_position_of_element_in_sorted_array.coverage" NAME="0034.find-first-and-last-position-of-element-in-sorted-array Coverage Results" MODIFIED="1586169060789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0094_binary_tree_inorder_traversal.coverage" NAME="0094.binary-tree-inorder-traversal Coverage Results" MODIFIED="1587565666339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0641_design_circular_dueue.coverage" NAME="0641.design-circular-dueue Coverage Results" MODIFIED="1587993584935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$10_fei_bo_na_qi_shu_lie_lcof.coverage" NAME="10.fei-bo-na-qi-shu-lie-lcof Coverage Results" MODIFIED="1587658106490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0018_4sum.coverage" NAME="0018.4sum Coverage Results" MODIFIED="1586163434140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0206_reverse_linked_list.coverage" NAME="0206.reverse-linked-list Coverage Results" MODIFIED="1587916971178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1182,6 +1131,7 @@
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0071_simplify_path.coverage" NAME="0071.simplify-path Coverage Results" MODIFIED="1587806871645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0073_set_matrix_zeroes.coverage" NAME="0073.set-matrix-zeroes Coverage Results" MODIFIED="1586676647110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0057_insert_interval.coverage" NAME="0057.insert-interval Coverage Results" MODIFIED="1586613983017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$17_09_get_kth_magic_number_lcci.coverage" NAME="17.09.get-kth-magic-number-lcci Coverage Results" MODIFIED="1587995965351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0079_subsets_ii.coverage" NAME="0079.subsets-ii Coverage Results" MODIFIED="1586694476435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$06_cong_wei_dao_tou_da_yin_lian_biao_lcof.coverage" NAME="06.cong-wei-dao-tou-da-yin-lian-biao-lcof Coverage Results" MODIFIED="1587571232861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
     <SUITE FILE_PATH="coverage/LeetCodePyRock$0072_edit_distance.coverage" NAME="0072.edit-distance Coverage Results" MODIFIED="1586181146552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1201,82 +1151,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/0173.binary-search-tree-iterator.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="285">
-            <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0501.find-mode-in-binary-search-tree.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="615">
-            <caret line="46" column="5" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
-            <folding>
-              <element signature="e#226#249#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0513.find-bottom-left-tree-value.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="615">
-            <caret line="36" column="74" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="36" selection-end-column="74" />
-          </first_editor>
-          <second_editor relative-caret-position="-33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0515.find-largest-value-in-each-tree-row.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="468">
-            <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-            <folding>
-              <element signature="e#226#242#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0102.binary-tree-level-order-traversal.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="530">
-            <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0107.binary-tree-level-order-traversal-ii.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="291">
-            <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          </first_editor>
-          <second_editor relative-caret-position="-87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0094.binary-tree-inorder-traversal.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="1101">
-            <caret line="84" column="19" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="19" />
-          </first_editor>
-          <second_editor relative-caret-position="-126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0530.minimum-absolute-difference-in-bst.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1706,16 +1580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/0880.decoded-string-at-index.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="378">
-            <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common_utils.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -1726,14 +1590,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/24.fan-zhuan-lian-biao-lcof.py">
+    <entry file="file://$PROJECT_DIR$/0206.reverse-linked-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="869">
+            <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0880.decoded-string-at-index.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="378">
-            <caret line="22" column="19" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="19" />
+            <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/24.fan-zhuan-lian-biao-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="594">
+            <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
             <folding>
               <element signature="e#226#242#0" expanded="true" />
             </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0907.sum-of-subarray-minimums.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0621.task-scheduler.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="126">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <folding>
+              <element signature="e#219#237#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0622.design-circular-queue.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-108" />
+          <second_editor relative-caret-position="-108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0641.design-circular-dueue.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0862.shortest-subarray-with-sum-at-least-k.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <folding>
+              <element signature="e#225#243#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17.09.get-kth-magic-number-lcci.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="414">
+            <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           </first_editor>
           <second_editor />
         </state>
