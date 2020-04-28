@@ -3,4 +3,4 @@
 build
 CMakeSettings.json
 /cmake-build-debug/
-!/python/.pytest_cache/
+/python/.pytest_cache/
