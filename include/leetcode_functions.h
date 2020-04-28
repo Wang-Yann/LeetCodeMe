@@ -6,13 +6,27 @@
 #define LEETCODE_FUNCTIONS_H
 
 #include "common.h"
-
+//0002
 int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+//0026
+int nthUglyNumber(int n);
 
 struct ListNode {
     int val;
     struct ListNode *next;
 };
+
+#define max(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a > _b ? _a : _b; });
+
+
+#define min(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+
 
 
 
