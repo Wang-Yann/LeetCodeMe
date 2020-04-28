@@ -29,7 +29,7 @@ else
     SOLUTION=$(echo ${SOLUTION} | sed 's/^.*\.//g')
 fi
 
-cp -f ${CMAKE_SOURCE_DIR}/src/0.template.cc ${CMAKE_SOURCE_DIR}/src/${ID}.${SOLUTION}.cc
+cp -f ${CMAKE_SOURCE_DIR}/src/0.template.c ${CMAKE_SOURCE_DIR}/src/${ID}.${SOLUTION}.c
 
 sed -i "s/isValid/$(expr ${SOLUTION})/g" \
     ${CMAKE_SOURCE_DIR}/src/${ID}.${SOLUTION}.cc
