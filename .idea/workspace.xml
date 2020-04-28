@@ -2,11 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="LeetCode" targetName="leetcode" />
-      <config projectName="LeetCode" targetName="2.addTwoNumbers" />
-      <config projectName="LeetCode" targetName="test_listnode" />
-      <config projectName="LeetCode" targetName="test_tree" />
-      <config projectName="LeetCode" targetName="0.template" />
+      <config projectName="LeetCode" targetName="0002_addTwoNumbers" />
+      <config projectName="LeetCode" targetName="test_0002" />
+      <config projectName="LeetCode" targetName="leetcode_c" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -15,7 +13,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71295d86-0cf1-4644-bb71-d9593945a093" name="Default Changelist" comment="" />
+    <list default="true" id="7595583d-2fd3-429d-92eb-e0eda4cb5803" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,50 +22,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-        <option value="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-        <option value="$PROJECT_DIR$/.idea/thriftCompiler.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1a4A0v3VDAnfY9HpNhl6JvpLvy6" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1bAbUoDJpP3JffCxpRPrQr8BKvI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -76,13 +35,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LeetCode-Solutions" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/test/test_0002.cpp&#10;/files/Tutorials/LeetCodeRockPyC/test/src/test_0002.cpp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/python" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -92,169 +49,68 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/python" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/src" />
+      <recent name="$PROJECT_DIR$/C/include" />
+      <recent name="$PROJECT_DIR$/C" />
+      <recent name="$PROJECT_DIR$/C/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.0053.maximum-subarray">
-    <configuration name="0.template" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="0.template" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="0.template" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake Application.test_0002">
+    <configuration name="0002_addTwoNumbers" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="0002_addTwoNumbers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="0002_addTwoNumbers" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="2.addTwoNumbers" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="2.addTwoNumbers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="2.addTwoNumbers" TEST_MODE="SUITE_TEST">
+    <configuration name="All in test_0002.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/test/test_0002.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_listnode" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_listnode" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_listnode" TEST_MODE="SUITE_TEST">
+    <configuration name="test_0002" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_tree" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_tree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_tree" TEST_MODE="SUITE_TEST">
+    <configuration name="two_sum_test.twoSum001" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002" TEST_CLASS="two_sum_test" TEST_METHOD="twoSum001" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="leetcode" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="leetcode" CONFIG_NAME="Debug">
+    <configuration name="0002_addTwoNumbers" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="0002_addTwoNumbers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="0002_addTwoNumbers">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="0026.remove-duplicates-from-sorted-array" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/0026.remove-duplicates-from-sorted-array.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="leetcode_c" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="leetcode_c" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="0027.remove-element" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/0027.remove-element.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="0035.search-insert-position" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/0035.search-insert-position.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="0053.maximum-subarray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/0053.maximum-subarray.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="0067.add-binary" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/0067.add-binary.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="test_0002" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="Google Test.0.template" />
-      <item itemvalue="Google Test.2.addTwoNumbers" />
-      <item itemvalue="Google Test.test_listnode" />
-      <item itemvalue="Google Test.test_tree" />
-      <item itemvalue="CMake Application.leetcode" />
-      <item itemvalue="Python.0026.remove-duplicates-from-sorted-array" />
-      <item itemvalue="Python.0027.remove-element" />
-      <item itemvalue="Python.0035.search-insert-position" />
-      <item itemvalue="Python.0053.maximum-subarray" />
-      <item itemvalue="Python.0067.add-binary" />
+      <item itemvalue="CMake Application.leetcode_c" />
+      <item itemvalue="CMake Application.0002_addTwoNumbers" />
+      <item itemvalue="CMake Application.test_0002" />
+      <item itemvalue="Google Test.0002_addTwoNumbers" />
+      <item itemvalue="Google Test.test_0002" />
+      <item itemvalue="Google Test.two_sum_test.twoSum001" />
+      <item itemvalue="Google Test.All in test_0002.cpp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.0053.maximum-subarray" />
-        <item itemvalue="Python.0035.search-insert-position" />
-        <item itemvalue="Python.0027.remove-element" />
-        <item itemvalue="Python.0026.remove-duplicates-from-sorted-array" />
-        <item itemvalue="Python.0067.add-binary" />
+        <item itemvalue="CMake Application.test_0002" />
+        <item itemvalue="Google Test.two_sum_test.twoSum001" />
+        <item itemvalue="Google Test.All in test_0002.cpp" />
+        <item itemvalue="CMake Application.0002_addTwoNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -263,162 +119,66 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="71295d86-0cf1-4644-bb71-d9593945a093" name="Default Changelist" comment="" />
-      <created>1585984272028</created>
+      <changelist id="7595583d-2fd3-429d-92eb-e0eda4cb5803" name="Default Changelist" comment="" />
+      <created>1588077863398</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585984272028</updated>
-      <workItem from="1585984274468" duration="2601000" />
-      <workItem from="1585987496147" duration="207000" />
-      <workItem from="1585987722118" duration="20408000" />
-      <workItem from="1586054218222" duration="132000" />
-      <workItem from="1586054379253" duration="18000" />
-      <workItem from="1586054567885" duration="16000" />
-      <workItem from="1586055033313" duration="23000" />
-      <workItem from="1586158267064" duration="116000" />
-      <workItem from="1586177315715" duration="495000" />
-      <workItem from="1586178625876" duration="22000" />
-      <workItem from="1586182949193" duration="87000" />
-      <workItem from="1586264854333" duration="102000" />
-      <workItem from="1586265647599" duration="9000" />
-      <workItem from="1586268842844" duration="41000" />
-      <workItem from="1586349963737" duration="27000" />
-      <workItem from="1586352608070" duration="20000" />
-      <workItem from="1586435759340" duration="124000" />
-      <workItem from="1586792060168" duration="74000" />
-      <workItem from="1586870157112" duration="15000" />
-      <workItem from="1587048026697" duration="27000" />
-      <workItem from="1587651597825" duration="43000" />
+      <updated>1588077863398</updated>
+      <workItem from="1588077864653" duration="3609000" />
     </task>
-    <task id="LOCAL-00001" summary="Array &amp; DP">
-      <created>1586182980068</created>
+    <task id="LOCAL-00001" summary="Init Environment For C &amp; GoogleTest">
+      <created>1588081421981</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1586182980068</updated>
+      <updated>1588081421981</updated>
     </task>
-    <task id="LOCAL-00002" summary="Array &amp; Stack">
-      <created>1586268863928</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1586268863928</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Array &amp; Stack">
-      <created>1586435772325</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1586435772325</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Increase Stack &amp; Twitter">
-      <created>1586792111898</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1586792111898</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Array &amp; DP" />
-    <MESSAGE value="Array &amp; Stack" />
-    <MESSAGE value="Increase Stack &amp; Twitter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase Stack &amp; Twitter" />
+    <MESSAGE value="Init Environment For C &amp; GoogleTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init Environment For C &amp; GoogleTest" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1676" y="308" width="539" height="831" key="#0053.maximum-subarray" timestamp="1586054408297">
+    <state x="224" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588079701325">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1676" y="308" width="539" height="831" key="#0053.maximum-subarray/0.0.2560.1440@0.0.2560.1440" timestamp="1586054408297" />
-    <state x="1250" y="741" width="759" height="394" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585992220914">
+    <state x="224" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1588079701325" />
+    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2" timestamp="1588081421869">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1250" y="741" width="759" height="394" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1585992220914" />
-    <state x="846" y="319" width="857" height="808" key="CommitChangelistDialog2" timestamp="1586792111740">
+    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1588081421869" />
+    <state x="549" y="478" width="424" height="491" key="FileChooserDialogImpl" timestamp="1588081552719">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="846" y="319" width="857" height="808" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1586792111740" />
-    <state x="1374" y="550" width="424" height="491" key="FileChooserDialogImpl" timestamp="1586178645358">
+    <state x="549" y="478" width="424" height="491" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1588081552719" />
+    <state width="1415" height="412" key="GridCell.Tab.0.bottom" timestamp="1588081177054">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1374" y="550" width="424" height="491" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1586178645358" />
-    <state width="2518" height="371" key="GridCell.Tab.0.bottom" timestamp="1586054951814">
+    <state width="1415" height="412" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177054" />
+    <state width="1415" height="412" key="GridCell.Tab.0.center" timestamp="1588081177053">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1586054951814" />
-    <state width="2518" height="371" key="GridCell.Tab.0.center" timestamp="1586054951813">
+    <state width="1415" height="412" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177053" />
+    <state width="1415" height="412" key="GridCell.Tab.0.left" timestamp="1588081177050">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1586054951813" />
-    <state width="2518" height="371" key="GridCell.Tab.0.left" timestamp="1586054951812">
+    <state width="1415" height="412" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177050" />
+    <state width="1415" height="412" key="GridCell.Tab.0.right" timestamp="1588081177053">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1586054951812" />
-    <state width="2518" height="371" key="GridCell.Tab.0.right" timestamp="1586054951813">
+    <state width="1415" height="412" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177053" />
+    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588081437716">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1586054951813" />
-    <state width="1166" height="506" key="GridCell.Tab.1.bottom" timestamp="1586015119511">
+    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1588081437716" />
+    <state x="138" y="100" width="1257" height="1240" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588080399098">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1166" height="506" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1586015119511" />
-    <state width="1166" height="506" key="GridCell.Tab.1.center" timestamp="1586015119510">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="1166" height="506" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1586015119510" />
-    <state width="1166" height="506" key="GridCell.Tab.1.left" timestamp="1586015119509">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="1166" height="506" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1586015119509" />
-    <state width="1166" height="506" key="GridCell.Tab.1.right" timestamp="1586015119510">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="1166" height="506" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1586015119510" />
-    <state x="847" y="523" width="1576" height="823" key="SettingsEditor" timestamp="1586054446710">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="847" y="523" width="1576" height="823" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1586054446710" />
-    <state x="875" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587048032128">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="875" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1587048032128" />
-    <state x="938" y="547" key="com.intellij.ide.util.TipDialog" timestamp="1587651605770">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="938" y="547" key="com.intellij.ide.util.TipDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1587651605770" />
-    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog" timestamp="1587651620364">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="950" y="515" width="650" height="417" key="git4idea.merge.GitPullDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1587651620364" />
-    <state x="944" y="335" key="run.anything.popup" timestamp="1586054495899">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="944" y="335" key="run.anything.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1586054495899" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python/0001.two-sum.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python/0002.add-two-numbers.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/python/0035.search-insert-position.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="138" y="100" width="1257" height="1240" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1588080399098" />
   </component>
 </project>
