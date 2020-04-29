@@ -11,10 +11,14 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize);
 //0026
 int nthUglyNumber(int n);
 
+//0646
+int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
+
 struct ListNode {
     int val;
     struct ListNode *next;
 };
+
 
 #define max(a,b) \
    ({ __typeof__ (a) _a = (a); \

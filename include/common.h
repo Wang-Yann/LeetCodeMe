@@ -5,5 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <math.h>
 
 #endif //LEETCODE_COMMON_H

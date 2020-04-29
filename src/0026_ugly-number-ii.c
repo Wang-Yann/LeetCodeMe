@@ -2,7 +2,6 @@
 /* Created by rock on 4/28/20.
 */
 #include "leetcode_functions.h"
-#include <math.h>
 
 
 
