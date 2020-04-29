@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="LeetCode" targetName="test_0026" />
+      <config projectName="LeetCode" targetName="0026_ugly-number-ii" />
       <config projectName="LeetCode" targetName="0002_addTwoNumbers" />
       <config projectName="LeetCode" targetName="test_0002" />
       <config projectName="LeetCode" targetName="leetcode_c" />
@@ -27,24 +29,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bAbUoDJpP3JffCxpRPrQr8BKvI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/test/test_0002.cpp&#10;/files/Tutorials/LeetCodeRockPyC/test/src/test_0002.cpp" />
+    <property name="add_unversioned_files" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/python" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <console-settings sdk-home="$USER_HOME$/.pyenv/versions/3.7.0/bin/python">
+      <console-settings module-name="LeetCodeRockPyC" sdk-home="$USER_HOME$/.pyenv/versions/3.7.0/bin/python">
         <option name="mySdkHome" value="$USER_HOME$/.pyenv/versions/3.7.0/bin/python" />
+        <option name="myModuleName" value="LeetCodeRockPyC" />
       </console-settings>
     </option>
   </component>
@@ -56,8 +63,14 @@
       <recent name="$PROJECT_DIR$/C/src" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.test_0002">
+  <component name="RunManager" selected="Google Test.test_0026">
     <configuration name="0002_addTwoNumbers" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="0002_addTwoNumbers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="0002_addTwoNumbers" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="0026_ugly-number-ii" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="0026_ugly-number-ii" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="0026_ugly-number-ii" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -70,6 +83,12 @@
       </method>
     </configuration>
     <configuration name="test_0002" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_0026" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0026" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0026" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -91,10 +110,20 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_0002" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002">
+    <configuration name="test_0002" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LeetCode" TARGET_NAME="test_0002" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LeetCode" RUN_TARGET_NAME="test_0002">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="lua.app" factoryName="Lua Application">
+      <option name="program" value="/usr/bin/lua" />
+      <option name="file" value="" />
+      <option name="workingDir" value="$PROJECT_DIR$/include/CMakeLists.txt" />
+      <option name="debuggerType" value="2" />
+      <option name="params" value="" />
+      <option name="charset" value="UTF-8" />
+      <option name="showConsole" value="true" />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="CMake Application.leetcode_c" />
@@ -102,17 +131,22 @@
       <item itemvalue="CMake Application.test_0002" />
       <item itemvalue="Google Test.0002_addTwoNumbers" />
       <item itemvalue="Google Test.test_0002" />
+      <item itemvalue="Google Test.0026_ugly-number-ii" />
+      <item itemvalue="Google Test.test_0026" />
       <item itemvalue="Google Test.two_sum_test.twoSum001" />
       <item itemvalue="Google Test.All in test_0002.cpp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.All in test_0002.cpp" />
         <item itemvalue="CMake Application.test_0002" />
         <item itemvalue="Google Test.two_sum_test.twoSum001" />
-        <item itemvalue="Google Test.All in test_0002.cpp" />
         <item itemvalue="CMake Application.0002_addTwoNumbers" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -124,7 +158,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588077863398</updated>
-      <workItem from="1588077864653" duration="3609000" />
+      <workItem from="1588077864653" duration="7712000" />
     </task>
     <task id="LOCAL-00001" summary="Init Environment For C &amp; GoogleTest">
       <created>1588081421981</created>
@@ -133,52 +167,96 @@
       <option name="project" value="LOCAL" />
       <updated>1588081421981</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="UglyNumber-II">
+      <created>1588088189042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588088189042</updated>
+    </task>
+    <task id="LOCAL-00003" summary="UglyNumber-II">
+      <created>1588088213675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588088213675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init Environment For C &amp; GoogleTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init Environment For C &amp; GoogleTest" />
+    <MESSAGE value="UglyNumber-II" />
+    <option name="LAST_COMMIT_MESSAGE" value="UglyNumber-II" />
   </component>
   <component name="WindowStateProjectService">
     <state x="224" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588079701325">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="224" y="378" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1588079701325" />
-    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2" timestamp="1588081421869">
+    <state x="414" y="444" width="539" height="558" key="#leetcode_c" timestamp="1588086785672">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1588081421869" />
+    <state x="414" y="444" width="539" height="558" key="#leetcode_c/0.0.2560.1440@0.0.2560.1440" timestamp="1588086785671" />
+    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2" timestamp="1588088213596">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="334" y="319" width="1090" height="891" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1588088213596" />
     <state x="549" y="478" width="424" height="491" key="FileChooserDialogImpl" timestamp="1588081552719">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="549" y="478" width="424" height="491" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1588081552719" />
-    <state width="1415" height="412" key="GridCell.Tab.0.bottom" timestamp="1588081177054">
+    <state width="1259" height="412" key="GridCell.Tab.0.bottom" timestamp="1588088243474">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1415" height="412" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177054" />
-    <state width="1415" height="412" key="GridCell.Tab.0.center" timestamp="1588081177053">
+    <state width="1259" height="412" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1588088243474" />
+    <state width="1259" height="412" key="GridCell.Tab.0.center" timestamp="1588088243473">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1415" height="412" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177053" />
-    <state width="1415" height="412" key="GridCell.Tab.0.left" timestamp="1588081177050">
+    <state width="1259" height="412" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1588088243473" />
+    <state width="1259" height="412" key="GridCell.Tab.0.left" timestamp="1588088243473">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1415" height="412" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177050" />
-    <state width="1415" height="412" key="GridCell.Tab.0.right" timestamp="1588081177053">
+    <state width="1259" height="412" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1588088243473" />
+    <state width="1259" height="412" key="GridCell.Tab.0.right" timestamp="1588088243474">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1415" height="412" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1588081177053" />
-    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588081437716">
+    <state width="1259" height="412" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1588088243474" />
+    <state width="1259" height="412" key="GridCell.Tab.1.bottom" timestamp="1588087993662">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1588081437716" />
+    <state width="1259" height="412" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1588087993662" />
+    <state width="1259" height="412" key="GridCell.Tab.1.center" timestamp="1588087993661">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1259" height="412" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1588087993661" />
+    <state width="1259" height="412" key="GridCell.Tab.1.left" timestamp="1588087993660">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1259" height="412" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1588087993660" />
+    <state width="1259" height="412" key="GridCell.Tab.1.right" timestamp="1588087993661">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1259" height="412" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1588087993661" />
+    <state x="222" y="355" width="932" height="737" key="SettingsEditor" timestamp="1588086328887">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="222" y="355" width="932" height="737" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1588086328887" />
+    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588088230267">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="361" y="456" width="800" height="535" key="Vcs.Push.Dialog.v2/0.0.2560.1440@0.0.2560.1440" timestamp="1588088230267" />
     <state x="138" y="100" width="1257" height="1240" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588080399098">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="138" y="100" width="1257" height="1240" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1588080399098" />
+    <state x="460" y="640" width="457" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588086359565">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="460" y="640" width="457" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1440@0.0.2560.1440" timestamp="1588086359565" />
   </component>
 </project>
