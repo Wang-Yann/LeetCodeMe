@@ -5,7 +5,7 @@
 # @Last Modified : 2020-04-06 14:59:18
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
-
+import collections
 from typing import List
 
 
@@ -57,7 +57,7 @@ class Solution:
             j = i + 1
             while j < length - 2:
                 if j != i + 1 and nums[j] == nums[j - 1]:
-                    j+=1
+                    j += 1
                     continue
                 v_sum = target - nums[i] - nums[j]
                 left, right = j + 1, length - 1
@@ -78,9 +78,30 @@ class Solution:
         return res
 
 
+# Space: O(n^2)
+class Solution3(object):
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
+        for i in range(0, len(nums) - 1):
+            for j in range(i + 1, len(nums)):
+                lookup[nums[i] + nums[j]].append([i, j])
+
+        for i in lookup.keys():
+            if target - i in lookup:
+                for x in lookup[i]:
+                    for y in lookup[target - i]:
+                        [a, b], [c, d] = x, y
+                        if a is not c and a is not d and \
+                                b is not c and b is not d:
+                            quad = sorted([nums[a], nums[b], nums[c], nums[d]])
+                            if quad not in result:
+                                result.append(quad)
+        return sorted(result)
+
+
 if __name__ == '__main__':
-    sol = Solution()
+    sol = Solution3()
     sample = [-1, 0, 1, 2, -1, -4]
-    sample = [1, 0, -1, 0, -2, 2]
-    print(sol.fourSum0(sample, 0))
+    sample1 = [1, 0, -1, 0, -2, 2]
     print(sol.fourSum(sample, 0))
+    print(sol.fourSum(sample1, 0))
