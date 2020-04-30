@@ -11,6 +11,9 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize);
 //0026
 int nthUglyNumber(int n);
 
+//0028
+int strStr(char * haystack, char * needle);
+
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
