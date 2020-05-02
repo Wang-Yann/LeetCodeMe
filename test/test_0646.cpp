@@ -3,7 +3,6 @@
 */
 
 #include "gtest/gtest.h"
-
 extern "C"
 {
 #include "leetcode_functions.h"
@@ -26,7 +25,7 @@ TEST(findLongestChainTest, test1) {
     ASSERT_EQ(res, 2);
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+//int main(int argc, char **argv) {
+//    ::testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+//}

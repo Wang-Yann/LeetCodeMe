@@ -204,7 +204,7 @@ class TreeNodeWithNext:
             return None
 
 
-class UnionFind:
+class UnionFindGrid:
 
     def __init__(self, grid):
         m, n = len(grid), len(grid[0])
@@ -237,6 +237,24 @@ class UnionFind:
     def getCout(self):
         return self.count
 
+
+class UnionFind(object):
+    def __init__(self, n):
+        self.set = list(range(n))
+
+    def find(self, x):
+        if self.set[x] != x:
+            self.set[x] = self.find(self.set[x])
+        return self.set[x]
+
+    def find_set(self, x):
+        return self.find(x)
+
+    def union_set(self, x, y):
+        x_root, y_root = self.find(x), self.find(y)
+        if x_root == y_root: return False
+        self.set[min(x_root, y_root)] = max(x_root, y_root)
+        return True
 
 class TreeNode:
 

@@ -8,6 +8,9 @@
 #include "common.h"
 //0002
 int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+//0020
+bool isValid(char * s);
+
 //0026
 int nthUglyNumber(int n);
 

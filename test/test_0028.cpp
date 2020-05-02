@@ -3,7 +3,6 @@
 */
 
 #include "gtest/gtest.h"
-
 extern "C"
 {
 #include "leetcode_functions.h"
@@ -29,7 +28,7 @@ TEST(strStrTest1, test2) {
     ASSERT_EQ(res, -1);
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+//int main(int argc, char **argv) {
+//    ::testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+//}

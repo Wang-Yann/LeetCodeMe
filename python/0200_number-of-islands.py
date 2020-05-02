@@ -8,7 +8,7 @@
 
 from typing import List
 
-from common_utils import UnionFind
+from common_utils import UnionFindGrid as   UnionFind
 
 
 class Solution:
