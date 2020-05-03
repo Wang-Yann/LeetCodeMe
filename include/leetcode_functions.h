@@ -16,7 +16,8 @@ int nthUglyNumber(int n);
 
 //0028
 int strStr(char * haystack, char * needle);
-
+//0065
+bool isNumber(char * s);
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
