@@ -8,6 +8,10 @@
 #include "common.h"
 //0002
 int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+
+//0007
+int reverse(int x);
+
 //0020
 bool isValid(char * s);
 
