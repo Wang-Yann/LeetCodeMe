@@ -9,7 +9,7 @@
 import pytest
 
 
-class Solution:
+class Solution0:
 
     def isNumber(self, s: str) -> bool:
         """注意审题 E不合法"""
@@ -40,6 +40,53 @@ class Solution:
         return is_numeric and self.i == length
 
 
+class InputType(object):
+    INVALID=0
+    SPACE=1
+    SIGN=2
+    DIGIT=3
+    DOT=4
+    EXPONENT=5
+
+
+class Solution:
+
+    def isNumber(self, s: str) -> bool:
+        """DFA
+        http://images.cnitblog.com/i/627993/201405/012016243309923.png
+        https://leetcode-cn.com/problems/valid-number/solution/biao-qu-dong-fa-by-user8973/
+        """
+        transition_table = [[-1,  0,  3,  1,  2, -1],     # next states for state 0
+                            [-1,  8, -1,  1,  4,  5],     # next states for state 1
+                            [-1, -1, -1,  4, -1, -1],     # next states for state 2
+                            [-1, -1, -1,  1,  2, -1],     # next states for state 3
+                            [-1,  8, -1,  4, -1,  5],     # next states for state 4
+                            [-1, -1,  6,  7, -1, -1],     # next states for state 5
+                            [-1, -1, -1,  7, -1, -1],     # next states for state 6
+                            [-1,  8, -1,  7, -1, -1],     # next states for state 7
+                            [-1,  8, -1, -1, -1, -1]]     # next states for state 8
+
+        state = 0
+        for char in s:
+            input_type= InputType.INVALID
+            if char.isspace():
+                input_type = InputType.SPACE
+            elif char in "+-":
+                input_type = InputType.SIGN
+            elif char.isdigit():
+                input_type =InputType.DIGIT
+            elif char==".":
+                input_type = InputType.DOT
+            elif char=="e":
+                input_type=InputType.EXPONENT
+            state = transition_table[state][input_type]
+            if state==-1:
+                return False
+        return state in (1,4,7,8)
+
+
+
+
 @pytest.mark.parametrize("args,expected", [
     ("1.2.3", False),
     ("-123", True),
@@ -52,6 +99,7 @@ class Solution:
     pytest.param("123e", False),
 ])
 def test_solutions(args, expected):
+    assert Solution0().isNumber(args) == expected
     assert Solution().isNumber(args) == expected
 
 
