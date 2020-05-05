@@ -22,13 +22,11 @@ int nthUglyNumber(int n);
 int strStr(char * haystack, char * needle);
 //0065
 bool isNumber(char * s);
+//0098
+bool isValidBST(struct TreeNode * root);
+
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
-
-struct ListNode {
-    int val;
-    struct ListNode *next;
-};
 
 
 #define max(a,b) \

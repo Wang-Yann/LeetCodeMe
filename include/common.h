@@ -13,5 +13,17 @@
 #include <time.h>
 #include <float.h>
 #include <errno.h>
+#include <limits.h>
+
+
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
 
 #endif //LEETCODE_COMMON_H

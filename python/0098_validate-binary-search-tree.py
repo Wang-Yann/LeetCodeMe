@@ -5,8 +5,9 @@
 # @Last Modified : 2020-04-20 19:10:30
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
+import pytest
 
-from common_utils import TreeNode
+from common_utils import TreeNode, ListNode
 
 
 class Solution:
@@ -44,19 +45,21 @@ class Solution2(object):
         if root is None:
             return True
 
-        return low < root.val and root.val < high \
+        return low < root.val  < high \
                and self.isValidBSTRecu(root.left, low, root.val) \
                and self.isValidBSTRecu(root.right, root.val, high)
 
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode.initTreeSimple( [2, 1, 3], [(1, 0)], [(1, 2)]), True),
+    (TreeNode.initTreeSimple( [1, None, 2, 3], [(2, 3)], [(0, 2)]), False),
+    (TreeNode.initTreeSimple( [3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]), False),
+])
+def test_solutions(args, expected):
+    assert Solution().isValidBST(args) == expected
+    assert Solution2().isValidBST(args) == expected
+
+
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([2, 1, 3], [(1, 0)], [(1, 2)]),
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
-
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.isValidBST(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
