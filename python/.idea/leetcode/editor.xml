@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0128_longest-consecutive-sequence.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0128_longest-consecutive-sequence.py" />
+              <option name="questionId" value="128" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0136_single-number.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0136_single-number.py" />
+              <option name="questionId" value="136" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0139_word-break.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0139_word-break.py" />
+              <option name="questionId" value="139" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/019_remove-nth-node-from-end-of-list.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/019_remove-nth-node-from-end-of-list.py" />
+              <option name="questionId" value="19" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/032_longest-valid-parentheses.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/032_longest-valid-parentheses.py" />
+              <option name="questionId" value="32" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/049_group-anagrams.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/049_group-anagrams.py" />
+              <option name="questionId" value="49" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0560_subarray-sum-equals-k.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0560_subarray-sum-equals-k.py" />
+              <option name="questionId" value="560" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0581_shortest-unsorted-continuous-subarray.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0581_shortest-unsorted-continuous-subarray.py" />
+              <option name="questionId" value="581" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/070_climbing-stairs.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/070_climbing-stairs.py" />
+              <option name="questionId" value="70" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/076_minimum-window-substring.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/076_minimum-window-substring.py" />
+              <option name="questionId" value="76" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
