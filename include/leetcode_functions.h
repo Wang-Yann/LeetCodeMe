@@ -6,6 +6,22 @@
 #define LEETCODE_FUNCTIONS_H
 
 #include "common.h"
+
+#define max(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a > _b ? _a : _b; });
+
+
+#define min(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+
+#define MIN(a,b,c) ((a)<(b)?( (a)<(c)?(a):(c) ):( (b)<(c)?(b):(c) ))
+
+
+
 //0002
 int* twoSum(int* nums, int numsSize, int target, int* returnSize);
 
@@ -25,20 +41,12 @@ bool isNumber(char * s);
 //0098
 bool isValidBST(struct TreeNode * root);
 
+//0221
+int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
+
+
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
-
-
-#define max(a,b) \
-   ({ __typeof__ (a) _a = (a); \
-       __typeof__ (b) _b = (b); \
-     _a > _b ? _a : _b; });
-
-
-#define min(a,b) \
-   ({ __typeof__ (a) _a = (a); \
-       __typeof__ (b) _b = (b); \
-     _a < _b ? _a : _b; })
 
 
 
