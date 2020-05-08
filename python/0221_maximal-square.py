@@ -8,14 +8,15 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
     def maximalSquare(self, matrix: List[List[str]]) -> int:
         """
         dp(i,j) 表示的是由 1 组成的最大正方形的边长；
-        从 (0,0)(0,0) 开始，对原始矩阵中的每一个 1，我们将当前元素的值更新为
-        \text{dp}(i,\ j) = \min \big( \text{dp}(i-1,\ j),\ \text{dp}(i-1,\ j-1),\ \text{dp}(i,\ j-1) \big) + 1
+        从 (0,0) 开始，对原始矩阵中的每一个 1，我们将当前元素的值更新为
         dp(i, j)=min(dp(i−1, j), dp(i−1, j−1), dp(i, j−1))+1
 
         """
@@ -32,16 +33,40 @@ class Solution:
         return max_side * max_side
 
 
+class Solution1:
+    def maximalSquare(self, matrix: List[List[str]]) -> int:
+        if not matrix:
+            return 0
+
+        maxSide = 0
+        rows, columns = len(matrix), len(matrix[0])
+        dp = [[0] * columns for _ in range(rows)]
+        for i in range(rows):
+            for j in range(columns):
+                if matrix[i][j] == '1':
+                    if i == 0 or j == 0:
+                        dp[i][j] = 1
+                    else:
+                        dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
+                    maxSide = max(maxSide, dp[i][j])
+
+        maxSquare = maxSide * maxSide
+        return maxSquare
+
+
+@pytest.mark.parametrize("args,expected",[
+   ([
+       ["1", "0", "1", "0", "0"],
+       ["1", "0", "1", "0", "0"],
+       ["1", "1", "1", "0", "0"],
+       ["1", "1", "1", "0", "0"],
+       ["1", "0", "1", "0", "0"]
+   ],4)
+])
+def test_solutions(args,expected):
+    assert Solution().maximalSquare(args)==expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [
-            ["1", "0", "1", "0", "0"],
-            ["1", "0", "1", "0", "0"],
-            ["1", "1", "1", "0", "0"],
-            ["1", "1", "1", "0", "0"],
-            ["1", "0", "1", "0", "0"]
-        ]
-    ]
-    res = [sol.maximalSquare(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+

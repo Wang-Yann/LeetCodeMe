@@ -14,6 +14,17 @@ class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         """
         只保留当前滑动窗口中有的元素的索引
+        滑动窗口代码框架
+        int left = 0, right = 0;
+        while (right < s.size()) {
+            window.add(s[right]);
+            right++;
+
+            while (valid) {
+                window.remove(s[left]);
+                left++;
+            }
+        }
         """
         dq = collections.deque()
         result = []
