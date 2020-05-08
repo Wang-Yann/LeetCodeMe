@@ -27,11 +27,35 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/014_longest-common-prefix.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/014_longest-common-prefix.py" />
+              <option name="questionId" value="14" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/015_3sum.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/015_3sum.py" />
+              <option name="questionId" value="15" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/019_remove-nth-node-from-end-of-list.py">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/019_remove-nth-node-from-end-of-list.py" />
               <option name="questionId" value="19" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0292_nim-game.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0292_nim-game.py" />
+              <option name="questionId" value="292" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -43,11 +67,27 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0344_reverse-string.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0344_reverse-string.py" />
+              <option name="questionId" value="344" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/049_group-anagrams.py">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/049_group-anagrams.py" />
               <option name="questionId" value="49" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/0557_reverse-words-in-a-string-iii.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0557_reverse-words-in-a-string-iii.py" />
+              <option name="questionId" value="557" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -80,6 +120,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/076_minimum-window-substring.py" />
               <option name="questionId" value="76" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/leetcode/editor/cn/089_gray-code.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/leetcode/editor/cn/089_gray-code.py" />
+              <option name="questionId" value="89" />
             </LeetcodeEditor>
           </value>
         </entry>

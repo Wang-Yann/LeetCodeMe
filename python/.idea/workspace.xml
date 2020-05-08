@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/31_zhan-de-ya-ru-dan-chu-xu-lie-lcof.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/32_i_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodingInterviews_2/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodingInterviews_2/14-i_jian-sheng-zi-lcof.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodingInterviews_2/14_i_jian-sheng-zi-lcof.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodingInterviews_2/56_i.shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodingInterviews_2/56_i_shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof.py" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="303" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/014_longest-common-prefix.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="343">
+                <caret line="43" column="15" lean-forward="true" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+              </first_editor>
+              <second_editor relative-caret-position="-126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/31_zhan-de-ya-ru-dan-chu-xu-lie-lcof.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="360">
+                <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                <folding>
+                  <element signature="e#598#621#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor relative-caret-position="-108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_i_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="450">
+                <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+                <folding>
+                  <element signature="e#225#241#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="432">
+                <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="576">
+                <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="46" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CodingInterviews_2/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="342">
+                <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+                <folding>
+                  <element signature="e#225#248#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/089_gray-code.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="541">
+                <caret line="66" column="64" lean-forward="true" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
+                <folding>
+                  <element signature="e#722#735#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor relative-caret-position="-126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0292_nim-game.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="504">
+                <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0344_reverse-string.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="811">
+                <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+                <folding>
+                  <element signature="e#569#592#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor relative-caret-position="-126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0557_reverse-words-in-a-string-iii.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="283">
+                <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+              </first_editor>
+              <second_editor relative-caret-position="-126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ino</find>
+      <find>traversal</find>
+      <find>BSTIterator</find>
+      <find>mergeTrees</find>
+      <find>constructFrom</find>
+      <find>constr</find>
+      <find>multiplicity</find>
+      <find>reverseList</find>
+      <find>//</find>
+      <find>;</find>
+      <find>circularDeque</find>
+      <find>递归</find>
+      <find>丑</find>
+      <find>pytest</find>
+      <find>--capture=no</find>
+      <find>UnionFind</find>
+      <find>approx</find>
+      <find>myPow</find>
+      <find>getatt</find>
+      <find>geta</find>
+      <find>atoi</find>
+      <find>Palindrome</find>
+      <find>max_points</find>
+      <find>isValidBST</find>
+      <find>getattr</find>
+      <find>mergeTwoLists</find>
+      <find>l2</find>
+      <find>isSubStructure</find>
+      <find>levelOrder</find>
+      <find>postOrder</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>end2</replace>
+      <replace>col</replace>
+      <replace>range</replace>
+      <replace>None</replace>
+      <replace>multi_times</replace>
+      <replace>#</replace>
+      <replace>curl2</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/0640_solve-the-equation.py" />
+        <option value="$PROJECT_DIR$/0645_set-mismatch.py" />
+        <option value="$PROJECT_DIR$/0670_maximum-swap.py" />
+        <option value="$PROJECT_DIR$/0728_self-dividing-numbers.py" />
+        <option value="$PROJECT_DIR$/0672_bulb-switcher-ii.py" />
+        <option value="$PROJECT_DIR$/0735_cracking-the-safe.py" />
+        <option value="$PROJECT_DIR$/0754_reach-a-number.py" />
+        <option value="$PROJECT_DIR$/0775_global-and-local-inversions.py" />
+        <option value="$PROJECT_DIR$/0780_reaching-points.py" />
+        <option value="$PROJECT_DIR$/0781_rabbits-in-forest.py" />
+        <option value="$PROJECT_DIR$/0782_transform-to-chessboard.py" />
+        <option value="$PROJECT_DIR$/0789_escape-the-ghosts.py" />
+        <option value="$PROJECT_DIR$/0794_valid-tic-tac-toe-state.py" />
+        <option value="$PROJECT_DIR$/0805_split-array-with-same-average.py" />
+        <option value="$PROJECT_DIR$/0810_chalkboard-xor-game.py" />
+        <option value="$PROJECT_DIR$/0829_consecutive-numbers-sum.py" />
+        <option value="$PROJECT_DIR$/0812_largest-triangle-area.py" />
+        <option value="$PROJECT_DIR$/0836_rectangle-overlap.py" />
+        <option value="$PROJECT_DIR$/0835——mirror-reflection.py" />
+        <option value="$PROJECT_DIR$/0835_mirror-reflection.py" />
+        <option value="$PROJECT_DIR$/0866——prime-palindrome.py" />
+        <option value="$PROJECT_DIR$/0866_prime-palindrome.py" />
+        <option value="$PROJECT_DIR$/0868_binary-gap.py" />
+        <option value="$PROJECT_DIR$/0869_reordered-power-of-2.py" />
+        <option value="$PROJECT_DIR$/0877_stone-game.py" />
+        <option value="$PROJECT_DIR$/0883_projection-area-of-3d-shape.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/25_he-bing-liang-ge-pai-xu-de-lian-biao-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/26_class Solution:     def isSubStructure(self, A: TreeNode, B: TreeNode) -&gt; bool:.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/26_shu-de-zi-jie-gou-lco.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/049_group-anagrams.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/070_climbing-stairs.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/076_minimum-window-substring.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0128_longest-consecutive-sequence.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0136_single-number.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0139_word-break.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/27_er-cha-shu-de-jing-xiang-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/28_dui-cheng-de-er-cha-shu-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/29_shun-shi-zhen-da-yin-ju-zhen-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/30_bao-han-minhan-shu-de-zhan-lcof.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0560_subarray-sum-equals-k.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0581_shortest-unsorted-continuous-subarray.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/014_longest-common-prefix.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/089_gray-code.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0292_nim-game.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0344_reverse-string.py" />
+        <option value="$PROJECT_DIR$/tmp/leetcode/editor/cn/0557_reverse-words-in-a-string-iii.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/31_zhan-de-ya-ru-dan-chu-xu-lie-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/32_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+        <option value="$PROJECT_DIR$/CodingInterviews_2/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="1093" />
+    <option name="width" value="1467" />
+    <option name="height" value="1440" />
+  </component>
+  <component name="ProjectId" id="1bAiyeMUrgbG0sr1p6oMaDxdO4c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LeetCodePyRock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LeetCodePyRock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="CodingInterviews_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="NBKnowledgePane" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CodingInterviews_2" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/CrackingTheCodingInterview_6" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CodingInterviews_2" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="31_zhan-de-ya-ru-dan-chu-xu-lie-lcof" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CodingInterviews_2/31_zhan-de-ya-ru-dan-chu-xu-lie-lcof.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="32_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CodingInterviews_2/32_i_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CodingInterviews_2/32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CodingInterviews_2/32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CodingInterviews_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CodingInterviews_2/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof" />
+        <item itemvalue="Python.32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" />
+        <item itemvalue="Python.32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" />
+        <item itemvalue="Python.32_cong-shang-dao-xia-da-yin-er-cha-shu-lcof" />
+        <item itemvalue="Python.31_zhan-de-ya-ru-dan-chu-xu-lie-lcof" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af005f66-17bc-4a7f-acf8-b9ccc7ba38ec" name="Default Changelist" comment="" />
+      <created>1586054896493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586054896493</updated>
+      <workItem from="1586054900043" duration="96000" />
+      <workItem from="1586055079911" duration="554000" />
+      <workItem from="1586056514872" duration="36937000" />
+      <workItem from="1586144125738" duration="35769000" />
+      <workItem from="1586265115128" duration="3507000" />
+      <workItem from="1586349874913" duration="9950000" />
+      <workItem from="1586435930608" duration="8837000" />
+      <workItem from="1586524915060" duration="1810000" />
+      <workItem from="1586529224563" duration="5608000" />
+      <workItem from="1586580079325" duration="24686000" />
+      <workItem from="1586663387563" duration="34245000" />
+      <workItem from="1586782779443" duration="9024000" />
+      <workItem from="1586869283432" duration="5627000" />
+      <workItem from="1586876507099" duration="258000" />
+      <workItem from="1586920854680" duration="15030000" />
+      <workItem from="1587040132920" duration="7922000" />
+      <workItem from="1587177439180" duration="23658000" />
+      <workItem from="1587265862811" duration="46319000" />
+      <workItem from="1587386382708" duration="6386000" />
+      <workItem from="1587473089070" duration="8023000" />
+      <workItem from="1587560505729" duration="11841000" />
+      <workItem from="1587650481168" duration="659000" />
+      <workItem from="1587651607098" duration="8794000" />
+      <workItem from="1587730857000" duration="10976000" />
+      <workItem from="1587791573628" duration="22046000" />
+      <workItem from="1587902939092" duration="11198000" />
+      <workItem from="1587989369810" duration="8335000" />
+      <workItem from="1588075367842" duration="5000" />
+      <workItem from="1588081555827" duration="66000" />
+      <workItem from="1588081660246" duration="5625000" />
+      <workItem from="1588166988898" duration="6778000" />
+      <workItem from="1588248192828" duration="52000" />
+      <workItem from="1588256753258" duration="3971000" />
+      <workItem from="1588304459893" duration="15572000" />
+      <workItem from="1588390765045" duration="903000" />
+      <workItem from="1588398892341" duration="12385000" />
+      <workItem from="1588480733486" duration="31197000" />
+      <workItem from="1588567844384" duration="23364000" />
+      <workItem from="1588651386095" duration="39692000" />
+      <workItem from="1588769076053" duration="63000" />
+      <workItem from="1588769164272" duration="9355000" />
+      <workItem from="1588854596619" duration="6299000" />
+      <workItem from="1588945289400" duration="5199000" />
+    </task>
+    <task id="LOCAL-00001" summary="increase stack &amp; DP">
+      <created>1586876329909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586876329909</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dp &amp; BFS &amp; binary search">
+      <created>1586963075073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963075073</updated>
+    </task>
+    <task id="LOCAL-00003" summary="array &amp; binary search">
+      <created>1587047971453</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587047971453</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Linked List">
+      <created>1587224855656</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587224855657</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Linked List">
+      <created>1587314474008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587314474008</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Linked List">
+      <created>1587395347754</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587395347754</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Tree">
+      <created>1587481233660</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587481233660</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Tree &amp; SwordToOffer2">
+      <created>1587572527801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587572527801</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Tree &amp; SwordToOffer2">
+      <created>1587660439697</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587660439697</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tree">
+      <created>1587743953670</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587743953670</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Stack">
+      <created>1587830554601</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587830554601</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Stack">
+      <created>1587917091547</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587917091547</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Queue">
+      <created>1587996057410</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587996057410</updated>
+    </task>
+    <task id="LOCAL-00014" summary="UglyNumber">
+      <created>1587997388011</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587997388011</updated>
+    </task>
+    <task id="LOCAL-00015" summary="LinkedList">
+      <created>1587998029589</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587998029589</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Rename All .py files">
+      <created>1588082599533</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588082599533</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Rename All .py files">
+      <created>1588082708034</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588082708034</updated>
+    </task>
+    <task id="LOCAL-00018" summary="DP">
+      <created>1588167388714</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588167388714</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Binary Search">
+      <created>1588349542788</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588349542788</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Binary Search">
+      <created>1588402199270</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588402199271</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Binary Search &amp; Palindromic">
+      <created>1588522202720</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588522202720</updated>
+    </task>
+    <task id="LOCAL-00022" summary="DFA">
+      <created>1588569232722</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1588569232722</updated>
+    </task>
+    <task id="LOCAL-00023" summary="math">
+      <created>1588606018722</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1588606018722</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Sword Offer2">
+      <created>1588607486824</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1588607486824</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Math">
+      <created>1588694667036</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1588694667036</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Math">
+      <created>1588694679814</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1588694679814</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Sword Offer2">
+      <created>1588778603696</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1588778603696</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Hot 100">
+      <created>1588854695311</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1588854695311</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Hot 100">
+      <created>1588863341903</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863341903</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="160455000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1093" y="0" width="1467" height="1440" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.33894736" />
+      <window_info id="TODO" order="1" side_tool="true" weight="0.32962722" />
+      <window_info id="FindBugs-IDEA" order="2" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
+      <window_info id="CheckStyle" order="3" sideWeight="0.50053364" side_tool="true" weight="0.18312623" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Version Control" order="8" sideWeight="0.49801114" weight="0.32644957" />
+      <window_info id="Jenkins" order="9" sideWeight="0.50053364" weight="0.32897317" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49579126" visible="true" weight="0.24140508" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49967298" weight="0.39760837" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Redis Servers" order="6" side_tool="true" weight="0.32867646" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.50420874" side_tool="true" weight="0.3258595" />
+      <window_info anchor="bottom" id="Consul" order="8" sideWeight="0.500327" side_tool="true" weight="0.39760837" />
+      <window_info anchor="bottom" id="Json Parser" order="9" sideWeight="0.5016351" side_tool="true" weight="0.29970104" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016351" side_tool="true" weight="0.29970104" />
+      <window_info anchor="bottom" id="Regex Tester" order="11" sideWeight="0.49901897" weight="0.32884902" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tail" order="13" />
+      <window_info anchor="bottom" id="REST Client" order="14" weight="0.32932934" />
+      <window_info anchor="bottom" id="Sequence" order="15" />
+      <window_info anchor="bottom" id="LuaCheck" order="16" show_stripe_button="false" weight="0.32932934" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="17" sideWeight="0.636436" visible="true" weight="0.3586156" />
+      <window_info active="true" anchor="bottom" id="Iedis Console" order="18" sideWeight="0.49960223" weight="0.3298969" />
+      <window_info anchor="bottom" id="Job test results" order="19" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24979457" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="LuaJ" order="5" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.49942595" weight="0.32856005" />
+      <window_info anchor="right" id="Leiningen" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="RestServices" order="11" />
+      <window_info anchor="right" id="REPL" order="12" side_tool="true" />
+      <window_info anchor="right" id="Runtime Info" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven" order="14" />
+      <window_info anchor="right" id="Key Promoter X" order="15" show_stripe_button="false" weight="0.32955536" />
+      <window_info anchor="right" id="make" order="16" show_stripe_button="false" weight="0.32995737" />
+      <window_info anchor="right" x="0" y="0" width="211" height="880" id="Documentation" order="17" sideWeight="0.50555557" side_tool="true" weight="0.2125" />
+      <window_info anchor="right" id="Jupyter" order="18" sideWeight="0.6886887" side_tool="true" visible="true" weight="0.21801706" />
+      <window_info anchor="right" id="SciView" order="19" sideWeight="0.3113113" weight="0.21770833" />
+      <window_info anchor="right" id="Favorites" order="20" sideWeight="0.50160086" side_tool="true" weight="0.32831916" />
+      <window_info anchor="right" id="Structure" order="21" side_tool="true" weight="0.24983649" />
+      <window_info anchor="right" id="Database Changes" order="22" show_stripe_button="false" sideWeight="0.50053364" side_tool="true" weight="0.35775018" />
+      <window_info anchor="right" id="Jms Messenger" order="23" side_tool="true" weight="0.27877697" />
+      <window_info anchor="right" id="Word Book" order="24" sideWeight="0.50057405" side_tool="true" weight="0.32856005" />
+      <window_info anchor="right" id="Redis Explorer" order="25" />
+      <window_info anchor="right" id="Mongo Explorer" order="26" sideWeight="0.4994664" weight="0.35775018" />
+      <window_info anchor="right" id="R Packages" order="27" show_stripe_button="false" weight="0.32977098" />
+      <window_info anchor="right" id="Scheme.REPL" order="28" show_stripe_button="false" side_tool="true" />
+      <window_info anchor="right" id="R Graphics" order="29" show_stripe_button="false" weight="0.32977098" />
+      <window_info anchor="right" id="leetcode" order="30" weight="0.31298247" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="increase stack &amp; DP" />
+    <MESSAGE value="dp &amp; BFS &amp; binary search" />
+    <MESSAGE value="array &amp; binary search" />
+    <MESSAGE value="Linked List" />
+    <MESSAGE value="Tree &amp; SwordToOffer2" />
+    <MESSAGE value="Tree" />
+    <MESSAGE value="Stack" />
+    <MESSAGE value="Queue" />
+    <MESSAGE value="UglyNumber" />
+    <MESSAGE value="LinkedList" />
+    <MESSAGE value="Rename All .py files" />
+    <MESSAGE value="DP" />
+    <MESSAGE value="Binary Search" />
+    <MESSAGE value="Binary Search &amp; Palindromic" />
+    <MESSAGE value="DFA" />
+    <MESSAGE value="math" />
+    <MESSAGE value="Math" />
+    <MESSAGE value="Sword Offer2" />
+    <MESSAGE value="Hot 100" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hot 100" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1713" y="308" width="535" height="838" key="#0109.convert-sorted-list-to-binary-search-tree" timestamp="1588081609847">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1713" y="308" width="535" height="838" key="#0109.convert-sorted-list-to-binary-search-tree/0.0.2560.1440@0.0.2560.1440" timestamp="1588081609847" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0300_longest-increasing-subsequence.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0354_russian-doll-envelopes.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CodingInterviews_2/20_biao-shi-shu-zhi-de-zi-fu-chuan-lcof.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CodingInterviews_2/20_biao-shi-shu-zhi-de-zi-fu-chuan-lcof.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CodingInterviews_2/20_biao-shi-shu-zhi-de-zi-fu-chuan-lcof.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/0782_transform-to-chessboard.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0786_k_th_smallest_prime_fraction.coverage" NAME="0786_k-th-smallest-prime-fraction Coverage Results" MODIFIED="1588485174555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0911_online_election.coverage" NAME="0911_online-election Coverage Results" MODIFIED="1588489797863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0812_largest_triangle_area.coverage" NAME="0812_largest-triangle-area Coverage Results" MODIFIED="1588685321806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0313_super_ugly_number.coverage" NAME="0313_super-ugly-number Coverage Results" MODIFIED="1588604005095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0557_reverse_words_in_a_string_iii.coverage" NAME="0557_reverse-words-in-a-string-iii Coverage Results" MODIFIED="1588947788610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0793_preimage_size_of_factorial_zeroes_function.coverage" NAME="0793_preimage-size-of-factorial-zeroes-function Coverage Results" MODIFIED="1588486669270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0065_valid_number.coverage" NAME="0065_valid-number Coverage Results" MODIFIED="1588568600444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0593_valid_square.coverage" NAME="0593_valid-square Coverage Results" MODIFIED="1588669458481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0836_rectangle_overlap.coverage" NAME="0836_rectangle-overlap Coverage Results" MODIFIED="1588686499787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0239_sliding_window_maximum.coverage" NAME="0239_sliding-window-maximum Coverage Results" MODIFIED="1588083694756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0981_time_based_key_value_store.coverage" NAME="0981_time-based-key-value-store Coverage Results" MODIFIED="1588494307240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0719_find_k_th_smallest_pair_distance.coverage" NAME="0719_find-k-th-smallest-pair-distance Coverage Results" MODIFIED="1588402103551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0853_car_fleet.coverage" NAME="0853_car-fleet Coverage Results" MODIFIED="1588488797161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0413_arithmetic_slices.coverage" NAME="0413_arithmetic-slices Coverage Results" MODIFIED="1588663027449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0710_random_pick_with_blacklist.coverage" NAME="0710_random-pick-with-blacklist Coverage Results" MODIFIED="1588399980692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0976_largest_perimeter_triangle.coverage" NAME="0976_largest-perimeter-triangle Coverage Results" MODIFIED="1588494009472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0258_add_digits.coverage" NAME="0258_add-digits Coverage Results" MODIFIED="1588601697493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$29_shun_shi_zhen_da_yin_ju_zhen_lcof.coverage" NAME="29_shun-shi-zhen-da-yin-ju-zhen-lcof Coverage Results" MODIFIED="1588778209668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0524_longest_word_in_dictionary_through_deleting.coverage" NAME="0524_longest-word-in-dictionary-through-deleting Coverage Results" MODIFIED="1588344607208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$17_da_yin_cong_1dao_zui_da_de_nwei_shu_lcof.coverage" NAME="17_da-yin-cong-1dao-zui-da-de-nwei-shu-lcof Coverage Results" MODIFIED="1588428174634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0640_solve_the_equation.coverage" NAME="0640_solve-the-equation Coverage Results" MODIFIED="1588670973910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0335_self_crossing.coverage" NAME="0335_self-crossing Coverage Results" MODIFIED="1588656328103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$26_shu_de_zi_jie_gou_lco.coverage" NAME="26_shu-de-zi-jie-gou-lco Coverage Results" MODIFIED="1588694572542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0927_three_equal_parts.coverage" NAME="0927_three-equal-parts Coverage Results" MODIFIED="1588492295618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0754_reach_a_number.coverage" NAME="0754_reach-a-number Coverage Results" MODIFIED="1588675276244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0386_largest_divisible_subset.coverage" NAME="0386_largest-divisible-subset Coverage Results" MODIFIED="1588657905891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0877_stone_game.coverage" NAME="0877_stone-game Coverage Results" MODIFIED="1588692026487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0166_fraction_to_recurring_decimal.coverage" NAME="0166_fraction-to-recurring-decimal Coverage Results" MODIFIED="1588580503507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0878_nth_magical_number.coverage" NAME="0878_nth-magical-number Coverage Results" MODIFIED="1588489266631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0782_transform_to_chessboard.coverage" NAME="0782_transform-to-chessboard Coverage Results" MODIFIED="1588679422589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0279_perfect_squares.coverage" NAME="0279_perfect-squares Coverage Results" MODIFIED="1588602976047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0775_global_and_local_inversions.coverage" NAME="0775_global-and-local-inversions Coverage Results" MODIFIED="1588676173326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0439_reverse_pairs.coverage" NAME="0439_reverse-pairs Coverage Results" MODIFIED="1588259095079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0670_maximum_swap.coverage" NAME="0670_maximum-swap Coverage Results" MODIFIED="1588672054750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0553_optimal_division.coverage" NAME="0553_optimal-division Coverage Results" MODIFIED="1588668262824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0048_rotate_matrix_lcci__0107.coverage" NAME="0048.rotate-matrix-lcci__0107 Coverage Results" MODIFIED="1588081699449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0868_binary_gap.coverage" NAME="0868_binary-gap Coverage Results" MODIFIED="1588689737284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$070_climbing_stairs.coverage" NAME="070_climbing-stairs Coverage Results" MODIFIED="1588771683666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$18_shan_chu_lian_biao_de_jie_dian_lcof.coverage" NAME="18_shan-chu-lian-biao-de-jie-dian-lcof Coverage Results" MODIFIED="1588428816585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0668_kth_smallest_number_in_multiplication_table.coverage" NAME="0668_kth-smallest-number-in-multiplication-table Coverage Results" MODIFIED="1588349012001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0969_pancake_sorting.coverage" NAME="0969_pancake-sorting Coverage Results" MODIFIED="1588493106352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0592_fraction_addition_and_subtraction.coverage" NAME="0592_fraction-addition-and-subtraction Coverage Results" MODIFIED="1588668984900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$31_zhan_de_ya_ru_dan_chu_xu_lie_lcof.coverage" NAME="31_zhan-de-ya-ru-dan-chu-xu-lie-lcof Coverage Results" MODIFIED="1588948458299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0789_escape_the_ghosts.coverage" NAME="0789_escape-the-ghosts Coverage Results" MODIFIED="1588680038466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0810_chalkboard_xor_game.coverage" NAME="0810_chalkboard-xor-game Coverage Results" MODIFIED="1588682906610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0365_water_and_jug_problem.coverage" NAME="0365_water-and-jug-problem Coverage Results" MODIFIED="1588657113551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0336_palindrome_pairs.coverage" NAME="0336_palindrome-pairs Coverage Results" MODIFIED="1588516186130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0013_roman_to_integer.coverage" NAME="0013_roman-to-integer Coverage Results" MODIFIED="1588570523968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0334_increasing_triplet_subsequence.coverage" NAME="0334_increasing-triplet-subsequence Coverage Results" MODIFIED="1588169496742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$1011_capacity_to_ship_packages_within_d_days.coverage" NAME="1011_capacity-to-ship-packages-within-d-days Coverage Results" MODIFIED="1588494787894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$20_biao_shi_shu_zhi_de_zi_fu_chuan_lcof.coverage" NAME="20_biao-shi-shu-zhi-de-zi-fu-chuan-lcof Coverage Results" MODIFIED="1588521461720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0497_random_point_in_non_overlapping_rectangles.coverage" NAME="0497_random-point-in-non-overlapping-rectangles Coverage Results" MODIFIED="1588344604086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0645_set_mismatch.coverage" NAME="0645_set-mismatch Coverage Results" MODIFIED="1588671636930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0220_contains_duplicate_iii.coverage" NAME="0220_contains-duplicate-iii Coverage Results" MODIFIED="1588342982806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0032_longest_valid_parentheses.coverage" NAME="0032_longest-valid-parentheses Coverage Results" MODIFIED="1588769965171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$33_er_cha_sou_suo_shu_de_hou_xu_bian_li_xu_lie_lcof.coverage" NAME="33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof Coverage Results" MODIFIED="1588950281161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0300_longest_increasing_subsequence.coverage" NAME="0300_longest-increasing-subsequence Coverage Results" MODIFIED="1588171166422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0462_minimum_moves_to_equal_array_elements_ii.coverage" NAME="0462_minimum-moves-to-equal-array-elements-ii Coverage Results" MODIFIED="1588664563843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0866_prime_palindrome.coverage" NAME="0866_prime-palindrome Coverage Results" MODIFIED="1588689334464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0453_minimum_moves_to_equal_array_elements.coverage" NAME="0453_minimum-moves-to-equal-array-elements Coverage Results" MODIFIED="1588664067853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0741_find_smallest_letter_greater_than_target.coverage" NAME="0741_find-smallest-letter-greater-than-target Coverage Results" MODIFIED="1588424126382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0653_maximum_product_of_three_numbers.coverage" NAME="0653_maximum-product-of-three-numbers Coverage Results" MODIFIED="1588670024570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0357_count_numbers_with_unique_digits.coverage" NAME="0357_count-numbers-with-unique-digits Coverage Results" MODIFIED="1588605943230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0397_integer_replacement.coverage" NAME="0397_integer-replacement Coverage Results" MODIFIED="1588661437476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0372_super_pow.coverage" NAME="0372_super-pow Coverage Results" MODIFIED="1588659305426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0646_maximum_length_of_pair_chain.coverage" NAME="0646_maximum-length-of-pair-chain Coverage Results" MODIFIED="1588172778328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0223_rectangle_area.coverage" NAME="0223_rectangle-area Coverage Results" MODIFIED="1588596387357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0005_longest_palindromic_substring.coverage" NAME="0005_longest-palindromic-substring Coverage Results" MODIFIED="1588504065929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0060_permutation_sequence.coverage" NAME="0060_permutation-sequence Coverage Results" MODIFIED="1588572255238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0343_integer_break.coverage" NAME="0343_integer-break Coverage Results" MODIFIED="1588605357646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0781_rabbits_in_forest.coverage" NAME="0781_rabbits-in-forest Coverage Results" MODIFIED="1588678443769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0794_valid_tic_tac_toe_state.coverage" NAME="0794_valid-tic-tac-toe-state Coverage Results" MODIFIED="1588682279334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0179_largest_number.coverage" NAME="0179_largest-number Coverage Results" MODIFIED="1588336477663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0174_dungeon_game.coverage" NAME="0174_dungeon-game Coverage Results" MODIFIED="1588167185295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0172_factorial_trailing_zeroes.coverage" NAME="0172_factorial-trailing-zeroes Coverage Results" MODIFIED="1588595111380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0292_nim_game.coverage" NAME="0292_nim-game Coverage Results" MODIFIED="1588946965778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$22_lian_biao_zhong_dao_shu_di_kge_jie_dian_lcof.coverage" NAME="22_lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof Coverage Results" MODIFIED="1588607304532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0233_number_of_digit_one.coverage" NAME="0233_number-of-digit-one Coverage Results" MODIFIED="1588599124634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0264_ugly_number_ii.coverage" NAME="0264_ugly-number-ii Coverage Results" MODIFIED="1588085534390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0581_shortest_unsorted_continuous_subarray.coverage" NAME="0581_shortest-unsorted-continuous-subarray Coverage Results" MODIFIED="1588863038924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0098_validate_binary_search_tree.coverage" NAME="0098_validate-binary-search-tree Coverage Results" MODIFIED="1588656165667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0598_range_addition_ii.coverage" NAME="0598_range-addition-ii Coverage Results" MODIFIED="1588669712733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0735_cracking_the_safe.coverage" NAME="0735_cracking-the-safe Coverage Results" MODIFIED="1588674869157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0922_sort_array_by_parity_ii.coverage" NAME="0922_sort-array-by-parity-ii Coverage Results" MODIFIED="1588490971206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0239_sliding_window_maximum_py.coverage" NAME="0239_sliding-window-maximum_py Coverage Results" MODIFIED="1588083659447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0483_smallest_good_base.coverage" NAME="0483_smallest-good-base Coverage Results" MODIFIED="1588258463241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0780_reaching_points.coverage" NAME="0780_reaching-points Coverage Results" MODIFIED="1588676738999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0852_peak_index_in_a_mountain_array.coverage" NAME="0852_peak-index-in-a-mountain-array Coverage Results" MODIFIED="1588487023355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0829_consecutive_numbers_sum.coverage" NAME="0829_consecutive-numbers-sum Coverage Results" MODIFIED="1588683451474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0778_swim_in_rising_water.coverage" NAME="0778_swim-in-rising-water Coverage Results" MODIFIED="1588426946498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$32_iii_cong_shang_dao_xia_da_yin_er_cha_shu_lcof.coverage" NAME="32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof Coverage Results" MODIFIED="1588949140116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0718_maximum_length_of_repeated_subarray.coverage" NAME="0718_maximum-length-of-repeated-subarray Coverage Results" MODIFIED="1588400975722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0148_sort_list.coverage" NAME="0148_sort-list Coverage Results" MODIFIED="1588693161328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0516_longest_palindromic_subsequence.coverage" NAME="0516_longest-palindromic-subsequence Coverage Results" MODIFIED="1588516807869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$21_diao_zheng_shu_zu_shun_xu_shi_qi_shu_wei_yu_ou_shu_qian_mian_lcof.coverage" NAME="21_diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof Coverage Results" MODIFIED="1588606915366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0354_russian_doll_envelopes.coverage" NAME="0354_russian-doll-envelopes Coverage Results" MODIFIED="1588171763247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$076_minimum_window_substring.coverage" NAME="076_minimum-window-substring Coverage Results" MODIFIED="1588772955166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0342_wiggle_sort_ii.coverage" NAME="0342_wiggle-sort-ii Coverage Results" MODIFIED="1588338262904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0168_excel_sheet_column_title.coverage" NAME="0168_excel-sheet-column-title Coverage Results" MODIFIED="1588582111909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0326_power_of_three.coverage" NAME="0326_power-of-three Coverage Results" MODIFIED="1588604698499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0537_complex_number_multiplication.coverage" NAME="0537_complex-number-multiplication Coverage Results" MODIFIED="1588667956667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$49_chou_shu_lcof.coverage" NAME="49_chou-shu-lcof Coverage Results" MODIFIED="1588085461191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0008_string_to_integer_atoi.coverage" NAME="0008_string-to-integer-atoi Coverage Results" MODIFIED="1588506908029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0658_find_k_closest_elements.coverage" NAME="0658_find-k-closest-elements Coverage Results" MODIFIED="1588346921983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0973_k_closest_points_to_origin.coverage" NAME="0973_k-closest-points-to-origin Coverage Results" MODIFIED="1588493879848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0241_shortest_palindrome.coverage" NAME="0241_shortest-palindrome Coverage Results" MODIFIED="1588512402792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0344_reverse_string.coverage" NAME="0344_reverse-string Coverage Results" MODIFIED="1588947269544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0400_nth_digit.coverage" NAME="0400_nth-digit Coverage Results" MODIFIED="1588662028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0672_bulb_switcher_ii.coverage" NAME="0672_bulb-switcher-ii Coverage Results" MODIFIED="1588673951508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0528_random_pick_with_weight.coverage" NAME="0528_random-pick-with-weight Coverage Results" MODIFIED="1588345705711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0273_integer_to_english_words.coverage" NAME="0273_integer-to-english-words Coverage Results" MODIFIED="1588600600416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0883_projection_area_of_3d_shape.coverage" NAME="0883_projection-area-of-3d-shape Coverage Results" MODIFIED="1588692505037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0767_reorganize_string.coverage" NAME="0767_reorganize-string Coverage Results" MODIFIED="1588424964005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0168_excel_sheet_column_number.coverage" NAME="0168_excel-sheet-column-number Coverage Results" MODIFIED="1588595007409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0045_jump_game_ii.coverage" NAME="0045_jump-game-ii Coverage Results" MODIFIED="1588568876410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0231_power_of_two.coverage" NAME="0231_power-of-two Coverage Results" MODIFIED="1588596675031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0478_generate_random_point_in_a_circle.coverage" NAME="0478_generate-random-point-in-a-circle Coverage Results" MODIFIED="1588664909812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0869_reordered_power_of_2.coverage" NAME="0869_reordered-power-of-2 Coverage Results" MODIFIED="1588690591819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$32_cong_shang_dao_xia_da_yin_er_cha_shu_lcof.coverage" NAME="32_cong-shang-dao-xia-da-yin-er-cha-shu-lcof Coverage Results" MODIFIED="1588948783286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0423_reconstruct_original_digits_from_english.coverage" NAME="0423_reconstruct-original-digits-from-english Coverage Results" MODIFIED="1588663268267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0704_binary_search.coverage" NAME="0704_binary-search Coverage Results" MODIFIED="1588349466020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0396_rotate_function.coverage" NAME="0396_rotate-function Coverage Results" MODIFIED="1588660628814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0517_super_washing_machines.coverage" NAME="0517_super-washing-machines Coverage Results" MODIFIED="1588667477882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$014_longest_common_prefix.coverage" NAME="014_longest-common-prefix Coverage Results" MODIFIED="1588946046904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0012_integer_to_roman.coverage" NAME="0012_integer-to-roman Coverage Results" MODIFIED="1588569608793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0805_split_array_with_same_average.coverage" NAME="0805_split-array-with-same-average Coverage Results" MODIFIED="1588682476284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0835_mirror_reflection.coverage" NAME="0835_mirror-reflection Coverage Results" MODIFIED="1588688118643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0053_maximum_subarray.coverage" NAME="0053_maximum-subarray Coverage Results" MODIFIED="1588503309452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0149_max_points_on_a_line.coverage" NAME="0149_max-points-on-a-line Coverage Results" MODIFIED="1588579724024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0415_add_strings.coverage" NAME="0415_add-strings Coverage Results" MODIFIED="1588571879787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$049_group_anagrams.coverage" NAME="049_group-anagrams Coverage Results" MODIFIED="1588770511156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0560_subarray_sum_equals_k.coverage" NAME="0560_subarray-sum-equals-k Coverage Results" MODIFIED="1588860522921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0043_multiply_strings.coverage" NAME="0043_multiply-strings Coverage Results" MODIFIED="1588571082855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0507_perfect_number.coverage" NAME="0507_perfect-number Coverage Results" MODIFIED="1588665854871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$32_ii_cong_shang_dao_xia_da_yin_er_cha_shu_lcof.coverage" NAME="32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof Coverage Results" MODIFIED="1588949013424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0164_maximum_gap.coverage" NAME="0164_maximum-gap Coverage Results" MODIFIED="1588335057870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0647_palindromic_substrings.coverage" NAME="0647_palindromic-substrings Coverage Results" MODIFIED="1588519913218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0319_bulb_switcher.coverage" NAME="0319_bulb-switcher Coverage Results" MODIFIED="1588604366752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0136_single_number.coverage" NAME="0136_single-number Coverage Results" MODIFIED="1588774759313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$16_shu_zhi_de_zheng_shu_ci_fang_lcof.coverage" NAME="16_shu-zhi-de-zheng-shu-ci-fang-lcof Coverage Results" MODIFIED="1588428155988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0535_encode_and_decode_tinyurl.coverage" NAME="0535_encode-and-decode-tinyurl Coverage Results" MODIFIED="1588667666165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$19_zheng_ze_biao_da_shi_pi_pei_lcof.coverage" NAME="19_zheng-ze-biao-da-shi-pi-pei-lcof Coverage Results" MODIFIED="1588431057594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0128_longest_consecutive_sequence.coverage" NAME="0128_longest-consecutive-sequence Coverage Results" MODIFIED="1588774624733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0139_word_break.coverage" NAME="0139_word-break Coverage Results" MODIFIED="1588776439407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0242_valid_anagram.coverage" NAME="0242_valid-anagram Coverage Results" MODIFIED="1588336975764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$12_ju_zhen_zhong_de_lu_jing_lcof.coverage" NAME="12_ju-zhen-zhong-de-lu-jing-lcof Coverage Results" MODIFIED="1588261815065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0204_count_primes.coverage" NAME="0204_count-primes Coverage Results" MODIFIED="1588595853225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$25_he_bing_liang_ge_pai_xu_de_lian_biao_lcof.coverage" NAME="25_he-bing-liang-ge-pai-xu-de-lian-biao-lcof Coverage Results" MODIFIED="1588693972898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CodingInterviews_2" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0633_sum_of_square_numbers.coverage" NAME="0633_sum-of-square-numbers Coverage Results" MODIFIED="1588670873567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$0728_self_dividing_numbers.coverage" NAME="0728_self-dividing-numbers Coverage Results" MODIFIED="1588673269525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeetCodePyRock$089_gray_code.coverage" NAME="089_gray-code Coverage Results" MODIFIED="1588946795332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/leetcode/editor/cn" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>res.most_common(1)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>res.most_common()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/0781_rabbits-in-forest.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="324">
+            <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <folding>
+              <element signature="e#224#242#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0782_transform-to-chessboard.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="110">
+            <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <folding>
+              <element signature="e#225#243#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0789_escape-the-ghosts.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0794_valid-tic-tac-toe-state.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="440">
+            <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0805_split-array-with-same-average.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="360">
+            <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0810_chalkboard-xor-game.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="414">
+            <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0829_consecutive-numbers-sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="278">
+            <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <folding>
+              <element signature="e#225#236#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0812_largest-triangle-area.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="332">
+            <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0836_rectangle-overlap.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="414">
+            <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0835_mirror-reflection.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="458">
+            <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0866_prime-palindrome.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="360">
+            <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0868_binary-gap.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="486">
+            <caret line="32" selection-start-line="32" selection-end-line="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0869_reordered-power-of-2.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="378">
+            <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0877_stone-game.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="1350">
+            <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0883_projection-area-of-3d-shape.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="576">
+            <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/25_he-bing-liang-ge-pai-xu-de-lian-biao-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="684">
+            <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0148_sort-list.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="576">
+            <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/3/functools.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/26_shu-de-zi-jie-gou-lco.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="504">
+            <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <folding>
+              <element signature="e#225#238#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/032_longest-valid-parentheses.py" />
+    <entry file="file://$PROJECT_DIR$/0892_surface-area-of-3d-shapes.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="547">
+            <caret line="71" column="14" lean-forward="true" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+            <folding>
+              <element signature="e#719#732#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0032_longest-valid-parentheses.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-29">
+            <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0049_group-anagrams.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="458">
+            <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <folding>
+              <element signature="e#496#509#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0070_climbing-stairs.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="684">
+            <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0076_minimum-window-substring.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="494">
+            <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            <folding>
+              <element signature="e#478#496#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0778_swim-in-rising-water.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="291">
+            <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          </first_editor>
+          <second_editor relative-caret-position="-87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="738">
+            <caret line="256" column="19" lean-forward="true" selection-start-line="239" selection-end-line="256" selection-end-column="19" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0128_longest-consecutive-sequence.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="756">
+            <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+            <folding>
+              <element signature="e#402#425#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0136_single-number.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="612">
+            <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          </first_editor>
+          <second_editor relative-caret-position="-54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0139_word-break.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="296">
+            <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <folding>
+              <element signature="e#796#812#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0226_invert-binary-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-28" />
+          <second_editor relative-caret-position="-28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/27_er-cha-shu-de-jing-xiang-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="378">
+            <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0101_symmetric-tree.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="396">
+            <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/28_dui-cheng-de-er-cha-shu-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="234">
+            <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/30_bao-han-minhan-shu-de-zhan-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="342">
+            <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/019_remove-nth-node-from-end-of-list.py" />
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/29_shun-shi-zhen-da-yin-ju-zhen-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="432">
+            <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0560_subarray-sum-equals-k.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="666">
+            <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            <folding>
+              <element signature="e#490#503#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0054_spiral-matrix.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="216">
+            <caret line="15" column="19" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0581_shortest-unsorted-continuous-subarray.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="242">
+            <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            <folding>
+              <element signature="e#536#559#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/089_gray-code.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="541">
+            <caret line="66" column="64" lean-forward="true" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
+            <folding>
+              <element signature="e#722#735#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0292_nim-game.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="504">
+            <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0344_reverse-string.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="811">
+            <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <folding>
+              <element signature="e#569#592#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/0557_reverse-words-in-a-string-iii.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="283">
+            <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/015_3sum.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/leetcode/editor/cn/014_longest-common-prefix.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="343">
+            <caret line="43" column="15" lean-forward="true" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+          </first_editor>
+          <second_editor relative-caret-position="-126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/31_zhan-de-ya-ru-dan-chu-xu-lie-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="360">
+            <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <folding>
+              <element signature="e#598#621#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_i_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="450">
+            <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <folding>
+              <element signature="e#225#241#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_ii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="432">
+            <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/32_iii_cong-shang-dao-xia-da-yin-er-cha-shu-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="576">
+            <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodingInterviews_2/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="342">
+            <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <folding>
+              <element signature="e#225#248#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>copyright</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7 (CONTROL-1.1.35) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Erlang 22</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
