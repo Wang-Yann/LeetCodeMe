@@ -38,6 +38,11 @@ int nthUglyNumber(int n);
 int strStr(char * haystack, char * needle);
 //0065
 bool isNumber(char * s);
+
+//0069
+int mySqrt(int x);
+
+
 //0098
 bool isValidBST(struct TreeNode * root);
 
