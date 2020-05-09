@@ -39,52 +39,99 @@
 https://leetcode-cn.com/problems/the-skyline-problem/solution/218tian-ji-xian-wen-ti-sao-miao-xian-fa-by-ivan_al/
 
 """
+import bisect
+import heapq
+from typing import List
 
 import pytest
-import math, fractions, operator
-from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
-# leetcode submit region begin(Prohibit modification and deletion)
-class Solution:
+
+class Solution0:
+
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
         """
         扫描线算法
         """
-        heap_all=heapq.heapify([])
-        res=[]
-        for l,r,h in buildings:
+        if len(buildings) == 0:
+            return []
+
+        points = []
+        for l, r, h in buildings:
+            # 左端点通过负数高度来标识，同时适用于标准库中的小顶堆转换为大顶堆
+            points.append((l, -h, r))
+            points.append((r, h, 0))
+
+        # 将扫描线中的关键点按照points的前两个元素x, y来排序
+        points.sort()
+        # 初始值，[0初始高度， float('inf')对应无穷右边界]
+        height_heap = [[0, float('inf')]]
+        res = [[0, 0]]
+
+        for x, h, r in points:
+            # 关键点：清除扫过的高楼
+            while x >= height_heap[0][1]:
+                heapq.heappop(height_heap)
+
+            # 左端点入堆
+            if h < 0:
+                heapq.heappush(height_heap, [h, r])
+
+            # 如果当前最大高度变化，说明是天际线中的关键点
+            if res[-1][1] != -height_heap[0][0]:
+                res.append([x, -height_heap[0][0]])
+
+        return res[1:]
+
+
+# leetcode submit region begin(Prohibit modification and deletion)
+
+
+class Solution:
+
+    def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+        """
+        扫描线算法
+        """
+        heap_all = []
+        res = []
+        for l, r, h in buildings:
             # // critical point, left corner
-            heap_all.add((l,-h))
+            heap_all.append((l, -h))
             # // critical point, right corner
-            heap_all.add((r,h))
+            heap_all.append((r, h))
         # // 保存当前位置所有高度。
-        heights_set = heapq.heapify([0])
+        heights = [0]
         # // 保存上一个位置的横坐标以及高度
-        last =[0,0]
-
-
-
-        
-        
-
+        last = [0, 0]
+        heap_all.sort()
+        for pos, h in heap_all:
+            if h < 0:
+                bisect.insort_left(heights,-h)
+                # heapq.heappush(heights, -h) #// 左端点，高度入堆
+            else:
+                heights.remove(h) #// 右端点，移除高度
+            # // 当前关键点，最大高度
+            # max_h = heapq.nlargest(1, heights)[0]
+            max_h = heights[-1]
+            # // 当前最大高度如果不同于上一个高度，说明这是一个转折点
+            if last[-1] != max_h:
+                # // 更新 last，并加入结果集
+                last = [pos, max_h]
+                res.append(last)
+        # print("res",res)
+        return res
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 
-@pytest.mark.parametrize("args,expected",[
-   ([[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]],
-    [[2,10],[3,15],[7,12],[12,0],[15,10],[20,8],[24,0]])
+@pytest.mark.parametrize("args,expected", [
+    ([[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]],
+     [[2, 10], [3, 15], [7, 12], [12, 0], [15, 10], [20, 8], [24, 0]])
 ])
-def test_solutions(args,expected):
-    assert Solution().getSkyline(args)==expected
+def test_solutions(args, expected):
+    assert Solution().getSkyline(args) == expected
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
