@@ -5,6 +5,7 @@
 # @Last Modified : 2020-04-06 21:02:06
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
+import pytest
 
 
 class Solution:
@@ -20,7 +21,7 @@ class Solution:
         # left是截至right，以right为最后一个元素的最长不重复子串的起始位置
         # 即索引范围是[left,right]的子串是以索引j为最后一个元素的最长子串
         for right in range(len(s)):
-            print(lookup, right, left, result)
+            # print(lookup, right, left, result)
             if s[right] in lookup:
                 left = max(left, lookup[s[right]] + 1)
             lookup[s[right]] = right
@@ -47,8 +48,16 @@ class Solution:
 
         return result
 
+@pytest.mark.parametrize("args,expected", [
+    ("abcabcbb", 3),
+    ("pwwkew", 3),
+    pytest.param("bbbbb", 1),
+])
+def test_solutions(args, expected):
+    assert Solution().lengthOfLongestSubstring(*args) == expected
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample = "ppwwkew"
-    print(sol.lengthOfLongestSubstring(sample))
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+
+
+

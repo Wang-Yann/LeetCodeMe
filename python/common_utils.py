@@ -41,7 +41,7 @@ class ListNode:
 
     def __repr__(self):
         if self:
-            return "{} -> {}".format(self.val, repr(self.next))
+            return "{} -> {}".format(str(self.val), repr(self.next))
 
     def __lt__(self, other):
         if not (self and other):
@@ -272,7 +272,7 @@ class TreeNode:
                 cur = queue[0]
 
                 if cur:
-                    serial.append(cur.val)
+                    serial.append(str(cur.val))
                     queue.append(cur.left)
                     queue.append(cur.right)
                 else:

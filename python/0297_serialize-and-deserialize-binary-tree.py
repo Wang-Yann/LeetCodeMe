@@ -12,6 +12,7 @@ data=pickle.dumps(root)
 root=pickle.loads(data)
 
 """
+import pytest
 
 from common_utils import TreeNode
 
@@ -72,17 +73,19 @@ class Codec:
         return rebuild(data_list)
 
 
-if __name__ == '__main__':
-    samples = [
-        TreeNode(5,
-                 left=TreeNode(6),
-                 right=TreeNode(2, TreeNode(7), TreeNode(4))
-                 ),
-        TreeNode(12),
-        None
+@pytest.mark.parametrize("root", [
+    TreeNode(5,
+              left=TreeNode(6),
+              right=TreeNode(2, TreeNode(7), TreeNode(4))
+              ),
+    TreeNode(8)
+])
+def test_solutions(root):
+    codec = Codec()
+    res = codec.deserialize(codec.serialize(root))
+    assert repr(res)==repr(root)
 
-    ]
-    for root in samples:
-        codec = Codec()
-        res = codec.deserialize(codec.serialize(root))
-        print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+
