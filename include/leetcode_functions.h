@@ -36,6 +36,9 @@ int nthUglyNumber(int n);
 
 //0028
 int strStr(char * haystack, char * needle);
+
+//0050
+double myPow(double x, int n);
 //0065
 bool isNumber(char * s);
 

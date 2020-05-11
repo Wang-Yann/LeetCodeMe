@@ -8,6 +8,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -30,9 +32,13 @@ class Solution:
         return left
 
 
+@pytest.mark.parametrize("kwargs,expected", [
+    (dict(nums = [4, 5, 6, 7, 0, 1, 2], target = 1), [-1, -1]),
+    pytest.param(dict(nums =  [ 0, 1, 2, 3,3, 4, 5], target = 2), [2, 2]),
+])
+def test_solutions(kwargs, expected):
+    assert Solution().searchRange(**kwargs) == expected
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [4, 5, 6, 7, 0, 1, 2]
-    sample = [ 0, 1, 2, 3,3, 4, 5]
-    # sample = [ 1]
-    print(sol.searchRange(sample, 1))
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+
