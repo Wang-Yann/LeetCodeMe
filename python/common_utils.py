@@ -391,3 +391,12 @@ class NestedInteger:
     def __repr__(self):
         if self:
             return "{}".format(repr(self.value))
+
+class UndirectedGraphNode:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors or []
+
+    def __repr__(self):
+        if self:
+            return "{}<=>[{}]".format(self.val, repr(self.neighbors))

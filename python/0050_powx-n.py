@@ -23,6 +23,17 @@ class Solution:
             res = 1.0 / res
         return min(max(-2147483648, res), 2147483647)
 
+class Solution1:
+    def myPow(self, x: float, n: int) -> float:
+        def quickMul(N):
+            if N == 0:
+                return 1.0
+            y = quickMul(N // 2)
+            return y * y if N % 2 == 0 else y * y * x
+
+        return quickMul(n) if n >= 0 else 1.0 / quickMul(-n)
+
+
 
 @pytest.mark.parametrize("args", [
     (2.0, 10, 1024.0),
@@ -30,9 +41,9 @@ class Solution:
     (2.0, -2, 0.25)
 ])
 def test_solutions(args):
-    sol = Solution()
     *args, expected = args
-    assert sol.myPow(*args) == pytest.approx(expected, 0.001)
+    assert Solution().myPow(*args) == pytest.approx(expected, 0.001)
+    assert Solution1().myPow(*args) == pytest.approx(expected, 0.001)
 
 
 if __name__ == '__main__':
