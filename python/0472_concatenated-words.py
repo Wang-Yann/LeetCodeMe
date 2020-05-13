@@ -71,6 +71,9 @@ class Solution:
 
 class Solution1:
     def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
+        """
+        TODO TODO
+        """
         trie = {}
         for word in words:
             if not word:
