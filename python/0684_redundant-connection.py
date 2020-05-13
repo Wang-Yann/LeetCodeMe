@@ -7,7 +7,7 @@
 # @Version       : alpha-1.0
 from typing import List
 
-
+from common_utils import UnionFind
 
 
 class Solution:
