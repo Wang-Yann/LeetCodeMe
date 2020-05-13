@@ -5,6 +5,7 @@
 # @Last Modified : 2020-04-20 21:42:33
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
+import pytest
 
 from common_utils import TreeNode
 
@@ -41,12 +42,15 @@ class Solution:
         return helper(root)[0]
 
 
+
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(3, TreeNode(9), TreeNode(20)), True),
+    (TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(1))), True),
+])
+def test_solutions(args, expected):
+    assert Solution().isBalanced(args) == expected
+    assert Solution().isBalancedRecursive(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, 2, 2], [(0, 1)], [(0, 2)]),
-        ([1, None, 2, 4], [(2, 3)], [(0, 2)]),
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.isBalancedRecursive(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
