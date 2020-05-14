@@ -50,6 +50,8 @@ int mySqrt(int x);
 bool isValidBST(struct TreeNode * root);
 //0102
 int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes);
+//0136
+int singleNumber(int* nums, int numsSize);
 //0221
 int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
 //00236
