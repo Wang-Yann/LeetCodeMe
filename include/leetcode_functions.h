@@ -57,6 +57,8 @@ int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
 //00236
 struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, struct TreeNode* q);
 
+//0560
+int subarraySum(int* nums, int numsSize, int k);
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
