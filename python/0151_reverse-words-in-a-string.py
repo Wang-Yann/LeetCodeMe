@@ -10,27 +10,30 @@ import os
 import sys
 import traceback
 
+import pytest
 
 
 class Solution:
     def reverseWords(self, s: str) -> str:
-        if not s.strip():return ""
-        s_list = s.strip().split(" ")
-        return " ".join(w.strip(" ")  for w in s_list[::-1] if w)
+        return ' '.join(reversed(s.split()))
+
+
+
+
+@pytest.mark.parametrize("args,expected", [
+    ("the sky is blue", "blue is sky the"),
+    ("  hello world!  ", "world! hello"),
+    ("a good   example", "example good a"),
+])
+def test_solutions(args, expected):
+    assert Solution().reverseWords(args) == expected
+
 
 
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample="the sky is blue"
-    sample="  hello world! "
-    sample="a good   example"
-    print(sol.reverseWords(sample))
-
-
-
-
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
 
 
 
