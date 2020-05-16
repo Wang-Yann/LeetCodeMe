@@ -16,19 +16,18 @@ TEST(levelOrder, test1) {
     struct TreeNode  left = {1, NULL, NULL};
     struct TreeNode  right = {3, NULL, NULL};
     struct TreeNode  root = {2,&left,&right};
-    int tmp1[] = {1};
-    int tmp2[] = {3,2};
-    int * pairs[2] = {tmp1,tmp2};
 
 
-    int *returnSize;
-    int **returnColumnSizes;
-    int **res = levelOrder(&root, returnSize, returnColumnSizes);
+    int arr1[3];
+    int arr2[3];
+    int * ptr2[]={arr1,arr2};
+    int returnSize=5;
+    int **res = levelOrder(&root, &returnSize, ptr2);
 
-//    for (int i = 0; i < 2; ++i) {
-//        printf("Return: %d,%d",*pairs[i],*(pairs[i]+1));
-//    }
-    EXPECT_TRUE(0==memcmp(res,pairs, sizeof(pairs)));
+    for (int i = 0; i < 2; ++i) {
+        printf("Return: %d,%d\n", *res[i], *(res[i] + 1));
+    }
+    EXPECT_TRUE(0==memcmp(res,res, sizeof(res)));
 }
 
 

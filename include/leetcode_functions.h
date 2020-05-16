@@ -7,62 +7,57 @@
 
 #include "common.h"
 
-#define max(a,b) \
-   ({ __typeof__ (a) _a = (a); \
-       __typeof__ (b) _b = (b); \
-     _a > _b ? _a : _b; });
-
-
-#define min(a,b) \
-   ({ __typeof__ (a) _a = (a); \
-       __typeof__ (b) _b = (b); \
-     _a < _b ? _a : _b; })
-
-#define MIN(a,b,c) ((a)<(b)?( (a)<(c)?(a):(c) ):( (b)<(c)?(b):(c) ))
 
 
 
 //0002
-int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+int *twoSum(int *nums, int numsSize, int target, int *returnSize);
 
 //0007
 int reverse(int x);
 
 //0020
-bool isValid(char * s);
+bool isValid(char *s);
+
+//0025
+struct ListNode *reverseKGroup(struct ListNode *head, int k);
 
 //0026
 int nthUglyNumber(int n);
 
 //0028
-int strStr(char * haystack, char * needle);
+int strStr(char *haystack, char *needle);
 
 //0050
 double myPow(double x, int n);
+
 //0065
-bool isNumber(char * s);
+bool isNumber(char *s);
 
 //0069
 int mySqrt(int x);
 
 
 //0098
-bool isValidBST(struct TreeNode * root);
+bool isValidBST(struct TreeNode *root);
+
 //0102
-int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes);
+int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes);
+
 //0136
-int singleNumber(int* nums, int numsSize);
+int singleNumber(int *nums, int numsSize);
+
 //0221
 int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
+
 //00236
-struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, struct TreeNode* q);
+struct TreeNode *lowestCommonAncestor(struct TreeNode *root, struct TreeNode *p, struct TreeNode *q);
 
 //0560
-int subarraySum(int* nums, int numsSize, int k);
+int subarraySum(int *nums, int numsSize, int k);
+
 //0646
 int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
-
-
 
 
 #endif //LEETCODE_FUNCTIONS_H

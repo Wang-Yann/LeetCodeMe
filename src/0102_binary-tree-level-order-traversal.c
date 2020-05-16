@@ -5,10 +5,7 @@
 #include "leetcode_functions.h"
 
 #define MAXSIZE 1000
-#define max(a,b) \
-   ({ __typeof__ (a) _a = (a); \
-       __typeof__ (b) _b = (b); \
-     _a > _b ? _a : _b; });
+
 int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes) {
     *returnSize = 0;
     if (root == NULL) {

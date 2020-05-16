@@ -16,14 +16,37 @@
 #include <limits.h>
 
 
+#define max(a, b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a > _b ? _a : _b; });
+
+
+#define min(a, b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+
+#define MIN(a, b, c) ((a)<(b)?( (a)<(c)?(a):(c) ):( (b)<(c)?(b):(c) ))
+
+typedef struct ListNode ListNode;
+typedef struct TreeNode TreeNode;
+
 struct ListNode {
     int val;
     struct ListNode *next;
 };
+
+ListNode *initNodeList(int *nums, int size);
+
+bool checkListEqual(ListNode *res, ListNode *expected);
+
+
 struct TreeNode {
     int val;
     struct TreeNode *left;
     struct TreeNode *right;
 };
+
 
 #endif //LEETCODE_COMMON_H
