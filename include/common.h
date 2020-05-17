@@ -29,12 +29,26 @@
 
 #define MIN(a, b, c) ((a)<(b)?( (a)<(c)?(a):(c) ):( (b)<(c)?(b):(c) ))
 
+
+
 typedef struct ListNode ListNode;
 typedef struct TreeNode TreeNode;
+typedef struct Queue Queue;
 
 struct ListNode {
     int val;
     struct ListNode *next;
+};
+
+
+#define INIT    (-1)
+#define VOS_OK  0
+#define VOS_NOK (-1)
+struct Queue{
+    int head;
+    int tail;
+    int size;
+    int *queue;
 };
 
 ListNode *initNodeList(int *nums, int size);
