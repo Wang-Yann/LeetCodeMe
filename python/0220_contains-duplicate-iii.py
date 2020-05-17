@@ -24,7 +24,7 @@ class Solution:
                 # The pairs are returned in LIFO order if last is true or FIFO order if false.
                 window.popitem(last=False)
             bucket = num if not t else num // t
-            print("bucket",bucket)
+            # print("bucket",bucket)
             for m in (window.get(bucket - 1), window.get(bucket), window.get(bucket + 1)):
                 # print(m)
                 if m is not None and abs(num - m) <= t:

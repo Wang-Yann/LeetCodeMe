@@ -58,7 +58,10 @@ import pytest
 class Solution:
 
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        """利用结点的入度拓扑排序"""
+        """
+        BFS
+        利用结点的入度拓扑排序
+        """
         adj_list = collections.defaultdict(list)
         indegree = collections.defaultdict(int)
         for dest, src in prerequisites:
@@ -80,12 +83,45 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        # 存储有向图
+        edges = collections.defaultdict(list)
+        # 存储每个节点的入度
+        indeg = [0] * numCourses
+        # 存储答案
+        result = list()
+
+        for info in prerequisites:
+            edges[info[1]].append(info[0])
+            indeg[info[0]] += 1
+
+        # 将所有入度为 0 的节点放入队列中
+        q = collections.deque([u for u in range(numCourses) if indeg[u] == 0])
+
+        while q:
+            # 从队首取出一个节点
+            u = q.popleft()
+            # 放入答案中
+            result.append(u)
+            for v in edges[u]:
+                indeg[v] -= 1
+                # 如果相邻节点 v 的入度为 0，就可以选 v 对应的课程了
+                if indeg[v] == 0:
+                    q.append(v)
+
+        if len(result) != numCourses:
+            result = list()
+        return result
+
+
 @pytest.mark.parametrize("numCourses,prerequisites,expected", [
     [2, [[1, 0]], [[0, 1]]],
     [4, [[1, 0], [2, 0], [3, 1], [3, 2]], [[0, 1, 2, 3], [0, 2, 1, 3]]]
 ])
 def test_solutions(numCourses, prerequisites, expected):
     assert Solution().findOrder(numCourses, prerequisites) in expected
+    assert Solution1().findOrder(numCourses, prerequisites) in expected
 
 
 if __name__ == '__main__':
