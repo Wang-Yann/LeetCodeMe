@@ -69,7 +69,7 @@ class Solution1:
     def twoSum(self, n: int) -> List[float]:
         dp = []
         for i in range(n + 1):
-            dp.append([0] * (6 * n + 1))
+            dp.append([0.0] * (6 * n + 1))
         for i in range(1, 7):
             dp[1][i] = 1 / 6
         for i in range(2, n + 1):

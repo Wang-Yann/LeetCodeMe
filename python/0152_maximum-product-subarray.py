@@ -8,6 +8,8 @@
 from functools import reduce
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -26,9 +28,12 @@ class Solution:
             dp_min[i] = min(dp_min[i - 1] * v, dp[i - 1] * v, v)
         return reduce(max, dp)
 
-    def maxProductS(self, A):
+
+class Solution1:
+
+    def maxProduct(self, nums):
         global_max, local_max, local_min = float("-inf"), 1, 1
-        for x in A:
+        for x in nums:
             local_max = max(1, local_max)
             if x > 0:
                 local_max, local_min = local_max * x, local_min * x
@@ -38,13 +43,16 @@ class Solution:
         return global_max
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([2, 3, -2, 4], 6),
+    ([-2, -3, -10000, 100, 0, -1], 3000000),
+    ([-1, -2, -9, -6], 108),
+    pytest.param([-2, 0, -1], 0),
+])
+def test_solutions(args, expected):
+    assert Solution().maxProduct(args) == expected
+    assert Solution1().maxProduct(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [2, 3, -2, 4],
-        [-2, 0, -1],
-        [-2, -3, -10000, 100, 0, -1],
-        [-1, -2, -9, -6]
-    ]
-    res = [sol.maxProduct(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
