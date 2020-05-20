@@ -65,5 +65,7 @@ int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
 //0680
 bool validPalindrome(char *s);
+//1371
+int findTheLongestSubstring(char * s);
 
 #endif //LEETCODE_FUNCTIONS_H
