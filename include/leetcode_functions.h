@@ -13,6 +13,8 @@
 //0002
 int *twoSum(int *nums, int numsSize, int target, int *returnSize);
 
+//0005
+char * longestPalindrome(char * s);
 //0007
 int reverse(int x);
 

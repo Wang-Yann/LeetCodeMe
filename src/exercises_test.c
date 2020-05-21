@@ -3,6 +3,7 @@
 */
 
 #include "common.h"
+#include "mystr.h"
 
 void testPrintArray(){
     int a[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
@@ -45,10 +46,41 @@ void testPointArrayShow(){
 
 }
 
-int main(void)
+void testMystr()
+{
+    char buf[20]="012345126";
+    char buf2[10];
+
+    replaceFirst(buf,"12","9999");
+    printf("replaceFirst:%s/n",buf);
+    strcpy(buf,"012345126");
+    replace(buf,"12","9999");
+    printf("replace:%s/n",buf);
+    strcpy(buf,"01234560");
+    substring(buf2,buf,2,5);
+    printf("substring:%s/n",buf2);
+    printf("charAt:%c/n",charAt(buf,4));
+    printf("indexOf:%d/n",indexOf(buf,"234"));
+    printf("lastIndexOf:%d/n",lastIndexOf(buf,"0"));
+    strcpy(buf,"    0123    ");
+    ltrim(buf);
+    printf("ltrim:||%s||/n",buf);
+    strcpy(buf,"    0123     ");
+    rtrim(buf);
+    printf("rtrim:||%s||/n",buf);
+    strcpy(buf,"    0123    ");
+    trim(buf);
+    printf("trim:||%s||/n",buf);
+    strcpy(buf,"  ");
+    trim(buf);
+    printf("trim2:||%s||/n",buf);
+}
+
+int main()
 {
 //    testPrintArray();
 //    testInitArray();
-    testPointArrayShow();
+//    testPointArrayShow();
+    testMystr();
     return 0;
 }
