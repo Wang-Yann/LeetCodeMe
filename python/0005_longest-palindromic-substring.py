@@ -62,6 +62,37 @@ class Solution1:
         return s[max_start:max_end + 1]
 
 
+class Solution2:
+
+    def longestPalindrome(self, s: str) -> str:
+        """
+        Manacher
+        """
+
+        def pre_process(s):
+            res = "#".join(s)
+            return "^#" + res + "#$"
+
+        t = pre_process(s)
+        P = [0] * len(t)
+        center, right = 0, 0
+        for i in range(1, len(t) - 1):
+            i_mirror = 2 * center - i
+            if right > i:
+                P[i] = min(right - i, P[i_mirror])
+            while t[i + 1 + P[i]] == t[i - 1 - P[i]]:
+                P[i] += 1
+            if i + P[i] > right:
+                center, right = i, i + P[i]
+        max_i = 0
+        print(P)
+        for i in range(1, len(t) - 1):
+            if P[i] > P[max_i]:
+                max_i = i
+        start = (max_i - 1 - P[max_i]) // 2
+        return s[start:start + P[max_i]]
+
+
 @pytest.mark.parametrize("args,expected", [
     ("babad", ["bab", "aba"]),
     pytest.param("cbbd", ["bb"]),
@@ -69,6 +100,7 @@ class Solution1:
 def test_solutions(args, expected):
     assert Solution().longestPalindrome(args) in expected
     assert Solution1().longestPalindrome(args) in expected
+    assert Solution2().longestPalindrome(args) in expected
 
 
 if __name__ == '__main__':
