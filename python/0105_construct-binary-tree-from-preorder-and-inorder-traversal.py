@@ -79,6 +79,22 @@ class Solution:
 
         return helper(0, len(inorder))
 
+
+class Solution9:
+    """
+    @param preorder : A list of integers that preorder traversal of a tree
+    @param inorder : A list of integers that inorder traversal of a tree
+    @return : Root of a tree
+    """
+    def buildTree(self, preorder, inorder):
+        # write your code here
+        if not inorder: return None # inorder is empty
+        root = TreeNode(preorder[0])
+        rootPos = inorder.index(preorder[0])
+        root.left = self.buildTree(preorder[1 : 1 + rootPos], inorder[ : rootPos])
+        root.right = self.buildTree(preorder[rootPos + 1 : ], inorder[rootPos + 1 : ])
+        return root
+
 @pytest.mark.parametrize("args,expected",[
    [([3, 9, 20, 15, 7],[9, 3, 15, 20, 7]),
     TreeNode.initPreOrder([3, 9,None,None, 20,15,None,None, 7,None,None  ]) ]
@@ -87,6 +103,7 @@ def test_solutions(args,expected):
     assert repr(Solution().buildTree(*copy.deepcopy(args)))==repr(expected)
     assert repr(Solution().buildTree1(*copy.deepcopy(args)))==repr(expected)
     assert repr(Solution().buildTree2(*copy.deepcopy(args)))==repr(expected)
+    assert repr(Solution9().buildTree(*copy.deepcopy(args)))==repr(expected)
 
 if __name__ == '__main__':
     pytest.main(["-q", "--color=yes","--capture=no", __file__])
