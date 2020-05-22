@@ -5,8 +5,10 @@
 # @Last Modified : 2020-04-21 10:52:40
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
-
+import copy
 from typing import List
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -32,6 +34,7 @@ class Solution:
             idx = inorder_lookup[node_val]
             # print("pre_start,idx,in_start", pre_start,idx ,in_start)
             node.left = buildTreeRecursive(pre_start + 1, in_start, idx)
+            # 得到左子树中的节点数目 idx - in_start
             node.right = buildTreeRecursive(pre_start + 1 + idx - in_start, idx + 1, in_end)
             return node
 
@@ -76,13 +79,14 @@ class Solution:
 
         return helper(0, len(inorder))
 
+@pytest.mark.parametrize("args,expected",[
+   [([3, 9, 20, 15, 7],[9, 3, 15, 20, 7]),
+    TreeNode.initPreOrder([3, 9,None,None, 20,15,None,None, 7,None,None  ]) ]
+])
+def test_solutions(args,expected):
+    assert repr(Solution().buildTree(*copy.deepcopy(args)))==repr(expected)
+    assert repr(Solution().buildTree1(*copy.deepcopy(args)))==repr(expected)
+    assert repr(Solution().buildTree2(*copy.deepcopy(args)))==repr(expected)
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([3, 9, 20, 15, 7], [9, 3, 15, 20, 7])
-
-    ]
-    lists = [x for x in samples]
-    res = [sol.buildTree(*x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
