@@ -50,7 +50,7 @@ class Solution:
 
     def numSquarefulPerms(self, A: List[int]) -> int:
         """
-        构造一张图，包含所有的边 ii 到 jj ，如果满足 A[i] + A[j]A[i]+A[j] 是一个完全平方数。
+        构造一张图，包含所有的边 i 到 j ，如果满足 A[i] + A[j] 是一个完全平方数。
         我们的目标就是求这张图的所有哈密顿路径，即经过图中所有点仅一次的路径
         我们使用 count 记录对于每一种值还有多少个节点等待被访问，与一个变量 todo 记录还剩多少个节点等待被访问
 
@@ -91,17 +91,19 @@ class Solution1(object):
         nums = A
         nums.sort()
         res = []
-        def backtrack(nums, tmp):
-            if not nums:
+
+        def backtrack(nums_list, tmp):
+            if not nums_list:
                 res.append(tmp)
                 return
-            for i in range(len(nums)):
+            for i, v in enumerate(nums_list):
                 # 去重
-                if i and nums[i]==nums[i-1]:
+                if i and v == nums_list[i - 1]:
                     continue
                 # 剪枝
-                if not tmp or math.sqrt(tmp[-1]+nums[i]).is_integer():
-                    backtrack(nums[:i] + nums[i+1:], tmp + [nums[i]])
+                if not tmp or math.sqrt(tmp[-1] + v).is_integer():
+                    backtrack(nums_list[:i] + nums_list[i + 1:], tmp + [v])
+
         backtrack(nums, [])
         return len(res)
 
