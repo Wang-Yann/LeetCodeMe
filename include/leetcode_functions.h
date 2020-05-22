@@ -45,6 +45,8 @@ bool isValidBST(struct TreeNode *root);
 
 //0102
 int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes);
+//0105
+struct TreeNode* buildTree(int* preorder, int preorderSize, int* inorder, int inorderSize);
 
 //0136
 int singleNumber(int *nums, int numsSize);

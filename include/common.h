@@ -55,5 +55,6 @@ struct TreeNode {
     struct TreeNode *right;
 };
 
+bool checkTreeEqual(TreeNode *rootA, TreeNode *rootB);
 
 #endif //LEETCODE_COMMON_H
