@@ -80,11 +80,58 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+
+    def minWindow(self, s: str, t: str) -> str:
+        score = 0
+        wanted = collections.Counter(t)
+        start, end = len(s), 3 * len(s)
+        d = collections.defaultdict(int)
+        deq = collections.deque([])
+        for idx, char in enumerate(s):
+            if char in wanted:
+                deq.append(idx)
+                d[char] += 1
+                if d[char] <= wanted[char]:
+                    score += 1
+                while deq and d[s[deq[0]]] > wanted[s[deq[0]]]:
+                    d[s[deq.popleft()]] -= 1
+                if score == len(t) and deq[-1] - deq[0] < end - start:
+                    start, end = deq[0], deq[-1]
+        return s[start:end + 1]
+
+
+class Solution2:
+
+    def minWindow(self, s: str, t: str) -> str:
+        """https://leetcode-cn.com/problems/minimum-window-substring/solution/python-jian-ji-hua-dong-chuang-kou-xiang-jie-by-am/"""
+        counter = collections.Counter(t)
+        ans = ''
+        n = 0  # 当前我满足了 t 中的字母的种数
+        l = 0
+        for r, ch in enumerate(s):
+            if ch not in counter:
+                continue
+            counter[ch] -= 1
+            if counter[ch] == 0:
+                n += 1
+            while s[l] not in counter or counter[s[l]] < 0:  # 看看当前 l 处的字母是否必要，没必要 l 就加以
+                if s[l] in counter:
+                    counter[s[l]] += 1
+                l += 1
+            if n == len(counter):
+                if not ans or len(ans) > r - l + 1:
+                    ans = s[l: r + 1]
+        return ans
+
+
 @pytest.mark.parametrize("kwargs,expected", [
     (dict(s="ADOBECODEBANC", t="ABC"), "BANC"),
 ])
 def test_solutions(kwargs, expected):
     assert Solution().minWindow(**kwargs) == expected
+    assert Solution1().minWindow(**kwargs) == expected
+    assert Solution2().minWindow(**kwargs) == expected
 
 
 if __name__ == '__main__':
