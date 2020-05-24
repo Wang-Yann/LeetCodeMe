@@ -43,6 +43,8 @@
 #  Related Topics 树
 
 """
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -120,7 +122,7 @@ class Solution1:
         return root if left and right else left or right
 
 
-if __name__ == '__main__':
+def test_solutions():
     sol = Solution()
     p = TreeNode(5,
                  left=TreeNode(6),
@@ -128,11 +130,21 @@ if __name__ == '__main__':
                  )
     q = TreeNode(1, TreeNode(0), TreeNode(8))
     root = TreeNode(3, left=p, right=q)
+
+    resA = sol.lowestCommonAncestor(root, p, q)
+    assert repr(resA) == repr(root)
+
+
+def test_solutions1():
+    sol = Solution()
     pA = TreeNode(4)
     qA = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), pA))
     rootA = TreeNode(3, left=qA, right=TreeNode(1, TreeNode(0), TreeNode(8)))
 
-    res = sol.lowestCommonAncestor(root, p, q)
     resA = sol.lowestCommonAncestor(rootA, pA, qA)
-    print(res)
-    print(resA)
+    assert repr(resA) == repr(qA)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
+

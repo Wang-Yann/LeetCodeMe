@@ -5,6 +5,7 @@
 # @Last Modified : 2020-04-22 11:03:16
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
+import pytest
 
 from common_utils import TreeNode
 
@@ -26,7 +27,8 @@ class Solution:
         return cur
 
 
-if __name__ == '__main__':
+
+def test_solutions():
     sol = Solution()
     p1A = TreeNode(2,
                    left=TreeNode(0),
@@ -36,4 +38,8 @@ if __name__ == '__main__':
     rootA = TreeNode(6, left=p1A, right=p2A)
 
     resA = sol.lowestCommonAncestor(rootA, p1A, p2A)
-    print(resA)
+    assert repr(resA) == repr(rootA)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
