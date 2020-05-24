@@ -10,7 +10,8 @@
 
 //0002
 int *twoSum(int *nums, int numsSize, int target, int *returnSize);
-
+//0004
+double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size);
 //0005
 char *longestPalindrome(char *s);
 
