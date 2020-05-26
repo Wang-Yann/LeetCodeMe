@@ -1,3 +1,4 @@
+#include "leetcode_functions.h"
 #define key_type int
 #define val_type int
 

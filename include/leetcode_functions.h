@@ -10,8 +10,10 @@
 
 //0002
 int *twoSum(int *nums, int numsSize, int target, int *returnSize);
+
 //0004
-double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size);
+double findMedianSortedArrays(int *nums1, int nums1Size, int *nums2, int nums2Size);
+
 //0005
 char *longestPalindrome(char *s);
 
@@ -65,6 +67,9 @@ int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
 
 //00236
 struct TreeNode *lowestCommonAncestor(struct TreeNode *root, struct TreeNode *p, struct TreeNode *q);
+
+//0287
+int findDuplicate(int *nums, int numsSize);
 
 //0560
 int subarraySum(int *nums, int numsSize, int k);
