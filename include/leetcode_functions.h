@@ -79,7 +79,8 @@ int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
 //0680
 bool validPalindrome(char *s);
-
+//0974
+int subarraysDivByK(int* A, int ASize, int K);
 //1371
 int findTheLongestSubstring(char *s);
 
