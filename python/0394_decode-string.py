@@ -5,6 +5,7 @@
 # @Last Modified : 2020-04-26 10:57:44
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
+import pytest
 
 
 class Solution0:
@@ -62,15 +63,17 @@ class Solution:
         return cur
 
 
+@pytest.mark.parametrize("args,expected", [
+    ("3[a]2[b4[F]c]", "aaabFFFFcbFFFFc"),
+    ("3[a]2[bc]", "aaabcbc"),
+    ("3[a2[c]]", "accaccacc"),
+    ("3[a2[c1[ee]]]", "aceeceeaceeceeaceecee"),
+    ("2[abc]3[cd]ef", "abcabccdcdcdef"),
+])
+def test_solutions(args, expected):
+    assert Solution0().decodeString(args) == expected
+    assert Solution().decodeString(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "3[a]2[b4[F]c]",  # "aaabFFFFcbFFFFc"
-        "3[a]2[bc]",
-        "3[a2[c]]",
-        "3[a2[c1[ee]]]",
-        "2[abc]3[cd]ef"
-    ]
-    lists = [x for x in samples]
-    res = [sol.decodeString(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
