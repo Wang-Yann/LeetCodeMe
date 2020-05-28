@@ -33,3 +33,15 @@ bool checkListEqual(ListNode *res, ListNode *expected){
 
 
 };
+
+bool checkTreeEqual(TreeNode *rootA, TreeNode *rootB){
+    if (rootA == NULL && rootB == NULL) {
+        return true;
+    }
+    if (rootA == NULL || rootB == NULL) {
+        return false;
+    }
+    return rootA->val == rootB->val && checkTreeEqual(rootA->left, rootB->left) &&
+           checkTreeEqual(rootA->right, rootB->right);
+
+};

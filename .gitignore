@@ -4,4 +4,7 @@ build
 CMakeSettings.json
 /cmake-build-debug/
 /python/.pytest_cache/
-!/python/me_notes.md
+/python/me_notes.md
+/python/CodingInterviews_2/.pytest_cache/
+/python/tmp/
+.idea
