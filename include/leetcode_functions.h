@@ -70,7 +70,8 @@ struct TreeNode *lowestCommonAncestor(struct TreeNode *root, struct TreeNode *p,
 
 //0287
 int findDuplicate(int *nums, int numsSize);
-
+//0394
+char * decodeString(char * s);
 //0560
 int subarraySum(int *nums, int numsSize, int k);
 
