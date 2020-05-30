@@ -8,77 +8,82 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     """
     TODO 单调栈
-    https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/
+    push 进去之前先把 >= 自己的元素 pop 出来。
+每次从栈中 pop 出一个数的时候，就找到了往左数比它小的第一个数（当前栈顶）和往右数比它小的第一个数（即将入栈的数），
+从而可以计算出这两个数中间的部分宽度 * 被pop出的数，就是以这个被pop出来的数为最低的那个直方向两边展开的最大矩阵面积
     """
 
-    def largestRectangleAreaS(self, heights: List[int]) -> int:
-        A = heights
+    def largestRectangleArea(self, heights: List[int]) -> int:
         result = 0
-        stack = [] #stores increasing height
+        stack = []  # stores increasing height
 
         i = 0
-        while i < len(A) + 1:
-            if not stack or (i < len(A) and A[i] > A[stack[-1]]):
+        while i < len(heights) + 1:
+            if not stack or (i < len(heights) and heights[i] > heights[stack[-1]]):
                 stack.append(i)
                 i += 1
             else:
                 last_pos = stack.pop()
                 if not stack:
-                    result = max(result, A[last_pos] * i)
+                    result = max(result, heights[last_pos] * i)
                 else:
-                    result = max(result, A[last_pos] * (i - stack[-1] - 1))
+                    result = max(result, heights[last_pos] * (i - stack[-1] - 1))
 
         return result
 
 
+class Solution1:
 
-    def calculateArea(self, heights: List[int],start:int,end:int) -> int:
-        if start>end:return 0
+    def calculateArea(self, heights: List[int], start: int, end: int) -> int:
+        if start > end:
+            return 0
         min_index = start
-        for i in range(start,end+1):
-            if heights[min_index]>heights[i]:
+        for i in range(start, end + 1):
+            if heights[min_index] > heights[i]:
                 min_index = i
-        return max(heights[min_index]*(end-start+1),
-                   self.calculateArea(heights,start,min_index-1),
-                   self.calculateArea(heights,min_index+1,end)
+        return max(heights[min_index] * (end - start + 1),
+                   self.calculateArea(heights, start, min_index - 1),
+                   self.calculateArea(heights, min_index + 1, end)
                    )
 
     def largestRectangleArea(self, heights: List[int]) -> int:
-        return self.calculateArea(heights, 0, len(heights)-1)
+        return self.calculateArea(heights, 0, len(heights) - 1)
 
-    def largestRectangleAreaSM(self, heights: List[int]) -> int:
+
+class Solution2:
+
+    def largestRectangleArea(self, heights: List[int]) -> int:
         A = heights
         result = 0
         stack = [-1]
 
         for i in range(len(A)):
-            while stack[-1]!=-1  and A[i] <= A[stack[-1]]:
+            while stack[-1] != -1 and A[i] <= A[stack[-1]]:
                 last_pos = stack.pop()
                 result = max(result, A[last_pos] * (i - stack[-1] - 1))
             stack.append(i)
             # 当我们到达数组的尾部时，我们将栈中剩余元素全部弹出栈
-        while stack and stack[-1]!=-1:
+        while stack and stack[-1] != -1:
             last_pos = stack.pop()
             result = max(result, A[last_pos] * (len(A) - stack[-1] - 1))
         return result
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([2, 1, 5, 6, 2, 3], 10),
+    pytest.param([], 0),
+])
+def test_solutions(args, expected):
+    assert Solution().largestRectangleArea(args) == expected
+    assert Solution1().largestRectangleArea(args) == expected
+    assert Solution2().largestRectangleArea(args) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [2, 1, 5, 6, 2, 3],
-        [0],
-        [],
-        [1]
-    ]
-    # res = [sol.largestRectangleArea(x) for x in samples]
-    # res1 = [sol.largestRectangleAreaS(x) for x in samples]
-    # print(res,res1)
-    res2 = [sol.largestRectangleAreaSM(x) for x in samples]
-    print(res2)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -44,6 +44,8 @@ int mySqrt(int x);
 //0076
 char *minWindow(char *s, char *t);
 
+//0084
+int largestRectangleArea(int* heights, int heightsSize);
 //0098
 bool isValidBST(struct TreeNode *root);
 
@@ -58,6 +60,8 @@ int singleNumber(int *nums, int numsSize);
 
 //0152
 int maxProduct(int *nums, int numsSize);
+//0198
+int rob(int* nums, int numsSize);
 
 //0210
 int *findOrder(int numCourses, int **prerequisites, int prerequisitesSize, int *prerequisitesColSize, int *returnSize);
