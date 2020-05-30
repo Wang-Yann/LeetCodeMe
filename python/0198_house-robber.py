@@ -8,6 +8,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
@@ -30,15 +32,16 @@ class Solution:
         return now
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 2, 3, 1],
-        [2, 7, 9, 3, 1],
-        [2, 3],
-        [4]
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3, 1], 4),
+    ([2, 7, 9, 3, 1], 12),
+    ([2, 3], 3),
+    ([4], 4),
+])
+def test_solutions(args, expected):
+    assert Solution().rob(args) == expected
+    assert Solution().robS(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.rob(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
