@@ -5,6 +5,7 @@
 # @Last Modified : 2020-04-20 21:42:33
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
+import pytest
 
 from common_utils import TreeNode
 
@@ -27,12 +28,32 @@ class Solution:
         return isSymmetricRecursive(root.left, root.right)
 
 
+class Solution1:
+
+    def isSymmetric(self, root: TreeNode) -> bool:
+
+        if not root:
+            return True
+        stack = [(root.left, root.right)]
+        while stack:
+            p, q = stack.pop()
+            if not p and not q:
+                continue
+            if not p or not q or p.val != q.val:
+                return False
+            stack.append((p.left, q.right))
+            stack.append((p.right, q.left))
+        return True
+
+
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode.initTreeSimple([1, 2, 2], [(0, 1)], [(0, 2)]), True),
+    (TreeNode.initTreeSimple([1, None, 2, 4], [(2, 3)], [(0, 2)]), False),
+])
+def test_solutions(args, expected):
+    assert Solution().isSymmetric(args) == expected
+    assert Solution1().isSymmetric(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, 2, 2], [(0, 1)], [(0, 2)]),
-        ([1, None, 2, 4], [(2, 3)], [(0, 2)]),
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.isSymmetric(lists[0]), sol.isSymmetric(lists[1])]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

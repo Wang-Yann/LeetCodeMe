@@ -48,7 +48,8 @@ char *minWindow(char *s, char *t);
 int largestRectangleArea(int* heights, int heightsSize);
 //0098
 bool isValidBST(struct TreeNode *root);
-
+//0101
+bool isSymmetric(struct TreeNode* root);
 //0102
 int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes);
 
