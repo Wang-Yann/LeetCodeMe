@@ -89,5 +89,7 @@ bool validPalindrome(char *s);
 int subarraysDivByK(int* A, int ASize, int K);
 //1371
 int findTheLongestSubstring(char *s);
+//1431
+bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize);
 
 #endif //LEETCODE_FUNCTIONS_H
