@@ -92,4 +92,7 @@ int findTheLongestSubstring(char *s);
 //1431
 bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize);
 
+
+//ms064
+int sumNums(int n);
 #endif //LEETCODE_FUNCTIONS_H
