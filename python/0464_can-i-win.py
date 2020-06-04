@@ -45,17 +45,27 @@ import pytest
 class Solution:
 
     def canIWin(self, maxChoosableInteger: int, desiredTotal: int) -> bool:
+        """
+        设定 dpS 表示还剩下集合S里的数字时, 先手的人是否有必胜策略.
+
+        状态转移很容易想出来: 如果集合 S 中存在一个数 i, 使得拿走 i 之后剩下的集合 T 是必败的, 那么集合 S 就是必胜的状态.
+
+        边界状态: 对于集合 S, 我们可以知道已经拿出去的数的和, 如果这个和加上集合 S 中最大的元素会达到或超过 desiredTotal, 那么 S 就是必胜的.
+
+        推荐使用记忆化搜索来实现.
+        """
+
         def dfs(nums, desiredTotalVal):
-            hash = str(nums)
-            if hash in memo:
-                return memo[hash]
+            key = str(nums)
+            if key in memo:
+                return memo[key]
             if nums[-1] >= desiredTotalVal:
                 return True
             for i in range(len(nums)):
                 if not dfs(nums[:i] + nums[i + 1:], desiredTotalVal - nums[i]):
-                    memo[hash] = True
+                    memo[key] = True
                     return True
-            memo[hash] = False
+            memo[key] = False
             return False
 
         if (1 + maxChoosableInteger) * maxChoosableInteger / 2 < desiredTotal:
