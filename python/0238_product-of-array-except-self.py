@@ -6,18 +6,20 @@
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
 
-import traceback
 from typing import List
+
+import pytest
 
 
 class Solution:
+
     def productExceptSelfOf(self, nums: List[int]) -> List[int]:
 
         # The length of the input array
         length = len(nums)
 
         # The answer array to be returned
-        answer = [0]*length
+        answer = [0] * length
 
         # answer[i] contains the product of all the elements to the left
         # Note: for the element at index '0', there are no elements to the left,
@@ -44,14 +46,15 @@ class Solution:
         return answer
 
 
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+class Solution1:
+
+    def productExceptSelfOf(self, nums: List[int]) -> List[int]:
         if not nums:
             return []
 
         left_product = [1 for _ in range(len(nums))]
         for i in range(1, len(nums)):
             left_product[i] = left_product[i - 1] * nums[i - 1]
-        print(left_product)
         right_product = 1
         for i in range(len(nums) - 2, -1, -1):
             right_product *= nums[i + 1]
@@ -59,12 +62,14 @@ class Solution:
 
         return left_product
 
+
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3, 4], [24, 12, 8, 6]),
+])
+def test_solutions(args, expected):
+    assert Solution().productExceptSelfOf(args) == expected
+    assert Solution1().productExceptSelfOf(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        [2,3,4,5]
-    ]
-    res = [ sol.productExceptSelfOf(x) for x in samples]
-    print(res)
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
