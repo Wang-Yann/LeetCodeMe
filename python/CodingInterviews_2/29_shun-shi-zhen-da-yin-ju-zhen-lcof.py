@@ -22,7 +22,7 @@ class Solution:
         while True:
             for i in range(l, r + 1):
                 res.append(matrix[t][i])  # left to right
-            t+=1
+            t += 1
             if t > b:
                 break
             for i in range(t, b + 1):
@@ -45,7 +45,8 @@ class Solution:
 
 @pytest.mark.parametrize("args,expected", [
     ([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [1, 2, 3, 6, 9, 8, 7, 4, 5]),
-    pytest.param([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]),
+    pytest.param([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]],
+                 [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]),
 ])
 def test_solutions(args, expected):
     assert Solution().spiralOrder(args) == expected
