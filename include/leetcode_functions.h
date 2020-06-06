@@ -55,7 +55,8 @@ int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes
 
 //0105
 struct TreeNode *buildTree(int *preorder, int preorderSize, int *inorder, int inorderSize);
-
+//0128
+int longestConsecutive(int* nums, int numsSize);
 //0136
 int singleNumber(int *nums, int numsSize);
 
@@ -70,9 +71,11 @@ int *findOrder(int numCourses, int **prerequisites, int prerequisitesSize, int *
 //0221
 int maximalSquare(char **matrix, int matrixSize, int *matrixColSize);
 
-//00236
+//0236
 struct TreeNode *lowestCommonAncestor(struct TreeNode *root, struct TreeNode *p, struct TreeNode *q);
 
+//0238
+int *productExceptSelf(int *nums, int numsSize, int *returnSize);
 //0287
 int findDuplicate(int *nums, int numsSize);
 //0394
@@ -85,6 +88,10 @@ int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 
 //0680
 bool validPalindrome(char *s);
+
+//0837
+double new21Game(int N, int K, int W);
+
 //0974
 int subarraysDivByK(int* A, int ASize, int K);
 //1371
@@ -92,7 +99,8 @@ int findTheLongestSubstring(char *s);
 //1431
 bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize);
 
-
+//ms029
+int *spiralOrder(int **matrix, int matrixSize, int *matrixColSize, int *returnSize);
 //ms064
 int sumNums(int n);
 #endif //LEETCODE_FUNCTIONS_H
