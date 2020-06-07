@@ -45,25 +45,35 @@ int mySqrt(int x);
 char *minWindow(char *s, char *t);
 
 //0084
-int largestRectangleArea(int* heights, int heightsSize);
+int largestRectangleArea(int *heights, int heightsSize);
+
 //0098
 bool isValidBST(struct TreeNode *root);
+
 //0101
-bool isSymmetric(struct TreeNode* root);
+bool isSymmetric(struct TreeNode *root);
+
 //0102
 int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes);
 
 //0105
 struct TreeNode *buildTree(int *preorder, int preorderSize, int *inorder, int inorderSize);
+
+//0126
+char ***findLadders(char *beginWord, char *endWord, char **wordList, int wordListSize,
+                    int *returnSize, int **returnColumnSizes);
+
 //0128
-int longestConsecutive(int* nums, int numsSize);
+int longestConsecutive(int *nums, int numsSize);
+
 //0136
 int singleNumber(int *nums, int numsSize);
 
 //0152
 int maxProduct(int *nums, int numsSize);
+
 //0198
-int rob(int* nums, int numsSize);
+int rob(int *nums, int numsSize);
 
 //0210
 int *findOrder(int numCourses, int **prerequisites, int prerequisitesSize, int *prerequisitesColSize, int *returnSize);
@@ -76,10 +86,13 @@ struct TreeNode *lowestCommonAncestor(struct TreeNode *root, struct TreeNode *p,
 
 //0238
 int *productExceptSelf(int *nums, int numsSize, int *returnSize);
+
 //0287
 int findDuplicate(int *nums, int numsSize);
+
 //0394
-char * decodeString(char * s);
+char *decodeString(char *s);
+
 //0560
 int subarraySum(int *nums, int numsSize, int k);
 
@@ -93,14 +106,18 @@ bool validPalindrome(char *s);
 double new21Game(int N, int K, int W);
 
 //0974
-int subarraysDivByK(int* A, int ASize, int K);
+int subarraysDivByK(int *A, int ASize, int K);
+
 //1371
 int findTheLongestSubstring(char *s);
+
 //1431
-bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize);
+bool *kidsWithCandies(int *candies, int candiesSize, int extraCandies, int *returnSize);
 
 //ms029
 int *spiralOrder(int **matrix, int matrixSize, int *matrixColSize, int *returnSize);
+
 //ms064
 int sumNums(int n);
+
 #endif //LEETCODE_FUNCTIONS_H
