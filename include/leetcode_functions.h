@@ -107,7 +107,8 @@ double new21Game(int N, int K, int W);
 
 //0974
 int subarraysDivByK(int *A, int ASize, int K);
-
+//0990
+bool equationsPossible(char ** equations, int equationsSize);
 //1371
 int findTheLongestSubstring(char *s);
 
