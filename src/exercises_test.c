@@ -81,6 +81,11 @@ int main()
 //    testPrintArray();
 //    testInitArray();
 //    testPointArrayShow();
+    char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+//    不需要把 null 字符放在字符串常量的末尾。C 编译器会在初始化数组时，自动把 '\0' 放在字符串的末尾
+    char greeting1[] = "Hello";
+
+
     testMystr();
     return 0;
 }

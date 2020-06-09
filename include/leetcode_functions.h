@@ -117,7 +117,8 @@ bool *kidsWithCandies(int *candies, int candiesSize, int extraCandies, int *retu
 
 //ms029
 int *spiralOrder(int **matrix, int matrixSize, int *matrixColSize, int *returnSize);
-
+//0046
+int translateNum(int num);
 //ms064
 int sumNums(int n);
 
