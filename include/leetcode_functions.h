@@ -20,6 +20,9 @@ char *longestPalindrome(char *s);
 //0007
 int reverse(int x);
 
+//0009
+bool isPalindrome(int x);
+
 //0020
 bool isValid(char *s);
 
