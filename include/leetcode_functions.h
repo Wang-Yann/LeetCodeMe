@@ -105,6 +105,9 @@ int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 //0680
 bool validPalindrome(char *s);
 
+//0739
+int* dailyTemperatures(int* T, int TSize, int* returnSize);
+
 //0837
 double new21Game(int N, int K, int W);
 

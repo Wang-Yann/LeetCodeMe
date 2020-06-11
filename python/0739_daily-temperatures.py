@@ -8,8 +8,11 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
+
     def dailyTemperatures(self, T: List[int]) -> List[int]:
         """
         不升高  　－－　递减
@@ -20,22 +23,23 @@ class Solution:
         result = [0] * length
         stack = []
         for idx, v in enumerate(T):
-            while stack and v>=stack[-1][1]:
+            while stack and v > stack[-1][1]:
                 pre_idx, pre_v = stack.pop()
                 result[pre_idx] = idx - pre_idx
-            stack.append((idx,v))
+            stack.append((idx, v))
         # print(result)
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [73, 74, 75, 71, 69, 72, 76, 73],
-        [],
-        [1, 3]
+@pytest.mark.parametrize("args,expected", [
+    ([73, 74, 75, 71, 69, 72, 76, 73], [1, 1, 4, 2, 1, 1, 0, 0]),
+    ([89,62,70,58,47,47,46,76,100,70], [8,1,5,4,3,2,1,1,0,0]),
+    pytest.param([], []),
+    pytest.param([1, 3], [1, 0]),
+])
+def test_solutions(args, expected):
+    assert Solution().dailyTemperatures(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.dailyTemperatures(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
