@@ -2,6 +2,7 @@
 /* Created by rock on 6/6/20.
 */
 #include "leetcode_functions.h"
+#include "common.h"
 
 double new21Game(int N, int K, int W) {
 

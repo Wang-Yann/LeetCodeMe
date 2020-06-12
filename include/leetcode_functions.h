@@ -19,7 +19,8 @@ char *longestPalindrome(char *s);
 
 //0007
 int reverse(int x);
-
+//0015
+int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes);
 //0009
 bool isPalindrome(int x);
 
