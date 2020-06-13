@@ -19,8 +19,10 @@ char *longestPalindrome(char *s);
 
 //0007
 int reverse(int x);
+
 //0015
-int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes);
+int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes);
+
 //0009
 bool isPalindrome(int x);
 
@@ -44,6 +46,9 @@ bool isNumber(char *s);
 
 //0069
 int mySqrt(int x);
+
+//0070
+int climbStairs(int n);
 
 //0076
 char *minWindow(char *s, char *t);
@@ -107,15 +112,17 @@ int findLongestChain(int **pairs, int pairsSize, int *pairsColSize);
 bool validPalindrome(char *s);
 
 //0739
-int* dailyTemperatures(int* T, int TSize, int* returnSize);
+int *dailyTemperatures(int *T, int TSize, int *returnSize);
 
 //0837
 double new21Game(int N, int K, int W);
 
 //0974
 int subarraysDivByK(int *A, int ASize, int K);
+
 //0990
-bool equationsPossible(char ** equations, int equationsSize);
+bool equationsPossible(char **equations, int equationsSize);
+
 //1371
 int findTheLongestSubstring(char *s);
 
@@ -124,8 +131,10 @@ bool *kidsWithCandies(int *candies, int candiesSize, int extraCandies, int *retu
 
 //ms029
 int *spiralOrder(int **matrix, int matrixSize, int *matrixColSize, int *returnSize);
+
 //0046
 int translateNum(int num);
+
 //ms064
 int sumNums(int n);
 
