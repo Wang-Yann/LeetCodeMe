@@ -122,6 +122,8 @@ int subarraysDivByK(int *A, int ASize, int K);
 
 //0990
 bool equationsPossible(char **equations, int equationsSize);
+//1300
+int findBestValue(int* arr, int arrSize, int target);
 
 //1371
 int findTheLongestSubstring(char *s);
