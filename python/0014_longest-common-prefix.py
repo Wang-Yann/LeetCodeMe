@@ -30,51 +30,46 @@
 #  Related Topics 字符串
 
 """
-import pytest
-import math, fractions, operator
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
-
-
+import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        ans =""
+        ans = ""
         for chars in zip(*strs):
-            if all( x==chars[0] for x in chars):
-                ans+=chars[0]
+            if all(x == chars[0] for x in chars):
+                ans += chars[0]
             else:
                 return ans
         return ans
+
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 class Solution1:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        if not strs:return ""
-        strs.sort(key=len )
-        ans =""
-        for i,char in enumerate(strs[0]):
-            if all( x[i]==char for x in strs):
-                ans+=char
+        if not strs: return ""
+        strs.sort(key=len)
+        ans = ""
+        for i, char in enumerate(strs[0]):
+            if all(x[i] == char for x in strs):
+                ans += char
             else:
                 return ans
         return ans
 
+
 @pytest.mark.parametrize("args,expected", [
-    (["flower","flow","flight"], "fl"),
-    pytest.param(["dog","racecar","car"], ""),
+    (["flower", "flow", "flight"], "fl"),
+    pytest.param(["dog", "racecar", "car"], ""),
 ])
 def test_solutions(args, expected):
     assert Solution().longestCommonPrefix(args) == expected
     assert Solution1().longestCommonPrefix(args) == expected
 
 
-
-
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
