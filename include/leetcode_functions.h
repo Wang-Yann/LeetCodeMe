@@ -123,6 +123,12 @@ int subarraysDivByK(int *A, int ASize, int K);
 
 //0990
 bool equationsPossible(char **equations, int equationsSize);
+
+//1014
+int maxScoreSightseeingPair(int* A, int ASize);
+//1028
+struct TreeNode* recoverFromPreorder(char * S);
+
 //1300
 int findBestValue(int* arr, int arrSize, int target);
 
