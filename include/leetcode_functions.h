@@ -68,6 +68,8 @@ int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes
 
 //0105
 struct TreeNode *buildTree(int *preorder, int preorderSize, int *inorder, int inorderSize);
+//125
+bool isPalindrome1(char * s);
 
 //0126
 char ***findLadders(char *beginWord, char *endWord, char **wordList, int wordListSize,
