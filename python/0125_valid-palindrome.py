@@ -48,12 +48,19 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+    def isPalindrome(self, s: str) -> bool:
+        sgood = "".join(ch.lower() for ch in s if ch.isalnum())
+        return sgood == sgood[::-1]
+
+
 @pytest.mark.parametrize("args,expected", [
     ("A man, a plan, a canal: Panama", True),
     ("race a car", False)
 ])
 def test_solutions(args, expected):
     assert Solution().isPalindrome(args) == expected
+    assert Solution1().isPalindrome(args) == expected
 
 
 if __name__ == '__main__':
