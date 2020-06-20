@@ -26,6 +26,8 @@ int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
 
 //0009
 bool isPalindrome(int x);
+//0010
+bool isMatch(char * s, char * p);
 
 //0020
 bool isValid(char *s);
