@@ -70,6 +70,12 @@ int **levelOrder(struct TreeNode *root, int *returnSize, int **returnColumnSizes
 
 //0105
 struct TreeNode *buildTree(int *preorder, int preorderSize, int *inorder, int inorderSize);
+
+//0124
+
+int maxPathSum(struct TreeNode* root);
+
+
 //125
 bool isPalindrome1(char * s);
 
