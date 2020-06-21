@@ -3,17 +3,17 @@
 */
 #include "leetcode_functions.h"
 
-int maxPathGain(TreeNode *node, int *maxValue) {
+int maxPathGain(struct TreeNode *node, int *maxValue) {
     if (node == NULL) {
         return 0;
     }
     int leftGain = fmax(maxPathGain(node->left,maxValue), 0);
-    int rigthGain = fmax(maxPathGain(node->right,maxValue), 0);
+    int rightGain = fmax(maxPathGain(node->right, maxValue), 0);
 
-    int priceNew = leftGain + rigthGain + node->val;
+    int priceNew = leftGain + rightGain + node->val;
 
     *maxValue = fmax(*maxValue, priceNew);
-    return node->val + fmax(leftGain, rigthGain);
+    return node->val + fmax(leftGain, rightGain);
 
 }
 
