@@ -46,6 +46,8 @@ double myPow(double x, int n);
 
 //0065
 bool isNumber(char *s);
+//0067
+char *addBinary(char *a, char *b);
 
 //0069
 int mySqrt(int x);
