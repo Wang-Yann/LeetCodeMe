@@ -19,15 +19,20 @@ char *longestPalindrome(char *s);
 
 //0007
 int reverse(int x);
-//0014
-char * longestCommonPrefix(char ** strs, int strsSize);
-//0015
-int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes);
 
 //0009
 bool isPalindrome(int x);
 //0010
 bool isMatch(char * s, char * p);
+
+//0014
+char * longestCommonPrefix(char ** strs, int strsSize);
+//0015
+int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes);
+
+
+//0016
+int threeSumClosest(int* nums, int numsSize, int target);
 
 //0020
 bool isValid(char *s);
@@ -90,6 +95,9 @@ int longestConsecutive(int *nums, int numsSize);
 
 //0136
 int singleNumber(int *nums, int numsSize);
+
+//0139
+bool wordBreak(char * s, char ** wordDict, int wordDictSize);
 
 //0152
 int maxProduct(int *nums, int numsSize);
