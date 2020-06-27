@@ -46,6 +46,10 @@ int nthUglyNumber(int n);
 //0028
 int strStr(char *haystack, char *needle);
 
+//0041
+int firstMissingPositive(int* nums, int numsSize);
+
+
 //0050
 double myPow(double x, int n);
 

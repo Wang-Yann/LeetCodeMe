@@ -1,0 +1,29 @@
+//
+/* Created by rock on 6/27/20.
+*/
+
+#include "leetcode_functions.h"
+
+int firstMissingPositive(int *nums, int numsSize) {
+    for (int i = 0; i < numsSize; ++i) {
+        if (nums[i] <= 0) {
+            nums[i] = numsSize + 1;
+        }
+    }
+
+    for (int i = 0; i < numsSize; ++i) {
+        int num = abs(*(nums + i));
+        if (num <= numsSize) {
+            nums[num - 1] = -abs(nums[num - 1]);
+        }
+    }
+
+    for (int i = 0; i < numsSize; ++i) {
+        if (nums[i] > 0) {
+            return i + 1;
+        }
+
+    }
+    return numsSize + 1;
+
+}
