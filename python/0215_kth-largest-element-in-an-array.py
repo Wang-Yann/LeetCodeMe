@@ -9,14 +9,18 @@ import heapq
 import random
 from typing import List
 
+import pytest
+
 
 class Solution0:
+
     def findKthLargest(self, nums: List[int], k: int) -> int:
         res_list = heapq.nlargest(k, nums)
         return res_list[-1]
 
 
 class Solution:
+
     def findKthLargest(self, nums: List[int], k: int) -> int:
         """
             Hoare选择算法
@@ -56,13 +60,14 @@ class Solution:
         return select(0, len(nums) - 1, len(nums) - k)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(nums=[3, 2, 1, 5, 6, 4], k=2),
-        dict(nums=[3, 2, 3, 1, 2, 4, 5, 5, 6], k=4),
+@pytest.mark.parametrize("kwargs,expected", [
+    (dict(nums=[3, 2, 1, 5, 6, 4], k=2), 5),
+    pytest.param(dict(nums=[3, 2, 3, 1, 2, 4, 5, 5, 6], k=4), 4),
+])
+def test_solutions(kwargs, expected):
+    assert Solution0().findKthLargest(**kwargs) == expected
+    assert Solution().findKthLargest(**kwargs) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.findKthLargest(**x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
