@@ -54,26 +54,41 @@ from typing import List
 import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
-Trie = lambda: collections.defaultdict(Trie)
+Trie = lambda:collections.defaultdict(Trie)
 
 
 class StreamChecker:
+    """
+    题意不清晰
+     Construct Trie with Reversed Words
+    https://leetcode.com/problems/stream-of-characters/discuss/278250/Python-Trie-Solution-with-Explanation
+    """
 
     def __init__(self, words: List[str]):
         self.trie = Trie()
+        # for w in words:
+        #      functools.reduce(dict.__getitem__, w[::-1], self.trie)['#'] = True
         for word in words:
             cur = self.trie
             for char in reversed(word):
-                cur[char] = Trie()
                 cur = cur[char]
-            cur["_end"] = True
+            cur["#"] = True
+        # print(self.trie)
+        self.S = ""
+        self.W = max(map(len, words))
 
     def query(self, letter: str) -> bool:
+        self.S = (letter + self.S)[:self.W]
         cur = self.trie
-        for char in letter:
-            if char not in cur:
-                return False
-        return True
+        for char in self.S:
+            if char in cur:
+                cur = cur[char]
+                if cur["#"]:
+                    return True
+            else:
+                break
+
+        return False
 
 
 # Your StreamChecker object will be instantiated and called as such:
