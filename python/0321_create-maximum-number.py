@@ -89,28 +89,22 @@ class Solution:
 class Solution1:
 
     def maxNumber(self, nums1: List[int], nums2: List[int], k: int) -> List[int]:
-        def getMax(nums, t):
-            ans = []
-            size = len(nums)
-            for x in range(size):
-                while ans and len(ans) + size - x > t and ans[-1] < nums[x]:
-                    ans.pop()
-                if len(ans) < t:
-                    ans.append(nums[x])
-            return ans
+        def prepare(nums, k):
+            drop = len(nums) - k
+            out = []
+            for num in nums:
+                while drop and out and out[-1] < num:
+                    out.pop()
+                    drop -= 1
+                out.append(num)
+            return out[:k]
 
-        def merge(nums1, nums2):
-            ans = []
-            for _ in nums1 + nums2:
-                ans.append(max(nums1, nums2).pop(0))
-            return ans
+        def merge(a, b):
+            return [max(a, b).pop(0) for _ in a + b]
 
-        len1, len2 = len(nums1), len(nums2)
-        res = []
-        for x in range(max(0, k - len2), min(k, len1) + 1):
-            tmp = merge(getMax(nums1, x), getMax(nums2, k - x))
-            res = max(tmp, res)
-        return res
+        return max(merge(prepare(nums1, i), prepare(nums2, k - i))
+                   for i in range(k + 1)
+                   if i <= len(nums1) and k - i <= len(nums2))
 
 
 @pytest.mark.parametrize("kwargs,expected", [

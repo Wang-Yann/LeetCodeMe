@@ -7,6 +7,8 @@
 # @Version       : alpha-1.0
 import collections
 
+import pytest
+
 
 class Solution:
     def removeDuplicateLetters(self, s: str) -> str:
@@ -24,12 +26,15 @@ class Solution:
         return "".join(stack)
 
 
+@pytest.mark.parametrize("args,expected", [
+    ("cdadabcc", "adbc"),
+    ("abcd", "abcd"),
+    ("ecbacba", "eacb"),
+    ("leetcode", "letcod"),
+])
+def test_solutions(args, expected):
+    assert Solution().removeDuplicateLetters(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "bcabc",
-        "cbacdcbc"
-    ]
-    lists = [x for x in samples]
-    res = [sol.removeDuplicateLetters(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
