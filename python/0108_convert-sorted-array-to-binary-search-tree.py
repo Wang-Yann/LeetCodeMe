@@ -8,6 +8,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -45,10 +47,19 @@ class Solution:
         return helper(0, length)
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([-10, -3, 0, 5, 9],
+     [
+         TreeNode(0, left=TreeNode(-3, left=TreeNode(-10)), right=TreeNode(9, left=TreeNode(5))),
+         TreeNode(0, left=TreeNode(-10, right=TreeNode(-3)), right=TreeNode(5, right=TreeNode(9))),
+     ])
+])
+def test_solutions(args, expected):
+    res1 = Solution().sortedArrayToBST(args)
+    res2 = Solution().sortedArrayToBST1(args)
+    assert repr(res1) in [repr(x) for x in expected]
+    assert repr(res2) in [repr(x) for x in expected]
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [-10, -3, 0, 5, 9]
-    ]
-    res = [sol.sortedArrayToBST(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
