@@ -130,7 +130,7 @@ class DiningPhilosophers:
 
 class DiningPhilosophersLock:
     """
-    mit only one even philosopher can eat at the same time
+    limit only one even philosopher can eat at the same time
     """
 
     forks = [Lock() for _ in range(5)]
