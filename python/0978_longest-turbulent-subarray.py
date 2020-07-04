@@ -69,21 +69,38 @@ class Solution:
                 if c_pre != 0:
                     res = max(res, i - start + 1)
                 start = i
+        print(A)
         return res
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+#
+# @pytest.mark.parametrize("args,expected", [
+#     ([9, 4, 2, 10, 7, 8, 8, 1, 9], 5),
+#     ([4, 8, 12, 16], 2),
+#     ([100], 1),
+#     ([9, 9], 1),
+# ])
+# def test_solutions(args, expected):
+#     assert Solution().maxTurbulenceSize(args) == expected
 
-@pytest.mark.parametrize("args,expected", [
+
+@pytest.fixture( params=[
     ([9, 4, 2, 10, 7, 8, 8, 1, 9], 5),
     ([4, 8, 12, 16], 2),
     ([100], 1),
     ([9, 9], 1),
 ])
-def test_solutions(args, expected):
+def test_data(request):
+    return request.param
+
+
+def test_solutions(test_data):
+    print("test output")
+    args,expected = test_data
     assert Solution().maxTurbulenceSize(args) == expected
 
-
 if __name__ == '__main__':
+    # pytest.main(["-q", "--color=yes", "--capture=tee-sys", __file__])
     pytest.main(["-q", "--color=yes", "--capture=no", __file__])

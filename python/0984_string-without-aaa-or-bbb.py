@@ -64,6 +64,7 @@ class Solution:
             else:
                 B -= 1
                 ans.append("b")
+        print(ans)
         return "".join(ans)
 
 
@@ -79,6 +80,7 @@ class Solution:
 def test_solutions(kw, expected):
     assert Solution().strWithout3a3b(**kw) in expected
 
+# "--capture=no",  During test execution any output sent to stdout and stderr is captured 不会打印
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
+    pytest.main(["-q", "--color=yes",  __file__])

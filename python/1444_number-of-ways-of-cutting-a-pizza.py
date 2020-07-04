@@ -60,6 +60,7 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+
     def ways(self, pizza: List[str], k: int) -> int:
         """
         HARD
@@ -102,12 +103,26 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
-@pytest.mark.parametrize("kw,expected", [
+# @pytest.mark.parametrize("kw,expected", [
+#     [dict(pizza=["A..", "AAA", "..."], k=3), 3],
+#     [dict(pizza=["A..", "AA.", "..."], k=3), 1],
+#     [dict(pizza=["A..", "A..", "..."], k=1), 1],
+# ])
+# def test_solutions(kw, expected):
+#     assert Solution().ways(**kw) == expected
+
+
+@pytest.fixture(params=[
     [dict(pizza=["A..", "AAA", "..."], k=3), 3],
     [dict(pizza=["A..", "AA.", "..."], k=3), 1],
-    [dict(pizza=["A..", "A..", "..."], k=1), 1],
+    [dict(pizza=["A..", "A..", "..."], k=1), 1]
 ])
-def test_solutions(kw, expected):
+def test_data(request):
+    return request.param
+
+
+def test_solutions(test_data):
+    kw, expected = test_data
     assert Solution().ways(**kw) == expected
 
 

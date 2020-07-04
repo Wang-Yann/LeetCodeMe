@@ -6,3 +6,10 @@
 https://zhuanlan.zhihu.com/p/89392459
 
 为找工作而刷题，建议你先刷热门推荐，一共两百多道题。
+
+
+#### pytest升级后 pytest AttributeError object has no attribute get_marker
+```sh 
+pip install pytest -U
+pip install pytest-cov pytest-remotedata -U
+```
