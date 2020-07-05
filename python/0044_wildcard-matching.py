@@ -72,29 +72,65 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+    """
+    https://leetcode.com/problems/wildcard-matching/discuss/17810/Linear-runtime-and-constant-space-solution
+    """
+
+    def isMatch(self, s: str, p: str) -> bool:
+        start_idx = -1
+        match = 0
+        p_i = s_i = 0
+        NP, NS = len(p), len(s)
+        while s_i < NS:
+            # // advancing both pointers
+            if p_i < NP and (p[p_i] == "?" or p[p_i] == s[s_i]):
+                p_i += 1
+                s_i += 1
+                # // * found, only advancing pattern pointer
+            elif p_i < NP and p[p_i] == "*":
+                start_idx = p_i
+                match = s_i
+                p_i += 1
+            # // last pattern pointer was *, advancing string pointer
+            elif start_idx != -1:
+                p_i = start_idx + 1
+                match += 1
+                s_i = match
+            # //current pattern pointer is not star, last patter pointer was not *
+            # //characters do not match
+            else:
+                return False
+        # //check for remaining characters in pattern
+        while p_i < NP and p[p_i] == "*":
+            p_i += 1
+        return p_i == NP
+
+
+# leetcode submit region end(Prohibit modification and deletion)
+
+class Solution1:
     """DP
     TODO
     dp[p_idx][s_idx] 代表的是字符模式中的第 p_idx 字符和输入字符串的第 s_idx 字符是否匹配。
     """
+
     def isMatch(self, s: str, p: str) -> bool:
         dp = [[False for _ in range(len(p) + 1)] for _ in range(len(s) + 1)]
 
         dp[0][0] = True
         for i in range(1, len(p) + 1):
-            if p[i-1] == '*':
-                dp[0][i] = dp[0][i-1]
-        for i in range(1,len(s) + 1):
+            if p[i - 1] == '*':
+                dp[0][i] = dp[0][i - 1]
+        for i in range(1, len(s) + 1):
             dp[i][0] = False
             for j in range(1, len(p) + 1):
-                if p[j-1] != '*':
-                    dp[i][j] = dp[i-1][j-1] and (s[i-1] == p[j-1] or p[j-1] == '?')
+                if p[j - 1] != '*':
+                    dp[i][j] = dp[i - 1][j - 1] and (s[i - 1] == p[j - 1] or p[j - 1] == '?')
                 else:
-                    dp[i][j] = dp[i][j-1] or dp[i-1][j]
+                    dp[i][j] = dp[i][j - 1] or dp[i - 1][j]
 
         return dp[len(s)][len(p)]
 
-
-# leetcode submit region end(Prohibit modification and deletion)
 
 class Solution4(object):
     """官方　带记忆的递归"""
@@ -142,8 +178,9 @@ class Solution4(object):
     ("", "*", True),
 ])
 def test_solutions(s, p, expected):
+    # assert Solution1().isMatch(s, p) == expected
     # assert Solution4().isMatch(s, p) == expected
-    assert Solution().isMatch(s,p) == expected
+    assert Solution().isMatch(s, p) == expected
 
 
 if __name__ == '__main__':
