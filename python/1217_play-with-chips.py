@@ -56,6 +56,11 @@ import pytest
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def minCostToMoveChips(self, chips: List[int]) -> int:
+        """
+        不要理解错题意
+        chips数组里存放的是第i个筹码存放的位置，不是第i个位置存放了多少个筹码
+        别统计奇数位置和偶数位置的个数，相当于把所有奇数放一起，所有偶数的放一起，然后比较奇数的少还是偶数的少，将少的个数移到多的个数位置上去就可以了。
+        """
         count = [0, 0]
         for p in chips:
             count[p % 2] += 1
