@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Author        : Rock Wayne 
-# @Created       : 2020-07-06 23:16:00
-# @Last Modified : 2020-07-06 23:16:00
+# @Created       : 2020-07-02 08:00:00
+# @Last Modified : 2020-07-02 08:00:00
 # @Mail          : lostlorder@gmail.com
 # @Version       : alpha-1.0
+
 """
 # 给你一个非负整数 num ，请你返回将它变成 0 所需要的步数。 如果当前数字是偶数，你需要把它除以 2 ；否则，减去 1 。 
 # 
@@ -47,35 +48,36 @@
 #  
 #  0 <= num <= 10^6 
 #  
-#  Related Topics 位运算 
-#  👍 22 👎 0
+#  Related Topics 位运算
 
 """
 
 import pytest
-import math, fractions, operator
-from typing import List
-import collections, bisect, heapq
-import functools, itertools
-from common_utils import TreeNode,ListNode
-from sample_datas import BIG_CASE,BIG_RES
-
-
-
-
-
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
-    def numberOfSteps (self, num: int) -> int:
+    def numberOfSteps(self, num: int) -> int:
+        cnt = 0
+        while num:
+            if not num & 0b1:
+                num >>= 1
+            else:
+                num -= 1
+            cnt += 1
+        return cnt
+
+
 # leetcode submit region end(Prohibit modification and deletion)
 
 
-
-
+@pytest.mark.parametrize("kw,expected", [
+    [dict(num=14), 6],
+    [dict(num=123), 12],
+])
+def test_solutions(kw, expected):
+    assert Solution().numberOfSteps(**kw) == expected
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=tee-sys", __file__])
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
