@@ -42,21 +42,25 @@ class Solution:
         dp[i][1] = max(dp[i-1][1], dp[i-2][0] - prices[i])
         解释：第 i 天选择 buy 的时候，要从 i-2 的状态转移，而不是 i-1 。
         """
-        if len(prices)<=1:
+
+        N = len(prices)
+        if N <= 1:
             return 0
-        n = len(prices)
-        INT_MIN=-2**31
-        dp = [[0,INT_MIN] for _ in range(n)]
-        for i in range(n):
+        dp = [[0, -0x80000000] for _ in range(N)]
+        for i in range(N):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
             dp[i][1] = max(dp[i - 1][1], dp[i - 2][0] - prices[i])
-        return dp[n - 1][0]
+        return dp[N - 1][0]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 @pytest.mark.parametrize("args,expected", [
-    ([1, 2, 3, 0, 2], 3)
+    ([1, 2, 3, 0, 2], 3),
+    ([1], 0),
+    ([1, 10], 9),
+    ([10, 3, 1], 0),
+    ([1,4,2], 3)
 ])
 def test_solutions(args, expected):
     assert Solution().maxProfit(args) == expected
