@@ -6,6 +6,8 @@
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
 
+import pytest
+
 
 class Solution:
     def waysToChangeMe(self, n: int) -> int:
@@ -40,22 +42,24 @@ class Solution:
 ​
         """
         choices = [25, 10, 5, 1]
-        dp = [0] * (n + 1)
-        dp[0] = 1
-        for i in range(len(choices)):
-            cost = choices[i]
+        dp = [1] + [0] * n
+        for cost in choices:
             for v_idx in range(cost, n + 1):
                 dp[v_idx] += dp[v_idx - cost]
 
         return dp[n] % 1000000007
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        5, 10, 23, 852
+@pytest.mark.parametrize("args,expected", [
+    (5, 2),
+    (10, 4),
+    (23, 9),
+    (852, 88537),
+])
+def test_solutions(args, expected):
+    assert Solution().waysToChange(args) == expected
+    # assert Solution().waysToChangeMe(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.waysToChange(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
