@@ -41,6 +41,7 @@ class Solution:
 
 @pytest.mark.parametrize("kw,expected", [
     [dict(numbers=[1, 2]), [2, 1]],
+    [dict(numbers=[2, 2]), [2, 2]],
 ])
 def test_solutions(kw, expected):
     assert Solution().swapNumbers(**kw) == expected
