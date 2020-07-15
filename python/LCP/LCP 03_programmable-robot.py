@@ -64,20 +64,20 @@ class Solution:
     def robot(self, command: str, obstacles: List[List[int]], x: int, y: int) -> bool:
         xi = 0
         yi = 0
-        ls = [[0, 0]]
+        path = [[0, 0]]
         for m in command:
             if m == 'U':
                 yi += 1
             elif m == 'R':
                 xi += 1
-            ls.append([xi, yi])
+            path.append([xi, yi])
         nu = min(x // xi, y // yi)
-        if [x, y] not in [[k[0] + xi * nu, k[1] + yi * nu] for k in ls]:
+        if [x, y] not in [[k[0] + xi * nu, k[1] + yi * nu] for k in path]:
             return False
-        for n in obstacles:
-            if n[0] <= x and n[1] <= y:
-                nu = min(n[0] // xi, n[1] // yi)
-                if n in [[k[0] + xi * nu, k[1] + yi * nu] for k in ls]:
+        for obstacle in obstacles:
+            if obstacle[0] <= x and obstacle[1] <= y:
+                nu = min(obstacle[0] // xi, obstacle[1] // yi)
+                if obstacle in [[k[0] + xi * nu, k[1] + yi * nu] for k in path]:
                     return False
         return True
 
