@@ -56,20 +56,26 @@ import pytest
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def minTime(self, time: List[int], m: int) -> int:
-        def check(limit, time_cost):
-            use_day, total_time, max_time = 1, 0, time_cost[0]
-            for i in time_cost[1:]:
-                if total_time + min(max_time, i) <= limit:
-                    total_time, max_time = total_time + min(max_time, i), max(max_time, i)
-                else:
-                    use_day += 1
-                    total_time, max_time = 0, i
-            return use_day <= m
-
+        if m >= len(time):
+            return 0
         l, r = 0, sum(time)
+
+        def check(T):
+            # 每天做题最多花费 T 个小时，并且需要在 m 天之内做完这些题目。
+            S, max_S, k = 0, 0, 1
+            for ti in time:
+                max_S = max(max_S, ti)
+                # 今天可以做题
+                if S + ti - max_S <= T:
+                    S += ti
+                else:
+                    # 开启新的一天
+                    S, max_S, k = ti, ti, k + 1
+            return k <= m
+
         while l < r:
-            mid = (l + r) >> 1
-            if check(mid, time):
+            mid = l + r >> 1
+            if check(mid):
                 r = mid
             else:
                 l = mid + 1
