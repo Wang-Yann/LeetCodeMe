@@ -6,8 +6,7 @@
 # @Mail          : lostlorder@gmail.com
 # @Version       : alpha-1.0
 
-"""
-# 给定一个无向图graph，当这个图为二分图时返回true。 
+# 给定一个无向图graph，当这个图为二分图时返回true。
 # 
 #  如果我们能将一个图的节点集合分割成两个独立的子集A和B，并使图中的每一条边的两个节点一个来自A集合，一个来自B集合，我们就将这个图称为二分图。 
 # 
@@ -52,7 +51,6 @@
 #  
 #  Related Topics 深度优先搜索 广度优先搜索 图
 
-"""
 from typing import List
 
 import pytest
@@ -63,6 +61,7 @@ class Solution:
 
     def isBipartite(self, graph: List[List[int]]) -> bool:
         """
+        二分图
         https://leetcode-cn.com/problems/is-graph-bipartite/solution/pan-duan-er-fen-tu-by-leetcode/
         深度优先搜索着色
         """
@@ -83,6 +82,28 @@ class Solution:
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+class Solution1:
+    def isBipartite(self, graph: List[List[int]]) -> bool:
+        color = {}
+
+        def dfs(pos):
+            for i in graph[pos]:
+                if i in color:
+                    if color[i] == color[pos]:
+                        return False
+                else:
+                    color[i] = color[pos] ^ 1
+                    if not dfs(i):
+                        return False
+            return True
+
+        for i in range(len(graph)):
+            if i not in color:
+                color[i] = 0
+                if not dfs(i):
+                    return False
+        return True
+
 
 @pytest.mark.parametrize("args,expected", [
     ([[1, 3], [0, 2], [1, 3], [0, 2]], True),
@@ -90,6 +111,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().isBipartite(args) == expected
+    assert Solution1().isBipartite(args) == expected
 
 
 if __name__ == '__main__':

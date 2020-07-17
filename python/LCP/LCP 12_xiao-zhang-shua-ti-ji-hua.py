@@ -74,7 +74,7 @@ class Solution:
             return k <= m
 
         while l < r:
-            mid = l + r >> 1
+            mid = (l + r) >> 1
             if check(mid):
                 r = mid
             else:
