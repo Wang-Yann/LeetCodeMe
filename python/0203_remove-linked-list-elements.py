@@ -6,6 +6,16 @@
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
 
+# 删除链表中等于给定值 val 的所有节点。
+#
+#  示例:
+#
+#  输入: 1->2->6->3->4->5->6, val = 6
+# 输出: 1->2->3->4->5
+#
+#  Related Topics 链表
+#  👍 408 👎 0
+
 from common_utils import ListNode
 
 

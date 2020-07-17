@@ -30,6 +30,7 @@ import pytest
 class Solution:
     def numTrees(self, n: int) -> int:
         """
+        卡塔兰数　　　Cn=(2n)!/(n+1)!n!  
         TODO
         问题是计算不同二叉搜索树的个数。为此，我们可以定义两个函数：
 

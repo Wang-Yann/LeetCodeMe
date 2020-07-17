@@ -44,11 +44,49 @@ class Solution:
         return ans
 
 
+class Solution1:
+    def trap(self, height: List[int]) -> int:
+        """DP"""
+        ans = 0
+        N = len(height)
+        max_left = [0] * N
+        max_right = [0] * N
+        for i in range(N - 1):
+            max_left[i] = max(max_left[i - 1], height[i - 1])
+        for i in range(N - 2, -1, -1):
+            max_right[i] = max(max_right[i + 1], height[i + 1])
+        for i in range(1, N - 1):
+            min_val = min(max_left[i], max_right[i])
+            if min_val > height[i]:
+                ans += (min_val - height[i])
+        return ans
+
+
+class Solution2:
+    def trap(self, height: List[int]) -> int:
+        left = 0
+        right = len(height) - 1
+        leftMax = rightMax = 0
+        ans = 0
+        while left <= right:
+            leftMax = max(leftMax, height[left])
+            rightMax = max(rightMax, height[right])
+            if leftMax < rightMax:
+                ans += leftMax - height[left]
+                left += 1
+            else:
+                ans += rightMax - height[right]
+                right -= 1
+        return ans
+
+
 @pytest.mark.parametrize("args,expected", [
     ([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1], 6)
 ])
 def test_solutions(args, expected):
     assert Solution().trap(args) == expected
+    assert Solution1().trap(args) == expected
+    assert Solution2().trap(args) == expected
 
 
 if __name__ == '__main__':

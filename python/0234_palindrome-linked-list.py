@@ -6,9 +6,27 @@
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
 
-import os
-import sys
-import traceback
+
+"""
+# 请判断一个链表是否为回文链表。
+#
+#  示例 1:
+#
+#  输入: 1->2
+# 输出: false
+#
+#  示例 2:
+#
+#  输入: 1->2->2->1
+# 输出: true
+#
+#
+#  进阶：
+# 你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+#  Related Topics 链表 双指针
+#  👍 564 👎 0
+
+"""
 
 from common_utils import ListNode
 
@@ -19,17 +37,17 @@ class Solution:
         cur = head
         while cur:
             l.append(cur.val)
-            cur=cur.next
-        return reversed(l)==l
+            cur = cur.next
+        return reversed(l) == l
 
     def isPalindromeSS(self, head: ListNode) -> bool:
-        reverse,fast = None,head
+        reverse, fast = None, head
         while fast and fast.next:
-            fast=fast.next.next
+            fast = fast.next.next
             head.next, reverse, head = reverse, head, head.next
         # If the number of the nodes is odd,
         # set the head of the tail list to the next of the median node.
-        print("Fast",fast)
+        print("Fast", fast)
 
         tail = head.next if fast else head
         print(head)
@@ -56,10 +74,6 @@ class Solution:
             return True
 
         return recursively_check()
-
-
-
-
 
 
 if __name__ == '__main__':

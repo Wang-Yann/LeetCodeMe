@@ -6,7 +6,6 @@
 # @Mail          : lostlorder@gmail.com
 # @Version       : alpha-1.0
 
-"""
 # 对于一个具有树特征的无向图，我们可选择任何一个节点作为根。图因此可以成为树，在所有可能的树中，具有最小高度的树被称为最小高度树。给出这样的一个图，写出一个函
 # 数找到所有的最小高度树并返回他们的根节点。 
 # 
@@ -51,7 +50,6 @@
 #  
 #  Related Topics 广度优先搜索 图
 
-"""
 import collections
 from typing import List
 
@@ -64,10 +62,10 @@ class Solution:
     def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
         """
         用拓扑排序即可
-首先我们将所有的叶子节点都放入队列中
-之后每次有点从队列中出来，就将和这个点相邻的没有入队过的点加入到队列中
-容易想到，答案的数量最多不超过两个，所以只要比较最后两个出队的点即可
-https://www.jiuzhang.com/solution/minimum-height-trees#tag-highlight-lang-python
+        首先我们将所有的叶子节点都放入队列中
+        之后每次有点从队列中出来，就将和这个点相邻的没有入队过的点加入到队列中
+        容易想到，答案的数量最多不超过两个，所以只要比较最后两个出队的点即可
+        https://www.jiuzhang.com/solution/minimum-height-trees#tag-highlight-lang-python
         """
         if n == 1:
             return [0]
@@ -95,12 +93,30 @@ https://www.jiuzhang.com/solution/minimum-height-trees#tag-highlight-lang-python
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+
+    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+        G = collections.defaultdict(set)
+        for u, v in edges:
+            G[u].add(v)
+            G[v].add(u)
+        s = set(range(n))
+        while len(s) > 2:
+            leaves = set(i for i in s if len(G[i]) == 1)
+            s -= leaves
+            for i in leaves:
+                for j in G[i]:
+                    G[j].remove(i)
+        return list(s)
+
+
 @pytest.mark.parametrize("kwargs,expected", [
     (dict(n=4, edges=[[1, 0], [1, 2], [1, 3]]), [1]),
     pytest.param(dict(n=6, edges=[[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]), [3, 4]),
 ])
 def test_solutions(kwargs, expected):
     assert Solution().findMinHeightTrees(**kwargs) == expected
+    assert Solution1().findMinHeightTrees(**kwargs) == expected
 
 
 if __name__ == '__main__':
