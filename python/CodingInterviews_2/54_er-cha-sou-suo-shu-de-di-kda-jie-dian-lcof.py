@@ -6,8 +6,7 @@
 # @Mail          : lostlorder@gmail.com
 # @Version       : alpha-1.0
 
-"""
-# 给定一棵二叉搜索树，请找出其中第k大的节点。 
+# 给定一棵二叉搜索树，请找出其中第k大的节点。
 # 
 #  
 # 
@@ -40,7 +39,6 @@
 #  1 ≤ k ≤ 二叉搜索树元素个数 
 #  Related Topics 树
 
-"""
 import pytest
 from common_utils import TreeNode
 
