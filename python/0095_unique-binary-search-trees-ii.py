@@ -42,7 +42,22 @@
 #  👍 467 👎 0
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
+
+
+class Solution0:
+    def generateTrees(self, n: int) -> List[TreeNode]:
+        def helper(last, first=1):
+            return [TreeNode(root, left, right)
+                    for root in range(first, last + 1)
+                    for left in helper(root - 1, first)
+                    for right in helper(last, root + 1)] or [None]
+
+        if not n:
+            return []
+        return helper(n)
 
 
 class Solution:
@@ -69,15 +84,29 @@ class Solution:
                         all_trees.append(current)
             return all_trees
 
-        if not n: return []
+        if not n:
+            return []
         return generateTreesRecursive(1, n)
 
 
+@pytest.mark.parametrize("args,expected", [
+    (3, [
+        TreeNode(1, right=TreeNode(3, left=TreeNode(2))),
+        TreeNode(3, left=TreeNode(2, left=TreeNode(1))),
+        TreeNode(3, left=TreeNode(1, right=TreeNode(2))),
+        TreeNode(2, left=TreeNode(1), right=TreeNode(3)),
+        TreeNode(1, right=TreeNode(2, right=TreeNode(3))),
+
+    ]),
+    (0, [])
+])
+@pytest.mark.parametrize("SolutionCls", [Solution, Solution0])
+def test_solutions(args, expected, SolutionCls):
+    res = SolutionCls().generateTrees(args)
+    res_show = list(map(repr, res))
+    expected_show = list(map(repr, expected))
+    assert sorted(res_show) == sorted(expected_show)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        3,1
-    ]
-    lists = [x for x in samples]
-    res = [sol.generateTrees(x) for x in lists]
-    print(res,sep="\t")
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
