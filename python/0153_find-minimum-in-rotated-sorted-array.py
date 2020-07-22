@@ -30,34 +30,32 @@
 
 """
 
-
-import traceback
 from typing import List
 
+import pytest
 
 
 class Solution:
     def findMinS(self, nums: List[int]) -> int:
-        l,r = 0 ,len(nums)
+        l, r = 0, len(nums)
         target = nums[-1]
-        while l<r:
-            mid = (l+r)//2
-            if nums[mid]<=target:
-                r =mid
+        while l < r:
+            mid = (l + r) // 2
+            if nums[mid] <= target:
+                r = mid
             else:
-                l=mid+1
-        return  nums[l]
+                l = mid + 1
+        return nums[l]
 
     def findMin(self, nums: List[int]) -> int:
-        left, right = 0, len(nums) - 1          # 左闭右闭区间，如果用右开区间则不方便判断右值
-        while left < right:                     # 循环不变式，如果left == right，则循环结束
-            mid = (left + right) >> 1           # 地板除，mid更靠近left
-            if nums[mid] > nums[right]:         # 中值 > 右值，最小值在右半边，收缩左边界
-                left = mid + 1                  # 因为中值 > 右值，中值肯定不是最小值，左边界可以跨过mid
-            elif nums[mid] < nums[right]:       # 明确中值 < 右值，最小值在左半边，收缩右边界
-                right = mid                     # 因为中值 < 右值，中值也可能是最小值，右边界只能取到mid处
-        return nums[left]                       # 循环结束，left == right，最小值输出nums[left]或nums[right]均可
-
+        left, right = 0, len(nums) - 1  # 左闭右闭区间，如果用右开区间则不方便判断右值
+        while left < right:  # 循环不变式，如果left == right，则循环结束
+            mid = (left + right) >> 1  # 地板除，mid更靠近left
+            if nums[mid] > nums[right]:  # 中值 > 右值，最小值在右半边，收缩左边界
+                left = mid + 1  # 因为中值 > 右值，中值肯定不是最小值，左边界可以跨过mid
+            elif nums[mid] < nums[right]:  # 明确中值 < 右值，最小值在左半边，收缩右边界
+                right = mid  # 因为中值 < 右值，中值也可能是最小值，右边界只能取到mid处
+        return nums[left]  # 循环结束，left == right，最小值输出nums[left]或nums[right]均可
 
     def findMin_Official(self, nums):
         """
@@ -82,7 +80,7 @@ class Solution:
         # Binary search way
         while right >= left:
             # Find the mid element
-            mid = left + (right - left) / 2
+            mid = left + (right - left) // 2
             # if the mid element is greater than its next element then mid+1 element is the smallest
             # This point would be the point of change. From higher to lower value.
             if nums[mid] > nums[mid + 1]:
@@ -100,16 +98,16 @@ class Solution:
                 right = mid - 1
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([3, 4, 5, 1, 2], 1),
+    ([4, 5, 6, 7, 0, 1, 2], 0),
+    ([1, 2], 1),
+])
+def test_solutions(args, expected):
+    assert Solution().findMinS(args) == expected
+    assert Solution().findMin(args) == expected
+    assert Solution().findMin_Official(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        [3,4,5,1,2],
-        [4,5,6,7,0,1,2],
-        [1,2]
-    ]
-    res = [ sol.findMin(x) for x in samples]
-    print(res)
-
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

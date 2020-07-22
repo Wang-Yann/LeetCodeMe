@@ -27,16 +27,16 @@
 #  👍 76 👎 0
 
 
-
-
 from typing import List
+
+import pytest
 
 
 class Solution:
 
     def minArray(self, numbers: List[int]) -> int:
         if not numbers:
-            return
+            return -1
         l, r = 0, len(numbers) - 1
         while l < r:
             mid = l + (r - l) // 2
@@ -45,15 +45,22 @@ class Solution:
             elif numbers[mid] < numbers[r]:
                 r = mid
             else:
-                r-=1
+                r -= 1
         return numbers[l]
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [3, 4, 5, 1, 2], [2, 2, 2, 0, 1],[3,1,1],[2,2,3]
+@pytest.mark.parametrize("args,expected", [
+    ([3, 4, 5, 1, 2], 1),
+    ([4, 5, 6, 7, 0, 1, 2], 0),
+    ([1, 2], 1),
+    ([2, 2, 2, 0, 1], 0),
+    ([1, 0, 1, 1, 1], 0),
+    ([1, 1, 1, 0, 1], 0),
+    ([1, 1, 1, 1, 1], 1),
+])
+def test_solutions(args, expected):
+    assert Solution().minArray(args) == expected
 
-    ]
-    res = [sol.minArray(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
