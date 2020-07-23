@@ -22,32 +22,23 @@
 #  👍 350 👎 0
 
 """
+# https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/
+import collections
+import itertools
 from typing import List
+
+import pytest
 
 
 class Solution:
 
-    def permuteUnique1(self, nums: List[int]) -> List[List[int]]:
-        from itertools import combinations
-        return [list(x) for x in combinations(nums, len(nums))]
-
     def permuteUnique(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        nums.sort()
-        res = []
-        length = len(nums)
-        is_used = [False] * length
-        self.dfs(res, is_used, [], nums, length)
-        return res
-
-    def dfs(self, result, is_used, cur, nums, numslen):
-        if len(cur) == numslen:
-            result.append(cur[:])
-        else:
-            for i in range(numslen):
+        def backtrack(cur):
+            if len(cur) == N:
+                res.append(cur[:])
+                return
+            for i in range(N):
+                # 递归树，一定要想清楚运行流程
                 #     //当前值用过了 或
                 # //当前值等于前一个值： 两种情况：
                 # //1 nums[i-1] 没用过 说明回溯到了同一层 此时接着用num[i] 则会与 同层用num[i-1] 重复
@@ -56,13 +47,52 @@ class Solution:
                     continue
                 is_used[i] = True
                 cur.append(nums[i])
-                self.dfs(result, is_used, cur, nums, numslen)
+                backtrack(cur)
                 cur.pop()
                 is_used[i] = False
 
+        nums.sort()
+        res = []
+        N = len(nums)
+        is_used = [False] * N
+        backtrack([])
+        return res
+
+
+class Solution1:
+
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        return [list(x) for x in set(itertools.permutations(nums))]
+
+
+class Solution2:
+    def permuteUnique(self, nums):
+        def backtrack(path, counter):
+            if len(path) == len(nums):
+                ans.append(path[:])
+                return 
+            for x in counter:  # dont pick duplicates
+                if counter[x] > 0:
+                    path.append(x)
+                    counter[x] -= 1
+                    backtrack(path, counter)
+                    path.pop()
+                    counter[x] += 1
+
+        ans = []
+        backtrack([], collections.Counter(nums))
+        return ans
+
+
+@pytest.mark.parametrize("args,expected", [
+    ([1, 3, 2], [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]),
+    ([1, 1, 2], [[1, 1, 2], [1, 2, 1], [2, 1, 1]]),
+])
+def test_solutions(args, expected):
+    assert sorted(Solution().permuteUnique(args)) == sorted(expected)
+    assert sorted(Solution1().permuteUnique(args)) == sorted(expected)
+    assert sorted(Solution2().permuteUnique(args)) == sorted(expected)
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [1, 3, 2]
-    sample = [1, 1, 2]
-    print(sol.permuteUnique(sample))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

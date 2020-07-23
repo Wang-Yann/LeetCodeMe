@@ -27,7 +27,10 @@
 
 """
 
+import itertools
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -45,15 +48,11 @@ class Solution:
                 self.dfs(result, current_list + [v], rest_list[0:i] + rest_list[i + 1:])
 
     def permute1(self, nums: List[int]) -> List[List[int]]:
-        from itertools import permutations
-        return [list(x) for x in permutations(nums, len(nums))]
+        return [list(x) for x in itertools.permutations(nums, len(nums))]
 
-    def permuteO(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        N = len(nums)
+
+class Solution1:
+    def permute(self, nums):
 
         def backtrack(first=0):
             # if all integers are used up
@@ -68,14 +67,28 @@ class Solution:
                 # backtrack
                 nums[first], nums[i] = nums[i], nums[first]
 
+        N = len(nums)
         output = []
         backtrack(0)
         return output
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3],
+     [
+         [1, 2, 3],
+         [1, 3, 2],
+         [2, 1, 3],
+         [2, 3, 1],
+         [3, 1, 2],
+         [3, 2, 1]
+     ])
+])
+def test_solutions(args, expected):
+    assert sorted(Solution().permute(args)) == sorted(expected)
+    assert sorted(Solution().permute1(args)) == sorted(expected)
+    assert sorted(Solution1().permute(args)) == sorted(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [1, 3, 2]
-    print(sol.permute(sample))
-    print(sol.permute1(sample))
-    print(sol.permuteO(sample))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
