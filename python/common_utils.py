@@ -333,7 +333,7 @@ class TreeNode:
 class TreeNodeWithChildren:
     def __init__(self, val=None, children=None):
         self.val = val
-        self.children = children
+        self.children = children or []
 
     def __repr__(self):
         if self:
