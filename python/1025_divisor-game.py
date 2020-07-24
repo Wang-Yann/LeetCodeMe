@@ -56,6 +56,13 @@ import pytest
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def divisorGame(self, N: int) -> bool:
+        """
+        N 为奇数的时候 Alice（先手）必败，NN 为偶数的时候 Alice 必胜。 这个猜想是否正确呢？下面我们来想办法证明它。
+
+        证明
+        N = 1  和 N = 2  时结论成立。
+        N > 2  时，假设 N≤k 时该结论成立，则 N = k + 1 时：
+        """
         # 1. if we get an even, we can choose x = 1
         #    to make the opponent always get an odd
         # 2. if the opponent gets an odd, he can only choose x = 1 or other odds
