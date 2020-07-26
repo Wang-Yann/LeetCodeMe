@@ -131,7 +131,7 @@ class DoubleWithChildNode:
 
         if not list_list:
             return None
-        node_dict = collections.defaultdict(lambda: cls(None))
+        node_dict = collections.defaultdict(lambda:cls(None))
         m, n = len(list_list), len(list_list[0])
         for i in range(m):
             length_row = len(list_list[i])
@@ -172,6 +172,7 @@ class DoubleWithChildNode:
 
 
 class TreeNodeWithNext:
+
     def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None,
                  next: 'Node' = None):
         self.val = val
@@ -239,6 +240,7 @@ class UnionFindGrid:
 
 
 class UnionFind(object):
+
     def __init__(self, n):
         self.set = list(range(n))
 
@@ -252,9 +254,11 @@ class UnionFind(object):
 
     def union_set(self, x, y):
         x_root, y_root = self.find(x), self.find(y)
-        if x_root == y_root: return False
+        if x_root == y_root:
+            return False
         self.set[min(x_root, y_root)] = max(x_root, y_root)
         return True
+
 
 class TreeNode:
 
@@ -331,6 +335,7 @@ class TreeNode:
 
 
 class TreeNodeWithChildren:
+
     def __init__(self, val=None, children=None):
         self.val = val
         self.children = children or []
@@ -344,6 +349,7 @@ class TreeNodeWithChildren:
 
 
 class NestedInteger:
+
     def __init__(self, value=None):
         """
         If value is not specified, initializes an empty list.
@@ -392,11 +398,24 @@ class NestedInteger:
         if self:
             return "{}".format(repr(self.value))
 
+
 class UndirectedGraphNode:
-    def __init__(self, val = 0, neighbors = None):
+
+    def __init__(self, val=0, neighbors=None):
         self.val = val
         self.neighbors = neighbors or []
 
     def __repr__(self):
         if self:
             return "{}<=>[{}]".format(self.val, repr(self.neighbors))
+
+
+class Interval:
+
+    def __init__(self, start: int = None, end: int = None):
+        self.start = start
+        self.end = end
+
+    def __str__(self):
+        return "{}->{}".format(self.start, self.end)
+    __repr__ = __str__

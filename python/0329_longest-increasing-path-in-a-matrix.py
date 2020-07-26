@@ -36,6 +36,7 @@
 #  Related Topics 深度优先搜索 拓扑排序 记忆化
 
 """
+import collections
 import functools
 from typing import List
 
@@ -77,6 +78,47 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        """
+        使用拓扑排序求解。从所有出度为 0 的单元格开始广度优先搜索，每一轮搜索都会遍历当前层的所有单元格，更新其余单元格的出度，
+        并将出度变为 0 的单元格加入下一层搜索。当搜索结束时，搜索的总层数即为矩阵中的最长递增路径的长度。
+
+        """
+        DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+        if not matrix:
+            return 0
+
+        rows, columns = len(matrix), len(matrix[0])
+        out_degree = [[0] * columns for _ in range(rows)]
+        queue = collections.deque()
+        for i in range(rows):
+            for j in range(columns):
+                for dx, dy in DIRS:
+                    newRow, newColumn = i + dx, j + dy
+                    if 0 <= newRow < rows and 0 <= newColumn < columns and matrix[newRow][newColumn] > matrix[i][j]:
+                        out_degree[i][j] += 1
+                if out_degree[i][j] == 0:
+                    queue.append((i, j))
+
+        ans = 0
+        while queue:
+            ans += 1
+            size = len(queue)
+            for _ in range(size):
+                row, column = queue.popleft()
+                for dx, dy in DIRS:
+                    newRow, newColumn = row + dx, column + dy
+                    if 0 <= newRow < rows and 0 <= newColumn < columns and matrix[newRow][newColumn] < matrix[row][column]:
+                        out_degree[newRow][newColumn] -= 1
+                        if out_degree[newRow][newColumn] == 0:
+                            queue.append((newRow, newColumn))
+
+        return ans
+
+
 @pytest.mark.parametrize("args,expected", [
     (
             [
@@ -95,6 +137,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().longestIncreasingPath(args) == expected
+    assert Solution1().longestIncreasingPath(args) == expected
 
 
 if __name__ == '__main__':

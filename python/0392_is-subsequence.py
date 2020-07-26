@@ -40,8 +40,10 @@ import pytest
 
 
 class Solution:
+
     def isSubsequence(self, s: str, t: str) -> bool:
-        if not s: return True
+        if not s:
+            return True
         i = 0
         for char in t:
             if char == s[i]:
@@ -51,12 +53,25 @@ class Solution:
         return i == len(s)
 
 
+class Solution1:
+
+    def isSubsequence(self, s: str, t: str) -> bool:
+        NS, NT = len(s), len(t)
+        i = j = 0
+        while i < NS and j < NT:
+            if s[i] == t[j]:
+                i += 1
+            j += 1
+        return i == NS
+
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(s="abc", t="ahbgdc"), True],
     [dict(s="axc", t="ahbgdc"), False],
 ])
 def test_solutions(kw, expected):
     assert Solution().isSubsequence(**kw) == expected
+    assert Solution1().isSubsequence(**kw) == expected
 
 
 if __name__ == '__main__':
