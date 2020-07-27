@@ -131,7 +131,7 @@ class DoubleWithChildNode:
 
         if not list_list:
             return None
-        node_dict = collections.defaultdict(lambda:cls(None))
+        node_dict = collections.defaultdict(lambda: cls(None))
         m, n = len(list_list), len(list_list[0])
         for i in range(m):
             length_row = len(list_list[i])
@@ -369,14 +369,15 @@ class NestedInteger:
         Set this NestedInteger to hold a nested list and adds a nested integer elem to it.
         :rtype void
         """
-        pass
+        if not self.isInteger():
+            self.value.append(elem)
 
     def setInteger(self, value):
         """
         Set this NestedInteger to hold a single integer equal to value.
         :rtype void
         """
-        pass
+        self.value = value
 
     def getInteger(self):
         """
@@ -384,7 +385,7 @@ class NestedInteger:
         Return None if this NestedInteger holds a nested list
         :rtype int
         """
-        pass
+        return int(self.value)
 
     def getList(self):
         """
@@ -392,7 +393,7 @@ class NestedInteger:
         Return None if this NestedInteger holds a single integer
         :rtype List[NestedInteger]
         """
-        pass
+        return self.value
 
     def __repr__(self):
         if self:
@@ -418,4 +419,5 @@ class Interval:
 
     def __str__(self):
         return "{}->{}".format(self.start, self.end)
+
     __repr__ = __str__
