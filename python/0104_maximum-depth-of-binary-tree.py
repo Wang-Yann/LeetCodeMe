@@ -25,6 +25,8 @@
 #  Related Topics 树 深度优先搜索
 #  👍 603 👎 0
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -36,12 +38,14 @@ class Solution:
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
 
+@pytest.mark.parametrize("args,expected", [
+    (
+            TreeNode(3, left=TreeNode(9), right=TreeNode(20, TreeNode(15), TreeNode(7))), 3
+    )
+])
+def test_solutions(args, expected):
+    assert Solution().maxDepth(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([1, None, 2, 4], [(2, 3)], [(0, 2)]),
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.maxDepth(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
