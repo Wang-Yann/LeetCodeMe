@@ -68,13 +68,11 @@
 
 """
 
+# leetcode submit region begin(Prohibit modification and deletion)
+import queue
 from typing import List
 
 import pytest
-
-
-# leetcode submit region begin(Prohibit modification and deletion)
-import queue
 
 
 class Solution:
@@ -86,12 +84,11 @@ class Solution:
         解答成功: 执行耗时:9568 ms,击败了15.00% 的Python3用户
         由于本题的复杂度较高，使用 Python 等性能较差的语言实现时需要注意效率问题
         """
-        n = len(maze)
-        m = len(maze[0])
+        R, C = len(maze), len(maze[0])
         p = []
         # 记录所有特殊点
-        for i in range(n):
-            for j in range(m):
+        for i in range(R):
+            for j in range(C):
                 if maze[i][j] in ['S', 'T', 'M', 'O']:
                     p.append((i, j, maze[i][j]))
         dxs = [0, 1, 0, -1]
@@ -100,14 +97,14 @@ class Solution:
         def bfs(x, y):
             q = queue.Queue()
             q.put((x, y))
-            dis = [[10000 for i in range(m)] for j in range(n)]
+            dis = [[0x7fffffff for _ in range(C)] for __ in range(R)]
             dis[x][y] = 0
             while not q.empty():
-                x,y = q.get()
+                x, y = q.get()
                 for dx, dy in zip(dxs, dys):
                     nx = x + dx
                     ny = y + dy
-                    if nx < 0 or nx == n or ny < 0 or ny == m:
+                    if nx < 0 or nx == R or ny < 0 or ny == C:
                         continue
                     if maze[nx][ny] == '#':
                         continue
@@ -124,31 +121,31 @@ class Solution:
         dis = []
         for idx, (i, j, t) in enumerate(p):
             dis.append(bfs(i, j))
-            if not t in tag:
+            if t not in tag:
                 tag[t] = []
             tag[t].append(idx)
-        sidx = tag['S'][0]
-        tidx = tag['T'][0]
+        start_idx = tag['S'][0]
+        target_idx = tag['T'][0]
 
         # 特殊处理 M 不存在的情况
-        if not 'M' in tag:
-            ans = dis[sidx][tidx]
-            if ans == 10000:
+        if 'M' not in tag:
+            ans = dis[start_idx][target_idx]
+            if ans == 0x7fffffff:
                 ans = -1
             return ans
 
         # 计算 S 到所有 M 点之间的最短距离
         Mnum = len(tag['M'])
         Onum = len(tag['O'])
-        dp = [[10000 for i in range(Mnum)] for i in range(1 << Mnum)]
+        dp = [[0x7fffffff] * Mnum for __ in range(1 << Mnum)]
         for i in range(Mnum):
             midx = tag['M'][i]
             s = 1 << i
             for j in range(Onum):
                 oidx = tag['O'][j]
-                dp[s][i] = min(dp[s][i], dis[sidx][oidx] + dis[oidx][midx])
+                dp[s][i] = min(dp[s][i], dis[start_idx][oidx] + dis[oidx][midx])
             # 预处理 M 点之间的最短距离
-        Mdis = [[10000 for i in range(Mnum)] for j in range(Mnum)]
+        Mdis = [[0x7fffffff] * Mnum for __ in range(Mnum)]
         for i in range(Mnum):
             midx1 = tag['M'][i]
             for j in range(Mnum):
@@ -169,12 +166,13 @@ class Solution:
                     dp[ns][k] = min(dp[ns][k], dp[s][j] + Mdis[j][k])
 
         # 统计结果
-        ans = 10000
+        ans = 0x7fffffff
         fs = (1 << Mnum) - 1
+        # print(dp)
         for j in range(Mnum):
             midx = tag['M'][j]
-            ans = min(ans, dp[fs][j] + dis[midx][tidx])
-        if ans == 10000:
+            ans = min(ans, dp[fs][j] + dis[midx][target_idx])
+        if ans == 0x7fffffff:
             ans = -1
         return ans
 
