@@ -35,8 +35,7 @@ class Solution:
 
     def integerBreak(self, n: int) -> int:
         dp = [0] * (n + 1)
-        dp[2] = 1
-        for i in range(3, n + 1):
+        for i in range(2, n + 1):
             for j in range(1, i):
                 dp[i] = max(dp[i], max(j * dp[i - j], j * (i - j)))
         return dp[n]
@@ -75,7 +74,6 @@ class Solution1(object):
         #          if n = 3Q + 2,   the max of the product = 3^Q * 2^1
         #          if n = 3Q + 2*2, the max of the product = 3^Q * 2^2
 
-        res = 0
         if n % 3 == 0:  # n = 3Q + 0, the max is 3^Q * 2^0
             res = 3 ** (n // 3)
         elif n % 3 == 2:  # n = 3Q + 2, the max is 3^Q * 2^1
