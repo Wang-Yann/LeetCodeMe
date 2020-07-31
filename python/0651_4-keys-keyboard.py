@@ -53,6 +53,7 @@
 #  👍 27 👎 0
 
 """
+import functools
 
 import pytest
 
@@ -80,7 +81,24 @@ class Solution(object):
 
 # leetcode submit region end(Prohibit modification and deletion)
 
-class Solution1:
+class Solution1(object):
+    """
+    每个操作都算一个步骤，给了我们一个数字N，问我们N个操作最多能输出多个A。
+    我们可以分析题目中的例子可以发现，N步最少都能打印N个A出来，因为我们可以每步都是打印A。
+    那么能超过N的情况肯定就是使用了复制粘贴，这里由于全选和复制要占用两步，所以能增加A的个数的操作其实只有N-2步，
+    那么我们如何确定打印几个A，剩下都是粘贴呢，其实是个trade off，A打印的太多或太少，都不会得到最大结果，
+    所以打印A和粘贴的次数要接近，最简单的方法就是遍历所有的情况然后取最大值，打印A的次数在[1, N-3]之间，
+    粘贴的次数为N-2-i，加上打印出的部分，就是N-1-i了
+    """
+    @functools.lru_cache(None)
+    def maxA(self, N):
+        res = N
+        for i in range(1, N - 2):
+            res = max(res, self.maxA(i) * ((N - 2 - i)+1))
+        return res
+
+
+class Solution2:
     def maxA(self, N: int) -> int:
         """
         连乘次数不超过 5
@@ -101,6 +119,7 @@ class Solution1:
 def test_solutions(kw, expected):
     assert Solution().maxA(**kw) == expected
     assert Solution1().maxA(**kw) == expected
+    assert Solution2().maxA(**kw) == expected
 
 
 if __name__ == '__main__':
