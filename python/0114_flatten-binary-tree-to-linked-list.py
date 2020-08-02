@@ -34,20 +34,24 @@
 #  Related Topics 树 深度优先搜索
 #  👍 420 👎 0
 
+import copy
+
+import pytest
+
 from common_utils import TreeNode
 
 
 class Solution:
 
-    def flattenS(self, root: TreeNode) -> None:
+    def flatten(self, root: TreeNode) -> None:
         """
         TODO
         """
 
-        def flattenRec(node, list_head):
+        def helper(node, list_head):
             if node:
-                list_head = flattenRec(node.right, list_head)
-                list_head = flattenRec(node.left, list_head)
+                list_head = helper(node.right, list_head)
+                list_head = helper(node.left, list_head)
                 node.right = list_head
                 node.left = None
                 return node
@@ -55,7 +59,94 @@ class Solution:
                 # print(node,list_head)
                 return list_head
 
-        flattenRec(root, None)
+        helper(root, None)
+
+
+#     draw a picture for understanding iterative process
+#
+#     1
+#    / \
+#   2   5
+#  / \   \
+# 3   4   6
+# -----------
+# pre = 5
+# cur = 4
+#
+#     1
+#    /
+#   2
+#  / \
+# 3   4
+#      \
+#       5
+#        \
+#         6
+# -----------
+# pre = 4
+# cur = 3
+#
+#     1
+#    /
+#   2
+#  /
+# 3
+#  \
+#   4
+#    \
+#     5
+#      \
+#       6
+# -----------
+# cur = 2
+# pre = 3
+#
+#     1
+#    /
+#   2
+#    \
+#     3
+#      \
+#       4
+#        \
+#         5
+#          \
+#           6
+# -----------
+# cur = 1
+# pre = 2
+#
+# 1
+#  \
+#   2
+#    \
+#     3
+#      \
+#       4
+#        \
+#         5
+#          \
+#           6
+#
+#
+
+class Solution0:
+
+    def __init__(self):
+        self.prev = None
+
+    def flatten(self, root: TreeNode) -> None:
+        if root is None:
+            return None
+        if root:
+            self.flatten(root.right)
+            self.flatten(root.left)
+            root.right = self.prev
+            root.left = None
+            self.prev = root
+
+
+class Solution1:
 
     def flatten(self, root: TreeNode) -> None:
         """
@@ -66,25 +157,57 @@ class Solution:
         stack = [root]
         pre = None
         while stack:
-            tmp = stack.pop()
-            if  pre:
-                pre.right = tmp
+            node = stack.pop()
+            if pre:
+                pre.right = node
                 pre.left = None
-            if tmp.right:
-                stack.append(tmp.right)
-            if tmp.left:
-                stack.append(tmp.left)
-            pre = tmp
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+            pre = node
+
+class Solution2:
+    def flatten(self, root: TreeNode) -> None:
+        preorderList = list()
+
+        def preorderTraversal(root: TreeNode):
+            if root:
+                preorderList.append(root)
+                preorderTraversal(root.left)
+                preorderTraversal(root.right)
+
+        preorderTraversal(root)
+        size = len(preorderList)
+        for i in range(1, size):
+            prev, curr = preorderList[i - 1], preorderList[i]
+            prev.left = None
+            prev.right = curr
+
+
+
+@pytest.mark.parametrize("args,expected", [
+    (
+            TreeNode(
+                1,
+                left=TreeNode(2, TreeNode(3), TreeNode(4)),
+                right=TreeNode(5, right=TreeNode(6))
+            ),
+            TreeNode(1, right=TreeNode(2, right=TreeNode(3, right=TreeNode(4, right=TreeNode(5, right=TreeNode(6)))))),
+
+    ),
+])
+def test_solutions(args, expected):
+    root = copy.deepcopy(args)
+    root0 = copy.deepcopy(args)
+    root1 = copy.deepcopy(args)
+    Solution().flatten(root)
+    Solution0().flatten(root0)
+    Solution1().flatten(root1)
+    assert repr(root) == repr(expected)
+    assert repr(root0) == repr(expected)
+    assert repr(root1) == repr(expected)
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        # ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]),
-        # ([1], [], [])
-
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.flatten(x) for x in lists]
-    print(lists)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
