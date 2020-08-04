@@ -39,38 +39,34 @@
 #  Related Topics 深度优先搜索 广度优先搜索 图 拓扑排序
 
 """
-from collections import deque
+
+import collections
+from typing import List
 
 import pytest
-import math, fractions, operator
-from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         """
-        BFS
+        拓扑排序
         """
-        indegrees = [0 for _ in range(numCourses)]
-        adjacency = [[] for _ in range(numCourses)]
-        queue = collections.deque()
+        indegrees = [0] * numCourses
+        G = collections.defaultdict(list)
         # Get the indegree and adjacency of every course.
         for cur, pre in prerequisites:
             indegrees[cur] += 1
-            adjacency[pre].append(cur)
+            G[pre].append(cur)
         # Get all the courses with the indegree of 0.
-        for i in range(numCourses):
-            if not indegrees[i]: queue.append(i)
-        while queue:
-            pre = queue.popleft()
+        dq = collections.deque([i for i in range(numCourses) if indegrees[i] == 0])
+        while dq:
+            pre = dq.popleft()
             numCourses -= 1
-            for cur in adjacency[pre]:
+            for cur in G[pre]:
                 indegrees[cur] -= 1
                 if not indegrees[cur]:
-                    queue.append(cur)
+                    dq.append(cur)
         return numCourses == 0
 
 
@@ -78,29 +74,30 @@ class Solution:
 
 class Solution1:
     """DFS"""
+
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        def dfs(i, adjacency, flags):
-            if flags[i] == -1: return True
-            if flags[i] == 1: return False
-            flags[i] = 1
-            for j in adjacency[i]:
-                if not dfs(j, adjacency, flags): return False
-            flags[i] = -1
+        def dfs(node, visited):
+            for j in G[node]:
+                if visited[j]:
+                    return False
+                visited[j] = True
+                if not dfs(j, visited):
+                    return False
+                visited[j] = False
             return True
 
-        adjacency = [[] for _ in range(numCourses)]
-        flags = [0 for _ in range(numCourses)]
+        G = collections.defaultdict(list)
         for cur, pre in prerequisites:
-            adjacency[pre].append(cur)
+            G[pre].append(cur)
         for i in range(numCourses):
-            if not dfs(i, adjacency, flags): return False
+            if not dfs(i, [False] * numCourses):
+                return False
         return True
 
 
-
 @pytest.mark.parametrize("args,expected", [
-    ((2, [[1, 0]]),True),
-    ((2, [[1, 0], [0, 1]]),False),
+    ((2, [[1, 0]]), True),
+    ((2, [[1, 0], [0, 1]]), False),
 ])
 def test_solutions(args, expected):
     assert Solution().canFinish(*args) == expected
