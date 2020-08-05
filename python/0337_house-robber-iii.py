@@ -40,6 +40,9 @@
 #  Related Topics 树 深度优先搜索
 #  👍 422 👎 0
 
+import functools
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -50,8 +53,11 @@ class Solution:
         TODO Good
         """
 
+        @functools.lru_cache(None)
         def getRobRecu(node):
-            """return vals tuple ( with node,val without node)"""
+            """
+            return vals tuple ( with node,val without node)
+            """
             if not node:
                 return 0, 0
             left, right = getRobRecu(node.left), getRobRecu(node.right)
@@ -60,20 +66,41 @@ class Solution:
         return max(getRobRecu(root))
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(3,
-                 left=TreeNode(2, right=TreeNode(3)),
-                 right=TreeNode(3, right=TreeNode(1))
-                 ),
-        TreeNode.initPreOrder([
-            3, 4, 1, None, None, 3, None, None,
-            5, None, 1, None, None
-        ])
+class Solution0:
+    @functools.lru_cache(None)
+    def rob(self, root: TreeNode) -> int:
+        """初始版本"""
+        if not root:
+            return 0
+        money_with_node = root.val
+        if root.left:
+            money_with_node += self.rob(root.left.left) + self.rob(root.left.right)
+        if root.right:
+            money_with_node += self.rob(root.right.left) + self.rob(root.right.right)
+        money_without_node = self.rob(root.left) + self.rob(root.right)
+        return max(money_with_node, money_without_node)
 
-    ]
-    lists = [x for x in samples]
-    print(lists)
-    res = [sol.rob(x) for x in lists]
-    print(res)
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(
+            3,
+            left=TreeNode(2, right=TreeNode(3)),
+            right=TreeNode(3, right=TreeNode(1))
+        ),
+    ), 7],
+    [dict(
+        root=TreeNode(
+            3,
+            left=TreeNode(4, left=TreeNode(1), right=TreeNode(3)),
+            right=TreeNode(5, right=TreeNode(1))
+        ),
+    ), 9],
+])
+def test_solutions(kw, expected):
+    assert Solution().rob(**kw) == expected
+    assert Solution0().rob(**kw) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
