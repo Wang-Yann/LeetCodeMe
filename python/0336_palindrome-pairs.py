@@ -34,6 +34,7 @@ class Solution:
         """HARD
         https://leetcode-cn.com/problems/palindrome-pairs/solution/hui-wen-dui-by-leetcode/
         """
+
         def all_valid_prefixes(word):
             valid_prefixes = []
             for i in range(len(word)):
@@ -48,7 +49,7 @@ class Solution:
                     valid_suffixes.append(word[i + 1:])
             return valid_suffixes
 
-        word_lookup = {word:i for i, word in enumerate(words)}
+        word_lookup = {word: i for i, word in enumerate(words)}
         solutions = []
         for word_index, word in enumerate(words):
             reversed_word = word[::-1]
@@ -56,6 +57,7 @@ class Solution:
             if reversed_word in word_lookup and word_index != word_lookup[reversed_word]:
                 solutions.append([word_index, word_lookup[reversed_word]])
 
+            # print(word,all_valid_prefixes(word),all_valid_suffixes(word))
             # Build solutions of case #2. This word will be word 2.
             for suffix in all_valid_suffixes(word):
                 reversed_suffix = suffix[::-1]
@@ -70,12 +72,28 @@ class Solution:
         return solutions
 
 
+class Solution1:
+    def palindromePairs(self, words: List[str]) -> List[List[int]]:
+        lookup = {w: i for i, w in enumerate(words)}
+        res = []
+        for i, w in enumerate(words):
+            for j in range(len(w) + 1):
+                pre, suf = w[j:], w[:j]
+                if pre[::-1] == pre and suf[::-1] in lookup and lookup[suf[::-1]] != i:
+                    res.append([i, lookup[suf[::-1]]])
+                if j > 0 and suf[::-1] == suf and pre[::-1] in lookup and lookup[pre[::-1]] != i:
+                    # j >0，j = w的情况出现过一次就行
+                    res.append([lookup[pre[::-1]], i])
+        return res
+
+
 @pytest.mark.parametrize("args,expected", [
     (["abcd", "dcba", "lls", "s", "sssll"], [[0, 1], [1, 0], [3, 2], [2, 4]]),
     pytest.param(["bat", "tab", "cat"], [[0, 1], [1, 0]]),
 ])
 def test_solutions(args, expected):
     assert Solution().palindromePairs(args) == expected
+    assert sorted(Solution1().palindromePairs(args)) == sorted(expected)
 
 
 if __name__ == '__main__':
