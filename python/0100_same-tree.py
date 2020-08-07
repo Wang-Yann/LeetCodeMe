@@ -45,6 +45,8 @@
 #  Related Topics 树 深度优先搜索
 #  👍 398 👎 0
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -60,12 +62,23 @@ class Solution:
                and self.isSameTree(p.right, q.right)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        p=TreeNode(1, left=TreeNode(2), right=TreeNode(3)),
+        q=TreeNode(1, left=TreeNode(2), right=TreeNode(3))
+    ), True],
+    [dict(
+        p=TreeNode(1, left=TreeNode(2)),
+        q=TreeNode(1, right=TreeNode(2))
+    ), False],
+    [dict(
+        p=TreeNode(1, left=TreeNode(2), right=TreeNode(1)),
+        q=TreeNode(1, left=TreeNode(1), right=TreeNode(2))
+    ), False],
+])
+def test_solutions(kw, expected):
+    assert Solution().isSameTree(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([1, None, 2, 4], [(2, 3)], [(0, 2)]),
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.isSameTree(lists[0], lists[1]), sol.isSameTree(lists[0], lists[0])]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
