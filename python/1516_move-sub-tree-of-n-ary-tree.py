@@ -97,7 +97,12 @@ from common_utils import TreeNodeWithChildren as Node
 class Solution:
     def moveSubTree(self, root: 'Node', p: 'Node', q: 'Node') -> 'Node':
         """
+        p-->q的子树
         TODO
+        要么q在p的子树里，要么不在，只要处理这两种情况就行。
+        dfs过一遍找到p和q的parent，顺便判断q是不是在p的子树里。
+        有了p和q的parent节点就能随意移动p和q了。
+
         """
         def find_parents(node, parent, is_ancestor):
             if node in (p, q):
