@@ -56,6 +56,9 @@
 #
 #  Related Topics 树 深度优先搜索
 #  👍 250 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -73,7 +76,7 @@ class Solution:
 
         """
         stack = []
-        x = y = pred = None
+        x = y = pre = None
 
         cur = root
         while stack or cur:
@@ -81,18 +84,21 @@ class Solution:
                 stack.append(cur)
                 cur = cur.left
             cur = stack.pop()
-            if pred and cur.val < pred.val:
+            if pre and cur.val < pre.val:
                 y = cur
                 if x is None:
-                    x = pred
+                    x = pre
                 else:
                     break
-            pred = cur
+            pre = cur
             cur = cur.right
 
         x.val, y.val = y.val, x.val
 
-    def recoverTreeMorris(self, root: TreeNode) -> None:
+
+class Solution1:
+
+    def recoverTree(self, root: TreeNode) -> None:
         """TODO
         MorrisTraversal
         """
@@ -127,13 +133,24 @@ class Solution:
             broken[1] = cur
 
 
+@pytest.mark.parametrize("kwargs,expected", [
+    [dict(root=TreeNode(1, left=TreeNode(3, right=TreeNode(2)))),
+     TreeNode(3, left=TreeNode(1, right=TreeNode(2)))],
+
+    [dict(root=TreeNode(3, left=TreeNode(1), right=TreeNode(4, left=TreeNode(2))
+                        )),
+     TreeNode(2, left=TreeNode(1), right=TreeNode(4, left=TreeNode(3))
+              )],
+
+])
+def test_solutions(kwargs, expected):
+    root = kwargs["root"]
+    root1 = copy.deepcopy(root)
+    Solution().recoverTree(root)
+    Solution1().recoverTree(root1)
+    assert repr(expected) == repr(root)
+    assert repr(expected) == repr(root1)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, 3, 2], [(0, 1)], [(1, 2)]),
-        # ([3, 1, 4, 2], [(0, 1), (2, 3)], [(0, 2)]),
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    print(lists)
-    res = [sol.recoverTree(x) for x in lists]
-    print(lists)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
