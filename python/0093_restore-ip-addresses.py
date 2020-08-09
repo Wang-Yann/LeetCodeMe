@@ -37,7 +37,7 @@ class Solution:
                     # remove first '.'
                     ans.append(path[1:])
                 return
-            for i in range(1, 4):
+            for i in (1,2,3):
                 if i <= len(rest_str):
                     if int(rest_str[:i]) <= 255:
                         dfs(rest_str[i:], path + "." + rest_str[:i], dots + 1)
@@ -50,28 +50,6 @@ class Solution:
 
 
 # leetcode submit region end(Prohibit modification and deletion)
-class Solution0:
-    def restoreIpAddresses(self, s: str) -> List[str]:
-        res = []
-        n = len(s)
-
-        def backtrack(i, tmp, flag):
-            if i == n and flag == 0:
-                res.append(tmp[:-1])
-                return
-            if flag < 0:
-                return
-            for j in range(i, i + 3):
-                if j < n:
-                    if i == j and s[j] == "0":
-                        backtrack(j + 1, tmp + s[j] + ".", flag - 1)
-                        break
-                    if 0 < int(s[i:j + 1]) <= 255:
-                        backtrack(j + 1, tmp + s[i:j + 1] + ".", flag - 1)
-
-        backtrack(0, "", 4)
-        return res
-
 
 
 class Solution1:
@@ -131,7 +109,6 @@ class Solution1:
 ])
 def test_solutions(args, expected):
     assert sorted(Solution().restoreIpAddresses(args)) == sorted(expected)
-    assert sorted(Solution0().restoreIpAddresses(args)) == sorted(expected)
     assert sorted(Solution1().restoreIpAddresses(args)) == sorted(expected)
 
 
