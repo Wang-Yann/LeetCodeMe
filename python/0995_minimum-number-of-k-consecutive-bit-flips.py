@@ -66,7 +66,7 @@ class Solution:
         ans = 0
         q = collections.deque()
         for i in range(len(A)):
-            print(q)
+            # print(q)
             if q and q[0] + K == i:
                 q.popleft()
             # len(q)翻转次数

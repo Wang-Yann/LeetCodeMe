@@ -24,6 +24,7 @@
 #  👍 349 👎 0
 
 """
+import pytest
 
 from common_utils import ListNode
 
@@ -45,13 +46,13 @@ class Solution:
         return dummy.next
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.initList([1, 2, 3, 4, 5, 5])), ListNode.initList([1, 2, 3, 4, 5])],
+    [dict(head=ListNode.initList([1, 1, 1, 2, 3])), ListNode.initList([1, 2, 3])],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().deleteDuplicates(**kw)) == repr(expected)
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1->2->3->3->4->4->5",
-        "1->1->1->2->3",
-        "1"
-    ]
-    res = [sol.deleteDuplicates(ListNode.init_list_from_str(x)) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

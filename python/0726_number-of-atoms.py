@@ -67,11 +67,14 @@
 import collections
 import re
 
+import pytest
+
 
 class Solution0:
 
     def countOfAtoms(self, formula: str) -> str:
         """
+        TODO
         官方解法 HARD
         """
         N = len(formula)
@@ -140,13 +143,15 @@ class Solution:
         )
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "H2O",
-        "Mg(OH)2",
-        "K4(ON(SO3)2)2"
+@pytest.mark.parametrize("args,expected", [
+    ["H2O", "H2O", ],
+    ["Mg(OH)2", 'H2MgO2', ],
+    ["K4(ON(SO3)2)2", 'K4N2O14S4'],
+])
+def test_solutions(args, expected):
+    assert Solution().countOfAtoms(args) == expected
+    assert Solution0().countOfAtoms(args) == expected
 
-    ]
-    res = [sol.countOfAtoms(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

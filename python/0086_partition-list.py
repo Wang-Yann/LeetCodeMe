@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 给定一个链表和一个特定值 x，对链表进行分隔，使得所有小于 x 的节点都在大于或等于 x 的节点之前。
 #
@@ -22,6 +21,7 @@
 #  👍 224 👎 0
 
 """
+import pytest
 
 from common_utils import ListNode
 
@@ -46,12 +46,12 @@ class Solution:
         return dummy.next
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("1->4->3->2->5->2", 3),
-        ("1", 3)
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.initList([1, 4, 3, 2, 5, 2]), x=3), ListNode.initList([1, 2, 2, 4, 3, 5])],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().partition(**kw)) == repr(expected)
 
-    ]
-    res = [sol.partition(ListNode.init_list_from_str(head), x) for (head, x) in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

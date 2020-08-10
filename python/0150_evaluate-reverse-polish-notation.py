@@ -72,6 +72,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -105,13 +107,14 @@ class Solution:
         return int(stack.pop())
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ["2", "1", "+", "3", "*"],
-        ["4", "13", "5", "/", "+"],
-        ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
+@pytest.mark.parametrize("args,expected", [
+    (["2", "1", "+", "3", "*"], 9),
+    (["4", "13", "5", "/", "+"], 6),
+    (["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"], 22),
+])
+def test_solutions(args, expected):
+    assert Solution().evalRPN(args) == expected
 
-    ]
-    res = [sol.evalRPN(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -33,7 +33,7 @@
 #  注意: 合并必须从两个树的根节点开始。
 #  Related Topics 树
 #  👍 419 👎 0
-
+import pytest
 
 from common_utils import TreeNode
 
@@ -50,13 +50,17 @@ class Solution:
         return t1
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        (TreeNode(1, TreeNode(3, TreeNode(5)), TreeNode(2)),
-         TreeNode(2, TreeNode(1, right=TreeNode(4)), right=TreeNode(3, right=TreeNode(7))))
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        t1=TreeNode(1, TreeNode(3, TreeNode(5)), TreeNode(2)),
+        t2=TreeNode(2, TreeNode(1, right=TreeNode(4)), right=TreeNode(3, right=TreeNode(7)))
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.mergeTrees(*x) for x in lists]
-    print(res)
+    ), ['3', '4', '5', '5', '4', '#', '7']],
+])
+def test_solutions(kw, expected):
+    res = Solution().mergeTrees(**kw)
+    assert repr(res) == repr(expected)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

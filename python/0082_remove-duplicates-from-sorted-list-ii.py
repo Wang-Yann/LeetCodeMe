@@ -24,6 +24,9 @@
 #  👍 319 👎 0
 
 """
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
@@ -46,12 +49,14 @@ class Solution:
         left.next = None
         return dummy.next
 
-    def deleteDuplicatesO(self, head):
+
+class Solution1:
+    def deleteDuplicates(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        dummy = ListNode(0)
+        dummy = ListNode(-1)
         pre, cur = dummy, head
         while cur:
             if cur.next and cur.next.val == cur.val:
@@ -66,11 +71,15 @@ class Solution:
         return dummy.next
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.initList([1, 2, 3, 3, 4, 4, 5])), ListNode.initList([1, 2, 5])],
+    [dict(head=ListNode.initList([1, 1, 1, 2, 3])), ListNode.initList([2, 3])],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().deleteDuplicates(**kw)) == repr(expected)
+    assert repr(Solution1().deleteDuplicates(**kw1)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1->2->3->3->4->4->5",
-        "1->1->1->2->3"
-    ]
-    res = [sol.deleteDuplicates(ListNode.init_list_from_str(x)) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

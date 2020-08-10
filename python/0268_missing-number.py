@@ -34,14 +34,19 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        if not nums: return 0
+        if not nums:
+            return 0
         length = len(nums)
-        return (length + 1) * (length) // 2 - sum(nums)
+        return (length + 1) * length // 2 - sum(nums)
 
-    def missingNumberBit(self, nums: List[int]) -> int:
+
+class Solution1:
+    def missingNumber(self, nums: List[int]) -> int:
         length = len(nums)
         missing = length
         for i, v in enumerate(nums):
@@ -49,8 +54,14 @@ class Solution:
         return missing
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[9, 6, 4, 2, 3, 5, 7, 0, 1]), 8],
+    [dict(nums=[3, 0, 1]), 2],
+])
+def test_solutions(kw, expected):
+    assert Solution().missingNumber(**kw) == expected
+    assert Solution1().missingNumber(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [9, 6, 4, 2, 3, 5, 7, 0, 1]
-    print(sol.missingNumberBit(sample))
-    print(sol.missingNumberBit([]))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -57,8 +57,9 @@
 """
 import bisect
 from random import randint
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -66,7 +67,7 @@ class Solution:
     def __init__(self, rects: List[List[int]]):
         """第 i 个矩形 rects [i] = [x1，y1，x2，y2]，其中 [x1，y1] 是左下角的整数坐标，[x2，y2] 是右上角的整数坐标"""
         self.__rects = rects
-        self.__prefix_sum = list(map(lambda x:(x[2] - x[0] + 1) * (x[3] - x[1] + 1), rects))
+        self.__prefix_sum = list(map(lambda x: (x[2] - x[0] + 1) * (x[3] - x[1] + 1), rects))
         # 按序累加每个矩形的面积（即权重)
         for i in range(1, len(self.__prefix_sum)):
             self.__prefix_sum[i] += self.__prefix_sum[i - 1]
@@ -80,7 +81,7 @@ class Solution:
         return [rect[0] + (target - base) % width, rect[1] + (target - base) // width]
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = Solution([[-2, -2, -1, -1], [1, 0, 3, 0]])
     # ops_list = ["Solution","pick","pick","pick"]
     # args_list =[[[[1,1,5,5]]],[],[],[]]
@@ -90,3 +91,7 @@ if __name__ == '__main__':
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
         print(getattr(obj, method)(*args))
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

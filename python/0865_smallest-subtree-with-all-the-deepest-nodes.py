@@ -45,6 +45,8 @@
 """
 import collections
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -72,13 +74,13 @@ class Solution:
         return result.node
 
 
-if __name__ == '__main__':
+def test_solution():
     sol = Solution()
     target = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4)))
     root = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(8)))
-    samples = [
-        root, target
-    ]
-    lists = [x for x in samples]
-    res = [sol.subtreeWithAllDeepest(x) for x in lists]
-    print(res)
+    res = sol.subtreeWithAllDeepest(root)
+    assert repr(res) == str(['2', '7', '4'])
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

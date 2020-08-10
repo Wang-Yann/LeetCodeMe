@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 给定一个单链表 L：L0→L1→…→Ln-1→Ln ，
 # 将其重新排列后变为： L0→Ln→L1→Ln-1→L2→Ln-2→…
@@ -25,6 +24,8 @@
 #  👍 253 👎 0
 
 """
+import pytest
+
 from common_utils import ListNode
 
 
@@ -49,9 +50,9 @@ class Solution:
         dummy = ListNode(-1)
         current = dummy
         while l1 and l2:
-            current.next=l1
-            current=l1
-            l1 =l1.next
+            current.next = l1
+            current = l1
+            l1 = l1.next
             # print(dummy,current, l1, l2, sep="\t")
 
             current.next, current, l2 = l2, l2, l2.next
@@ -60,12 +61,19 @@ class Solution:
         return dummy.next
 
 
+@pytest.mark.parametrize("args,expected", [
+    (
+        ListNode.init_list_from_str("1->2->3->4"),
+        ListNode.init_list_from_str("1->4->2->3"),
+    ),
+    (
+        ListNode.init_list_from_str("1->2->3->4->5"),
+        ListNode.init_list_from_str("1->5->2->4->3"),
+    ),
+])
+def test_solutions(args, expected):
+    assert repr(Solution().reorderList(args)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1->2->3->4->5->6",
-        "1->2->3->4->5",
-    ]
-    lists = [ListNode.init_list_from_str(x) for x in samples]
-    res = [sol.reorderList(x) for x in lists]
-    print(lists)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -49,6 +49,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution0:
     def numberOfSubarrays(self, nums: List[int], k: int) -> int:
@@ -90,18 +92,18 @@ class Solution:
             if odd >= k:
                 ans += cnt[odd - k]
             cnt[odd] += 1
-        print("Pre Array", cnt)
+        # print("Pre Array", cnt)
         return ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, 1, 2, 1, 1], 3),
-        ([2, 4, 6], 1),
-        ([2, 2, 2, 1, 2, 2, 1, 2, 2, 2], 2),
+@pytest.mark.parametrize("args,expected", [
+    [([1, 1, 2, 1, 1], 3), 2],
+    [([2, 4, 6], 1), 0],
+    [([2, 2, 2, 1, 2, 2, 1, 2, 2, 2], 2), 16],
+])
+def test_solutions(args, expected):
+    assert Solution().numberOfSubarrays(*args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.numberOfSubarrays(*x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

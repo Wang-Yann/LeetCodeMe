@@ -49,6 +49,8 @@ import math
 import random
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -63,11 +65,15 @@ class Solution:
         return [self.__x + r * math.cos(theta), self.__y + r * math.sin(theta)]
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = Solution(1, 0, 0)
     ops_list = ["Solution", "randPoint", "randPoint", "randPoint"]
     args_list = [[1, 0, 0], [], [], []]
 
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
-        print(getattr(obj, method)(*args))
+        assert getattr(obj, method)(*args)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

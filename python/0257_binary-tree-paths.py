@@ -30,6 +30,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -49,17 +51,16 @@ class Solution:
         return ["->".join(map(str, x)) for x in results]
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(5,
-                 left=TreeNode(6),
-                 right=TreeNode(2, TreeNode(7), TreeNode(4))
-                 ),
-        TreeNode(12),
-        None
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(5,
+                        left=TreeNode(6),
+                        right=TreeNode(2, TreeNode(7), TreeNode(4))
+                        )
+          ), ['5->6', '5->2->7', '5->2->4']],
+])
+def test_solutions(kw, expected):
+    assert Solution().binaryTreePaths(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.binaryTreePaths(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

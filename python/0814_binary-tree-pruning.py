@@ -54,6 +54,7 @@
 #  👍 96 👎 0
 
 """
+import pytest
 
 from common_utils import TreeNode
 
@@ -78,13 +79,13 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, right=TreeNode(0, TreeNode(0), TreeNode(1))),
-        TreeNode(0, right=TreeNode(1, TreeNode(0), TreeNode(1))),
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(1, right=TreeNode(0, TreeNode(0), TreeNode(1))), ['1', '#', '0', '#', '1']),
+    (TreeNode(0, right=TreeNode(1, TreeNode(0), TreeNode(1))), ['0', '#', '1', '#', '1'])
+])
+def test_solutions(args, expected):
+    assert repr(Solution().pruneTree(args)) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.pruneTree(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

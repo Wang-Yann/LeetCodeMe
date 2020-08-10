@@ -59,7 +59,10 @@
 #
 #  Related Topics 栈 哈希表
 #  👍 80 👎 0
+
 import collections
+
+import pytest
 
 
 class FreqStack:
@@ -89,7 +92,7 @@ class FreqStack:
         return x
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = FreqStack()
     ops_list = ["FreqStack", "push", "push", "push", "push",
                 "push", "push", "pop", "pop", "pop", "pop"]
@@ -97,4 +100,7 @@ if __name__ == '__main__':
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
         print(getattr(obj, method)(*args))
-        # print(method, args, obj)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -25,8 +25,9 @@
 
 """
 
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -60,16 +61,17 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [
-            ["1", "0", "1", "0", "0"],
-            ["1", "0", "1", "1", "1"],
-            ["1", "1", "1", "1", "1"],
-            ["1", "0", "0", "1", "0"]
-        ]
+@pytest.mark.parametrize("args,expected", [
+    ([
+         ["1", "0", "1", "0", "0"],
+         ["1", "0", "1", "1", "1"],
+         ["1", "1", "1", "1", "1"],
+         ["1", "0", "0", "1", "0"]
+     ], 6)
+])
+def test_solutions(args, expected):
+    assert Solution().maximalRectangle(args) == expected
 
-    ]
-    res = [sol.maximalRectangle(x) for x in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

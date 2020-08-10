@@ -133,7 +133,7 @@ class Solution:
                 cnt = 0 if (i, j) in lookup else cnt + 1
                 dp[i][j] = min(dp[i][j], cnt)
                 res = max(res, dp[i][j])
-        print(dp)
+        # print(dp)
         return res
 
 

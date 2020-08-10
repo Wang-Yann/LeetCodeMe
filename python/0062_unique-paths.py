@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
 #
@@ -49,6 +48,8 @@
 #  👍 609 👎 0
 
 """
+import pytest
+
 
 class Solution:
 
@@ -61,14 +62,16 @@ class Solution:
         dp = [[0] * (n + 1) for _ in range(m + 1)]
 
         dp[1][1] = 1
-        for row in range(1, m+1):
-            for col in range(1, n+1):
-                if row==1 and col==1:
+        for row in range(1, m + 1):
+            for col in range(1, n + 1):
+                if row == 1 and col == 1:
                     continue
                 dp[row][col] = dp[row][col - 1] + dp[row - 1][col]
         return dp[m][n]
 
-    def uniquePathsS(self, m, n):
+
+class Solution1:
+    def uniquePaths(self, m, n):
         if m < n:
             return self.uniquePaths(n, m)
         ways = [1] * n
@@ -80,15 +83,18 @@ class Solution:
         return ways[n - 1]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([3, 2], 3),
+    ([7, 3], 28),
+    ([33, 11], 1471442973),
+    ([1, 1], 1),
+    ([1, 10], 1),
+    ([10, 1], 1),
+])
+def test_solutions(args, expected):
+    assert Solution().uniquePaths(*args) == expected
+    assert Solution1().uniquePaths(*args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [3, 2],
-        [7, 3],
-        [99, 66],
-        [1, 1],
-        [1, 10],
-        [10, 1]
-    ]
-    res = [sol.uniquePaths(x, y) for x, y in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

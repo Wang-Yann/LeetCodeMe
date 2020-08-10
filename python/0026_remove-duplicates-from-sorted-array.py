@@ -56,6 +56,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
@@ -70,11 +72,13 @@ class Solution:
         return length
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]), 5],
+    [dict(nums=[1, 1, 2]), 2],
+])
+def test_solutions(kw, expected):
+    assert Solution().removeDuplicates(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-    sample1 = [1, 1, 2]
-    print(sol.removeDuplicates(sample))
-    print(sol.removeDuplicates(sample1))
-    print(sample)
-    print(sample1)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

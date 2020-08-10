@@ -15,20 +15,24 @@
 #
 #  Related Topics 链表
 #  👍 408 👎 0
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def removeElementsMe(self, head: ListNode, val: int) -> ListNode:
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+        """Me"""
         if not head:
             return head
         dummy = ListNode(None)
         cur, prev = head, dummy
         while cur:
             while cur and cur.val == val:
-                cur =cur.next
+                cur = cur.next
             prev.next = cur
             prev = prev.next
             if not cur:
@@ -36,26 +40,30 @@ class Solution:
             cur = cur.next
         return dummy.next
 
+
+class Solution1:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         dummy = ListNode(None)
-        dummy.next=head
+        dummy.next = head
         cur, prev = head, dummy
         while cur:
             if cur.val == val:
-                prev.next =cur.next
+                prev.next = cur.next
             else:
-                prev=cur
-            cur=cur.next
+                prev = cur
+            cur = cur.next
         return dummy.next
 
 
+@pytest.mark.parametrize("args,expected", [
+    [(ListNode.init_list_from_str("1->2->6->3->4->5->6"), 6), ListNode.initList([1, 2, 3, 4, 5])],
+    [(ListNode.init_list_from_str("1->2->6->3->4"), 6), ListNode.initList([1, 2, 3, 4])],
+    [(ListNode.init_list_from_str("1->2->3->4"), 6), ListNode.initList([1, 2, 3, 4])]
+])
+def test_solutions(args, expected):
+    assert repr(Solution().removeElements(*copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution1().removeElements(*copy.deepcopy(args))) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("1->2->6->3->4->5->6", 6),
-        ("1->2->6->3->4", 6),
-        ("1->2->3->4", 6),
-    ]
-    lists = [(ListNode.init_list_from_str(x), y) for x, y in samples]
-    res = [sol.removeElements(*x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

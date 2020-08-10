@@ -37,6 +37,8 @@
 """
 from typing import List
 
+import pytest
+
 
 class Solution:
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
@@ -62,8 +64,21 @@ class Solution:
         return sorted(tmp_list) == words
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        s="barfoothefoobarman",
+        words=["foo", "bar"]
+
+    ), [0, 9]],
+    [dict(
+        s="wordgoodgoodgoodbestword",
+        words=["word", "good", "best", "word"]
+
+    ), []],
+])
+def test_solutions(kw, expected):
+    assert Solution().findSubstring(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    s = "barfoothefoobarman"
-    words = ["foo", "bar"]
-    print(sol.findSubstring(s, words))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -34,6 +34,7 @@
 #  注意：本题与主站 191 题相同：https://leetcode-cn.com/problems/number-of-1-bits/
 #  Related Topics 位运算
 #  👍 35 👎 0
+import pytest
 
 
 class Solution0:
@@ -53,19 +54,20 @@ class Solution:
     def hammingWeight(self, n: int) -> int:
         """对于任意数字 n ，将 n 和 n - 1做与运算，会把最后一个 1的位变成 0"""
         ans = 0
-        while n!=0b0:
-            ans+=1
-            n &= (n-0b1)
+        while n != 0b0:
+            ans += 1
+            n &= (n - 0b1)
         return ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        0b00000000000000000000000000001011,
-        0b00000000000000000000000010000000,
-        0b11111111111111111111111111111101
+@pytest.mark.parametrize("args,expected", [
+    [0b00000000000000000000000000001011, 3],
+    [0b00000000000000000000000010000000, 1],
+    [0b11111111111111111111111111111101, 31],
+])
+def test_solutions(args, expected):
+    assert Solution().hammingWeight(args) == expected
 
-    ]
-    res = [sol.hammingWeight(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

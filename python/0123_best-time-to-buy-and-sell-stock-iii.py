@@ -37,18 +37,16 @@
 #  👍 447 👎 0
 from typing import List
 
-"""
-贪心算法
-&&&&&&&&&&&
-https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/solution/yi-ge-tong-yong-fang-fa-tuan-mie-6-dao-gu-piao-wen/
-
-"""
+import pytest
 
 
 class Solution:
 
     def maxProfit(self, prices: List[int]) -> int:
         """
+        贪心算法
+        &&&&&&&&&&&
+        https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/solution/yi-ge-tong-yong-fang-fa-tuan-mie-6-dao-gu-piao-wen/
             dp[i][k][0 or 1]
             0 <= i <= n-1, 1 <= k <= K
             n 为天数，大 K 为最多交易数
@@ -61,7 +59,7 @@ class Solution:
         max_k = 2
         k_range = (0, 1, 2)
         s_range = (0, 1)
-        dp = [[[0] * len(s_range) for y in k_range] for x in range(0, n)]
+        dp = [[[0] * len(s_range) for _ in k_range] for __ in range(0, n)]
         for ki in k_range:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
@@ -73,11 +71,14 @@ class Solution:
         return dp[n - 1][max_k][0]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([3, 3, 5, 0, 0, 3, 1, 4], 6),
+    ([1, 2, 3, 4, 5], 4),
+    ([7, 6, 4, 3, 1], 0),
+])
+def test_solutions(args, expected):
+    assert Solution().maxProfit(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [3, 3, 5, 0, 0, 3, 1, 4]
-    sample1 = [1, 2, 3, 4, 5]
-    sample2 = [7, 6, 4, 3, 1]
-    print(sol.maxProfit(sample))
-    print(sol.maxProfit(sample1))
-    print(sol.maxProfit(sample2))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

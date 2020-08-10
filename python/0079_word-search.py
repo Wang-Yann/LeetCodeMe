@@ -44,6 +44,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -57,27 +59,31 @@ class Solution:
         def need_walk_pos(i, j, visited):
             return 0 <= i <= m - 1 and 0 <= j <= n - 1 and (i, j) not in visited
 
-        def existRecu(pos_x, pox_y, curr, visited, k):
+        def dfs(pos_x, pox_y, curr, visited, k):
+            # print(pos_x, pox_y, curr, visited)
             if curr == word:
                 return True
-            res = False
             for x, y in [
                 (pos_x, pox_y - 1), (pos_x, pox_y + 1),
                 (pos_x - 1, pox_y), (pos_x + 1, pox_y)]:
                 if need_walk_pos(x, y, visited) and board[x][y] == word[k + 1]:
                     visited.append((x, y))
-                    res = res or existRecu(x, y, curr + board[x][y], visited, k + 1)
+                    if dfs(x, y, curr + board[x][y], visited, k + 1):
+                        return True
                     visited.pop()
 
         for i in range(m):
             for j in range(n):
                 if board[i][j] != word[0]:
                     continue
-                if existRecu(i, j, word[0], [(i, j)], 0):
+                res = dfs(i, j, word[0], [(i, j)], 0)
+                if res:
                     return True
         return False
 
-    def existS(self, board, word):
+
+class Solution1:
+    def exist(self, board, word):
         visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
 
         for i in range(len(board)):
@@ -104,17 +110,23 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    board = [
+@pytest.mark.parametrize("board", [
+    [
         ['A', 'B', 'C', 'E'],
         ['S', 'F', 'C', 'S'],
         ['A', 'D', 'E', 'E']
-    ]
-    samples = [
-        "ABCCED",
-        "SEE",
-        "ABCB"
-    ]
-    res = [sol.exist(board, x) for x in samples]
-    print(res)
+    ],
+])
+@pytest.mark.parametrize("word,expected", [
+    ["ABCCED", True],
+    ["SEE", True],
+    ["ABCB", False],
+])
+def test_solutions(board, word, expected):
+    # print(board,word)
+    assert Solution().exist(board, word) == expected
+    assert Solution1().exist(board, word) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

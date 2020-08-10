@@ -36,6 +36,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -68,10 +70,12 @@ class Solution:
         return results
 
 
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(1, right=TreeNode(2, left=TreeNode(2))), [2])
+])
+def test_solutions(args, expected):
+    assert Solution().findMode(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, right=TreeNode(2, left=TreeNode(2)))
-    ]
-    res = [sol.findMode(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -54,7 +54,7 @@ class Solution:
         envelopes.sort(key=lambda x:(x[0],-x[1]))
         for envelope in envelopes:
             insert(envelope[1])
-        print(LIS )
+        # print(LIS )
         return len(LIS)
 
 

@@ -130,7 +130,7 @@ def test_solution():
     f.addContentToFile("/a/b/c/d", "hello")
     assert f.ls("/") == ["a"]
     assert f.readContentFromFile("/a/b/c/d") == "hello"
-    print(f)
+    # print(f)
 
 
 if __name__ == '__main__':

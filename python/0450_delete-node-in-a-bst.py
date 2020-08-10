@@ -50,6 +50,7 @@
 #
 #  Related Topics 树
 #  👍 235 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -69,14 +70,14 @@ class Solution:
 
     def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
         if not root:
-            return None
+            return root
         if key > root.val:
             root.right = self.deleteNode(root.right, key)
         elif key < root.val:
             root.left = self.deleteNode(root.left, key)
         else:
             if not root.left and not root.right:
-                root= None
+                root = None
             elif root.right:
                 root.val = self.successor(root)
                 root.right = self.deleteNode(root.right, root.val)
@@ -86,16 +87,20 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(8,
-                 left=TreeNode(1),
-                 right=TreeNode(10, TreeNode(9), TreeNode(12))
-                 ),
-        TreeNode(9),
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(8,
+                        left=TreeNode(1),
+                        right=TreeNode(10, TreeNode(9), TreeNode(12))
+                        ), key=9),
+     TreeNode(8,
+              left=TreeNode(1),
+              right=TreeNode(10, right=TreeNode(12))
+              )
+     ],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().deleteNode(**kw)) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.deleteNode(x, 9) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

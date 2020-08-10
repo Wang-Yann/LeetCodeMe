@@ -38,26 +38,33 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
     def search(self, nums: List[int], target: int) -> int:
         left = 0
-        right = len(nums)-1
-        while left<=right:
-            mid = left+(right-right)//2
-            if nums[mid]==target:
+        right = len(nums) - 1
+        while left <= right:
+            mid = left + (right - right) // 2
+            if nums[mid] == target:
                 return True
-            elif (nums[left] <= target < nums[mid]) or (nums[mid] < nums[left] and not (nums[mid] < target <= nums[right])):
-                right =mid-1
+            elif (nums[left] <= target < nums[mid]) or (
+                nums[mid] < nums[left] and not (nums[mid] < target <= nums[right])):
+                right = mid - 1
             else:
-                left = mid+1
+                left = mid + 1
         return False
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[2, 5, 6, 0, 0, 1, 2], target=0), True],
+    [dict(nums=[2, 5, 6, 0, 0, 1, 2], target=3), False],
+])
+def test_solutions(kw, expected):
+    assert Solution().search(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [2,5,6,0,0,1,2]
-    sample1 = [2,5,6,0,0,1,2]
-    print(sol.search(sample, 0))
-    print(sol.search(sample1, 3))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

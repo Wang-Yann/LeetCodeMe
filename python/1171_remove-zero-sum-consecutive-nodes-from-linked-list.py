@@ -46,13 +46,14 @@
 #
 #  Related Topics 链表
 #  👍 69 👎 0
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def removeZeroSumSublistsMe(self, head: ListNode) -> ListNode:
+    def removeZeroSumSublists(self, head: ListNode) -> ListNode:
         """
 
         """
@@ -81,6 +82,8 @@ class Solution:
             pos = pos.next
         return dummy.next
 
+
+class Solution1:
     def removeZeroSumSublists(self, head: ListNode) -> ListNode:
         """
         TODO 前缀和 掌握 ; so Amazing
@@ -112,21 +115,22 @@ class Solution:
         return dummy.next
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 2, -3, 3, 1],
-        # [1, 2, 3, -3, 4],
-        # [1, 2, 3, -3, -2],
-        # [],
-        # [0],
-        # [0, 0],
-        # [-1, 1, 0, 1],
-        # [2,2,-2,1,-1,-1],
-        # [-1, -2, 0, -1, 2, 2, -1, 1],
-        # [-1,1,1,-1]
+@pytest.mark.parametrize("args,expected", [
+    [ListNode.initList([1, 2, -3, 3, 1], ), ListNode.initList([3, 1])],
+    [ListNode.initList([1, 2, 3, -3, 4], ), ListNode.initList([1, 2, 4])],
+    [ListNode.initList([1, 2, 3, -3, -2], ), ListNode.initList([1])],
+    [ListNode.initList([], ), ListNode.initList([])],
+    [ListNode.initList([0], ), ListNode.initList([])],
+    [ListNode.initList([0, 0], ), ListNode.initList([])],
+    [ListNode.initList([-1, 1, 0, 1], ), ListNode.initList([1])],
+    [ListNode.initList([2, 2, -2, 1, -1, -1], ), ListNode.initList([2, -1])],
+    [ListNode.initList([-1, -2, 0, -1, 2, 2, -1, 1], ), ListNode.initList([])],
+    [ListNode.initList([-1, 1, 1, -1]), ListNode.initList([])]
+])
+def test_solutions(args, expected):
+    assert repr(Solution().removeZeroSumSublists(args)) == repr(expected)
+    assert repr(Solution1().removeZeroSumSublists(args)) == repr(expected)
 
-    ]
-    lists = [ListNode.initList(x) for x in samples]
-    res = [sol.removeZeroSumSublists(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -9,6 +9,8 @@
 import bisect
 import collections
 
+import pytest
+
 
 class TimeMap:
 
@@ -29,7 +31,7 @@ class TimeMap:
         return A[i - 1][1] if i else ""
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = TimeMap()
     ops_list = ["TimeMap", "set", "get", "get", "set", "get", "get"]
     args_list = [[], ["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5]]
@@ -37,3 +39,7 @@ if __name__ == '__main__':
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
         print(getattr(obj, method)(*args))
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

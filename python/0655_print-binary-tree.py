@@ -71,21 +71,26 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
 class Solution:
     def printTree(self, root: TreeNode) -> List[List[str]]:
         def getWidth(root):
-            if not root: return 0
+            if not root:
+                return 0
             return 2 * max(getWidth(root.left), getWidth(root.right)) + 1
 
         def getHeight(root):
-            if not root: return 0
+            if not root:
+                return 0
             return max(getHeight(root.left), getHeight(root.right)) + 1
 
         def preorderTraversal(root, level, left, right):
-            if not root: return
+            if not root:
+                return
             mid = (left + right) >> 1
             result[level][mid] = str(root.val)
             preorderTraversal(root.left, level + 1, left, mid - 1)
@@ -97,14 +102,15 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, TreeNode(2)),
-        TreeNode(1, TreeNode(2, right=TreeNode(4)), TreeNode(3)),
-        None
+@pytest.mark.parametrize("args,expected", [
+    [TreeNode(1, TreeNode(2)), [['', '1', ''], ['2', '', '']]],
+    [TreeNode(1, TreeNode(2, right=TreeNode(4)), TreeNode(3)),
+     [['', '', '', '1', '', '', ''], ['', '2', '', '', '', '3', ''], ['', '', '4', '', '', '', '']]],
+    [None, []],
+])
+def test_solutions(args, expected):
+    assert Solution().printTree(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.printTree(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

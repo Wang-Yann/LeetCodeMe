@@ -32,11 +32,9 @@
 
 """
 
-
-import os
-import sys
-import traceback
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -46,31 +44,29 @@ class Solution:
         三向切分
         """
         length = len(nums)
-        lo,hi = 0,length-1
-        lt,gt=lo,hi
-        i =lo
-        MID_V=1
-        while  i<=gt:
-            if nums[i]<MID_V:
-                nums[i],nums[lt]=nums[lt],nums[i]
-                lt+=1
-                i+=1
-            elif nums[i]>MID_V:
-                nums[i],nums[gt]=nums[gt],nums[i]
-                gt-=1
+        lo, hi = 0, length - 1
+        lt, gt = lo, hi
+        i = lo
+        MID_V = 1
+        while i <= gt:
+            if nums[i] < MID_V:
+                nums[i], nums[lt] = nums[lt], nums[i]
+                lt += 1
+                i += 1
+            elif nums[i] > MID_V:
+                nums[i], nums[gt] = nums[gt], nums[i]
+                gt -= 1
             else:
-                i+=1
+                i += 1
 
 
-
+@pytest.mark.parametrize("args,expected", [
+    ([2, 0, 2, 1, 1, 0], [0, 0, 1, 1, 2, 2])
+])
+def test_solutions(args, expected):
+    Solution().sortColors(args)
+    assert args == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        [2,0,2,1,1,0],
-        [0,0,2,0],
-        [1,0,1,0]
-    ]
-    res = [ sol.sortColors(x) for x in samples]
-    print(samples)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

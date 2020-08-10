@@ -37,8 +37,9 @@
 
 """
 
-
 from typing import List
+
+import pytest
 
 
 class Solution0:
@@ -97,15 +98,15 @@ class Solution:
         return sum(a * l * r for a, l, r in zip(A, left, right)) % MOD
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        # [3, 1, 2, 4],
-        [3, 1, 5, 3, 1, 2, 4],
-        # [],
-        # [1]
+@pytest.mark.parametrize("args,expected", [
+    ([3, 1, 2, 4], 17),
+    ([3, 1, 5, 3, 1, 2, 4], 43),
+    ([], 0),
+    ([1], 1),
+])
+def test_solutions(args, expected):
+    assert Solution().sumSubarrayMins(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.sumSubarrayMins(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

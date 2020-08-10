@@ -26,8 +26,10 @@
 #  👍 581 👎 0
 
 """
-
+import copy
 from typing import List
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -85,30 +87,30 @@ class Solution2:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
         cur = root
-        while cur :
+        while cur:
             if not cur.left:
                 res.append(cur.val)
-                cur=cur.right  #// move to next right node
-            else: #// has a left subtree
-                pre=cur.left
-                while pre.right: #// find rightmost
+                cur = cur.right  # // move to next right node
+            else:  # // has a left subtree
+                pre = cur.left
+                while pre.right:  # // find rightmost
                     pre = pre.right
-                pre.right = cur    #// put cur after the pre node
-                tmp =cur           #// store cur node
-                cur=cur.left       #// move cur to the top of the new tree
-                tmp.left=None      #// original cur left be null, avoid infinite loops
+                pre.right = cur  # // put cur after the pre node
+                tmp = cur  # // store cur node
+                cur = cur.left  # // move cur to the top of the new tree
+                tmp.left = None  # // original cur left be null, avoid infinite loops
 
         return res
 
 
-if __name__ == '__main__':
-    # sol = Solution()
-    sol = Solution2()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(1, right=TreeNode(2, left=TreeNode(3)))), [1, 3, 2]],
+])
+def test_solutions(kw, expected):
+    assert Solution().inorderTraversal(**copy.deepcopy(kw)) == expected
+    assert Solution2().inorderTraversal(**copy.deepcopy(kw)) == expected
+    assert Solution1().inorderTraversal(**copy.deepcopy(kw)) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.inorderTraversal(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

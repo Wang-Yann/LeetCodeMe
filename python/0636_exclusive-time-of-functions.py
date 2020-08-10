@@ -46,6 +46,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def exclusiveTime(self, n: int, logs: List[str]) -> List[int]:
@@ -69,15 +71,12 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(n=2, logs=["0:start:0",
-                        "1:start:2",
-                        "1:end:5",
-                        "0:end:6"])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(n=2, logs=["0:start:0", "1:start:2", "1:end:5", "0:end:6"]), [3, 4]],
+])
+def test_solutions(kw, expected):
+    assert Solution().exclusiveTime(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.exclusiveTime(**x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

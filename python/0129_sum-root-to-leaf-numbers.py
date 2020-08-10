@@ -42,12 +42,13 @@
 # 因此，数字总和 = 495 + 491 + 40 = 1026.
 #  Related Topics 树 深度优先搜索
 #  👍 155 👎 0
+import pytest
 
 from common_utils import TreeNode
 
 
-class Solution:
-    def sumNumbersMe(self, root: TreeNode) -> int:
+class Solution0:
+    def sumNumbers(self, root: TreeNode) -> int:
         results = []
 
         def dfs(path, cur):
@@ -67,25 +68,34 @@ class Solution:
         # print(results)
         return sum(results, 0)
 
+
+class Solution:
     def sumNumbers(self, root: TreeNode) -> int:
         def helper(node, path_sum):
             if not node: return 0
             if not node.left and not node.right:
                 return path_sum * 10 + node.val
-            return helper(node.left, path_sum * 10 + node.val)\
+            return helper(node.left, path_sum * 10 + node.val) \
                    + helper(node.right, path_sum * 10 + node.val)
 
         return helper(root, 0)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]),
-        ([1], [], [])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(1, TreeNode(2, ),TreeNode(3))
+    ), 25],
+    [dict(
+        root=TreeNode(
+            4,
+            left=TreeNode(9, TreeNode(5), TreeNode(1)),
+            right=TreeNode(0)
+        )
+    ), 1026],
+])
+def test_solutions(kw, expected):
+    assert Solution().sumNumbers(**kw) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.sumNumbers(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

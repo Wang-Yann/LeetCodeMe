@@ -45,6 +45,8 @@
 import collections
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -54,10 +56,11 @@ class Solution:
         BFS
         不过更改了数据结构,加了父指针
         """
-        parent_map={}
+        parent_map = {}
+
         def dfs(cur, parent):
             if cur:
-                parent_map[cur]=parent
+                parent_map[cur] = parent
                 # cur.parent = parent
                 dfs(cur.left, cur)
                 dfs(cur.right, cur)
@@ -76,11 +79,13 @@ class Solution:
         return []
 
 
-if __name__ == '__main__':
-    sol = Solution()
-
+def test_solutions():
     target = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4)))
     root = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(8)))
     K = 2
-    res = sol.distanceK(root, target, K)
-    print(res)
+    res = Solution().distanceK(root, target, K)
+    assert res == [7, 4, 1]
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

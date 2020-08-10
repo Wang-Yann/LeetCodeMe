@@ -21,13 +21,16 @@
 #  👍 425 👎 0
 
 """
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def reverseBetweenMe(self, head: ListNode, m: int, n: int) -> ListNode:
+    def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         i = 0
         dummy = ListNode(-1)
         dummy.next = head
@@ -48,6 +51,8 @@ class Solution:
         left_end.next = right_part
         return dummy.next
 
+
+class Solution1:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         diff, dummy, cur = n - m + 1, ListNode(-1), head
         dummy.next = head
@@ -56,13 +61,13 @@ class Solution:
         while cur and m > 1:
             cur, last_unswap, m = cur.next, cur, m - 1
         prev, first_swap = last_unswap, cur
-        print(first_swap, last_unswap, sep="\t")
-        print(cur, prev, sep="\t")
+        # print(first_swap, last_unswap, sep="\t")
+        # print(cur, prev, sep="\t")
         # Reverse List part
         while cur and diff > 0:
             prev, cur.next, cur, diff = cur, prev, cur.next, diff - 1
-        print(cur.val, prev.val, sep="\t")
-        print(first_swap.val, last_unswap.val, sep="\t")
+        # print(cur.val, prev.val, sep="\t")
+        # print(first_swap.val, last_unswap.val, sep="\t")
 
         first_swap.next, last_unswap.next = cur, prev
 
@@ -70,23 +75,27 @@ class Solution:
 
     def reverseList(self, head):
         """
-        TODO
+        TODO 示范写法
         """
         dummy = ListNode(-1)
         while head:
-            print("Before", head, dummy.next, head.next, sep="\t")
+            # print("Before", head, dummy.next, head.next, sep="\t")
             dummy.next, head.next, head = head, dummy.next, head.next
             # print("After",dummy.next, head.next, head,sep="\t")
         return dummy.next
 
 
+@pytest.mark.parametrize("kw,expected", [
+    (dict(
+        head=ListNode.init_list_from_str("1->2->3->4->5"), m=2, n=4
+    ), ListNode.initList([1, 4, 3, 2, 5])
+    )
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().reverseBetween(**kw)) == repr(expected)
+    assert repr(Solution1().reverseBetween(**kw1)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("1->2->3->4->5", 2, 4),
-        # ("1->2->3->4->5", 2, 2),
-        # ("1", 1, 1),
-    ]
-    res = [sol.reverseBetween(ListNode.init_list_from_str(x), m, n) for x, m, n in samples]
-    # res = [sol.reverseList(ListNode.init_list_from_str(x)) for x, m, n in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

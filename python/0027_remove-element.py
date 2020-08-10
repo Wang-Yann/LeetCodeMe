@@ -62,9 +62,11 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
-    def removeElement0(self, nums: List[int], val: int) -> int:
+    def removeElement(self, nums: List[int], val: int) -> int:
         length = len(nums)
         i = 0
         while i < length:
@@ -72,25 +74,29 @@ class Solution:
                 nums.remove(nums[i])
                 length -= 1
             else:
-                i+=1
+                i += 1
         return length
 
+
+class Solution1:
     def removeElement(self, nums: List[int], val: int) -> int:
         i = 0
-        j =0
+        j = 0
         while j < len(nums):
             if nums[j] != val:
-                nums[i]=nums[j]
-                i+=1
-            j+=1
+                nums[i] = nums[j]
+                i += 1
+            j += 1
         return i
 
 
+@pytest.mark.parametrize("kw,expected,new_nums", [
+    [dict(nums=[0, 0, 1, 1, 1, 2, 2, 3, 3, 4], val=3), 8, [0, 0, 1, 1, 1, 2, 2, 4]],
+])
+def test_solutions(kw, expected, new_nums):
+    assert Solution().removeElement(**kw) == expected
+    assert kw["nums"] == new_nums
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-    sample1 = [1, 1, 2]
-    print(sol.removeElement(sample, 3))
-    print(sol.removeElement(sample1, 1))
-    print(sample)
-    print(sample1)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

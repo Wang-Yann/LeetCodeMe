@@ -50,11 +50,13 @@
 #  👍 1694 👎 0
 
 """
+import pytest
+
 
 class Solution:
 
     def isValid(self, s: str) -> bool:
-        hash_map = {"(":")", "[":"]", "{":"}"}
+        hash_map = {"(": ")", "[": "]", "{": "}"}
         stack = []
         for c in s:
             if c in hash_map:
@@ -65,13 +67,17 @@ class Solution:
                 last = stack.pop()
                 if c != hash_map[last]:
                     return False
-        return  len(stack)==0
+        return len(stack) == 0
+
+
+@pytest.mark.parametrize(
+    "args,expected", list(zip(
+        ["()", "", "()[]{}", "(]", "([)]", "{[]}"],
+        [True, True, True, False, False, True]
+    )))
+def test_solutions(args, expected):
+    assert Solution().isValid(args) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "()", "", "()[]{}", "(]", "([)]", "{[]}"
-    ]
-    res = [sol.isValid(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

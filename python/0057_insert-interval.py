@@ -30,10 +30,12 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
-    def insertS(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         low, high = newInterval
         if not intervals:
             return [newInterval]
@@ -49,11 +51,13 @@ class Solution:
             l += 1
         while intervals[r][0] > high and l <= r:
             r -= 1
-        print(l, r)
+        # print(l, r)
         new_v = [min(low, intervals[l][0]), max(high, intervals[r][1])]
         intervals[l:r + 1] = [new_v]
         return intervals
 
+
+class Solution1:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         res = []
         length = len(intervals)
@@ -79,17 +83,17 @@ class Solution:
         return res
 
 
+@pytest.mark.parametrize("args,expected", [
+    [([[1, 3], [6, 9]], [2, 5]), [[1, 5], [6, 9]]],
+    [([[2, 3], [6, 9]], [0, 1]), [[0, 1], [2, 3], [6, 9]]],
+    [([[2, 3], [6, 9]], [0, 2]), [[0, 3], [6, 9]]],
+    [([[2, 3], [6, 9]], [11, 12]), [[2, 3], [6, 9], [11, 12]]],
+    [([[2, 3], [6, 9]], [8, 12]), [[2, 3], [6, 12]]],
+    [([[2, 3], [6, 9]], [0, 0]), [[0, 0], [2, 3], [6, 9]]],
+])
+def test_solutions(args, expected):
+    assert Solution().insert(*args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
-    ]
-    newInterval = [4, 8]
-    res = [sol.insert(x, newInterval) for x in samples]
-    print(res)
-    print(sol.insert([[1, 3], [6, 9]], [2, 5]))
-    print(sol.insert([[2, 3], [6, 9]], [0, 1]))
-    print(sol.insert([[2, 3], [6, 9]], [0, 2]))
-    print(sol.insert([[2, 3], [6, 9]], [11, 12]))
-    print(sol.insert([[2, 3], [6, 9]], [8, 12]))
-    print(sol.insert([[2, 3], [6, 9]], [0, 0]))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

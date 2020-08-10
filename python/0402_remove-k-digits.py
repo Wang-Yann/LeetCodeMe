@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。
 #
@@ -45,6 +44,8 @@
 #  👍 256 👎 0
 
 """
+import pytest
+
 
 class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
@@ -61,14 +62,15 @@ class Solution:
         return "".join(final_stack).lstrip("0") or "0"
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("1432219", 3),
-        ("10200", 1),
-        ("10", 2),
+@pytest.mark.parametrize("args,expected", [
+    [("1432219", 3), "1219"],
+    [("10200", 1), "200"],
+    [("10", 2), "0"],
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.removeKdigits(*x) for x in lists]
-    print(res)
+])
+def test_solutions(args, expected):
+    assert Solution().removeKdigits(*args) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

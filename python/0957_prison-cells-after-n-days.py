@@ -88,8 +88,7 @@ def test_N():
     for N in range(44):
         N1 = N - max(N - 1, 0) // 14 * 14
         N2 = N % 14
-        if N1 != N2:
-            print(N1, N2)
+        assert N1==N2
 
 
 @pytest.mark.parametrize("kw,expected", [

@@ -32,6 +32,8 @@
 from collections import deque
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -49,13 +51,15 @@ class Solution:
             if node.right:
                 levelOrderTraversalRecursive(node.right, level + 1)
 
-
         levelOrderTraversalRecursive(root, 0)
         return res[::-1]
 
-    def levelOrderBottomBFS(self, root: TreeNode) -> List[List[int]]:
+
+class Solution1:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
         levels = []
-        if not root: return levels
+        if not root:
+            return levels
         dq = deque([root])
         while dq:
             level_length = len(dq)
@@ -72,13 +76,19 @@ class Solution:
         return levels
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(
+            3,
+            TreeNode(9),
+            TreeNode(20, TreeNode(15), TreeNode(7)),
+        )
+    ), [[15, 7], [9, 20], [3]]],
+])
+def test_solutions(kw, expected):
+    assert Solution().levelOrderBottom(**kw) == expected
+    assert Solution1().levelOrderBottom(**kw) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.levelOrderBottom(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

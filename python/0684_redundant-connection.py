@@ -50,6 +50,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import UnionFind
 
 
@@ -62,13 +64,13 @@ class Solution:
         return []
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [[1, 2], [1, 3], [2, 3]],
-        [[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]
+@pytest.mark.parametrize("args,expected", [
+    ([[1, 2], [1, 3], [2, 3]], [2, 3]),
+    ([[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]], [1, 4]),
+])
+def test_solutions(args, expected):
+    assert Solution().findRedundantConnection(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.findRedundantConnection(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

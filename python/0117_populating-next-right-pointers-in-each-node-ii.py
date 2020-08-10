@@ -54,13 +54,12 @@
 #
 #  Related Topics 树 深度优先搜索
 #  👍 172 👎 0
+import pytest
 
 from common_utils import TreeNodeWithNext as Node
 
 
 class Solution:
-
-
 
     def connect(self, root: 'Node') -> 'Node':
         """
@@ -87,10 +86,12 @@ class Solution:
         return root
 
 
+@pytest.mark.parametrize("args,expected", [
+    (Node(1, Node(2, None, Node(5), None), Node(3, None, Node(7), None), None), [1, 2, 3, '#', 5, '#', 7])
+])
+def test_solutions(args, expected):
+    assert repr(Solution().connect(args)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, Node(2, None, Node(5), None), Node(3, None, Node(7), None), None)
-    ]
-    res = [sol.connect(x) for x in samples]
-    print(samples)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

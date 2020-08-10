@@ -74,13 +74,17 @@
 #
 #  Related Topics 树
 #  👍 60 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
 
-    def addOneRowMe(self, root: TreeNode, v: int, d: int) -> TreeNode:
+    def addOneRow(self, root: TreeNode, v: int, d: int) -> TreeNode:
+        """Me"""
         if not root or not d:
             return root
         level = 1
@@ -112,6 +116,9 @@ class Solution:
             return node
         # print(level_nodes)
         return root
+
+
+class Solution1:
     def addOneRow(self, root, v, d):
         """
         """
@@ -123,19 +130,31 @@ class Solution:
                 node.right = root
             return node
         if root and d >= 2:
-            root.left = self.addOneRow(root.left,  v, d-1 if d > 2 else 1)
-            root.right = self.addOneRow(root.right, v, d-1 if d > 2 else 0)
+            root.left = self.addOneRow(root.left, v, d - 1 if d > 2 else 1)
+            root.right = self.addOneRow(root.right, v, d - 1 if d > 2 else 0)
         return root
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(
+        4,
+        TreeNode(2, TreeNode(3), TreeNode(1)),
+        TreeNode(6, TreeNode(5))
+    ),
+        v=1, d=2),
+        TreeNode(
+            4,
+            left=TreeNode(1, left=TreeNode(2, TreeNode(3), TreeNode(1))),
+            right=TreeNode(1, right=TreeNode(6, TreeNode(5)))
+        )
+
+    ],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().addOneRow(**kw)) == repr(expected)
+    assert repr(Solution1().addOneRow(**kw1)) == repr(expected)
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        (TreeNode(4, TreeNode(2, TreeNode(3), TreeNode(1)), TreeNode(6, TreeNode(5))),
-         1, 2)
-
-    ]
-    res = [sol.addOneRow(*args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

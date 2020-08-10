@@ -25,6 +25,8 @@
 #  👍 163 👎 0
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -46,10 +48,14 @@ class Solution:
         return res
 
 
+@pytest.mark.parametrize("args,expected", [
+    (3, [1, 3, 3, 1]),
+    (2, [1, 2, 1]),
+    (5, [1, 5, 10, 10, 5, 1]),
+])
+def test_solutions(args, expected):
+    assert Solution().getRow(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = []
-    print(sol.getRow(3))
-    print(sol.getRow(2))
-    print(sol.getRow(5))
-    print(sol.getRow(5))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -33,9 +33,9 @@
 
 """
 
-
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -51,19 +51,22 @@ class Solution:
                     backtrack(i + 1, curr + char.upper())
                 else:
                     backtrack(i + 1, curr + char)
+
         output = []
         n = len(S)
         backtrack(0, "")
         return output
 
 
+@pytest.mark.parametrize("args,expected", [
+    ["a1b2", ['a1b2', 'a1B2', 'A1b2', 'A1B2']],
+    ["3z4", ['3z4', '3Z4']],
+    ["12345", ['12345']],
+    ["", [""]],
+])
+def test_solutions(args, expected):
+    assert sorted(Solution().letterCasePermutation(args)) == sorted(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "a1b2",
-        "3z4",
-        "12345",
-        ""
-    ]
-    res = [sol.letterCasePermutation(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 # 给出一个完全二叉树，求出该树的节点个数。
 #
 #  说明：
@@ -27,7 +26,7 @@
 # 输出: 6
 #  Related Topics 树 二分查找
 #  👍 193 👎 0
-
+import pytest
 
 from common_utils import TreeNode
 
@@ -35,7 +34,7 @@ from common_utils import TreeNode
 class Solution:
     def countNodes(self, root: TreeNode) -> int:
         ans = []
-        if not root:return 0
+        if not root: return 0
         stack = [root]
         while stack:
             node = stack.pop()
@@ -47,14 +46,16 @@ class Solution:
         return len(ans)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, left=TreeNode(2, TreeNode(4), TreeNode(5)),
-                 right=TreeNode(3, left=TreeNode(6))
-                 )
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(1, left=TreeNode(2, TreeNode(4), TreeNode(5)),
+                      right=TreeNode(3, left=TreeNode(6))
+                      )
+    ), 6],
+])
+def test_solutions(kw, expected):
+    assert Solution().countNodes(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.countNodes(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

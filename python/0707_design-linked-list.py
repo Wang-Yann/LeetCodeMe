@@ -48,6 +48,7 @@
 #  👍 151 👎 0
 
 """
+import pytest
 
 from common_utils import ListNode, DoubleListNode
 
@@ -62,7 +63,7 @@ class MyLinkedList:
         self.tail.prev = self.head
 
     def __repr__(self):
-        return "MyLinkedList({}  |length: {} )".format(self.head, self.size)
+        return "MyLinkedList({}  |  length: {} )".format(self.head, self.size)
 
     def get(self, index: int) -> int:
         """
@@ -181,7 +182,7 @@ class MyLinkedListSingle:
         self.__size = 0
 
     def __repr__(self):
-        return "MyLinkedListSingle({}  |length: {} )".format(self.__dummy_head.next, self.__size)
+        return "MyLinkedListSingle({}  |  length: {} )".format(self.__dummy_head.next, self.__size)
 
     def get(self, index: int) -> int:
         """
@@ -235,25 +236,33 @@ class MyLinkedListSingle:
         self.__size -= 1
 
 
-if __name__ == '__main__':
+@pytest.mark.parametrize("ops_list, args_list", [
+    (["MyLinkedList", "addAtHead", "get", "addAtHead", "addAtHead",
+      "deleteAtIndex", "addAtHead", "get", "get", "get", "addAtHead",
+      "deleteAtIndex"],
+     [[], [4], [1], [1], [5], [3], [7], [3], [3], [3], [1], [4]]),
+    (
+        ["MyLinkedList", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "deleteAtIndex",
+         "addAtHead", "addAtTail", "get", "addAtHead", "addAtIndex", "addAtHead"],
+        [[], [7], [2], [1], [3, 0], [2], [6], [4], [4], [4], [5, 0], [6]]
+    ),
+    (["MyLinkedList", "addAtHead", "addAtTail", "deleteAtIndex", "addAtTail", "addAtIndex", "addAtIndex",
+      "deleteAtIndex",
+      "deleteAtIndex", "addAtTail", "addAtIndex", "addAtTail"],
+     [[], [7], [0], [1], [5], [1, 1], [2, 6], [2], [1], [7], [1, 7], [6]])
+])
+@pytest.mark.parametrize("LinkedListCLS", [
+    MyLinkedList, MyLinkedListSingle
+])
+def test_solutions(LinkedListCLS, ops_list, args_list):
+    print("-" * 30)
+    print(LinkedListCLS.__name__, list(zip(ops_list, args_list)))
+    lk = LinkedListCLS()
+    for i in range(1, len(ops_list)):
+        method, args = ops_list[i], args_list[i]
+        print(method, args, lk, getattr(lk, method)(*args))
+    print("-" * 30)
 
-    samples = [
-        # (["MyLinkedList", "addAtHead", "get", "addAtHead", "addAtHead",
-        #   "deleteAtIndex", "addAtHead", "get", "get", "get", "addAtHead",
-        #   "deleteAtIndex"],
-        #  [[], [4], [1], [1], [5], [3], [7], [3], [3], [3], [1], [4]]),
-        # (
-        #     ["MyLinkedList", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "deleteAtIndex", "addAtHead", "addAtTail", "get", "addAtHead", "addAtIndex", "addAtHead"],
-        #     [[], [7], [2], [1], [3, 0], [2], [6], [4], [4], [4], [5, 0], [6]]
-        # ),
-        (["MyLinkedList", "addAtHead", "addAtTail", "deleteAtIndex", "addAtTail", "addAtIndex", "addAtIndex", "deleteAtIndex",
-          "deleteAtIndex", "addAtTail", "addAtIndex", "addAtTail"],
-         [[], [7], [0], [1], [5], [1, 1], [2, 6], [2], [1], [7], [1, 7], [6]])
-    ]
-    for ops_list, args_list in samples:
-        print("-----------------------------------------------------\n")
-        lk = MyLinkedList()
-        for i in range(1, len(ops_list)):
-            method, args = ops_list[i], args_list[i]
-            print(getattr(lk, method)(*args))
-            print(method, args, lk)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

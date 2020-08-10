@@ -59,12 +59,15 @@
 """
 from typing import List
 
+import pytest
+
 from common_utils import ListNode
 
 
 class Solution:
 
-    def splitListToPartsMe(self, root: ListNode, k: int) -> List[ListNode]:
+    def splitListToParts(self, root: ListNode, k: int) -> List[ListNode]:
+        """Me"""
         if not root:
             return [None] * k
         n = 0
@@ -95,12 +98,9 @@ class Solution:
                     cur_pos = tmp
         return [x.next for x in res]
 
+
+class Solution1:
     def splitListToParts(self, root, k):
-        """
-        :type root: ListNode
-        :type k: int
-        :rtype: List[ListNode]
-        """
         n = 0
         curr = root
         while curr:
@@ -121,13 +121,16 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, 2, 3], 5),
-        ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=ListNode.initList([1, 2, 3]), k=5), [[1], [2], [3], [], []]],
+    [dict(root=ListNode.initList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), k=3),
+     [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]]],
+])
+def test_solutions(kw, expected):
+    expected = [ListNode.initList(x) for x in expected]
+    res = Solution().splitListToParts(**kw)
+    assert repr(res) == repr(expected)
 
-    ]
-    lists = [(ListNode.initList(x), y) for x, y in samples]
-    res = [sol.splitListToPartsSP(x, y) for x, y in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

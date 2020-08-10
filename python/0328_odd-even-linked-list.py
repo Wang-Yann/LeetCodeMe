@@ -6,7 +6,7 @@
 # @Mail          : lostlorder@gamil.com
 # @Version       : alpha-1.0
 
-# 给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
+"""
 #
 #  请尝试使用原地算法完成。你的算法的空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。
 #
@@ -29,7 +29,9 @@
 #
 #  Related Topics 链表
 #  👍 210 👎 0
+"""
 
+import pytest
 
 from common_utils import ListNode
 
@@ -54,12 +56,16 @@ class Solution:
         return head
 
 
+@pytest.mark.parametrize("args,expected", [
+    (
+        ListNode.initList([1, 2, 3, 4, 5]),
+        ListNode.initList([1, 3, 5, 2, 4]),
+
+    )
+])
+def test_solutions(args, expected):
+    assert repr(Solution().oddEvenList(args)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1->2->3->4->5",
-        # "2->1->3->5->6->4->7",
-    ]
-    lists = [ListNode.init_list_from_str(x) for x in samples]
-    res = [sol.oddEvenList(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

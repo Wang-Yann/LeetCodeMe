@@ -49,6 +49,7 @@
 #  注意: 给定的二叉树不超过10000个结点。 树的高度不超过1000。
 #  Related Topics 树 递归
 #  👍 304 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -76,13 +77,13 @@ class Solution:
         return self.ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(5, TreeNode(4, TreeNode(1), TreeNode(1)),
-                 TreeNode(5, TreeNode(6), right=TreeNode(5)))
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(5, TreeNode(4, TreeNode(1), TreeNode(1)),
+                        TreeNode(5, TreeNode(6), right=TreeNode(5)))), 2],
+])
+def test_solutions(kw, expected):
+    assert Solution().longestUnivaluePath(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.longestUnivaluePath(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

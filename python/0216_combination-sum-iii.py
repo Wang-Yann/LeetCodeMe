@@ -35,17 +35,18 @@
 
 from typing import List
 
+import pytest
 
 
 class Solution:
 
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         result = []
-        self.combinationSumRecu(result, [], 1, k, n)
+        self.helper(result, [], 1, k, n)
         return result
 
-    def combinationSumRecu(self, result: List[List[int]], intermediate: List[int],
-                          start: int, k:int, target: int) -> None:
+    def helper(self, result: List[List[int]], intermediate: List[int],
+               start: int, k: int, target: int) -> None:
         if k == 0 and target == 0:
             result.append(list(intermediate))
         elif k < 0:
@@ -53,13 +54,18 @@ class Solution:
         # while start < 10 and start * k + k * (k - 1) / 2 <= target:
         while start < 10:
             intermediate.append(start)
-            self.combinationSumRecu(result, intermediate, start + 1, k - 1, target - start)
+            self.helper(result, intermediate, start + 1, k - 1, target - start)
             intermediate.pop()
             start += 1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(k=3, n=7), [[1, 2, 4]]],
+    [dict(k=3, n=9), [[1, 2, 6], [1, 3, 5], [2, 3, 4]]],
+])
+def test_solutions(kw, expected):
+    assert Solution().combinationSum3(**kw) == expected
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [10,1,2,7,6,1,5]
-    print(sol.combinationSum3(3, 9))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

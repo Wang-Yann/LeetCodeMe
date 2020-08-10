@@ -78,7 +78,7 @@ class Solution1:
             if A[i - 2] + A[i] == 2 * A[i - 1]:
                 dp[i] = dp[i - 1] + 1
                 # ans+=dp[i]
-        print(dp)
+        # print(dp)
         return sum(dp)
 
 

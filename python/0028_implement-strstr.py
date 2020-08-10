@@ -36,23 +36,23 @@
 """
 
 # Rabin Karp is OK
+import pytest
+
 
 class Solution:
 
     def strStr(self, haystack: str, needle: str) -> int:
         lennd = len(needle)
-        if not lennd:return 0
+        if not lennd:
+            return 0
         for i in range(len(haystack) - lennd + 1):
-            if haystack[i : i + len(needle)] == needle:
+            if haystack[i: i + len(needle)] == needle:
                 return i
         return -1
 
-    def strStrKmp(self, haystack, needle):
-        """
-        :type haystack: str
-        :type needle: str
-        :rtype: int
-        """
+
+class Solution1:
+    def strStr(self, haystack, needle):
         if not needle:
             return 0
 
@@ -61,35 +61,39 @@ class Solution:
     def KMP(self, text, pattern):
         prefix = self.getPrefix(pattern)
         j = -1
-        print(prefix)
+        # print(prefix)
         for i in range(len(text)):
             while j > -1 and pattern[j + 1] != text[i]:
                 j = prefix[j]
             if pattern[j + 1] == text[i]:
                 j += 1
-            if j==len(pattern)-1:
-                return  i-j
+            if j == len(pattern) - 1:
+                return i - j
         return -1
 
-    def getPrefix(self,pattern):
+    def getPrefix(self, pattern):
         lenP = len(pattern)
-        prefixArray = [-1]* lenP
-        j=-1
-        for i in range(1,lenP):
-            while j>-1 and pattern[j+1]!=pattern[i]:
-                print(i,j,pattern[j],prefixArray[j])
+        prefixArray = [-1] * lenP
+        j = -1
+        for i in range(1, lenP):
+            while j > -1 and pattern[j + 1] != pattern[i]:
+                # print(i, j, pattern[j], prefixArray[j])
                 j = prefixArray[j]
-            if pattern[j+1]==pattern[i]:
-                j+=1
-            prefixArray[i]=j
+            if pattern[j + 1] == pattern[i]:
+                j += 1
+            prefixArray[i] = j
         return prefixArray
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(haystack="hello", needle="ll"), 2],
+    [dict(haystack="aaaaa", needle="bba"), -1],
+    [dict(haystack="helabalalaaballaalblacblaalaalalaabacbllalablaaao", needle="laalblacblaalaa"), 14],
+])
+def test_solutions(kw, expected):
+    assert Solution().strStr(**kw) == expected
+    assert Solution1().strStr(**kw) == expected
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    haystack = "helabalalaaballaalblacblaalaalalaabacbllalablaaao"
-    needle = "laalblacblaalaa"
-    # haystack = "a"*100000
-    # needle = "a"*10000+"b"
-    print(sol.strStrKmp(haystack, needle))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

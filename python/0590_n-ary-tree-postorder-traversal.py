@@ -25,6 +25,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNodeWithChildren as Node
 
 
@@ -47,7 +49,8 @@ class Solution0:
 
 class Solution:
     def postorder(self, root: 'Node') -> List[int]:
-        if not root: return []
+        if not root:
+            return []
         results = []
         stack = [(root, False)]
         while stack:
@@ -63,16 +66,17 @@ class Solution:
         return results
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, [Node(3, [Node(5), Node(6)]),
-                 Node(2),
-                 Node(4)]
-             ),
-        None,
-        Node(1)
+@pytest.mark.parametrize("args,expected", [
+    [Node(1, [Node(3, [Node(5), Node(6)]),
+              Node(2),
+              Node(4)]
+          ), [5, 6, 3, 2, 4, 1]],
+    [None, []],
+    [Node(1), [1]]
+])
+def test_solutions(args, expected):
+    assert Solution().postorder(args) == expected
 
-    ]
-    res = [sol.postorder(x) for x in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

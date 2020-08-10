@@ -47,45 +47,45 @@
 
 """
 
-import traceback
 from typing import List
 
-
+import pytest
 
 
 class Solution:
     def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
         """ 题意不清"""
-        res =0
+        res = 0
         end = 0
-        for i,v in enumerate(timeSeries):
-            if v>=end:
-                end = v+duration
-                res+=duration
+        for i, v in enumerate(timeSeries):
+            if v >= end:
+                end = v + duration
+                res += duration
             else:
-                if i> 0:
-                    delta = timeSeries[i]-timeSeries[i-1]
-                    end+=delta
-                    res+=delta
+                if i > 0:
+                    delta = timeSeries[i] - timeSeries[i - 1]
+                    end += delta
+                    res += delta
         return res
 
-    def findPoisonedDurationS(self, timeSeries: List[int], duration: int) -> int:
+
+class Solution1:
+    def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
         result = duration * len(timeSeries)
         for i in range(1, len(timeSeries)):
-            result -= max(0, duration - (timeSeries[i] - timeSeries[i-1]))
+            result -= max(0, duration - (timeSeries[i] - timeSeries[i - 1]))
         return result
 
 
-
-
+@pytest.mark.parametrize("args,expected", [
+    (([1, 4], 2), 4),
+    (([1, 2], 2), 3),
+    (([1, 3, 5, 7, 9, 11, 13, 15], 3), 17),
+])
+def test_solutions(args, expected):
+    assert Solution().findPoisonedDuration(*args) == expected
+    assert Solution1().findPoisonedDuration(*args) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        ([1,4], 2),
-        ([1,2], 2),
-        ([1,3,5,7,9,11,13,15],3)
-    ]
-    res = [ sol.findPoisonedDuration(*x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

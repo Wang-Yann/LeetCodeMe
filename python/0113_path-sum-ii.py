@@ -33,14 +33,17 @@
 #  👍 274 👎 0
 
 
-import itertools
 from typing import List
+
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
-    def pathSumMe(self, root: TreeNode, sum: int) -> List[List[int]]:
+    """Me"""
+
+    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
         results = []
 
         def dfs(path, cur, sum_val):
@@ -57,6 +60,8 @@ class Solution:
         dfs([], root, sum)
         return results
 
+
+class Solution1:
     def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
         results = []
 
@@ -76,15 +81,27 @@ class Solution:
         return results
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]),
-        ([1], [], [])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(
+            5,
+            left=TreeNode(4, left=TreeNode(11, TreeNode(7), TreeNode(2))),
+            right=TreeNode(8,
+                           TreeNode(13),
+                           TreeNode(4, TreeNode(5), TreeNode(1))
+                           ),
+        ), sum=22
+    ),
+        [
+            [5, 4, 11, 2],
+            [5, 8, 4, 5]
+        ]
+    ],
+])
+def test_solutions(kw, expected):
+    assert sorted(Solution().pathSum(**kw)) == sorted(expected)
+    assert sorted(Solution1().pathSum(**kw)) == sorted(expected)
 
-    ]
-    sums = [7, 12, 1]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.pathSum(x, y) for x, y in itertools.zip_longest(lists, sums)]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

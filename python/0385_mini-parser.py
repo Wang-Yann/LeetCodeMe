@@ -45,6 +45,7 @@
 #  👍 38 👎 0
 
 """
+import pytest
 
 from common_utils import NestedInteger
 
@@ -76,6 +77,13 @@ class Solution:
         return stack[-1]
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(s="324"), 324],
+    [dict(s="[123,[456,[789]]]"), [123, [456, [789]]]],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().deserialize(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    print(sol.deserialize("[1]"))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

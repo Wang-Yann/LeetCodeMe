@@ -67,6 +67,17 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1(object):
+    def countBinarySubstrings(self, s):
+        result, prev, curr = 0, 0, 1
+        for i in range(1, len(s)):
+            if s[i-1] != s[i]:
+                result += min(prev, curr)
+                prev, curr = curr, 1
+            else:
+                curr += 1
+        result += min(prev, curr)
+        return result
 
 @pytest.mark.parametrize("args,expected", [
     ("00110011", 6),
@@ -74,6 +85,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().countBinarySubstrings(args) == expected
+    assert Solution1().countBinarySubstrings(args) == expected
 
 
 if __name__ == '__main__':

@@ -48,8 +48,9 @@
 
 """
 
-
 from typing import List
+
+import pytest
 
 from common_utils import ListNode
 
@@ -74,12 +75,13 @@ class Solution:
         return result
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([ListNode.initList([0, 1, 2, 3]), [0, 1, 3]], 2),
+    ([ListNode.initList([0, 1, 2, 3, 4]), [0, 3, 1, 4]], 2)
+])
+def test_solutions(args, expected):
+    assert Solution().numComponents(*args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("0->1->2->3", [0, 1, 3]),
-        ("0->1->2->3->4", [0, 3, 1, 4]),
-    ]
-    args_list = [(ListNode.init_list_from_str(x), y) for x, y in samples]
-    res = [sol.numComponents(x, y) for x, y in args_list]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -43,13 +43,16 @@
 # 输出: false
 #  Related Topics 栈
 #  👍 104 👎 0
+import pytest
+
 
 class Solution:
     def isValidSerialization(self, preorder: str) -> bool:
         """
         Good  官方
         想不到
-        我们可以定义一个概念，叫做槽位，二叉树中任意一个节点或者空孩子节点都要占据一个槽位。二叉树的建立也伴随着槽位数量的变化。开始时只有一个槽位，如果根节点是空节点，就只消耗掉一个槽位，如果根节点不是空节点，除了消耗一个槽位，还要为孩子节点增加两个新的槽位。之后的节点也是同理
+        我们可以定义一个概念，叫做槽位，二叉树中任意一个节点或者空孩子节点都要占据一个槽位。二叉树的建立也伴随着槽位数量的变化。
+        开始时只有一个槽位，如果根节点是空节点，就只消耗掉一个槽位，如果根节点不是空节点，除了消耗一个槽位，还要为孩子节点增加两个新的槽位。之后的节点也是同理
           初始化可用槽位：slots = 1
         """
         data_list = preorder.split(",")
@@ -64,14 +67,14 @@ class Solution:
         return slots == 0
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "9,3,4,#,#,1,#,#,2,#,6,#,#",
-        "1,#",
-        "9,#,#,1"
+@pytest.mark.parametrize("args,expected", [
+    ["9,3,4,#,#,1,#,#,2,#,6,#,#", True],
+    ["1,#", False],
+    ["9,#,#,1", False],
+])
+def test_solutions(args, expected):
+    assert Solution().isValidSerialization(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.isValidSerialization(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

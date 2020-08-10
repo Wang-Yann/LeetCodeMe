@@ -29,6 +29,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
@@ -50,14 +52,14 @@ class Solution:
         return result
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 1], [2, -1, 2]),
+    ([1, 4, 3, 2, 1], [4, -1, 4, 4, 4]),
+    ([100, 1, 11, 1, 120, 111, 123, 1, -1, -100], [120, 11, 120, 120, 123, 123, -1, 100, 100, 100])
+])
+def test_solutions(args, expected):
+    assert Solution().nextGreaterElements(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    # [[2, -1, 2], [4, -1, 4, 4, 4],[120,11,120,120,123,123,-1,100,100,100]]
-    samples = [
-        [1, 2, 1],
-        [1, 4, 3, 2, 1],
-        [100, 1, 11, 1, 120, 111, 123, 1, -1, -100]
-    ]
-    lists = [x for x in samples]
-    res = [sol.nextGreaterElements(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

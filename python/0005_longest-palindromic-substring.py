@@ -104,7 +104,7 @@ class Solution2:
             if i + P[i] > right:
                 center, right = i, i + P[i]
         max_i = 0
-        print(P)
+        # print(P)
         for i in range(1, len(t) - 1):
             if P[i] > P[max_i]:
                 max_i = i

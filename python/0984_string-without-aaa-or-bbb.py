@@ -64,7 +64,7 @@ class Solution:
             else:
                 B -= 1
                 ans.append("b")
-        print(ans)
+        # print(ans)
         return "".join(ans)
 
 

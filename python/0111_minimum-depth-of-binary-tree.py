@@ -25,22 +25,26 @@
 #  返回它的最小深度 2.
 #  Related Topics 树 深度优先搜索 广度优先搜索
 #  👍 292 👎 0
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
-    def minDepthRecursive(self, root):
+    def minDepth(self, root):
         if root is None:
             return 0
 
         if root.left and root.right:
-            return min(self.minDepthRecursive(root.left), self.minDepthRecursive(root.right)) + 1
+            return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
         else:
-            return max(self.minDepthRecursive(root.left), self.minDepthRecursive(root.right)) + 1
+            return max(self.minDepth(root.left), self.minDepth(root.right)) + 1
 
+
+class Solution1:
     def minDepth(self, root: TreeNode) -> int:
-        if not root: return 0
+        if not root:
+            return 0
         queue = [(root, 1)]
         levels = []
         while queue:
@@ -57,14 +61,14 @@ class Solution:
         return min(levels)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))), 2],
+    [dict(root=TreeNode(1, TreeNode(2))), 2],
+])
+def test_solutions(kw, expected):
+    assert Solution().minDepth(**kw) == expected
+    assert Solution1().minDepth(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([3, 9, 20, 15, 7], [(0, 1), (2, 3)], [(0, 2), (2, 4)]),
-        ([1, None, 2, 4], [(2, 3)], [(0, 2)]),
-        ([1, 2], [(0, 1)], []),
-        ([1, 2, 3, 4, 5], [(0, 1), (1, 3)], [(0, 2), (2, 4)])
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.minDepth(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -58,11 +58,13 @@ import collections
 import queue
 from typing import List
 
+import pytest
+
 
 class Solution(object):
 
     def updateMatrixS(self, matrix: List[List[int]]) -> List[List[int]]:
-        if not matrix:return []
+        if not matrix: return []
         m, n = len(matrix), len(matrix[0])
         # res = [[0] * n for _ in range(m)]
         q = queue.Queue()
@@ -106,10 +108,8 @@ class Solution(object):
         return dist
 
 
-
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
+@pytest.mark.parametrize("args,expected", [
+    (
         [
             [1, 0, 1, 0, 0],
             [1, 0, 1, 0, 0],
@@ -117,8 +117,16 @@ if __name__ == '__main__':
             [1, 1, 1, 0, 0],
             [1, 0, 1, 0, 0]
         ],
-        [[0,0,0],[0,1,0],[0,0,0]]
-    ]
-    # res = [sol.updateMatrix(x) for x in samples]
-    res = [sol.updateMatrix(x) for x in samples]
-    print(res)
+        [[1, 0, 1, 0, 0], [1, 0, 1, 0, 0], [2, 1, 1, 0, 0], [2, 1, 1, 0, 0], [1, 0, 1, 0, 0]]
+
+    ),
+    ([[0, 0, 0], [0, 1, 0], [0, 0, 0]],
+     [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+     )
+])
+def test_solutions(args, expected):
+    assert Solution().updateMatrix(args) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

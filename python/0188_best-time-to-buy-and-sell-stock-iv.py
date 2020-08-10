@@ -32,18 +32,21 @@
 #  👍 251 👎 0
 
 """
+import math
 from typing import List
+
+import pytest
 
 
 class Solution:
-
+    """TODO"""
     def maxProfitInf(self, prices: List[int]) -> int:
         if not prices:
             return 0
         n = len(prices)
         s_range = (0, 1)
-        dp = [[0] * len(s_range) for x in range(0, n)]
-        dp[-1][1] = - float('inf')
+        dp = [[0] * len(s_range) for _ in range(0, n)]
+        dp[-1][1] = - math.inf
         for i in range(0, n):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
             dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
@@ -59,7 +62,7 @@ class Solution:
 
         k_range = range(max_k + 1)
         s_range = (0, 1)
-        dp = [[[0] * len(s_range) for y in k_range] for x in range(0, n)]
+        dp = [[[0] * len(s_range) for _ in k_range] for _ in range(0, n)]
         for ki in k_range:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
@@ -71,9 +74,39 @@ class Solution:
         return dp[n - 1][max_k][0]
 
 
+class Solution1(object):
+    # @return an integer as the maximum profit
+    def maxProfit(self, k, prices):
+        if k >= len(prices) // 2:
+            return self.maxAtMostNPairsProfit(prices)
+        return self.maxAtMostKPairsProfit(prices, k)
+
+    def maxAtMostNPairsProfit(self, prices):
+        profit = 0
+        for i in range(len(prices) - 1):
+            profit += max(0, prices[i + 1] - prices[i])
+        return profit
+
+    def maxAtMostKPairsProfit(self, prices, k):
+        max_buy = [float("-inf") for _ in range(k + 1)]
+        max_sell = [0 for _ in range(k + 1)]
+
+        for i in range(len(prices)):
+            for j in range(1, min(k, i // 2 + 1) + 1):
+                max_buy[j] = max(max_buy[j], max_sell[j - 1] - prices[i])
+                max_sell[j] = max(max_sell[j], max_buy[j] + prices[i])
+
+        return max_sell[k]
+
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(prices=[2, 4, 1], k=2), 2],
+    [dict(prices=[3, 2, 6, 5, 0, 3], k=2), 7],
+])
+def test_solutions(kw, expected):
+    assert Solution().maxProfit(**kw) == expected
+    assert Solution1().maxProfit(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [2, 4, 1]
-    sample1 = [3, 2, 6, 5, 0, 3]
-    print(sol.maxProfit(2, sample))
-    print(sol.maxProfit(2, sample1))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

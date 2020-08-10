@@ -22,6 +22,7 @@
 #
 #  Related Topics 树
 #  👍 166 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -43,15 +44,15 @@ class Solution:
         return res
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(3,
-                 left=TreeNode(9),
-                 right=TreeNode(20, TreeNode(15), TreeNode(7))),
-        TreeNode(9)
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(3,
+              left=TreeNode(9),
+              right=TreeNode(20, TreeNode(15), TreeNode(7))), 24),
+    (TreeNode(9), 0)
+])
+def test_solutions(args, expected):
+    assert Solution().sumOfLeftLeaves(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.sumOfLeftLeaves(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -44,6 +44,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -52,13 +54,13 @@ class Solution:
     def constructMaximumBinaryTree(self, nums: List[int]) -> TreeNode:
         if not nums:
             return None
-        lookup = {v:i for i, v in enumerate(nums)}
+        lookup = {v: i for i, v in enumerate(nums)}
 
         def helper(start, end):
             # print(start, end)
             if start > end:
                 return None
-            max_val = max(nums[start:end+1])
+            max_val = max(nums[start:end + 1])
             max_index = lookup[max_val]
             root = TreeNode(max_val)
             root.left = helper(start, max_index - 1)
@@ -68,12 +70,16 @@ class Solution:
         return helper(0, len(nums) - 1)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [3, 2, 1, 6, 0, 5],
-        []
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[3, 2, 1, 6, 0, 5]), TreeNode(
+        6,
+        TreeNode(3, right=TreeNode(2, right=TreeNode(1))),
+        TreeNode(5, left=TreeNode(0))
+    )],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().constructMaximumBinaryTree(**kw)) == repr(expected)
 
-    ]
-    res = [sol.constructMaximumBinaryTree(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

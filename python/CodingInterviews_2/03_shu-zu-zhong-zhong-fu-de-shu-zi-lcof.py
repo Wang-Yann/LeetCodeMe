@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 # 找出数组中重复的数字。
 #
 #
@@ -32,6 +31,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -42,27 +43,29 @@ class Solution:
                 return v
             hash_set.add(v)
 
+
 class Solution1:
 
     def findRepeatNumber(self, nums: List[int]) -> int:
-        length =  len(nums)
+        length = len(nums)
         if not length:
             return None
         for i in range(length):
-            if not 0<=nums[i]<=length-1:return None
-            while i!=nums[i]:
-                if nums[i]==nums[nums[i]]:
+            if not 0 <= nums[i] <= length - 1: return None
+            while i != nums[i]:
+                if nums[i] == nums[nums[i]]:
                     return nums[i]
-                v=nums[i]
-                nums[i],nums[v]  = nums[v],nums[i]
+                v = nums[i]
+                nums[i], nums[v] = nums[v], nums[i]
 
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[2, 3, 1, 0, 2, 5, 3]), 2],
+])
+def test_solutions(kw, expected):
+    assert Solution().findRepeatNumber(**kw) == expected
+    assert Solution1().findRepeatNumber(**kw) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [2, 3, 1, 0, 2, 5, 3]
-
-    ]
-    res = [sol.findRepeatNumber(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

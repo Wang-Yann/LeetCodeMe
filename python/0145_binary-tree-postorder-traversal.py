@@ -25,6 +25,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -101,13 +103,14 @@ class Solution:
         return result
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(1, right=TreeNode(2, left=TreeNode(3)))), [3, 2, 1]],
+])
+def test_solutions(kw, expected):
+    assert Solution().postorderTraversal(**kw) == expected
+    assert Solution0().postorderTraversal(**kw) == expected
+    assert Solution1().postorderTraversal(**kw) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.postorderTraversal(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

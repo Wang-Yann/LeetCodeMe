@@ -37,6 +37,8 @@ import collections
 from queue import PriorityQueue
 from typing import List
 
+import pytest
+
 
 class Solution0:
     def leastInterval(self, tasks: List[str], n: int) -> int:
@@ -68,33 +70,35 @@ class Solution:
         # from queue import PriorityQueue
         counter = collections.Counter(tasks)
         q = PriorityQueue()
-        #优先　小值
+        # 优先　小值
         for k, v in counter.items():
-            q.put((-v,v))
+            q.put((-v, v))
         time = 0
         while not q.empty():
             i = 0
             tmp = []
             while i <= n:
                 if not q.empty():
-                    _,cnt = q.get()
+                    _, cnt = q.get()
                     if cnt > 1:
-                        tmp.append(cnt-1)
+                        tmp.append(cnt - 1)
                 time += 1
                 if q.empty() and not tmp:
                     break
                 i += 1
             for v in tmp:
-                q.put((-v,v))
+                q.put((-v, v))
         return time
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(tasks=["A", "A", "A", "B", "B", "B"], n=2), 8],
+    [dict(tasks=["A", "A", "A", "B", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F"], n=2), 14],
+])
+def test_solutions(kw, expected):
+    assert Solution().leastInterval(**kw) == expected
+    assert Solution0().leastInterval(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(tasks = ["A","A","A","B","B","B"], n = 2 ) ,
-        dict(tasks=["A", "A", "A", "B", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F"], n=2)
-    ]
-    lists = [x for x in samples]
-    res = [sol.leastInterval(**x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

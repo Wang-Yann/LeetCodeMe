@@ -35,7 +35,7 @@
 #  Related Topics 树
 #  👍 491 👎 0
 
-import itertools
+import pytest
 
 from common_utils import TreeNode
 
@@ -54,24 +54,26 @@ class Solution:
             cur_cnt = int(cur_val == sum)
             return cur_cnt + getPathSum(cur.left, cur_val) + getPathSum(cur.right, cur_val)
 
-        if not root: return 0
+        if not root:
+            return 0
         return getPathSum(root, 0) + self.pathSum(root.left, sum) + self.pathSum(root.right, sum)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([10, 5, -3, 3, 2, 11, 3, -2, 1],
-         [(0, 1), (1, 3), (3, 6)],
-         [(0, 2), (2, 5), (1, 4), (4, 8), (3, 7)]
-         ),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]),
-        ([1], [], [])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(
+            10,
+            left=TreeNode(5,
+                          left=TreeNode(3, TreeNode(3), TreeNode(-2)),
+                          right=TreeNode(2, right=TreeNode(1))),
+            right=TreeNode(-3, right=TreeNode(11)),
+        ), sum=8
 
-    ]
-    sums = [8,
-            12, 1
-            ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.pathSum(x, y) for x, y in itertools.zip_longest(lists, sums)]
-    print(res)
+    ), 3],
+])
+def test_solutions(kw, expected):
+    assert Solution().pathSum(**kw) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -64,6 +64,7 @@
 #  👍 36 👎 0
 
 """
+import pytest
 import random
 from typing import List
 
@@ -109,11 +110,16 @@ class Solution(object):
         return self.__lookup[index] if index in self.__lookup else index
 
 
-if __name__ == '__main__':
-    obj = Solution(4, [2])
+@pytest.mark.parametrize("CLS", [Solution, Solution0])
+def test_solution(CLS):
+    obj = CLS(4, [2])
     ops_list = ["Solution", "pick", "pick", "pick"]
     args_list = [[4, [2]], [], [], []]
 
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
         print(getattr(obj, method)(*args))
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

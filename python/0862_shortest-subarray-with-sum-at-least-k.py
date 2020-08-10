@@ -51,6 +51,8 @@
 import collections
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -69,7 +71,6 @@ class Solution:
 
         同时，我们会在队首也移除若干元素，如果 P[y] >= P[x0] + K，则将队首元素移除，直到该不等式不满足。
         这是为了满足性质二。
-
 
         https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/solution/he-zhi-shao-wei-k-de-zui-duan-zi-shu-zu-by-leetcod/
         """
@@ -94,12 +95,14 @@ class Solution:
         return ans if ans < N + 1 else -1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(A=[1], K=1), 1],
+    [dict(A=[1, 2], K=4), -1],
+    [dict(A=[2, -1, 2], K=3), 3],
+])
+def test_solutions(kw, expected):
+    assert Solution().shortestSubarray(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(A=[1], K=1),
-        dict(A=[1, 2], K=4),
-        dict(A=[2, -1, 2], K=3)
-    ]
-    res = [sol.shortestSubarray(**args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

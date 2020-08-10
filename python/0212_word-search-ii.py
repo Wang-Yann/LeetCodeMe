@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 给定一个二维网格 board 和一个字典中的单词列表 words，找出所有同时在二维网格和字典中出现的单词。
 #
@@ -42,6 +41,8 @@
 
 """
 from typing import List
+
+import pytest
 
 from common_utils import TrieNode
 
@@ -104,12 +105,10 @@ class Solution:
         return matchedWords
 
 
+class Solution1:
+    """Me"""
 
-
-
-
-
-    def findWordsMe(self, board: List[List[str]], words: List[str]) -> List[str]:
+    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         def need_walk_pos(i, j, visited):
             return 0 <= i <= m - 1 and 0 <= j <= n - 1 and (i, j) not in visited
 
@@ -126,7 +125,7 @@ class Solution:
                 result.add(curr_word)
             visited.append((pos_x, pox_y))
             for x, y in [(pos_x, pox_y - 1), (pos_x, pox_y + 1), (pos_x - 1, pox_y), (pos_x + 1, pox_y)]:
-            # for (rowOffset, colOffset) in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
+                # for (rowOffset, colOffset) in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
                 dfsRecu(next_trie_node, x, y, curr_word, visited, cur_idx + 1)
             visited.pop()
             # curr_word.pop()
@@ -144,16 +143,21 @@ class Solution:
         return list(result)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    board = [
-        ['o', 'a', 'a', 'n'],
-        ['e', 't', 'a', 'e'],
-        ['i', 'h', 'k', 'r'],
-        ['i', 'f', 'l', 'v']
-    ]
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        board=[
+            ['o', 'a', 'a', 'n'],
+            ['e', 't', 'a', 'e'],
+            ['i', 'h', 'k', 'r'],
+            ['i', 'f', 'l', 'v']
+        ],
+        words=["oath", "pea", "eat", "rain"]
+    ), ['oath', 'eat']],
+])
+def test_solutions(kw, expected):
+    assert Solution().findWords(**kw) == expected
+    assert Solution1().findWords(**kw) == expected
 
-    words = ["oath", "pea", "eat", "rain"]
-    # res = sol.findWords(board, words)
-    res = sol.findWordsMe(board, words)
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

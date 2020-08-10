@@ -205,38 +205,6 @@ class TreeNodeWithNext:
             return None
 
 
-class UnionFindGrid:
-
-    def __init__(self, grid):
-        m, n = len(grid), len(grid[0])
-        self.count = 0
-        self.parent = [-1] * m * n
-        self.rank = [0] * m * n
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == "1":
-                    self.parent[i * n + j] = i * n + j
-                    self.count += 1
-
-    def find(self, i):
-        if self.parent[i] != i:
-            self.parent[i] = self.find(self.parent[i])
-        return self.parent[i]
-
-    def union(self, x, y):
-        """make sure rank(root_x)>=rank(root_y)"""
-        root_x = self.find(x)
-        root_y = self.find(y)
-        if root_x != root_y:
-            if self.rank[root_x] < self.rank[root_y]:
-                root_x, root_y = root_y, root_x
-            self.parent[root_y] = root_x
-            if self.rank[root_x] == self.rank[root_y]:
-                self.rank[root_x] += 1
-            self.count -= 1
-
-    def getCout(self):
-        return self.count
 
 
 class UnionFind(object):
@@ -355,7 +323,7 @@ class NestedInteger:
         If value is not specified, initializes an empty list.
         Otherwise initializes a single integer equal to value.
         """
-        self.value = value
+        self.value = value or []
 
     def isInteger(self):
         """

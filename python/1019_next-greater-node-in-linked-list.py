@@ -52,13 +52,16 @@
 """
 from typing import List
 
+import pytest
+
 from common_utils import ListNode
 
 
 class Solution:
 
-    def nextLargerNodesMe(self, head: ListNode) -> List[int]:
+    def nextLargerNodes(self, head: ListNode) -> List[int]:
         """
+        ME
         TODO
         单调栈
 
@@ -80,6 +83,8 @@ class Solution:
             result.append(0)
         return result
 
+
+class Solution1:
     def nextLargerNodes(self, head: ListNode) -> List[int]:
         result, stack = [], []
         while head:
@@ -93,14 +98,14 @@ class Solution:
         return result
 
 
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([2, 1, 5]), [5, 5, 0]),
+    (ListNode.initList([2, 7, 4, 3, 5]), [7, 0, 5, 5, 0]),
+    (ListNode.initList([1, 7, 5, 1, 9, 2, 5, 1]), [7, 9, 9, 9, 0, 5, 0, 0]),
+])
+def test_solutions(args, expected):
+    assert Solution().nextLargerNodes(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [2, 1, 5],
-        [2, 7, 4, 3, 5],
-        [1, 7, 5, 1, 9, 2, 5, 1]
-
-    ]
-    res = [sol.nextLargerNodes(ListNode.initList(x)) for x in samples]
-
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

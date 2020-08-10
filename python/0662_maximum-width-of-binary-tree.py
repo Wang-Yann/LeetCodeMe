@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-"""
 # 给定一个二叉树，编写一个函数来获取这个树的最大宽度。树的宽度是所有层中的最大宽度。这个二叉树与满二叉树（full binary tree）结构相同，但一些节
 # 点为空。
 #
@@ -78,7 +77,7 @@
 #  Related Topics 树
 #  👍 115 👎 0
 
-"""
+import pytest
 
 from common_utils import TreeNode
 
@@ -127,13 +126,13 @@ class Solution:
         return self.ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, TreeNode(3, TreeNode(5), TreeNode(3)), TreeNode(2, right=TreeNode(9))),
-        TreeNode(1, TreeNode(3, TreeNode(5), TreeNode(3)))
+@pytest.mark.parametrize("args,expected", [
+    [TreeNode(1, TreeNode(3, TreeNode(5), TreeNode(3)), TreeNode(2, right=TreeNode(9))), 4],
+    [TreeNode(1, TreeNode(3, TreeNode(5), TreeNode(3))), 2]
+])
+def test_solutions(args, expected):
+    assert Solution().widthOfBinaryTree(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.widthOfBinaryTree(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -74,7 +74,7 @@ class Solution:
         k = target - Min
         err = sum(prices) - Min
         errors = [abs(floor_prices[i] - prices[i]) - abs(ceil_prices[i] - prices[i]) for i in range(len(prices))]
-        print(errors,Min,Max)
+        # print(errors,Min,Max)
         # errors = sorted(errors, reverse=True)
         return '%.3f' % (err - sum(errors[:k]))
 

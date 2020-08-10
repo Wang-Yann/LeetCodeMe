@@ -60,7 +60,7 @@ class Solution:
                 tmp.append(sums[i])
             # Copy tmp back to sums.
             sums[start:start + len(tmp)] = tmp
-            print("tmp,sums",tmp,sums )
+            # print("tmp,sums",tmp,sums )
             return count
 
         sums = [0] * (len(nums) + 1)

@@ -37,40 +37,47 @@
 # 如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化 kthSmallest 函数？
 #  Related Topics 树 二分查找
 #  👍 246 👎 0
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        if not root or not k:return None
+        if not root or not k: return None
         cur = root
         stack = []
-        idx=0
+        idx = 0
         while cur or stack:
             while cur:
                 stack.append(cur)
-                cur=cur.left
+                cur = cur.left
             cur = stack.pop()
-            idx+=1
-            if idx==k:
+            idx += 1
+            if idx == k:
                 return cur.val
-            cur=cur.right
+            cur = cur.right
+
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=TreeNode(3,
+                      left=TreeNode(1, right=TreeNode(2)),
+                      right=TreeNode(4)
+                      ), k=3
+
+    ), 3],
+    [dict(
+        root=TreeNode(5,
+                      left=TreeNode(3, TreeNode(2, TreeNode(1)), TreeNode(4)),
+                      right=TreeNode(6)
+                      ), k=3
+
+    ), 3],
+])
+def test_solutions(kw, expected):
+    assert Solution().kthSmallest(**kw) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(3,
-                 left=TreeNode(1, right=TreeNode(2)),
-                 right=TreeNode(4)
-                 ),
-        TreeNode(5,
-                 left=TreeNode(3, TreeNode(2, TreeNode(1)), TreeNode(4)),
-                 right=TreeNode(6)
-                 )
-
-    ]
-    lists = [x for x in samples]
-    res = [sol.kthSmallest(x,3) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

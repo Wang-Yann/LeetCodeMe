@@ -40,6 +40,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
@@ -55,11 +57,13 @@ class Solution:
         return l
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3, 1], {2}),
+    ([1, 2, 1, 3, 5, 6, 4], {1, 5}),
+])
+def test_solutions(args, expected):
+    assert Solution().findPeakElement(args) in expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 2, 3, 1],
-        [1, 2, 1, 3, 5, 6, 4]
-    ]
-    res = [sol.findPeakElement(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -35,13 +35,13 @@
 
 from typing import List
 
+import pytest
 
-class Solution:
+
+class Solution00:
 
     def mergeArray(self, nums1: List[int], m: int, nums2: List[int], n: int) -> List[int]:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
+
         idx1, idx2 = 0, 0
         idx_total = 0
         ret = [0] * (m + n)
@@ -64,13 +64,15 @@ class Solution:
             idx_total += 1
         return ret
 
+
+class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
         idx1, idx2 = m - 1, n - 1
         idx_total = m + n - 1
-        while idx_total >= 0 and idx2 >= 0 and idx1>=0:
+        while idx_total >= 0 and idx2 >= 0 and idx1 >= 0:
             if nums2[idx2] >= nums1[idx1]:
                 nums1[idx_total] = nums2[idx2]
                 idx2 -= 1
@@ -85,21 +87,17 @@ class Solution:
             idx2 -= 1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        nums1=[1, 2, 3, 0, 0, 0], m=3,
+        nums2=[2, 5, 6], n=3
+    ), [1, 2, 2, 3, 5, 6]],
+])
+def test_solutions(kw, expected):
+    assert Solution00().mergeArray(**kw) == expected
+    Solution().merge(**kw)
+    assert kw["nums1"] == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    nums0 = [1, 2, 3, 0, 0, 0]
-    nums1 = [1, 2, 3, 0, 0, 0]
-    nums2 = [4, 5, 6, 0, 0, 0]
-    nums3 = [1, 0]
-    nums4 = [4, 0, 0, 0, 0, 0]
-    print(sol.merge(nums0, 3, [4, 5, 6], 3))
-    print(sol.merge(nums1, 3, [2, 5, 6], 3))
-    print(sol.merge(nums2, 3, [1, 2, 3], 3))
-    print(sol.merge(nums3, 1, [2], 1))
-    print(sol.merge(nums4, 1, [1, 2, 3, 5, 6], 5))
-    # print(sol.mergeArray(nums4, 1, [1, 2, 3,5,6], 5))
-    print(nums0)
-    print(nums1)
-    print(nums2)
-    print(nums3)
-    print(nums4)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

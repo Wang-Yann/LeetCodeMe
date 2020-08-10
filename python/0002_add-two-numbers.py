@@ -22,13 +22,9 @@
 """
 
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+import pytest
 
-    def __str__(self):
-        return "Node:{0.val}".format(self)
+from common_utils import ListNode
 
 
 class Solution:
@@ -80,14 +76,16 @@ class Solution:
             cur_node.next = next_node
         return head_node
 
-    def addTwoNumbers2(self, l1: ListNode, l2: ListNode) -> ListNode:
+
+class Solution1:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         carry = 0
         head_node = ListNode(0)
         curr_node = head_node
 
         while l1 or l2:
             x = l1.val if l1 else 0
-            y = l2.val if l2 else  0
+            y = l2.val if l2 else 0
             v_sum = x + y + carry
             carry = v_sum // 10
             curr_node.next = ListNode(v_sum % 10)
@@ -101,22 +99,16 @@ class Solution:
         return head_node.next
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    n1 = ListNode(2)
-    n2 = ListNode(4)
-    n3 = ListNode(3)
-    n1.next = n2
-    n2.next = n3
-    m1 = ListNode(5)
-    m2 = ListNode(6)
-    m3 = ListNode(4)
-    m1.next = m2
-    m2.next = m3
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        l1=ListNode.initList([2, 4, 3]),
+        l2=ListNode.initList([5, 6, 4])
+    ), ListNode.initList([7, 0, 8])],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().addTwoNumbers(**kw)) == repr(expected)
+    assert repr(Solution1().addTwoNumbers(**kw)) == repr(expected)
 
-    print(m1, n1)
-    res = sol.addTwoNumbers2(m1, n1)
-    while res:
-        print(res.val)
-        res = res.next
-        print("-->")
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

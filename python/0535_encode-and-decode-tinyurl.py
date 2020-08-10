@@ -19,6 +19,8 @@
 """
 import hmac
 
+import pytest
+
 
 class Codec:
 
@@ -32,7 +34,7 @@ class Codec:
         hash_obj = hmac.new(b"secret", longUrl.encode(), digestmod="sha256")
         key = hash_obj.hexdigest()[0:6]
         self._cache[key] = longUrl
-        print(key)
+        # print(key)
         return self.url + key
 
     def decode(self, shortUrl: str) -> str:
@@ -42,8 +44,12 @@ class Codec:
         return self._cache[key]
 
 
-if __name__ == '__main__':
+def test_solution():
     codec = Codec()
     url = "https://leetcode-cn.com/problemset/all/?topicSlugs=math"
     res = codec.decode(codec.encode(url))
-    print(res)
+    assert res == url
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

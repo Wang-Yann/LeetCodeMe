@@ -31,6 +31,9 @@
 # um-tree/ 相同
 #  Related Topics 树
 #  👍 281 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -69,13 +72,14 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(5, TreeNode(2), TreeNode(13)),
-        None
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(5, TreeNode(2), TreeNode(13))), TreeNode(18, TreeNode(20), TreeNode(13))],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().convertBST(**kw)) == repr(expected)
+    assert repr(Solution0().convertBST(**kw1)) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.convertBST(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

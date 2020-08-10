@@ -22,6 +22,8 @@
 #
 #  0 <= s 的长度 <= 10000
 #  👍 29 👎 0
+import pytest
+
 
 class Solution:
 
@@ -53,12 +55,15 @@ class Solution:
         return "".join(s_chars)
 
 
+@pytest.mark.parametrize("args,expected", [
+    ["We are happy.", 'We%20are%20happy.'],
+    ["", ""],
+    [" hello ", '%20hello%20']
+
+])
+def test_solutions(args, expected):
+    assert Solution().replaceSpace(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "We are happy.",
-        "",
-        " hello "
-    ]
-    res = [sol.replaceSpace(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -57,6 +57,8 @@
 """
 from typing import List
 
+import pytest
+
 
 class Solution:
     def calPoints(self, ops: List[str]) -> int:
@@ -68,22 +70,23 @@ class Solution:
                 v = stack[-1] * 2
                 stack.append(v)
             elif char == "+":
-                stack.append(stack[-1]+stack[-2])
+                stack.append(stack[-1] + stack[-2])
             else:
                 stack.append(int(char))
         # print("stack",stack)
         return sum(stack)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        # ["5", "2", "C", "D", "+"],
-        ["5", "-2", "4", "C", "D", "9", "+", "+"],
-        ["57", "D", "-3", "-58", "D", "77", "+", "C", "+", "+", "38", "78", "-6", "24", "-46", "+",
-         "31", "20", "D", "-81"]
+@pytest.mark.parametrize("args,expected", [
+    (["5", "2", "C", "D", "+"], 30),
+    (["5", "-2", "4", "C", "D", "9", "+", "+"], 27),
+    (["57", "D", "-3", "-58", "D", "77", "+",
+      "C", "+", "+", "38", "78", "-6", "24",
+      "-46", "+", "31", "20", "D", "-81"], 146)
+])
+def test_solutions(args, expected):
+    assert Solution().calPoints(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.calPoints(x) for x in lists]
-    print(res)
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+

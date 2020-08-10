@@ -32,12 +32,13 @@
 import collections
 from typing import List
 
-
 #
+import pytest
+
 
 class Solution:
 
-    def fourSum0(self, nums, target):
+    def fourSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -68,6 +69,8 @@ class Solution:
                         left += 1
         return res
 
+
+class Solution1:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         #  i j k
         nums.sort()
@@ -103,7 +106,7 @@ class Solution:
 
 
 # Space: O(n^2)
-class Solution3(object):
+class Solution2(object):
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
         for i in range(0, len(nums) - 1):
@@ -116,16 +119,23 @@ class Solution3(object):
                     for y in lookup[target - i]:
                         [a, b], [c, d] = x, y
                         if a is not c and a is not d and \
-                                b is not c and b is not d:
+                            b is not c and b is not d:
                             quad = sorted([nums[a], nums[b], nums[c], nums[d]])
                             if quad not in result:
                                 result.append(quad)
         return sorted(result)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[-1, 0, 1, 2, -1, -4], target=0), [[-1, -1, 0, 2]]],
+    [dict(nums=[1, 0, -1, 0, -2, 2], target=0), [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]],
+])
+@pytest.mark.parametrize("SolutionCLS", [
+    Solution, Solution1, Solution2
+])
+def test_solutions(kw, expected, SolutionCLS):
+    assert sorted(SolutionCLS().fourSum(**kw)) == sorted(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution3()
-    sample = [-1, 0, 1, 2, -1, -4]
-    sample1 = [1, 0, -1, 0, -2, 2]
-    print(sol.fourSum(sample, 0))
-    print(sol.fourSum(sample1, 0))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

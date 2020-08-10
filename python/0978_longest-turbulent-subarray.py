@@ -69,7 +69,7 @@ class Solution:
                 if c_pre != 0:
                     res = max(res, i - start + 1)
                 start = i
-        print(A)
+        # print(A)
         return res
 
 
@@ -97,7 +97,7 @@ def test_data(request):
 
 
 def test_solutions(test_data):
-    print("test output")
+    # print("test output")
     args,expected = test_data
     assert Solution().maxTurbulenceSize(args) == expected
 

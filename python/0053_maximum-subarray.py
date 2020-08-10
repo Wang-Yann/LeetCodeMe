@@ -41,7 +41,7 @@ class Solution:
             max_sofar = max(v, max_sofar + v)
             max_result = max(max_sofar, max_result)
             temp.append(max_result)
-        print(temp)
+        # print(temp)
         return max_result
 
     def maxSubArray(self, nums: List[int]) -> int:
@@ -54,7 +54,7 @@ class Solution:
                 nums[i] += nums[i - 1]
             max_sum = max(nums[i], max_sum)
             temp.append(max_sum)
-        print(temp)
+        # print(temp)
         return max_sum
 
 
@@ -123,7 +123,7 @@ class Solution3:
             return pushUp(lSub, rSub)
 
         ret = get(0, length - 1)
-        print(ret)
+        # print(ret)
         return ret.mSum
 
 
@@ -131,9 +131,9 @@ class Solution3:
     ([-2, 1, -3, 4, -1, 2, 1, -5, 4], 6),
 ])
 def test_solutions(args, expected):
-    # assert Solution().maxSubArray(args) == expected
-    # assert Solution().maxSubArray0(args) == expected
-    # assert Solution1().maxSubArray(args) == expected
+    assert Solution().maxSubArray(args) == expected
+    assert Solution().maxSubArray0(args) == expected
+    assert Solution1().maxSubArray(args) == expected
     assert Solution2().maxSubArray(args) == expected
     assert Solution3().maxSubArray(args) == expected
 

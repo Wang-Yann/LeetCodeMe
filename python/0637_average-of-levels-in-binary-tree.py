@@ -35,6 +35,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -59,11 +61,12 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))), [3.0, 14.5, 11.0]],
+])
+def test_solutions(kw, expected):
+    assert Solution().averageOfLevels(**kw) == expected
 
-    ]
-    res = [sol.averageOfLevels(args) for args in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

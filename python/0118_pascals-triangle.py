@@ -31,26 +31,34 @@
 """
 from typing import List
 
+import pytest
+
 
 class Solution:
 
     def generate(self, numRows: int) -> List[List[int]]:
-        if numRows == 0: return []
+        if numRows == 0:
+            return []
         res = [[1]]
         for i in range(1, numRows):
-            temp = []
-            temp.append(1)
+            cur_row = []
+            cur_row.append(1)
             prev = res[i - 1]
             for i in range(0, i - 1):
-                temp.append(prev[i] + prev[i + 1])
-            temp.append(1)
-            res.append(temp)
+                cur_row.append(prev[i] + prev[i + 1])
+            cur_row.append(1)
+            res.append(cur_row)
         return res
 
 
+@pytest.mark.parametrize("args,expected", [
+    (3, [[1], [1, 1], [1, 2, 1]]),
+    (2, [[1], [1, 1]]),
+    (7, [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1]])
+])
+def test_solutions(args, expected):
+    assert Solution().generate(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = []
-    print(sol.generate(3))
-    print(sol.generate(2))
-    print(sol.generate(7))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

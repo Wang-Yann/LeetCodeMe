@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 你将获得 K 个鸡蛋，并可以使用一栋从 1 到 N 共有 N 层楼的建筑。
 #
@@ -61,6 +60,10 @@
 #  👍 435 👎 0
 
 """
+import functools
+
+import pytest
+
 
 class Solution:
 
@@ -87,7 +90,10 @@ class Solution:
                 left = mid + 1
         return left
 
-    def superEggDropS(self, K: int, N: int) -> int:
+
+class Solution1:
+
+    def superEggDrop(self, K: int, N: int) -> int:
         """ 需要掌握
         方法一：动态规划 + 二分搜索
         状态可以表示成 (K, N)( ，其中 K为鸡蛋数，N 为楼层数
@@ -100,49 +106,43 @@ class Solution:
         也就是说，我们把原问题缩小成了一个规模为 (K-1, X-1)  的子问题。
 
         """
-        memo = {}
 
+        @functools.lru_cache(None)
         def dp(k, n):
-            if (k, n) not in memo:
-                if n == 0:
-                    ans = 0
-                elif k == 1:
-                    ans = n
-                else:
-                    lo, hi = 1, n
-                    # keep a gap of 2 X values to manually check later
-                    while lo + 1 < hi:
-                        x = (lo + hi) // 2
-                        t1 = dp(k - 1, x - 1)
-                        t2 = dp(k, n - x)
+            if n == 0:
+                ans = 0
+            elif k == 1:
+                ans = n
+            else:
+                lo, hi = 1, n
+                # keep a gap of 2 X values to manually check later
+                while lo + 1 < hi:
+                    x = (lo + hi) // 2
+                    t1 = dp(k - 1, x - 1)
+                    t2 = dp(k, n - x)
 
-                        if t1 < t2:
-                            lo = x
-                        elif t1 > t2:
-                            hi = x
-                        else:
-                            lo = hi = x
-                    print([k,n],lo,hi)
-                    ans = 1 + min(max(dp(k - 1, x - 1), dp(k, n - x))
-                                  for x in (lo, hi))
-
-                memo[k, n] = ans
-            return memo[k, n]
+                    if t1 < t2:
+                        lo = x
+                    elif t1 > t2:
+                        hi = x
+                    else:
+                        lo = hi = x
+                # print([k,n],lo,hi)
+                ans = 1 + min(max(dp(k - 1, x - 1), dp(k, n - x)) for x in (lo, hi))
+            return ans
 
         return dp(K, N)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(K=1, N=2), 2],
+    [dict(K=2, N=6), 3],
+    [dict(K=3, N=14), 4],
+])
+def test_solutions(kw, expected):
+    assert Solution().superEggDrop(**kw) == expected
+    assert Solution1().superEggDrop(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = []
-    K = 10
-    N = 60
-    # K = 1
-    # N = 2
-    # K = 3
-    # N = 1
-    # K = 1
-    # N = 1
-    # K = 1
-    # N = 4
-    print(sol.superEggDropS(K, N))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

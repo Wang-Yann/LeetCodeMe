@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 设计实现双端队列。
 # 你的实现需要支持以下操作：
@@ -51,6 +50,8 @@
 #  👍 46 👎 0
 
 """
+import pytest
+
 
 class MyCircularDueue:
 
@@ -71,7 +72,7 @@ class MyCircularDueue:
             return False
         idx = (self.__start + self.__capacity - 1) % self.__capacity
         self.__buffer[idx] = value
-        self.__start=idx
+        self.__start = idx
         self.__size += 1
         return True
 
@@ -83,7 +84,7 @@ class MyCircularDueue:
             return False
         idx = (self.__start + self.__size) % self.__capacity
         self.__buffer[idx] = value
-        self.__size+=1
+        self.__size += 1
         return True
 
     def deleteFront(self) -> bool:
@@ -110,7 +111,7 @@ class MyCircularDueue:
         Get the front item from the deque.
         """
         if not self.isEmpty():
-           return self.__buffer[self.__start]
+            return self.__buffer[self.__start]
         return -1
 
     def getRear(self) -> int:
@@ -118,7 +119,7 @@ class MyCircularDueue:
         Get the last item from the deque.
         """
         if not self.isEmpty():
-            idx = (self.__start + self.__size-1) % self.__capacity
+            idx = (self.__start + self.__size - 1) % self.__capacity
             return self.__buffer[idx]
         return -1
 
@@ -135,14 +136,18 @@ class MyCircularDueue:
         return self.__size == self.__capacity
 
 
-if __name__ == '__main__':
+def test_solution():
     circularDeque = MyCircularDueue(3)  ## 设置长度为 3
-    circularDeque.insertLast(1)  # 返回 true
-    circularDeque.insertLast(2)  # 返回 true
-    circularDeque.insertFront(3)   # 返回 true
-    circularDeque.insertFront(4)   # 已经满了，返回 false
-    print(circularDeque.getRear() )      # 返回 2
-    circularDeque.isFull()       # 返回 true
-    circularDeque.deleteLast()    # 返回 true
-    print(circularDeque.insertFront(4))  # 返回 true
-    print(circularDeque.getFront())  # 返回 4
+    assert circularDeque.insertLast(1)  # 返回 true
+    assert circularDeque.insertLast(2)  # 返回 true
+    assert circularDeque.insertFront(3)  # 返回 true
+    assert not circularDeque.insertFront(4)  # 已经满了，返回 false
+    assert circularDeque.getRear() == 2  # 返回 2
+    assert circularDeque.isFull()  # 返回 true
+    assert circularDeque.deleteLast()  # 返回 true
+    assert circularDeque.insertFront(4)  # 返回 true
+    assert circularDeque.getFront() == 4  # 返回 4
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

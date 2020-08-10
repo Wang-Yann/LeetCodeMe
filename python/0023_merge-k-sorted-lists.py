@@ -27,6 +27,8 @@ import heapq
 from queue import PriorityQueue
 from typing import List
 
+import pytest
+
 from common_utils import ListNode
 
 
@@ -53,9 +55,11 @@ class Solution:
                 Q.put((node.val, node))
         return dummyHead.next
 
-    def mergeKListsMe(self, lists: List[ListNode]) -> ListNode:
 
-        """  O(NlogN) """
+class Solution1:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+
+        """Me  O(NlogN) """
         min_heap = []
         heapq.heapify(min_heap)
         for head in lists:
@@ -71,13 +75,17 @@ class Solution:
         return dummyHead.next
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(lists=[
+        ListNode.init_list_from_str("1->4->5"),
+        ListNode.init_list_from_str("1->3->4"),
+        ListNode.init_list_from_str("2->6")
+    ]), ListNode.init_list_from_str("1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6")],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().mergeKLists(**kw)) == repr(expected)
+    assert repr(Solution1().mergeKLists(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [
-        "1->4->5",
-        "1->3->4",
-        "2->6"
-    ]
-    s_list = [ListNode.init_list_from_str(x) for x in sample]
-    res = sol.mergeKLists(s_list)
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -144,7 +144,7 @@ def test_solution():
     root = Node(val=1, children=[Node(3, children=[Node(5), Node(6)]), Node(2), Node(4)])
     coder = Codec()
     ss = coder.serialize(root)
-    print(ss)
+    # print(ss)
     assert repr(coder.deserialize(ss)) == repr(root)
 
 

@@ -82,7 +82,7 @@ class Solution:
         ans = collections.defaultdict(list)
         for email in em_to_name:
             ans[uf.find_set(em_to_id[email])].append(email)
-        print(ans)
+        # print(ans)
         return [[em_to_name[v[0]]]+sorted(v) for v in ans.values()]
             
             

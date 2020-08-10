@@ -28,29 +28,29 @@
 #  树的节点总不会超过 5000。
 #  Related Topics 树 深度优先搜索 广度优先搜索
 #  👍 98 👎 0
+import pytest
 
 from common_utils import TreeNodeWithChildren as Node
 
 
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
-        if not root: return 0
+        if not root:
+            return 0
         if not root.children:
             return 1
         return max([self.maxDepth(node) for node in root.children]) + 1
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, [Node(3, [Node(5), Node(6)]),
-                 Node(2),
-                 Node(4)]
-             ),
-        None,
-        Node(1)
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=Node(1, [Node(3, [Node(5), Node(6)]),
+                        Node(2),
+                        Node(4)]
+                    )), 3],
+])
+def test_solutions(kw, expected):
+    assert Solution().maxDepth(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.maxDepth(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

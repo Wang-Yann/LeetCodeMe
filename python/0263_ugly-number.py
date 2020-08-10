@@ -41,6 +41,8 @@
 #  👍 136 👎 0
 
 """
+import pytest
+
 
 class Solution:
 
@@ -54,11 +56,16 @@ class Solution:
         return abs(num) == 1
 
 
+@pytest.mark.parametrize(
+    "args,expected",
+    list(zip(
+        [-10, 0, 1, 6, 8, 14, -2147483648],
+        [False, False, True, True, True, False, False])
+    )
+)
+def test_solutions(args, expected):
+    assert Solution().isUgly(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        -10,0,1,6,8,14,
-        -2147483648
-    ]
-    res = [sol.isUgly(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

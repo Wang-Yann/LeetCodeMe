@@ -27,6 +27,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import ListNode
 
 
@@ -41,12 +43,14 @@ class Solution:
         return res
 
 
+@pytest.mark.parametrize("args,expected", [
+    [ListNode.initList([1, 3, 2]), [2, 3, 1]],
+    [ListNode.initList([1]), [1]],
+    [ListNode.initList([]), []],
+])
+def test_solutions(args, expected):
+    assert Solution().reversePrint(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ListNode.initList([1, 3, 2]),
-        ListNode.initList([1]),
-        ListNode.initList([]),
-    ]
-    res = [sol.reversePrint(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

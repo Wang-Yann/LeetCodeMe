@@ -51,6 +51,9 @@
 #
 #  Related Topics 树 深度优先搜索
 #  👍 83 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -72,7 +75,7 @@ class Solution:
             cur = cur.right
         new_root = TreeNode(res[0])
         cur = new_root
-        for i in range(1, len(res) ):
+        for i in range(1, len(res)):
             cur.right = TreeNode(res[i])
             cur = cur.right
         return new_root
@@ -93,10 +96,16 @@ class Solution1:
         return helper(root, None)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(5,
+                        TreeNode(3, TreeNode(2), TreeNode(4)))
+          ),
+     ['2', '#', '3', '#', '4', '#', '5']],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().increasingBST(**copy.deepcopy(kw))) == repr(expected)
+    assert repr(Solution1().increasingBST(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)))
-    ]
-    res = [sol.increasingBST(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

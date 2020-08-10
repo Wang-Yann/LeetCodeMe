@@ -34,10 +34,12 @@
 from collections import deque
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
-class SolutionMe:
+class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         if not root: return []
         ans = []
@@ -64,24 +66,26 @@ class SolutionMe:
         return ans
 
 
-class Solution:
+class Solution1:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         res = []
         if not root: return res
 
-        def levelOrderTraversalRecursive(node, level):
+        def helper(node, level):
             if len(res) == level:
                 res.append([])
             res[level].append(node.val)
             if node.left:
-                levelOrderTraversalRecursive(node.left, level + 1)
+                helper(node.left, level + 1)
             if node.right:
-                levelOrderTraversalRecursive(node.right, level + 1)
+                helper(node.right, level + 1)
 
-        levelOrderTraversalRecursive(root, 0)
+        helper(root, 0)
         return res
 
-    def levelOrderIter(self, root: TreeNode) -> List[List[int]]:
+
+class Solution2:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
         levels = []
         if not root: return levels
         level = 0
@@ -101,15 +105,25 @@ class Solution:
         return levels
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(
+        3,
+        TreeNode(9),
+        TreeNode(20, TreeNode(15), TreeNode(7)))
+    ),
+        [
+            [3],
+            [9, 20],
+            [15, 7]
+        ]
+    ],
+])
+@pytest.mark.parametrize("CLS", [
+    Solution, Solution1, Solution2
+])
+def test_solutions(kw, expected, CLS):
+    assert CLS().levelOrder(**kw) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    print(lists)
-    # res = [sol.levelOrder(x) for x in lists]
-    res = [sol.levelOrderIter(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

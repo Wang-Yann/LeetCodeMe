@@ -40,6 +40,8 @@
 import collections
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -52,7 +54,8 @@ class Solution:
 
         def post_order_traversal(node):
             """Use PostOrder show String as key"""
-            if not node: return ""
+            if not node:
+                return ""
             key_str = "({}|{}|{})".format(
                 post_order_traversal(node.left),
                 node.val,
@@ -67,21 +70,27 @@ class Solution:
         return results
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1,
-                 left=TreeNode(2, right=TreeNode(4)),
-                 right=TreeNode(3, left=TreeNode(2, TreeNode(4)),
-                                right=TreeNode(4))
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(1,
+              left=TreeNode(2, right=TreeNode(4)),
+              right=TreeNode(3, left=TreeNode(2, TreeNode(4)),
+                             right=TreeNode(4))
 
-                 ),
-        TreeNode(1, TreeNode(1), TreeNode(1)),
-        TreeNode(0,
-                 left=TreeNode(0, TreeNode(0)),
-                 right=TreeNode(0, right=TreeNode(0, right=TreeNode(0)))
-                 )
-    ]
-    lists = [x for x in samples]
-    res = [sol.findDuplicateSubtrees(x) for x in lists]
-    print(res)
+              ), [['4']]),
+    (TreeNode(1, TreeNode(1), TreeNode(1)),
+     [['1']]
+     ),
+    (TreeNode(0,
+              left=TreeNode(0, TreeNode(0)),
+              right=TreeNode(0, right=TreeNode(0, right=TreeNode(0)))
+              ),
+     [['0']]
+     )
+])
+def test_solutions(args, expected):
+    res = Solution().findDuplicateSubtrees(args)
+    assert repr(res) == repr(expected)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

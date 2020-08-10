@@ -39,7 +39,7 @@
 #
 #  Related Topics 树 递归
 #  👍 65 👎 0
-
+import pytest
 
 from common_utils import TreeNode
 
@@ -62,12 +62,12 @@ class Solution:
         return ans
 
 
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(1, right=TreeNode(3, TreeNode(2))), 1)
+])
+def test_solutions(args, expected):
+    assert Solution().minDiffInBST(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, right=TreeNode(3, TreeNode(2))),
-        TreeNode(12),
-        None
-    ]
-    res = [sol.minDiffInBST(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

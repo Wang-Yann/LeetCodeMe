@@ -33,6 +33,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -53,8 +55,12 @@ class Solution:
         return False
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[1, 2, 3, 1, 2, 3], k=2), False],
+])
+def test_solutions(kw, expected):
+    assert Solution().containsDuplicate(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    nums = [1, 2, 3, 1, 2, 3];
-    k = 2
-    print(sol.containsDuplicate(nums, k))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

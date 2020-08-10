@@ -32,27 +32,32 @@
 #  谷歌：我们90％的工程师使用您编写的软件(Homebrew)，但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。
 #  Related Topics 树
 #  👍 500 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
-    def invertTreeMe(self, root: TreeNode) -> TreeNode:
+    def invertTree(self, root: TreeNode) -> TreeNode:
         if not root:
-            return None
+            return root
         left = self.invertTree(root.right)
         right = self.invertTree(root.left)
         root.left = left
         root.right = right
         return root
 
+
+class Solution1:
     def invertTree(self, root: TreeNode) -> TreeNode:
         if not root:
-            return None
-        stack=[root]
+            return root
+        stack = [root]
         while stack:
-            node  = stack.pop()
-            node.left,node.right=node.right,node.left
+            node = stack.pop()
+            node.left, node.right = node.right, node.left
             if node.left:
                 stack.append(node.left)
             if node.right:
@@ -60,17 +65,24 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(
+        4,
+        TreeNode(2, TreeNode(1), TreeNode(3)),
+        TreeNode(7, TreeNode(6), TreeNode(9))
+    )),
         TreeNode(
             4,
-            TreeNode(2, TreeNode(1), TreeNode(3)),
-            TreeNode(7, TreeNode(6), TreeNode(9))
+            TreeNode(7, TreeNode(9), TreeNode(6)),
+            TreeNode(2, TreeNode(3), TreeNode(1)),
         )
+    ],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().invertTree(**kw)) == repr(expected)
+    assert repr(Solution1().invertTree(**kw1)) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    print(lists)
-    res = [sol.invertTree(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

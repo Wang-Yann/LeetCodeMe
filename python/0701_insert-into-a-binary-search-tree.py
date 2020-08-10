@@ -47,7 +47,9 @@
 #
 #  Related Topics 树
 #  👍 71 👎 0
+import copy
 
+import pytest
 
 from common_utils import TreeNode
 
@@ -84,12 +86,17 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7)), 5]
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(4,
+                        TreeNode(2, TreeNode(1), TreeNode(3)),
+                        TreeNode(7)),
+          val=5),
+     ['4', '2', '7', '1', '3', '5']],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().insertIntoBST(**copy.deepcopy(kw))) == repr(expected)
+    assert repr(Solution0().insertIntoBST(**copy.deepcopy(kw))) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.insertIntoBST(*x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -43,6 +43,7 @@
 #
 #  Related Topics 树
 #  👍 154 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -67,10 +68,12 @@ class Solution:
         return False
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(6, right=TreeNode(7))), k=9), True],
+])
+def test_solutions(kw, expected):
+    assert Solution().findTarget(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(6, right=TreeNode(7))), 9]
-    ]
-    res = [sol.findTarget(*args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -41,6 +41,8 @@
 
 import operator
 
+import pytest
+
 
 class Solution:
 
@@ -49,12 +51,13 @@ class Solution:
         如果我们使用栈并从左到右读取表达式的元素，则最终我们会从右到左计算表达式。就会出现 (A-B)-C(A−B)−C 等于
         (C-B)-A(C−B)−A 的情况，这是不正确的。减法即不遵循结合律也不遵循交换律。
         """
+
         def compute():
             """重点 顺序是反的"""
             left = val_stack.pop()
             right = val_stack.pop()
             op = op_stack.pop()
-            operator_map = {"+":operator.add, "-":operator.sub}
+            operator_map = {"+": operator.add, "-": operator.sub}
             if op in operator_map:
                 val_stack.append(operator_map[op](left, right))
 
@@ -88,19 +91,18 @@ class Solution:
         return val_stack[0]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ["1 + 11", 12],
+    [" 2-1 + 2 ", 3],
+    ["(1+(4+5+2)-3)+(6+8)", 23],
+    ["(1)", 1],
+    ["1+5-4", 2],
+    ["2-4-(8+2-6+(8+4-1+8-10))", -15],
+    ["2-4-(8+2-6+(8+4-(1)+8-10))", -15],
+])
+def test_solutions(args, expected):
+    assert Solution().calculate(args) == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1 + 11",
-        " 2-1 + 2 ",
-        "(1+(4+5+2)-3)+(6+8)",
-        "(1)",
-        "1+5-4",
-        "2-4-(8+2-6+(8+4-1+8-10))",
-        "2-4-(8+2-6+(8+4-(1)+8-10))"
-
-    ]
-    res = [sol.calculate(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

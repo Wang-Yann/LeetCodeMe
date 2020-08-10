@@ -35,9 +35,11 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
-    def singleNumbersO(self, nums: List[int]) -> List[int]:
+    def singleNumbers(self, nums: List[int]) -> List[int]:
         def isBit1(num, indexBit):
             num >>= indexBit
             return num & 0b1
@@ -65,6 +67,8 @@ class Solution:
                 num2 ^= v
         return [num1, num2]
 
+
+class Solution1:
     def singleNumbers(self, nums: List[int]) -> List[int]:
         """
         先对所有数字进行一次异或，得到两个出现一次的数字的异或值。
@@ -90,13 +94,14 @@ class Solution:
         return [num1, num2]
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [4, 1, 4, 6],
-        [1, 2, 10, 4, 1, 4, 3, 3]
+@pytest.mark.parametrize("args,expected", [
+    ([4, 1, 4, 6], [1, 6]),
+    ([1, 2, 10, 4, 1, 4, 3, 3], [2, 10])
+])
+def test_solutions(args, expected):
+    assert sorted(Solution().singleNumbers(args)) == expected
+    assert sorted(Solution1().singleNumbers(args)) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.singleNumbers(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -40,6 +40,7 @@
 #  注意：本题与主站 509 题相同：https://leetcode-cn.com/problems/fibonacci-number/
 #  Related Topics 递归
 #  👍 38 👎 0
+import pytest
 
 
 class Solution:
@@ -53,7 +54,9 @@ class Solution:
             fb[i] = fb[i - 2] + fb[i - 1]
         return fb[n] % 1000000007
 
-    def fib1(self, n: int) -> int:
+
+class Solution1:
+    def fib(self, n: int) -> int:
         if n in (0, 1):
             return n
         a, b = 1, 0
@@ -63,10 +66,15 @@ class Solution:
         return a % mod
 
 
+@pytest.mark.parametrize("args,expected", [
+    (2, 1),
+    (5, 5),
+    (45, 134903163),
+])
+def test_solutions(args, expected):
+    assert Solution().fib(args) == expected
+    assert Solution1().fib(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        2, 5, 45
-    ]
-    res = [sol.fib(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -51,6 +51,7 @@
 #  👍 542 👎 0
 
 """
+import pytest
 
 from common_utils import ListNode
 
@@ -59,7 +60,7 @@ class Solution:
 
     def detectCycle(self, head: ListNode) -> ListNode:
         if not head:
-            return None
+            return head
         fast = head
         slow = head
         while fast and fast.next:
@@ -70,15 +71,19 @@ class Solution:
                 while fast is not slow:
                     fast, slow = fast.next, slow.next
                 return fast
-        return None
+
+
+def test_solution():
+    cycle = ListNode.initList([2, 0, -4])
+    cur = cycle
+    while cur.next:
+        cur = cur.next
+    cur.next = cycle
+    head = ListNode(3)
+    head.next = cycle
+    res = Solution().detectCycle(head)
+    assert res and res.val == 2
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([3, 2, 0, -4], 1),
-        ([1, 2], 0),
-        ([1], -1)
-    ]
-    res = [sol.detectCycle(ListNode.initList(x)) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

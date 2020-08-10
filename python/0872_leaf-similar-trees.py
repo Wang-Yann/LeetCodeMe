@@ -30,6 +30,8 @@
 #  👍 60 👎 0
 
 """
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -54,11 +56,13 @@ class Solution:
         return res1 == res2
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root1=TreeNode(1, TreeNode(2)),
+          root2=TreeNode(3, TreeNode(4, TreeNode(2)))), True],
+])
+def test_solutions(kw, expected):
+    assert Solution().leafSimilar(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(1, TreeNode(2)),
-         TreeNode(3, TreeNode(4, TreeNode(2)))]
-    ]
-    res = [sol.leafSimilar(*args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

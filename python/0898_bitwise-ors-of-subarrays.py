@@ -66,7 +66,7 @@ class Solution:
         for i in A:
             cur = {i} | {i | j for j in cur}
             res |= cur
-        print(res)
+        # print(res)
         return len(res)
 
 

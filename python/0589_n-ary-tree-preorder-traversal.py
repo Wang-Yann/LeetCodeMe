@@ -25,12 +25,15 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNodeWithChildren as Node
 
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        if not root: return []
+        if not root:
+            return []
         results = []
         stack = [root]
         while stack:
@@ -44,15 +47,16 @@ class Solution:
         return results
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, [Node(3, [Node(5), Node(6)]),
-                 Node(2),
-                 Node(4)
-                 ]
-             )
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=Node(1, [Node(3, [Node(5), Node(6)]),
+                        Node(2),
+                        Node(4)
+                        ]
+                    )), [1, 3, 5, 6, 2, 4]],
+])
+def test_solutions(kw, expected):
+    assert Solution().preorder(**kw) == expected
 
-    ]
-    res = [sol.preorder(x) for x in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

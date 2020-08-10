@@ -26,17 +26,19 @@
 from collections import deque
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
         ans = []
-        if not root:return ans
+        if not root: return ans
         queue = deque([root])
         while queue:
             level_length = len(queue)
-            ans.append(queue[level_length-1].val)
+            ans.append(queue[level_length - 1].val)
             for i in range(level_length):
                 node = queue.popleft()
                 if node.left:
@@ -46,13 +48,16 @@ class Solution:
         return ans
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(1,
+                        left=TreeNode(2, right=TreeNode(5)),
+                        right=TreeNode(3, right=TreeNode(4))
+                        )
+          ), [1, 3, 4]],
+])
+def test_solutions(kw, expected):
+    assert Solution().rightSideView(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-    TreeNode(1,
-        left=TreeNode(2, right=TreeNode(5)),
-        right=TreeNode(3, right=TreeNode(4))
-    )]
-    lists = [x for x in samples]
-    res = [sol.rightSideView(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

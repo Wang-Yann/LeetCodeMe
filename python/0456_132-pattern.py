@@ -49,6 +49,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def find132pattern(self, nums: List[int]) -> bool:
@@ -68,15 +70,15 @@ class Solution:
         return False
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 2, 3, 4],
-        [3, 1, 4, 2],
-        [-1, 3, 2, 0],
-        [1, 0, 1, -4, -3]
+@pytest.mark.parametrize("args,expected", [
+    [[1, 2, 3, 4], False],
+    [[3, 1, 4, 2], True],
+    [[-1, 3, 2, 0], True],
+    [[1, 0, 1, -4, -3], False],
+])
+def test_solutions(args, expected):
+    assert Solution().find132pattern(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.find132pattern(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

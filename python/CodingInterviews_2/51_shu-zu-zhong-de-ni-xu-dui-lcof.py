@@ -23,8 +23,9 @@
 #  👍 205 👎 0
 
 
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -68,16 +69,18 @@ class Solution:
             for k in range(start, end + 1):
                 nums[k] = copy[k]
             return left + right + cnt
+
         count = helper(0, len(nums) - 1)
         # print("End:", nums, copy)
         return count
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[7, 5, 6, 4]), 5],
+])
+def test_solutions(kw, expected):
+    assert Solution().reversePairs(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [7, 5, 6, 4]
-    ]
-    lists = [x for x in samples]
-    res = [sol.reversePairs(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

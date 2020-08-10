@@ -42,6 +42,8 @@
 #  👍 235 👎 0
 
 """
+import pytest
+
 from common_utils import ListNode
 
 
@@ -58,12 +60,14 @@ class Solution:
         return slow
 
 
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([1, 2, 3, 4, 5]), 3),
+    (ListNode.initList([1, 2, 3, 4, 5, 6]), 4),
+])
+def test_solutions(args, expected):
+    res = Solution().middleNode(args)
+    assert res and res.val == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5, 6]
-    ]
-    lists = [ListNode.initList(x) for x in samples]
-    res = [sol.middleNode(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

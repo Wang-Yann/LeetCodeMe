@@ -91,7 +91,7 @@ def test_solution():
     assert obj.seat() == 9  # 学生最后坐在 9 号座位上。
     assert obj.seat() == 4  # 学生最后坐在 4 号座位上。
     assert obj.seat() == 2  # 学生最后坐在 2 号座位上。
-    print(obj.students)
+    # print(obj.students)
     assert obj.leave(4) is None  # null
     assert obj.seat() == 5  # 学生最后坐在 5 号座位上。
 

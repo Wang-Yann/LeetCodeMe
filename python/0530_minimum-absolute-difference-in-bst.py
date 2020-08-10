@@ -38,6 +38,8 @@
 #
 #  Related Topics 树
 #  👍 121 👎 0
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -50,7 +52,7 @@ class Solution:
                 return []
             stack = []
             res = []
-            cur =root
+            cur = root
             while cur or stack:
                 while cur:
                     stack.append(cur)
@@ -63,20 +65,20 @@ class Solution:
         results = in_order_traversal(root)
         # print(results)
         if len(results) <= 1:
-            return None
+            return 0
         else:
             delta = float("inf")
             for i in range(1, len(results)):
-                delta = min(abs(results[i] - results[i - 1]),delta)
+                delta = min(abs(results[i] - results[i - 1]), delta)
             return delta
 
 
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(1, right=TreeNode(3, TreeNode(2))), 1)
+])
+def test_solutions(args, expected):
+    assert Solution().getMinimumDifference(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, right=TreeNode(3, TreeNode(2))),
-        TreeNode(12),
-        None
-    ]
-    res = [sol.getMinimumDifference(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

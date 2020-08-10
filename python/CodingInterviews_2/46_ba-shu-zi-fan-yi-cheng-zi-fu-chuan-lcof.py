@@ -74,7 +74,7 @@ class Solution1:
         s = str(num)
         a = b = 1
         for i in range(2, len(s) + 1):
-            print(a,b)
+            # print(a,b)
             a, b = (a + b if "10" <= s[i - 2:i] <= "25" else a), a
 
         return a
@@ -84,7 +84,7 @@ class Solution1:
     (12258, 5),
 ])
 def test_solutions(args, expected):
-    # assert Solution().translateNum(args) == expected
+    assert Solution().translateNum(args) == expected
     assert Solution1().translateNum(args) == expected
 
 

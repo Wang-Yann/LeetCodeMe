@@ -38,7 +38,7 @@ class No62(object):
             if pos == -1:
                 return 1
             sta = int(sta)
-            print(pos, int(sta))
+            # print(pos, int(sta))
             if not limit and dp[pos][sta] != -1:
                 return dp[pos][sta]
             up = a[pos] if limit else 9

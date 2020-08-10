@@ -58,7 +58,7 @@ class Solution:
                 res.append(self.threeDigits(cur, lookup, unit[i]))
             num //= 1000
             i += 1
-        print("Ret", num, res)
+        # print("Ret", num, res)
         return " ".join(res[::-1])
 
     def threeDigits(self, num, lookup, unit):

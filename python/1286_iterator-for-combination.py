@@ -103,7 +103,7 @@ class CombinationIteratorBit:
 
 @pytest.mark.parametrize("IterCls", [CombinationIteratorBit, CombinationIterator])
 def test_solution(IterCls):
-    print("IterCls", IterCls)
+    # print("IterCls", IterCls)
     iterator = IterCls("abc", 2)
     assert iterator.next() == "ab"  # 返回 "ab"
     assert iterator.hasNext()  # // 返回 true

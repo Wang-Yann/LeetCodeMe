@@ -26,46 +26,62 @@
 
 """
 
-import os
-import sys
-import traceback
 from typing import List
+
+import pytest
 
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        if n<=0:return []
+        if n <= 0:
+            return []
         res = []
-        # self.dfs(res_set,"",n,n)
-        self.generateParenthesisRecu(res, "", n, n)
+        self.helper(res, "", n, n)
         return list(res)
 
-    def generateParenthesisRecu(self, result, current, left, right):
+    def helper(self, result, current, left, right):
         if left == 0 and right == 0:
             result.append(current)
         if left > 0:
-            self.generateParenthesisRecu(result, current + "(", left - 1, right)
+            self.helper(result, current + "(", left - 1, right)
         if left < right:
-            self.generateParenthesisRecu(result, current + ")", left, right - 1)
+            self.helper(result, current + ")", left, right - 1)
 
-    def dfs(self,res_set,s,ln,rn):
-        if ln>rn or ln<0 or rn<0:
+
+class Solution1:
+    def generateParenthesis(self, n: int) -> List[str]:
+        if n <= 0:
+            return []
+        res = set()
+        # self.dfs(res_set,"",n,n)
+        self.dfs(res, "", n, n)
+        return list(res)
+
+    def dfs(self, res_set, path, ln, rn):
+        if ln > rn or ln < 0 or rn < 0:
             return
-        elif ln<rn:
-            self.dfs(res_set,s+")",ln,rn-1)
-            self.dfs(res_set,s+"(",ln-1,rn)
+        elif ln < rn:
+            self.dfs(res_set, path + ")", ln, rn - 1)
+            self.dfs(res_set, path + "(", ln - 1, rn)
         else:
-            if ln==rn==0:
-                res_set.add(s)
+            if ln == rn == 0:
+                res_set.add(path)
             else:
-                self.dfs(res_set,s+"(",ln-1,rn)
+                self.dfs(res_set, path + "(", ln - 1, rn)
 
 
-
-
+@pytest.mark.parametrize("CLS", [
+    Solution, Solution1
+])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(n=4),
+     ['(((())))', '((()()))', '((())())', '((()))()', '(()(()))', '(()()())', '(()())()',
+      '(())(())', '(())()()', '()((()))', '()(()())', '()(())()', '()()(())', '()()()()']
+     ],
+])
+def test_solutions(kw, expected, CLS):
+    assert sorted(CLS().generateParenthesis(**kw)) == sorted(expected)
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample=13
-    print(sol.generateParenthesis(sample))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

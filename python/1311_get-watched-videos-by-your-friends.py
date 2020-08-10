@@ -123,7 +123,7 @@ class Solution:
 ])
 def test_solutions(kw, expected):
     res = Solution().watchedVideosByFriends(**kw)
-    print(len(res), len(expected))
+    # print(len(res), len(expected))
     assert res == expected
 
 

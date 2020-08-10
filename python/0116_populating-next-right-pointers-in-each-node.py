@@ -51,13 +51,17 @@
 #
 #  Related Topics 树 深度优先搜索
 #  👍 207 👎 0
+import copy
+
+import pytest
 
 from common_utils import TreeNodeWithNext as Node
 
 
 class Solution:
 
-    def connectMe(self, root: 'Node') -> 'Node':
+    def connect(self, root: 'Node') -> 'Node':
+        """Me"""
         if not root:
             return root
         queue = [root]
@@ -73,36 +77,45 @@ class Solution:
                     queue.append(node.right)
         return root
 
-    def connect1(self, root: 'Node') -> 'Node':
+
+class Solution1:
+    def connect(self, root: 'Node') -> 'Node':
         head = root
         while head:
             cur = head
             while cur and cur.left:
-                cur.left.next=cur.right
+                cur.left.next = cur.right
                 if cur.next:
-                    cur.right.next=cur.next.left
+                    cur.right.next = cur.next.left
                 cur = cur.next
-            head=head.left
+            head = head.left
         return root
 
+
+class Solution2:
     def connect(self, root: 'Node') -> 'Node':
         """
         Good
         """
-        if not root:return root
+        if not root: return root
         if root.left:
-            root.left.next =root.right
+            root.left.next = root.right
         if root.right and root.next:
-            root.right.next =root.next.left
+            root.right.next = root.next.left
         self.connect(root.left)
         self.connect(root.right)
         return root
 
 
+@pytest.mark.parametrize("args,expected", [
+    [Node(1, Node(2, Node(4), Node(5), None), Node(3, Node(6), Node(7), None), None),
+     [1, 2, 3, 4, 5, 6, 7]]
+])
+def test_solutions(args, expected):
+    assert repr(Solution().connect(copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution1().connect(copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution2().connect(copy.deepcopy(args))) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, Node(2, Node(4), Node(5), None), Node(3, Node(6), Node(7), None), None)
-    ]
-    res = [sol.connect(x) for x in samples]
-    print(samples)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

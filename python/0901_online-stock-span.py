@@ -49,6 +49,8 @@
 #  👍 53 👎 0
 
 """
+import pytest
+
 
 class StockSpanner:
     """
@@ -67,10 +69,16 @@ class StockSpanner:
         return result
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = StockSpanner()
     ops_list = ["StockSpanner", "next", "next", "next", "next", "next", "next", "next"]
     args_list = [[], [100], [80], [60], [70], [60], [75], [85]]
+    res = []
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
-        print(getattr(obj, method)(*args))
+        res.append(getattr(obj, method)(*args))
+    assert res == [1, 1, 1, 2, 1, 4, 6]
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -44,10 +44,9 @@
 #  👍 108 👎 0
 
 
-
-
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -55,29 +54,34 @@ class Solution:
     def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
-        m,n =  len(matrix),len(matrix[0])
-        i,j=0,n-1
-        while i<=m-1 and j>=0:
-            if matrix[i][j]==target:
+        m, n = len(matrix), len(matrix[0])
+        i, j = 0, n - 1
+        while i <= m - 1 and j >= 0:
+            if matrix[i][j] == target:
                 return True
-            elif matrix[i][j]<target:
-                i+=1
+            elif matrix[i][j] < target:
+                i += 1
             else:
-                j-=1
+                j -= 1
         return False
 
 
-
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
+@pytest.mark.parametrize("matrix", [
+    [
         [1, 4, 7, 11, 15],
         [2, 5, 8, 12, 19],
         [3, 6, 9, 16, 22],
         [10, 13, 14, 17, 24],
         [18, 21, 23, 26, 30]
-    ]
+    ],
+])
+@pytest.mark.parametrize("target,expected", [
+    [5, True],
+    [20, False]
+])
+def test_solutions(matrix, target, expected):
+    assert Solution().findNumberIn2DArray(matrix, target) == expected
 
-    print(sol.findNumberIn2DArray(samples, 5))
-    print(sol.findNumberIn2DArray(samples, 20))
-    print(sol.findNumberIn2DArray([[20]], 20))
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

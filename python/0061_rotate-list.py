@@ -32,14 +32,17 @@
 #  👍 293 👎 0
 
 """
+import copy
 
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def rotateRightMe(self, head: ListNode, k: int) -> ListNode:
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
+        """Me"""
         if not head or not k:
             return head
         cur_head = head
@@ -62,6 +65,8 @@ class Solution:
             cnt -= 1
         return cur_head
 
+
+class Solution1:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
         # base cases
         if not head or not head.next:
@@ -88,15 +93,15 @@ class Solution:
         return new_head
 
 
+@pytest.mark.parametrize("args,expected", [
+    [(ListNode.initList([1, 2, 3, 4, 5]), 2), ListNode.initList([4, 5, 1, 2, 3])],
+    [(ListNode.initList([0, 1, 2]), 4), ListNode.initList([2, 0, 1])],
+    [(ListNode.initList([1, 2]), 2), ListNode.initList([1, 2])],
+])
+def test_solutions(args, expected):
+    assert repr(Solution().rotateRight(*copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution1().rotateRight(*args)) == repr(expected)
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("1->2->3->4->5", 2),
-        ("0->1->2", 4),
-        ("1->2", 2)
-
-    ]
-    res = [sol.rotateRight(ListNode.init_list_from_str(head), k) for head, k in samples]
-    for x in res:
-        print(x)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

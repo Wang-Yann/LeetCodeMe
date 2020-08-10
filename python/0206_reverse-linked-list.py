@@ -21,20 +21,25 @@
 #  👍 1096 👎 0
 
 """
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def reverseListIter(self, head: ListNode) -> ListNode:
+    def reverseList(self, head: ListNode) -> ListNode:
         dummy = ListNode(-1)
         cur = head
         while cur:
             dummy.next, cur.next, cur = cur, dummy.next, cur.next
         return dummy.next
 
-    def reverseListIter1(self, head: ListNode) -> ListNode:
+
+class Solution1:
+    def reverseList(self, head: ListNode) -> ListNode:
         prev, cur = None, head
         while cur:
             tmp = cur.next
@@ -43,7 +48,9 @@ class Solution:
             cur = tmp
         return prev
 
-    def reverseListRecurse(self, head: ListNode) -> ListNode:
+
+class Solution2:
+    def reverseList(self, head: ListNode) -> ListNode:
         """TODO
         涉及到链表的操作，一定要在纸上把过程先画出来，再写程序
         https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-by-leetcode/
@@ -56,20 +63,24 @@ class Solution:
         """
         if not (head and head.next):
             return head
-        p = self.reverseListRecurse(head.next)
+        p = self.reverseList(head.next)
         head.next.next = head
         head.next = None
         return p
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.initList([1, 2, 3, 4, 5])), ListNode.initList([1, 2, 3, 4, 5][::-1])],
+    [dict(head=ListNode.initList([1, 2])), ListNode.initList([2, 1])],
+    [dict(head=ListNode.initList([1])), ListNode.initList([1])],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    kw2 = copy.deepcopy(kw)
+    assert repr(Solution().reverseList(**kw)) == repr(expected)
+    assert repr(Solution1().reverseList(**kw1)) == repr(expected)
+    assert repr(Solution2().reverseList(**kw2)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1->2->3->4->5",
-        "1->2",
-        "1"
-    ]
-    # res = [ sol.reverseList(ListNode.init_list_from_str(x)) for x in samples]
-    # res = [ sol.reverseListIter1(ListNode.init_list_from_str(x)) for x in samples]
-    res = [sol.reverseListRecurse(ListNode.init_list_from_str(x)) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

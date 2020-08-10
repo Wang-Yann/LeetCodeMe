@@ -8,12 +8,14 @@
 from collections import deque
 from typing import List
 
+import pytest
+
 from common_utils import TreeNodeWithChildren as Node
 
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
-        if not root:return []
+        if not root: return []
         results = []
         q = deque([root])
         level = 0
@@ -29,15 +31,17 @@ class Solution:
         return results
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        Node(1, [Node(3, [Node(5), Node(6)]),
-                 Node(2),
-                 Node(4)
-                 ]
-             )
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        root=Node(1, [Node(3, [Node(5), Node(6)]),
+                      Node(2),
+                      Node(4)]
+                  )
+    ), [[1], [3, 2, 4], [5, 6]]],
+])
+def test_solutions(kw, expected):
+    assert Solution().levelOrder(**kw) == expected
 
-    ]
-    res = [sol.levelOrder(x) for x in samples]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

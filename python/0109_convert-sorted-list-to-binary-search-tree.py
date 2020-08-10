@@ -24,6 +24,7 @@
 #
 #  Related Topics 深度优先搜索 链表
 #  👍 256 👎 0
+import pytest
 
 from common_utils import ListNode, TreeNode
 
@@ -37,24 +38,27 @@ class Solution:
         while cur:
             cur, length = cur.next, length + 1
         self.head = head
-        return self.sortedListToBSTRecu(0, length)
+        return self.helper(0, length)
 
-    def sortedListToBSTRecu(self, start, end):
+    def helper(self, start, end):
         if start == end:
             return None
         mid = (start + end) >> 1
-        left = self.sortedListToBSTRecu(start, mid)
+        left = self.helper(start, mid)
         current = TreeNode(self.head.val)
         current.left = left
         self.head = self.head.next
-        current.right = self.sortedListToBSTRecu(mid + 1, end)
+        current.right = self.helper(mid + 1, end)
         return current
 
 
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([-10, -3, 0, 5, 9]),
+     ['0', '-3', '9', '-10', '#', '5'])
+])
+def test_solutions(args, expected):
+    assert repr(Solution().sortedListToBST(args)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ListNode.initList([-10, -3, 0, 5, 9])
-    ]
-    res = [sol.sortedListToBST(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

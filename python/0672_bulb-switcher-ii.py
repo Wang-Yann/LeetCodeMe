@@ -89,7 +89,7 @@ class Solution:
                     light ^= cand[3] and i % 3 == 0
                     A.append(light)
                 seen.add(tuple(A))
-        print(seen)
+        # print(seen)
         return len(seen)
 
 

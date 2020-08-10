@@ -27,6 +27,8 @@
 #
 #  Related Topics 栈 设计
 #  👍 127 👎 0
+import pytest
+
 
 class NestedInteger:
     def isInteger(self) -> bool:
@@ -73,9 +75,13 @@ class NestedIterator:
             return False
 
 
-if __name__ == '__main__':
+def test_solution():
     nestedList = []
     i, v = NestedIterator(nestedList), []
     while i.hasNext():
         v.append(i.next())
-    print(v)
+    assert v == []
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -33,10 +33,9 @@
 
 """
 
-import os
-import sys
-import traceback
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -45,7 +44,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        a_set=set()
+        a_set = set()
         for v in nums:
             if v not in a_set:
                 a_set.add(v)
@@ -54,7 +53,12 @@ class Solution:
         return False
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3, 4, 5, 6, 7], False),
+])
+def test_solutions(args, expected):
+    assert Solution().containsDuplicate(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [1, 2, 3, 4, 5, 6, 7]
-    print(sol.containsDuplicate(sample))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

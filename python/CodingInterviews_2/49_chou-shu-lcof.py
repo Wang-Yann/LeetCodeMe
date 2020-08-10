@@ -26,13 +26,15 @@
 #  注意：本题与主站 264 题相同：https://leetcode-cn.com/problems/ugly-number-ii/
 #  Related Topics 数学
 #  👍 48 👎 0
+import pytest
+
 
 class Solution:
 
     def nthUglyNumber(self, n: int) -> int:
         dp = [1] + [0] * (n - 1)
         p2, p3, p5 = 0, 0, 0
-        for i in range(1,n):
+        for i in range(1, n):
             vp2, vp3, vp5 = dp[p2] * 2, dp[p3] * 3, dp[p5] * 5
             dp[i] = min(vp2, vp3, vp5)
             if dp[i] == vp2:
@@ -44,10 +46,14 @@ class Solution:
         return dp[n - 1]
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(n=1), 1],
+    [dict(n=10), 12],
+    [dict(n=12), 16],
+])
+def test_solutions(kw, expected):
+    assert Solution().nthUglyNumber(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        1, 10, 12
-    ]
-    res = [sol.nthUglyNumber(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

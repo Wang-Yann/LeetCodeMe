@@ -134,7 +134,7 @@ class Solution:
 def binarySearch(l, r, check_func):
     while l <= r:
         mid = l + ((r - l) >> 1)
-        print("l,r,mid", l, r, mid)
+        # print("l,r,mid", l, r, mid)
         if check_func(mid):
             r = mid - 1
         else:

@@ -49,53 +49,73 @@
 #  👍 249 👎 0
 
 """
-
-import traceback
+import copy
 from typing import List
+
+import pytest
+
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         length = len(nums)
-        if not length: return 0
-        last,i,is_same = 0,1,False
-        while i <length:
-            if nums[last]!=nums[i] or not is_same:
-                is_same  = nums[last]==nums[i]
-                last+=1
-                nums[last]=nums[i]
-            i+=1
-        return last+1
+        if not length:
+            return 0
+        last, i, is_same = 0, 1, False
+        while i < length:
+            if nums[last] != nums[i] or not is_same:
+                is_same = nums[last] == nums[i]
+                last += 1
+                nums[last] = nums[i]
+            i += 1
+        return last + 1
 
-    def removeDuplicatesMe(self, nums: List[int]) -> int:
+
+class Solution1:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        """Me"""
         length = len(nums)
-        if length<=2:return  length
-        pos_cur =1
-        l=1
+        if length <= 2:
+            return length
+        pos_cur = 1
+        l = 1
         cnt = 1
-        while l<=length-1:
-            if nums[l]==nums[l-1]:
-                cnt+=1
+        while l <= length - 1:
+            if nums[l] == nums[l - 1]:
+                cnt += 1
             else:
-                cnt=1
-            if cnt<=2:
+                cnt = 1
+            if cnt <= 2:
                 nums[pos_cur] = nums[l]
-                pos_cur+=1
-            l+=1
+                pos_cur += 1
+            l += 1
         return pos_cur
 
 
+@pytest.mark.parametrize(
+    "nums,ret,expected",
+    list(zip(
+        [
+            [1, 1, 1, 2, 2, 3],
+            [0, 0, 1, 1, 1, 1, 2, 3, 3],
+            [-1, 1, 1, 1, 1, 2, 3, 3],
+            [1, 1, 1, 2, 2, 3],
+            [1, 2, 2]
+        ],
+        [5, 7, 6, 5, 3],
+        [[1, 1, 2, 2, 3, 3],
+         [0, 0, 1, 1, 2, 3, 3, 3, 3],
+         [-1, 1, 1, 2, 3, 3, 3, 3],
+         [1, 1, 2, 2, 3, 3],
+         [1, 2, 2]]
+    ))
+)
+def test_solutions(nums, ret, expected):
+    nums1 = copy.deepcopy(nums)
+    assert Solution().removeDuplicates(nums) == ret
+    assert Solution1().removeDuplicates(nums1) == ret
+    assert nums == expected
+    assert nums1 == expected
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        [1,1,1,2,2,3],
-        [0,0,1,1,1,1,2,3,3],
-        [-1,1,1,1,1,2,3,3],
-        [1,1,1,2,2,3],
-        [1,2,2]
-    ]
-    res = [ sol.removeDuplicates(x) for x in samples]
-    # res = [ sol.removeDuplicatesMe(x) for x in samples]
-    print(res)
-    print(samples)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

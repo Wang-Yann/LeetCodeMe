@@ -31,6 +31,8 @@
 from collections import deque
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -54,7 +56,9 @@ class Solution:
         zigzagLevelTraversalRecursive(root, 0)
         return res
 
-    def zigzagLevelOrderIter(self, root: TreeNode) -> List[List[int]]:
+
+class Solution1:
+    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         levels = []
         if not root: return levels
         level = 0
@@ -77,15 +81,19 @@ class Solution:
         return levels
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7))),
+     [
+         [3],
+         [20, 9],
+         [15, 7]
+     ]
+    ),
+])
+def test_solutions(args, expected):
+    assert Solution().zigzagLevelOrder(args) == expected
+    assert Solution1().zigzagLevelOrder(args) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    print(lists)
-    # res = [sol.levelOrder(x) for x in lists]
-    res = [sol.zigzagLevelOrder(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

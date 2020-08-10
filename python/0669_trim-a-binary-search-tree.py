@@ -50,6 +50,7 @@
 #
 #  Related Topics 树
 #  👍 241 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -57,7 +58,7 @@ from common_utils import TreeNode
 class Solution:
     def trimBST(self, root: TreeNode, L: int, R: int) -> TreeNode:
         if not root:
-            return None
+            return root
 
         elif root.val < L:
             return self.trimBST(root.right, L, R)
@@ -69,14 +70,18 @@ class Solution:
             return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(3, TreeNode(0, right=TreeNode(2, TreeNode(1))), TreeNode(4)),
-         1, 3],
-        [TreeNode(1, TreeNode(0), TreeNode(2)), 1, 2]
+@pytest.mark.parametrize("args,expected", [
+    ([TreeNode(3, TreeNode(0, right=TreeNode(2, TreeNode(1))), TreeNode(4)),
+      1, 3],
+     TreeNode(3, TreeNode(2, TreeNode(1)))
+     ),
+    ([TreeNode(1, TreeNode(0), TreeNode(2)), 1, 2],
+     TreeNode(1, None, TreeNode(2))
+     )
+])
+def test_solutions(args, expected):
+    assert repr(Solution().trimBST(*args)) == repr(expected)
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.trimBST(*x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

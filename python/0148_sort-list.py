@@ -21,6 +21,7 @@
 # 输出: -1->0->3->4->5
 #  Related Topics 排序 链表
 #  👍 630 👎 0
+import pytest
 
 from common_utils import ListNode
 
@@ -39,9 +40,9 @@ class Solution:
         fast, slow, prev = head, head, None
         while fast and fast.next:
             prev, fast, slow = slow, fast.next.next, slow.next
-        prev.next = None #Cut & save head
+        prev.next = None  # Cut & save head
 
-        print(head, slow)
+        # print(head, slow)
         sorted_l1 = self.sortList(head)
         sorted_l2 = self.sortList(slow)
         return self.mergeTwoLists(sorted_l1, sorted_l2)
@@ -63,15 +64,15 @@ class Solution:
         return dummy.next
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "4->2->1->3",
-        # "-1->5->3->4->0",
-        # "3"
+@pytest.mark.parametrize("args,expected", [
+    (
+        ListNode.initList([4, 2, 1, 3]),
+        ListNode.initList([1, 2, 3, 4]),
+    )
+])
+def test_solutions(args, expected):
+    assert repr(Solution().sortList(args)) == repr(expected)
 
-    ]
-    lists = [ListNode.init_list_from_str(x) for x in samples]
-    # res = [sol.insertionSortList(x) for x in lists]
-    res = [sol.sortList(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

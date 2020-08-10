@@ -69,6 +69,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -86,15 +88,15 @@ class Solution:
         return stack
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [5, 10, -5],
-        [8, -8],
-        [10, 2, -5],
-        [-2, -1, 1, 2]
+@pytest.mark.parametrize("args,expected", [
+    ([5, 10, -5], [5, 10]),
+    ([8, -8], []),
+    ([10, 2, -5], [10]),
+    ([-2, -1, 1, 2], [-2, -1, 1, 2]),
+])
+def test_solutions(args, expected):
+    assert Solution().asteroidCollision(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.asteroidCollision(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

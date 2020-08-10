@@ -31,8 +31,9 @@
 
 """
 
-
 from typing import List
+
+import pytest
 
 
 class SummaryRanges:
@@ -63,7 +64,7 @@ class SummaryRanges:
         if i != 0 and self.__intervals[i - 1][1] + 1 >= val:
             i -= 1
         while i != len(self.__intervals) \
-                and end + 1 >= self.__intervals[i][0]:
+            and end + 1 >= self.__intervals[i][0]:
             start = min(start, self.__intervals[i][0])
             end = max(end, self.__intervals[i][1])
             self.__intervals.pop(i)
@@ -73,7 +74,7 @@ class SummaryRanges:
         return self.__intervals
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = SummaryRanges()
     obj.addNum(1)
     obj.addNum(3)
@@ -82,4 +83,8 @@ if __name__ == '__main__':
     obj.addNum(3)
     obj.addNum(6)
     obj.addNum(10)
-    print(obj.getIntervals())
+    # print(obj.getIntervals())
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

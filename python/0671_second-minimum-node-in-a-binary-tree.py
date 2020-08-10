@@ -36,7 +36,7 @@
 #
 #  Related Topics 树
 #  👍 87 👎 0
-
+import pytest
 
 from common_utils import TreeNode
 
@@ -44,7 +44,8 @@ from common_utils import TreeNode
 class Solution:
     def findSecondMinimumValue(self, root: TreeNode) -> int:
         """中序遍历"""
-        if not root: return None
+        if not root:
+            return None
         min_val, ans = root.val, float("inf")
         stack = []
         cur = root
@@ -59,13 +60,15 @@ class Solution:
         return ans if ans != float("inf") else -1
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(2, TreeNode(2, TreeNode(5, TreeNode(5), TreeNode(7)))),
-        TreeNode(2, TreeNode(2), TreeNode(2))
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(2,
+              TreeNode(2, TreeNode(5, TreeNode(5), TreeNode(7)))
+              ), 5),
+    (TreeNode(2, TreeNode(2), TreeNode(2)), -1),
+])
+def test_solutions(args, expected):
+    assert Solution().findSecondMinimumValue(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.findSecondMinimumValue(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

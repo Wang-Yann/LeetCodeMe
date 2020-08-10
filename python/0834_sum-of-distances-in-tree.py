@@ -37,12 +37,16 @@
 import collections
 from typing import List
 
+import pytest
 
-class Solution:
-    def sumOfDistancesInTreeMe(self, N: int, edges: List[List[int]]) -> List[int]:
-        """超出时间限制"""
-        if not N: return []
-        if not edges: return [0]
+
+class Solution0:
+    def sumOfDistancesInTree(self, N: int, edges: List[List[int]]) -> List[int]:
+        """Me超出时间限制 TLE"""
+        if not N:
+            return []
+        if not edges:
+            return [0]
         v_map = collections.defaultdict(list)
         for s, d in edges:
             v_map[s].append(d)
@@ -69,6 +73,8 @@ class Solution:
             results.append(ans)
         return results
 
+
+class Solution:
     def sumOfDistancesInTree(self, N: int, edges: List[List[int]]) -> List[int]:
         """
         官方解法
@@ -100,13 +106,13 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(N=6, edges=[[0, 1], [0, 2], [2, 3], [2, 4], [2, 5]]),
-        dict(N=1, edges=[])
+@pytest.mark.parametrize("kw,expected", [
+    [dict(N=6, edges=[[0, 1], [0, 2], [2, 3], [2, 4], [2, 5]]), [8, 12, 6, 10, 10, 10]],
+    [dict(N=1, edges=[]), [0]],
+])
+def test_solutions(kw, expected):
+    assert Solution().sumOfDistancesInTree(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.sumOfDistancesInTree(**x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

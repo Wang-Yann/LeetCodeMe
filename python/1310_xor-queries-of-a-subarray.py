@@ -69,7 +69,7 @@ class Solution:
         prefix = [0]
         for v in arr:
             prefix.append(prefix[-1] ^ v)
-        print(prefix)
+        # print(prefix)
         ans = list()
         for x, y in queries:
             ans.append(prefix[x] ^ prefix[y + 1])

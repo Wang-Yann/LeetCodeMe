@@ -36,6 +36,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -89,11 +91,13 @@ class Solution:
         return root
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(pre=[1, 2, 4, 5, 3, 6, 7], post=[4, 5, 2, 6, 7, 3, 1]), ['1', '2', '3', '4', '5', '6', '7']],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().constructFromPrePost(**kw)) == repr(expected)
+    assert repr(Solution1().constructFromPrePost(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(pre=[1, 2, 4, 5, 3, 6, 7], post=[4, 5, 2, 6, 7, 3, 1]),
-        dict(pre=[1], post=[1])
-    ]
-    res = [sol.constructFromPrePost(**args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

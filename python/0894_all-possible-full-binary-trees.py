@@ -37,13 +37,15 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
 class Solution:
 
     def __init__(self):
-        self.possible_map = {1:[TreeNode(0)]}
+        self.possible_map = {1: [TreeNode(0)]}
 
     def allPossibleFBT(self, N: int) -> List[TreeNode]:
         if N % 2 == 0:
@@ -63,10 +65,16 @@ class Solution:
         return self.possible_map[N]
 
 
+@pytest.mark.parametrize("kw,expected", [
+    (dict(N=7), [['0', '0', '0', '#', '#', '0', '0', '#', '#', '0', '0'],
+                 ['0', '0', '0', '#', '#', '0', '0', '0', '0'],
+                 ['0', '0', '0', '0', '0', '0', '0'],
+                 ['0', '0', '0', '0', '0', '#', '#', '#', '#', '0', '0'],
+                 ['0', '0', '0', '0', '0', '#', '#', '0', '0']]),
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().allPossibleFBT(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        2, 3, 7
-    ]
-    res = [sol.allPossibleFBT(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

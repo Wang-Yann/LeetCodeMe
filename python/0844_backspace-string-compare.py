@@ -67,6 +67,8 @@
 
 import itertools
 
+import pytest
+
 
 class Solution0:
 
@@ -107,13 +109,15 @@ class Solution:
         return True
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(S="ab#c", T="ad#c"), True],
+    [dict(S="ab##", T="c#d#"), True],
+    [dict(S="a##c", T="#a#c"), True],
+    [dict(S="aba#cbbb", T="abbb"), False],
+])
+def test_solutions(kw, expected):
+    assert Solution().backspaceCompare(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(S="ab#c", T="ad#c"),
-        dict(S="ab##", T="c#d#"),
-        dict(S="a##c", T="#a#c"),
-        dict(S="aba#cbbb", T="abbb"),
-    ]
-    res = [sol.backspaceCompare(**args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

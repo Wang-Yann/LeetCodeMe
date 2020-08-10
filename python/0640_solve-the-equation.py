@@ -56,7 +56,7 @@ class Solution:
     def solveEquation(self, equation: str) -> str:
         a, b, side = 0, 0, 1
         for eq, sign, num, is_x in re.findall("(=)|([-+]?)(\d*)(x?)", equation):
-            print("rows",[eq, sign, num, is_x])
+            # print("rows",[eq, sign, num, is_x])
             if eq:
                 side = -1
             elif is_x:

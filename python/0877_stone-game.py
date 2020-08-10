@@ -79,7 +79,7 @@ class Solution1:
         #缓存递归调用
         @functools.lru_cache(None)
         def dp(i, j):
-            print("DP(%d,%d)"%(i,j))
+            # print("DP(%d,%d)"%(i,j))
             # The value of the game [piles[i], piles[i+1], ..., piles[j]].
             if i > j:
                 return 0

@@ -19,6 +19,8 @@
 #  👍 1152 👎 0
 
 """
+import pytest
+
 from common_utils import ListNode
 
 
@@ -45,9 +47,15 @@ class Solution:
         return dummyHead.next
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        l1=ListNode.init_list_from_str("1->2->4"),
+        l2=ListNode.init_list_from_str("1->3->4")
+    ), ListNode.initList([1, 1, 2, 3, 4, 4])],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().mergeTwoLists(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    s1 = ListNode.init_list_from_str("1->2->4")
-    s2 = ListNode.init_list_from_str("1->3->4")
-    res = sol.mergeTwoLists(s1, s2)
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -20,6 +20,7 @@
 #  👍 91 👎 0
 
 """
+import pytest
 
 from common_utils import TreeNode
 
@@ -104,7 +105,7 @@ class Codec:
         return builder()
 
 
-if __name__ == '__main__':
+def test_solution():
     samples = [
         TreeNode(8,
                  left=TreeNode(1),
@@ -117,6 +118,10 @@ if __name__ == '__main__':
     for root in samples:
         codec = Codec()
         data = codec.serialize(root)
-        print(data)
+        # print(data)
         res = codec.deserialize(data)
-        print(res)
+        assert repr(res) == repr(root)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

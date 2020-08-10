@@ -24,6 +24,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -57,12 +59,16 @@ class Solution:
             right -= 1
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 5, 4, 3, 3, 2], [2, 1, 3, 3, 4, 5]),
+    ([1, 8, 7, 3, 5, 6], [1, 8, 7, 3, 6, 5]),
+    ([3, 2, 1], [1, 2, 3]),
+    ([3, 2, 1, 4, 5, 2], [3, 2, 1, 5, 2, 4]),
+])
+def test_solutions(args, expected):
+    Solution().nextPermutation(args)
+    assert args == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [1, 5, 4, 3, 3, 2]
-    sample = [1, 8, 7, 3, 5, 6]
-    sample = [3, 2, 1]
-    sample = [3, 2, 1, 4, 5, 2]
-    # sample=[1,2,3]
-    print(sol.nextPermutation(sample))
-    print(sample)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

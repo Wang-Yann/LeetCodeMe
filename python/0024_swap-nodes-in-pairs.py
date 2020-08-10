@@ -21,12 +21,16 @@
 #  👍 552 👎 0
 
 """
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
-    def swapPairsMe(self, head: ListNode) -> ListNode:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        """ME"""
         if not (head and head.next):
             return head
         dummy = ListNode(-1)
@@ -43,6 +47,8 @@ class Solution:
             head = cur_pre.next.next
         return dummy.next
 
+
+class Solution1:
     def swapPairs(self, head: ListNode) -> ListNode:
         # Dummy node acts as the prevNode for the head node
         # of the list and hence stores pointer to the head node.
@@ -52,7 +58,6 @@ class Solution:
         prev_node = dummy
 
         while head and head.next:
-
             # Nodes to be swapped
             first_node = head
             second_node = head.next
@@ -70,7 +75,8 @@ class Solution:
         return dummy.next
 
 
-    def swapPairsRecurse(self, head: ListNode) -> ListNode:
+class Solution2:
+    def swapPairs(self, head: ListNode) -> ListNode:
         """
         :type head: ListNode
         :rtype: ListNode
@@ -85,24 +91,22 @@ class Solution:
         second_node = head.next
 
         # Swapping
-        first_node.next  = self.swapPairs(second_node.next)
+        first_node.next = self.swapPairs(second_node.next)
         second_node.next = first_node
 
         # Now the head is the second node
         return second_node
 
 
+@pytest.mark.parametrize("CLS", [
+    Solution, Solution1, Solution2
+])
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([1, 2, 3, 4]), ListNode.initList([2, 1, 4, 3]))
+])
+def test_solutions(CLS, args, expected):
+    assert repr(CLS().swapPairs(copy.deepcopy(args))) == repr(expected)
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [
-        "1->2->3->4",
-        "1->3->4",
-        "2->6",
-        "1",
-        ""
-    ]
-    s_list = [ListNode.init_list_from_str(x) for x in sample]
-    # for res in [sol.swapPairs(x) for x in s_list]:
-    for res in [sol.swapPairsRecurse(x) for x in s_list]:
-        print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

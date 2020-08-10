@@ -31,12 +31,14 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
     def plusOne(self, digits: List[int]) -> List[int]:
         i = len(digits) - 1
-        v_sum = digits[i]+1
+        v_sum = digits[i] + 1
         carry = v_sum // 10
         digits[i] = v_sum % 10
         i -= 1
@@ -46,14 +48,20 @@ class Solution:
             carry = v_sum // 10
             if not carry:
                 break
-            i-=1
+            i -= 1
         if carry:
             digits.insert(0, 1)
         return digits
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([1, 2, 3], [1, 2, 4]),
+    ([9, 9], [1, 0, 0]),
+    ([1], [2]),
+])
+def test_solutions(args, expected):
+    assert Solution().plusOne(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    print(sol.plusOne([1, 2, 3]))
-    print(sol.plusOne([9, 9]))
-    print(sol.plusOne([ 1]))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

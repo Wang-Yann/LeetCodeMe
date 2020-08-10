@@ -32,6 +32,7 @@
 #  👍 107 👎 0
 
 """
+import pytest
 
 
 class Solution:
@@ -54,10 +55,12 @@ class Solution:
                 return (prefix_count + pattern_count + suffix_count) // n2
             look_up[j] = k
             repeat_count[k] = count
-            print(look_up, repeat_count)
+            # print(look_up, repeat_count)
         return repeat_count[n1] // n2
 
-    def getMaxRepetitionsBru(self, s1: str, n1: int, s2: str, n2: int) -> int:
+
+class Solution1:
+    def getMaxRepetitions(self, s1: str, n1: int, s2: str, n2: int) -> int:
         """
         TODO TODO TODO
         方法一：找出循环节
@@ -113,11 +116,12 @@ class Solution:
         return ans // n2
 
 
+@pytest.mark.parametrize("args,expected", [
+    [("abaacdbac", 100, "adcbd", 4), 12]
+])
+def test_solutions(args, expected):
+    assert Solution().getMaxRepetitions(*args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ("abaacdbac", 100, "adcbd", 4),
-        # ("acb", 4, "ab", 2),
-    ]
-    res = [sol.getMaxRepetitions(*x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

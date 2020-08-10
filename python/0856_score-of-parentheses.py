@@ -54,17 +54,19 @@
 #  👍 122 👎 0
 
 """
+import pytest
 
 
 class Solution:
 
     def scoreOfParentheses(self, S: str) -> int:
         """
+        TODO
         我们用一个栈来维护当前所在的深度，以及每一层深度的得分。当我们遇到一个左括号 ( 时，
         我们将深度加一，并且新的深度的得分置为 0。当我们遇到一个右括号 ) 时，
         我们将当前深度的得分乘二并加到上一层的深度。这里有一种例外情况，如果遇到的是 ()，那么只将得分加一
 
-    """
+        """
         stack = [0]
         for char in S:
             if char == "(":
@@ -76,11 +78,30 @@ class Solution:
         return stack[0]
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "()", "(())", "()()", "(()(()))"
+class Solution1(object):
+    def scoreOfParentheses(self, S):
 
-    ]
-    res = [sol.scoreOfParentheses(args) for args in samples]
-    print(res)
+        result, depth = 0, 0
+        for i in range(len(S)):
+            if S[i] == '(':
+                depth += 1
+            else:
+                depth -= 1
+                if S[i - 1] == '(':
+                    result += 2 ** depth
+        return result
+
+
+@pytest.mark.parametrize(
+    "args,expected",
+    list(zip(["()", "(())", "()()", "(()(()))"],
+             [1, 2, 2, 6])
+         )
+)
+def test_solutions(args, expected):
+    assert Solution().scoreOfParentheses(args) == expected
+    assert Solution1().scoreOfParentheses(args) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

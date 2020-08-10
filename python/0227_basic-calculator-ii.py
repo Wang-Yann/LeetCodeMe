@@ -38,14 +38,16 @@
 
 import operator
 
+import pytest
+
 
 class Solution1:
 
     def calculate(self, s: str) -> int:
         """重点 顺序
         """
-        operator_map = {"+":operator.add, "*":operator.mul,
-                        "-":operator.sub, "/":operator.floordiv}
+        operator_map = {"+": operator.add, "*": operator.mul,
+                        "-": operator.sub, "/": operator.floordiv}
         val_stack = []
         op_stack = []
         length = len(s)
@@ -99,7 +101,7 @@ class Solution(object):
                 operators.append(s[i])
             elif s[i] == '+' or s[i] == '-':
                 while operators and \
-                        (operators[-1] == '*' or operators[-1] == '/'):
+                    (operators[-1] == '*' or operators[-1] == '/'):
                     self.compute(operands, operators)
                 operators.append(s[i])
             elif s[i] == '(':
@@ -126,18 +128,25 @@ class Solution(object):
             operands.append(left // right)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "1 -1+1",
-        " 2-1 + 2 ",
-        "3+2*2-6",
-        "1+5-4",
-        " 3/2 ",
-        " 3+5 / 2 ",
-        "14/3*2",
-        "1+1+1"
+@pytest.mark.parametrize(
+    "args,expected",
+    list(zip(
+        [
+            "1 -1+1",
+            " 2-1 + 2 ",
+            "3+2*2-6",
+            "1+5-4",
+            " 3/2 ",
+            " 3+5 / 2 ",
+            "14/3*2",
+            "1+1+1"
 
-    ]
-    res = [sol.calculate(args) for args in samples]
-    print(res)
+        ], [1, 3, 1, 2, 1, 5, 8, 3]
+    ))
+)
+def test_solutions(args, expected):
+    assert Solution().calculate(args) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

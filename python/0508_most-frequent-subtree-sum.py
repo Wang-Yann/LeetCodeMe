@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-"""
 # 给你一个二叉树的根结点，请你找出出现次数最多的子树元素和。一个结点的「子树元素和」定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
 #
 #  你需要返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
@@ -40,11 +39,11 @@
 #  Related Topics 树 哈希表
 #  👍 72 👎 0
 
-"""
-
 
 import collections
 from typing import List
+
+import pytest
 
 from common_utils import TreeNode
 
@@ -70,11 +69,13 @@ class Solution:
         return [k for k, v in lookup.items() if v == mv]
 
 
+@pytest.mark.parametrize("args,expected", [
+    [TreeNode(5, TreeNode(2), TreeNode(-3)), [1, -3, 4]],
+    [TreeNode(5, TreeNode(2), TreeNode(-5)), [2]]
+])
+def test_solutions(args, expected):
+    assert Solution().findFrequentTreeSum(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(5, TreeNode(2), TreeNode(-3)),
-        TreeNode(5, TreeNode(2), TreeNode(-5)),
-    ]
-    res = [sol.findFrequentTreeSum(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

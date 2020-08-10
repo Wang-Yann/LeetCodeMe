@@ -78,7 +78,7 @@ class MapSum:
 def test_solutions():
     obj = MapSum()
     obj.insert("apple", 3)
-    print(obj.root)
+    # print(obj.root)
     assert obj.sum("ap") == 3
     obj.insert("app", 2)
     # print(obj.root)

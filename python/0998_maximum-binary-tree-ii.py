@@ -69,6 +69,7 @@
 #  👍 26 👎 0
 
 """
+import pytest
 
 from common_utils import TreeNode
 
@@ -90,11 +91,18 @@ class Solution:
         return root
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(4, TreeNode(1), TreeNode(3, TreeNode(2))), 5]
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(4, TreeNode(1), TreeNode(3, TreeNode(2))), val=5),
+     TreeNode(5, left=TreeNode(
+         4,
+         TreeNode(1),
+         TreeNode(3, TreeNode(2))))
 
-    ]
-    res = [sol.insertIntoMaxTree(*args) for args in samples]
-    print(res)
+     ],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().insertIntoMaxTree(**kw)) == repr(expected)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

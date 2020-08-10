@@ -57,21 +57,24 @@
 #
 #  Related Topics 位运算 链表
 #  👍 39 👎 0
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def getDecimalValueMe(self, head: ListNode) -> int:
+    def getDecimalValue(self, head: ListNode) -> int:
         if not head:
-            return None
+            return 0
         s = ""
         while head:
             s += str(head.val)
             head = head.next
         return int(s, 2)
 
+
+class Solution1:
     def getDecimalValue(self, head: ListNode) -> int:
         cur = head
         ans = 0
@@ -81,17 +84,19 @@ class Solution:
         return ans
 
 
+@pytest.mark.parametrize("args,expected", [
+    [ListNode.initList([1, 0, 1], ), 5],
+    [ListNode.initList([1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0], ), 18880],
+    [ListNode.initList([0], ), 0],
+    [ListNode.initList([1], ), 1],
+    [ListNode.initList([0, 0], ), 0],
+    [ListNode.initList([0, 0, 1, 1], ), 3],
+    [ListNode.initList([]), 0],
+])
+def test_solutions(args, expected):
+    assert Solution().getDecimalValue(args) == expected
+    assert Solution1().getDecimalValue(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 0, 1],
-        [1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-        [0],
-        [1],
-        [0, 0],
-        [0, 0, 1, 1],
-        []
-    ]
-    lists = [ListNode.initList(x) for x in samples]
-    res = [sol.getDecimalValue(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

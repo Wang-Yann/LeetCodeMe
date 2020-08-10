@@ -32,6 +32,8 @@
 from collections import Counter
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -40,7 +42,12 @@ class Solution:
         return max(res.items(), key=lambda x: x[1])[0]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([2, 2, 1, 1, 1, 2, 2], 2)
+])
+def test_solutions(args, expected):
+    assert Solution().majorityElement(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [2, 2, 1, 1, 1, 2, 2]
-    print(sol.majorityElement(sample))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

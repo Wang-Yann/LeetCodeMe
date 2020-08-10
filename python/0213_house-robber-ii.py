@@ -33,6 +33,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
@@ -48,6 +50,7 @@ class Solution:
         for i in range(2, length):
             dp2[i] = max(dp2[i - 1], dp2[i - 2] + nums[i])
         return max(dp1[length - 2], dp2[length - 1])
+
 
 class Solution1:
     def rob(self, nums):
@@ -69,15 +72,15 @@ class Solution1:
         return num_i
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [2, 3, 2],
-        [1, 2, 3, 1],
-        [2, 3],
-        [4]
+@pytest.mark.parametrize("args,expected", [
+    [[2, 3, 2], 3],
+    [[1, 2, 3, 1], 4],
+    [[2, 3], 3],
+    [[4], 4],
+])
+def test_solutions(args, expected):
+    assert Solution().rob(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.rob(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

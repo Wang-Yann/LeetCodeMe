@@ -18,6 +18,7 @@
 #
 #  Related Topics 堆 队列 数学
 #  👍 26 👎 0
+import pytest
 
 
 class Solution:
@@ -37,10 +38,14 @@ class Solution:
         return dp[k - 1]
 
 
+@pytest.mark.parametrize("args,expected", [
+    (2, 3),
+    (5, 9),
+    (10, 35),
+])
+def test_solutions(args, expected):
+    assert Solution().getKthMagicNumber(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        2, 5, 10
-    ]
-    res = [sol.getKthMagicNumber(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

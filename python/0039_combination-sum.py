@@ -34,9 +34,9 @@
 #  输入：candidates = [2,3,5], target = 8,
 # 所求解集为：
 # [
-#   [2,2,2,2],
-#   [2,3,3],
-#   [3,5]
+#  [2,2,2,2],
+#  [2,3,3],
+#  [3,5]
 # ]
 #
 #
@@ -56,6 +56,7 @@
 
 from typing import List
 
+import pytest
 
 
 class Solution:
@@ -67,7 +68,7 @@ class Solution:
         return result
 
     def dfs(self, candidates: List[int], result: List[List[int]],
-                          start: int, intermediate: List[int], target: int) -> None:
+            start: int, intermediate: List[int], target: int) -> None:
         if target == 0:
             result.append(list(intermediate))
         while start < len(candidates) and candidates[start] <= target:
@@ -77,7 +78,22 @@ class Solution:
             start += 1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(candidates=[2, 3, 6, 7], target=7),
+     [
+         [7],
+         [2, 2, 3]
+     ]],
+    [dict(candidates=[2, 3, 5], target=8, ),
+     [
+         [2, 2, 2, 2],
+         [2, 3, 3],
+         [3, 5]
+     ]],
+])
+def test_solutions(kw, expected):
+    assert sorted(Solution().combinationSum(**kw)) == sorted(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [2, 3, 6, 7]
-    print(sol.combinationSum(sample, 7))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

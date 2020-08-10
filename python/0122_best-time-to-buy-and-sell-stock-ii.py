@@ -49,13 +49,14 @@
 #  👍 782 👎 0
 from typing import List
 
-"""
-贪心算法
-&&&&&&&&&&&
-"""
+import pytest
 
 
 class Solution:
+    """
+    贪心算法
+    &&&&&&&&&&&
+    """
 
     def maxProfit(self, prices: List[int]) -> int:
         profit_max = 0
@@ -65,7 +66,10 @@ class Solution:
                 profit_max += delta
         return profit_max
 
-    def maxProfitPeakValley(self, prices: List[int]) -> int:
+
+class Solution1:
+    def maxProfit(self, prices: List[int]) -> int:
+        """PeakValley"""
         if not prices:
             return 0
         i = 0
@@ -83,7 +87,9 @@ class Solution:
             max_profit += peak - valley
         return max_profit
 
-    def maxProfitSmSimple(self, prices: List[int]) -> int:
+
+class Solution2:
+    def maxProfit(self, prices: List[int]) -> int:
         """
             dp[i][k][0 or 1]
             0 <= i <= n-1, 1 <= k <= K
@@ -95,7 +101,7 @@ class Solution:
             return 0
         n = len(prices)
         s_range = (0, 1)
-        dp = [[0] * len(s_range) for x in range(0, n)]
+        dp = [[0] * len(s_range) for _ in range(n)]
         dp[-1][1] = - float('inf')
         for i in range(0, n):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
@@ -104,17 +110,17 @@ class Solution:
         return dp[n - 1][0]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([7, 1, 5, 3, 6, 4], 7),
+    ([1, 2, 3, 4, 5], 4),
+    ([7, 6, 4, 3, 1], 0),
+])
+@pytest.mark.parametrize("SolutionCLS", [
+    Solution, Solution1, Solution2
+])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().maxProfit(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [7, 1, 5, 3, 6, 4]
-    sample1 = [1, 2, 3, 4, 5]
-    sample2 = [7, 6, 4, 3, 1]
-    print(sol.maxProfit(sample))
-    print(sol.maxProfit(sample1))
-    print(sol.maxProfit(sample2))
-
-    print(sol.maxProfitPeakValley(sample))
-    print(sol.maxProfitPeakValley(sample1))
-    print(sol.maxProfitPeakValley(sample2))
-
-    print(sol.maxProfitSmSimple(sample), sol.maxProfitSmSimple(sample1), sol.maxProfitSmSimple(sample2))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

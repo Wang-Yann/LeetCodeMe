@@ -63,6 +63,8 @@
 #  👍 320 👎 0
 from collections import defaultdict
 
+import pytest
+
 from common_utils import Node
 
 
@@ -71,7 +73,7 @@ class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         if not head:
             return head
-        clone = defaultdict(lambda:Node(0))
+        clone = defaultdict(lambda: Node(0))
         clone[None] = None
         cur = head
         while cur:
@@ -81,7 +83,9 @@ class Solution:
             cur = cur.next
         return clone[head]
 
-    def copyRandomList2(self, head):
+
+class Solution1:
+    def copyRandomList(self, head):
         dummy = Node(0)
         current, prev, copies = head, dummy, {}
 
@@ -100,8 +104,7 @@ class Solution:
         return dummy.next
 
 
-if __name__ == '__main__':
-    sol = Solution()
+def test_solution():
     samples = [
         [[7, None], [13, 0], [11, 4], [10, 2], [1, 0]],
         [[1, 1], [2, 1]],
@@ -109,8 +112,12 @@ if __name__ == '__main__':
         []
     ]
     lists = [Node.initList(x) for x in samples]
-    print(lists)
     # res = [sol.copyRandomList(x) for x in lists]
-    res = [sol.copyRandomList2(x) for x in lists]
+    res = [Solution().copyRandomList(x) for x in lists]
+    res1 = [Solution1().copyRandomList(x) for x in lists]
+    assert repr(lists) == repr(res)
+    assert repr(lists) == repr(res1)
 
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

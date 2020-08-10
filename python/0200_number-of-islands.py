@@ -45,7 +45,41 @@
 
 from typing import List
 
-from common_utils import UnionFindGrid as   UnionFind
+import pytest
+
+
+class UnionFindGrid:
+
+    def __init__(self, grid):
+        m, n = len(grid), len(grid[0])
+        self.count = 0
+        self.parent = [-1] * m * n
+        self.rank = [0] * m * n
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    self.parent[i * n + j] = i * n + j
+                    self.count += 1
+
+    def find(self, i):
+        if self.parent[i] != i:
+            self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
+
+    def union(self, x, y):
+        """make sure rank(root_x)>=rank(root_y)"""
+        root_x = self.find(x)
+        root_y = self.find(y)
+        if root_x != root_y:
+            if self.rank[root_x] < self.rank[root_y]:
+                root_x, root_y = root_y, root_x
+            self.parent[root_y] = root_x
+            if self.rank[root_x] == self.rank[root_y]:
+                self.rank[root_x] += 1
+            self.count -= 1
+
+    def getCout(self):
+        return self.count
 
 
 class Solution:
@@ -53,7 +87,7 @@ class Solution:
         if not len(grid):
             return 0
         m, n = len(grid), len(grid[0])
-        uf = UnionFind(grid)
+        uf = UnionFindGrid(grid)
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         for r in range(m):
             for c in range(n):
@@ -65,14 +99,17 @@ class Solution:
                         uf.union(r * n + c, x * n + y)
         return uf.getCout()
 
-    def numIslandsMe(self, grid: List[List[str]]) -> int:
+
+class Solution1:
+    """Me"""
+
+    def numIslands(self, grid: List[List[str]]) -> int:
         def dfs(i, j):
             grid[i][j] = "0"
             directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
             for dlt_x, dlt_y in directions:
                 x, y = i + dlt_x, j + dlt_y
-                if 0 <= x <= m - 1 and 0 <= y <= n - 1 \
-                        and grid[x][y] == "1":
+                if 0 <= x <= m - 1 and 0 <= y <= n - 1 and grid[x][y] == "1":
                     dfs(x, y)
 
         if not grid: return 0
@@ -86,24 +123,24 @@ class Solution:
         return cnt_of_dfs
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [
-            ["1", "0", "1", "0", "0"],
-            ["1", "0", "1", "0", "0"],
-            ["1", "1", "1", "0", "0"],
-            ["1", "1", "1", "0", "0"],
-            ["1", "0", "1", "0", "0"]
-        ],
-        [
-            ["1", "1", "0", "0", "0"],
-            ["1", "1", "0", "0", "0"],
-            ["0", "0", "1", "0", "0"],
-            ["0", "0", "0", "1", "1"],
-        ]
+@pytest.mark.parametrize("args,expected", [
+    ([
+         ["1", "0", "1", "0", "0"],
+         ["1", "0", "1", "0", "0"],
+         ["1", "1", "1", "0", "0"],
+         ["1", "1", "1", "0", "0"],
+         ["1", "0", "1", "0", "0"]
+     ], 1),
+    ([
+         ["1", "1", "0", "0", "0"],
+         ["1", "1", "0", "0", "0"],
+         ["0", "0", "1", "0", "0"],
+         ["0", "0", "0", "1", "1"],
+     ], 3)
+])
+def test_solutions(args, expected):
+    assert Solution().numIslands(args) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.numIslands(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

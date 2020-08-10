@@ -32,6 +32,8 @@
 #  👍 1081 👎 0
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -47,7 +49,9 @@ class Solution:
         # print(profit_list, temp_list)
         return max(profit_list)
 
-    def maxProfitSm(self, prices: List[int]) -> int:
+
+class Solution1:
+    def maxProfit(self, prices: List[int]) -> int:
         """
             dp[i][k][0 or 1]
             0 <= i <= n-1, 1 <= k <= K
@@ -75,7 +79,9 @@ class Solution:
 
         return dp[n - 1][1][0]
 
-    def maxProfitSmSimple(self, prices: List[int]) -> int:
+
+class Solution2:
+    def maxProfit(self, prices: List[int]) -> int:
         """
             dp[i][k][0 or 1]
             0 <= i <= n-1, 1 <= k <= K
@@ -97,11 +103,14 @@ class Solution:
         return dp[n - 1][0]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([7, 1, 5, 3, 6, 4], 5),
+    ([7, 6, 4, 3, 1], 0),
+    ([7, 1, 5, 3, 6, 4], 5),
+])
+def test_solutions(args, expected):
+    assert Solution().maxProfit(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [7, 1, 5, 3, 6, 4]
-    sample1 = [7, 6, 4, 3, 1]
-    sample2 = [7, 1, 5, 3, 6, 4]
-    print(sol.maxProfit(sample), sol.maxProfit(sample1), sol.maxProfit(sample2))
-    print(sol.maxProfitSm(sample), sol.maxProfitSm(sample1), sol.maxProfitSm(sample2))
-    print(sol.maxProfitSmSimple(sample), sol.maxProfitSmSimple(sample1), sol.maxProfitSmSimple(sample2))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

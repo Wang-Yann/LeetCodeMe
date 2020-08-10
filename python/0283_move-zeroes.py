@@ -25,13 +25,15 @@
 #  👍 653 👎 0
 
 """
-
+import copy
 from typing import List
+
+import pytest
 
 
 class Solution:
 
-    def moveZeroes0(self, nums: List[int]) -> None:
+    def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
@@ -51,6 +53,8 @@ class Solution:
                 cur_index += 1
             nums[cur_index] = 0
 
+
+class Solution1:
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
@@ -64,16 +68,16 @@ class Solution:
             nums[i] = 0
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([0, 1, 0, 3, 12], [1, 3, 12, 0, 0])
+])
+def test_solutions(args, expected):
+    args1 = copy.deepcopy(args)
+    Solution().moveZeroes(args)
+    Solution1().moveZeroes(args1)
+    assert args == expected
+    assert args1 == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [0, 1, 0, 3, 12]
-    sample1 = [0, 1, 0, 3, 0, 120, 0]
-    sample2 = [2, 0, 1, 0, 3, 0, 120, 0]
-    sample3 = [0, 0]
-    sample4 = [2, 1]
-    print(sol.moveZeroes(sample))
-    print(sol.moveZeroes(sample1))
-    print(sol.moveZeroes(sample2))
-    print(sol.moveZeroes(sample3))
-    print(sol.moveZeroes(sample4))
-    print(sample, sample1, sample2, sample3, sample4)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

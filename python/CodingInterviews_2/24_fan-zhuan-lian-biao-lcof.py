@@ -26,33 +26,40 @@
 #  注意：本题与主站 206 题相同：https://leetcode-cn.com/problems/reverse-linked-list/
 #  Related Topics 链表
 #  👍 67 👎 0
+import copy
 
-import traceback
-from typing import List
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
-    def reverseList1(self, head: ListNode) -> ListNode:
-        dummy=ListNode(-1)
-        cur =head
-        while  cur:
-            dummy.next,cur.next,cur = cur ,dummy.next,cur.next
+    def reverseList(self, head: ListNode) -> ListNode:
+        dummy = ListNode(-1)
+        cur = head
+        while cur:
+            dummy.next, cur.next, cur = cur, dummy.next, cur.next
         return dummy.next
 
+
+class Solution1:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not ( head and head.next):return head
+        if not (head and head.next):
+            return head
         p = self.reverseList(head.next)
-        head.next.next=head
-        head.next=None
+        head.next.next = head
+        head.next = None
         return p
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        ListNode.init_list_from_str("1->2->3->4->5")
-    ]
-    res = [ sol.reverseList(args) for args in samples]
-    print(res)
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.initList([1, 2, 3, 4, 5])), ListNode.initList([5, 4, 3, 2, 1])],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().reverseList(**kw)) == repr(expected)
+    assert repr(Solution1().reverseList(**kw1)) == repr(expected)
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

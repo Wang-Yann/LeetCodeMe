@@ -40,6 +40,7 @@
 #
 #  Related Topics 链表
 #  👍 719 👎 0
+import pytest
 
 from common_utils import ListNode
 
@@ -59,12 +60,13 @@ class Solution:
             del node_to_delete
 
 
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([4, 5, 1, 9]), ListNode.initList([5, 1, 9]))
+])
+def test_solutions(args, expected):
+    Solution().deleteNode(args)
+    assert repr(args) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([4, 5, 1, 9], 5),
-        ([4, 5, 1, 9], 1)
-    ]
-    lists = [(ListNode.initList(x),y) for x, y in samples]
-    res = [sol.deleteNode(x) for x, y in lists]
-    print(lists)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -59,6 +59,8 @@
 #  👍 163 👎 0
 
 """
+import pytest
+
 
 class Solution1:
 
@@ -101,19 +103,27 @@ class Solution:
         return "/" + "/".join(stack)
 
 
+@pytest.mark.parametrize("args,expected",
+    list(zip(
+        [
+            "/...",
+            "/home/",
+            "",
+            "/../",
+            "/home//foo/",
+            "/a/./b/../../c/",
+            "/a/../../b/../c//.//",
+            "/a//b////c/d//././/..",
+            "/a/../../b/../c//.//",
+            "///eHx/.."
+        ],
+        ['/...', '/home', '', '/', '/home/foo', '/c', '/c', '/a/b/c', '/c', '/']
+
+    )),
+)
+def test_solutions(args, expected):
+    assert Solution().simplifyPath(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "/...",
-        "/home/",
-        "",
-        "/../",
-        "/home//foo/",
-        "/a/./b/../../c/",
-        "/a/../../b/../c//.//",
-        "/a//b////c/d//././/..",
-        "/a/../../b/../c//.//",
-        "///eHx/.."
-    ]
-    res = [sol.simplifyPath(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

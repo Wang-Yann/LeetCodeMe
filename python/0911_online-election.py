@@ -45,6 +45,8 @@ import bisect
 import collections
 from typing import List
 
+import pytest
+
 
 class TopVotedCandidate:
     """每当选票记录，我们可以记录每个胜者改变的 (winner, time) 时刻信息。之后，我们拥有一个有序的时刻信息，并用二分搜索找到答案。"""
@@ -69,12 +71,18 @@ class TopVotedCandidate:
         return self.A[idx - 1][1]
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = TopVotedCandidate([0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30])
     ops_list = ["TopVotedCandidate", "q", "q", "q", "q", "q", "q"]
     args_list = [[[0, 1, 1, 0, 0, 1, 0], [0, 5, 10, 15, 20, 25, 30]], [3], [12], [25], [15], [24], [8]]
 
     # output [null,0,1,1,0,0,1]
+    res = []
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
-        print(getattr(obj, method)(*args))
+        res.append(getattr(obj, method)(*args))
+    assert res == [0, 1, 1, 0, 0, 1]
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

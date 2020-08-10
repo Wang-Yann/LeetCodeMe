@@ -95,11 +95,13 @@ def test_solution():
         cur = cur.next
     cur.next = head
     res = Solution().insert(head, 2)
+    vals = []
     while res.next:
-        print(res.val)
+        vals.append(res.val)
         res = res.next
         if res.val == 3:
             break
+    assert vals == [3, 1, 2, 4]
 
 
 if __name__ == '__main__':

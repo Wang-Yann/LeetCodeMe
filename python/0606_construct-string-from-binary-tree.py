@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
 #
@@ -49,6 +48,7 @@
 #  👍 128 👎 0
 
 """
+import pytest
 
 from common_utils import TreeNode
 
@@ -64,13 +64,13 @@ class Solution:
         return s
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, left=TreeNode(2, TreeNode(4)), right=TreeNode(3)),
-        TreeNode(1, left=TreeNode(2, right=TreeNode(4)), right=TreeNode(3))
+@pytest.mark.parametrize("kw,expected", [
+    [dict(t=TreeNode(1, left=TreeNode(2, TreeNode(4)), right=TreeNode(3)), ), '1(2(4))(3)'],
+    [dict(t=TreeNode(1, left=TreeNode(2, right=TreeNode(4)), right=TreeNode(3))), '1(2()(4))(3)'],
+])
+def test_solutions(kw, expected):
+    assert Solution().tree2str(**kw) == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.tree2str(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

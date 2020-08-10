@@ -90,7 +90,7 @@ class Solution1:
             idx = bisect.bisect_left(sortns, v)
             res.append(idx)
             sortns.insert(idx, v)
-        print(sortns, res)
+        # print(sortns, res)
         return res[::-1]
 
 

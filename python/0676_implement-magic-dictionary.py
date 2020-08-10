@@ -80,7 +80,7 @@ class MagicDictionary:
 def test_solutions():
     obj = MagicDictionary()
     obj.buildDict(["hello", "leetcode"])
-    print(obj.count)
+    # print(obj.count)
     assert obj.search("hello") == False
     assert obj.search("hhllo") == True
     assert obj.search("hell") == False

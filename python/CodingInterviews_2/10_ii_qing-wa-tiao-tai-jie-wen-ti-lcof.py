@@ -33,6 +33,8 @@
 #
 #  Related Topics 递归
 #  👍 47 👎 0
+import pytest
+
 
 class Solution:
 
@@ -43,10 +45,13 @@ class Solution:
         return fb[n] % 1000000007
 
 
+@pytest.mark.parametrize("args,expected", [
+    (2, 2),
+    (7, 21),
+])
+def test_solutions(args, expected):
+    assert Solution().numWays(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        2, 7
-    ]
-    res = [sol.numWays(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

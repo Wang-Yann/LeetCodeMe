@@ -95,7 +95,7 @@ class Solution:
 ])
 def test_solutions(kwargs, expected):
     res = Solution().listOfDepth(**kwargs)
-    print(res)
+    # print(res)
     assert all(repr(x) == repr(y) for x, y in zip(res, expected))
 
 

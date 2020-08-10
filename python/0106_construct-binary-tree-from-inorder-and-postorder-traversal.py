@@ -29,6 +29,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -51,7 +53,7 @@ class Solution:
             node_val = postorder[post_end - 1]
             node = TreeNode(node_val)
             idx = inorder_lookup[node_val]
-            print("post_end,idx,in_start", post_end, idx, in_end)
+            # print("post_end,idx,in_start", post_end, idx, in_end)
             node.left = buildTreeRecursive(post_end - 1 - (in_end - idx - 1), in_start, idx)
             node.right = buildTreeRecursive(post_end - 1, idx + 1, in_end)
             return node
@@ -72,15 +74,19 @@ class Solution:
             node.left = helper(in_start, index)
             return node
 
-        return helper(0, len(inorder) )
+        return helper(0, len(inorder))
+
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(
+        inorder=[9, 3, 15, 20, 7],
+        postorder=[9, 15, 7, 20, 3]
+    ), TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+    ],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().buildTree(**kw)) == repr(expected)
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([9, 3, 15, 20, 7], [9, 15, 7, 20, 3])
-
-    ]
-    lists = [x for x in samples]
-    res = [sol.buildTree(*x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

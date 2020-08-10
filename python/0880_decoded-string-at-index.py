@@ -60,6 +60,8 @@
 #  👍 98 👎 0
 
 """
+import pytest
+
 
 class Solution:
 
@@ -74,7 +76,7 @@ class Solution:
                 i *= int(c)
             else:
                 i += 1
-        print(i)
+        # print(i)
         for c in reversed(S):
             K %= i
             if K == 0 and c.isalpha():
@@ -85,15 +87,17 @@ class Solution:
                 i -= 1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(S="leet2code3", K=10), 'o'],
+    [dict(S="ha22", K=5), 'h'],
+    [dict(S="a2345678999999999999999", K=1), 'a'],
+    [dict(S="abc", K=1), 'a'],
+    [dict(S="vzpp636m8y", K=2920), 'z'],
+    [dict(S="abc234567899999999999999999999999999999999999999999999999999999", K=2), 'b'],
+])
+def test_solutions(kw, expected):
+    assert Solution().decodeAtIndex(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        dict(S="leet2code3", K=10),
-        dict(S="ha22", K=5),
-        dict(S="a2345678999999999999999", K=1),
-        dict(S="abc", K=1),
-        dict(S="vzpp636m8y", K=2920),
-        # dict(S="abc234567899999999999999999999999999999999999999999999999999999", K=2)
-    ]
-    res = [sol.decodeAtIndex(**args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

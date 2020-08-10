@@ -159,7 +159,7 @@ def test1():
     ex = Excel(26, "Z")
     for op, arg in zip(ops[1:], args[1:]):
         x = getattr(ex, op)(*arg)
-        if op != set:
+        if op != "set":
             print(x)
 
 

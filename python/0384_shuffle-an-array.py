@@ -79,7 +79,7 @@ def test_solutions():
     param_1 = obj.reset()
     param_2 = obj.shuffleSimple()
     param_3 = obj.shuffle()
-    print(param_2, param_3)
+    # print(param_2, param_3)
     assert param_2
 
 

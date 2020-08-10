@@ -24,39 +24,44 @@
 #  Related Topics 树 深度优先搜索 广度优先搜索
 #  👍 74 👎 0
 
-import traceback
 from typing import List
+
+import pytest
 
 from common_utils import TreeNode
 
 
 class Solution:
     def largestValues(self, root: TreeNode) -> List[int]:
-        if not root:return []
+        if not root: return []
         result = []
-        level =0
+        level = 0
         queue = [root]
         while queue:
             length = len(queue)
             result.append(float("-inf"))
             for i in range(length):
                 cur = queue.pop(0)
-                result[level]=max(result[level],cur.val)
+                result[level] = max(result[level], cur.val)
                 if cur.left:
                     queue.append(cur.left)
                 if cur.right:
                     queue.append(cur.right)
-            level+=1
+            level += 1
         return result
 
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(
+        1,
+        left=TreeNode(2, right=TreeNode(4)),
+        right=TreeNode(3, TreeNode(5, TreeNode(7), TreeNode(6)))
+    )
+    ), [1, 3, 5, 7]],
+])
+def test_solutions(kw, expected):
+    assert Solution().largestValues(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples=[
-        TreeNode(1, left=TreeNode(2, right=TreeNode(4)),
-                 right=TreeNode(3, TreeNode(5, TreeNode(7), TreeNode(6))))
-    ]
-    res = [ sol.largestValues(x) for x in samples]
-    print(res)
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

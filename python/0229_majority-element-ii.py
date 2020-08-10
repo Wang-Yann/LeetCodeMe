@@ -28,6 +28,8 @@
 import collections
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -35,11 +37,13 @@ class Solution:
         return [i[0] for i in collections.Counter(nums).items() if i[1] > len(nums) / 3]
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([3, 2, 3], [3]),
+    ([1, 1, 1, 3, 3, 2, 2, 2], [1, 2]),
+])
+def test_solutions(args, expected):
+    assert Solution().majorityElement(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [1, 1, 1, 3, 3, 2, 2, 2],
-        [3, 2, 3]
-    ]
-    res = [sol.majorityElement(x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

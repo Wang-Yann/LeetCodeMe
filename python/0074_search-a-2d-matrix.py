@@ -44,13 +44,15 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix or not matrix[0]:
             return False
-        high_row, high_col = len(matrix)-1, len(matrix[0])-1
+        high_row, high_col = len(matrix) - 1, len(matrix[0]) - 1
         low_row, low_col = 0, 0
         searched_row = -1
         while low_row <= high_row:
@@ -66,7 +68,7 @@ class Solution:
                 break
         if searched_row == -1:
             return False
-        print("Searched_Row",searched_row)
+        # print("Searched_Row",searched_row)
         while low_col <= high_col:
             mid_col = (low_col + high_col) // 2
             if matrix[searched_row][mid_col] < target:
@@ -76,13 +78,16 @@ class Solution:
             else:
                 return True
         return False
-    def searchMatrixS(self, matrix: List[List[int]], target: int) -> bool:
+
+
+class Solution1:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         m = len(matrix)
         if m == 0:
             return False
         n = len(matrix[0])
 
-        #二分查找
+        # 二分查找
         left, right = 0, m * n - 1
         while left <= right:
             pivot_idx = (left + right) // 2
@@ -97,25 +102,19 @@ class Solution:
         return False
 
 
+@pytest.mark.parametrize("args,expected", [
+    [([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 3), True],
+    [([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 13), False],
+    [([[1]], 0), False],
+    [([[1]], 1), True],
+    [([[1, 3]], 1), True],
+    [([[1], [3]], 3), True],
+    [([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 3), True],
+])
+def test_solutions(args, expected):
+    assert Solution().searchMatrix(*args) == expected
+    assert Solution1().searchMatrix(*args) == expected
+
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([
-             [1, 3, 5, 7],
-             [10, 11, 16, 20],
-             [23, 30, 34, 50]
-         ], 3),
-        ([
-             [1, 3, 5, 7],
-             [10, 11, 16, 20],
-             [23, 30, 34, 50]
-         ], 13),
-        ([[1]],0),
-        ([[1]],1),
-        ([[1,3]],1),
-        ([[1],[3]],3),
-        ([[1,3,5,7],[10,11,16,20],[23,30,34,50]],3)
-    ]
-    res = [sol.searchMatrix(m, target) for m, target in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

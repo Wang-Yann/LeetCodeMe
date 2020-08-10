@@ -27,6 +27,7 @@
 #  注意：两结点之间的路径长度是以它们之间边的数目表示。
 #  Related Topics 树
 #  👍 411 👎 0
+import pytest
 
 from common_utils import TreeNode
 
@@ -38,7 +39,8 @@ class Solution:
 
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
         def heightHelper(root, diameter):
-            if not root: return 0, diameter
+            if not root:
+                return 0, diameter
             left, diameter = heightHelper(root.left, diameter)
             right, diameter = heightHelper(root.right, diameter)
             return 1 + max(left, right), max(diameter, left + right)
@@ -46,13 +48,18 @@ class Solution:
         return heightHelper(root, 0)[1]
 
 
+@pytest.mark.parametrize("args,expected", [
+    [TreeNode(1,
+              TreeNode(2, TreeNode(4), TreeNode(5)),
+              TreeNode(3)), 3],
+    [TreeNode(1,
+              TreeNode(2),
+              TreeNode(3)), 2],
+    [TreeNode(1, left=TreeNode(2, right=TreeNode(3, right=TreeNode(9)))), 3],
+])
+def test_solutions(args, expected):
+    assert Solution().diameterOfBinaryTree(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3)),
-        TreeNode(1, TreeNode(2), TreeNode(3)),
-        TreeNode(1, left=TreeNode(2, right=TreeNode(3, right=TreeNode(9))))
-    ]
-    lists = [x for x in samples]
-    res = [sol.diameterOfBinaryTree(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

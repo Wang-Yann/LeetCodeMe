@@ -39,6 +39,8 @@
 #  Related Topics 树
 #  👍 76 👎 0
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -49,7 +51,8 @@ class Solution:
         """
 
         def postOrder(cur, tilt):
-            if not cur: return 0, tilt
+            if not cur:
+                return 0, tilt
             left_val, tilt = postOrder(cur.left, tilt)
             right_val, tilt = postOrder(cur.right, tilt)
             tilt += abs(left_val - right_val)
@@ -60,15 +63,16 @@ class Solution:
         return res[1]
 
 
+@pytest.mark.parametrize("args,expected", [
+    [TreeNode(1, left=TreeNode(2), right=TreeNode(3)), 1],
+    [TreeNode(1, left=TreeNode(2, TreeNode(4)), right=TreeNode(3)), 7],
+    [TreeNode(1), 0],
+    [TreeNode(1, TreeNode(2, left=TreeNode(4)), TreeNode(3, left=TreeNode(5))), 11],
+    [None, 0],
+])
+def test_solutions(args, expected):
+    assert Solution().findTilt(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        TreeNode(1, left=TreeNode(2), right=TreeNode(3)),
-        TreeNode(1, left=TreeNode(2, TreeNode(4)), right=TreeNode(3)),
-        TreeNode(1),
-        TreeNode(1, TreeNode(2, left=TreeNode(4)), TreeNode(3, left=TreeNode(5))),
-        None
-    ]
-    lists = [x for x in samples]
-    res = [sol.findTilt(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

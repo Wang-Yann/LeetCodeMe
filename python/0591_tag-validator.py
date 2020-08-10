@@ -103,12 +103,15 @@
 #  👍 23 👎 0
 
 """
+import pytest
+
 
 class Solution:
     def isValid(self, code: str) -> bool:
         """
         HARD
         """
+
         def validText(s, i):
             j = i
             i = s.find("<", i)
@@ -162,16 +165,17 @@ class Solution:
         return result and i == len(code)
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "<DIV>This is the first line <![CDATA[<div>]]></DIV>",
-        "<DIV>>>  ![cdata[]] <![CDATA[<div>]>]]>]]>>]</DIV>",
-        "<A>  <B> </A>   </B>",
-        "<DIV> closed tags with invalid tag name  <b>123</b> </DIV>",
-        "<DIV>  unmatched <  </DIV>"
+@pytest.mark.parametrize("code,expected", [
+    ("<DIV>This is the first line <![CDATA[<div>]]></DIV>", True),
+    ("<DIV>>>  ![cdata[]] <![CDATA[<div>]>]]>]]>>]</DIV>", True),
+    ("<A>  <B> </A>   </B>", False),
+    ("<DIV> closed tags with invalid tag name  <b>123</b> </DIV>", False),
+    ("<DIV>  unmatched <  </DIV>", False),
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.isValid(x) for x in lists]
-    print(res)
+])
+def test_solutions(code, expected):
+    assert Solution().isValid(code) == expected
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

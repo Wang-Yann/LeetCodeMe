@@ -35,6 +35,8 @@
 
 from typing import List
 
+import pytest
+
 
 class Solution:
 
@@ -46,7 +48,7 @@ class Solution:
             if nums[mid] == target:
                 return mid
             elif (nums[left] <= target < nums[mid]) or (
-                    nums[mid] < nums[left] and not (nums[mid] < target <= nums[right])):
+                nums[mid] < nums[left] and not (nums[mid] < target <= nums[right])):
                 right = mid - 1
             else:
                 left = mid + 1
@@ -76,8 +78,14 @@ class Solution1:
         return -1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[4, 5, 6, 7, 0, 1, 2], target=0), 4],
+    [dict(nums=[4, 5, 6, 7, 0, 1, 2], target=3), -1],
+])
+def test_solutions(kw, expected):
+    assert Solution().search(**kw) == expected
+    assert Solution1().search(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [4, 5, 6, 7, 0, 1, 2]
-    sample = [7, 9, 0, 1, 2, 3, 4, 5]
-    print(sol.search(sample, 0))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

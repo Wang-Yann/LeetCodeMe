@@ -188,7 +188,7 @@ def test_solutions(kw, expected):
     edges = kw.pop("edges")
     kw["htmlParser"] = HtmlParser()
     ans = Solution().crawl(**kw)
-    print(ans)
+    # print(ans)
     assert ans == expected
 
 

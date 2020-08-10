@@ -55,7 +55,7 @@ class Solution:
         heapq.heapify(stones)
         while len(stones) > 1:
             a, b = heapq.heappop(stones), heapq.heappop(stones)
-            print(a, b)
+            # print(a, b)
             if a != b:
                 heapq.heappush(stones, -abs(a - b))
         return abs(stones[0]) if stones else 0

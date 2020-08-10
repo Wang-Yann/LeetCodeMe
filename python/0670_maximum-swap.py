@@ -46,7 +46,7 @@ class Solution:
                 max_idx = i
             elif digits[i] < digits[max_idx]:
                 left, right = i, max_idx
-        print(left,right)
+        # print(left,right)
         digits[left], digits[right] = digits[right], digits[left]
         return int("".join(digits))
 

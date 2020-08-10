@@ -33,7 +33,7 @@
 #  在上述示例中，如果要找的值是 5，但因为没有节点值为 5，我们应该返回 NULL。
 #  Related Topics 树
 #  👍 71 👎 0
-
+import pytest
 
 from common_utils import TreeNode
 
@@ -50,12 +50,17 @@ class Solution:
                 cur = cur.right
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        [TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7)), 2]
+@pytest.mark.parametrize("kw,expected", [
+    [dict(root=TreeNode(4,
+                        TreeNode(2, TreeNode(1), TreeNode(3)),
+                        TreeNode(7)
+                        ),
+          val=2), 2],
+])
+def test_solutions(kw, expected):
+    res = Solution().searchBST(**kw)
+    assert res == expected == None or res.val == expected
 
-    ]
-    lists = [x for x in samples]
-    res = [sol.searchBST(*x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

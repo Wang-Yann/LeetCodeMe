@@ -32,10 +32,9 @@
 #
 #  👍 124 👎 0
 
-import os
-import sys
-import traceback
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -64,11 +63,14 @@ class Solution:
                + self.dfs(area_array, rows, cols, i + 1, j, k)
 
 
+@pytest.mark.parametrize("args,expected", [
+    ([11, 11, 5], 21),
+    ([2, 3, 1], 3),
+    ([3, 1, 0], 1),
+])
+def test_solutions(args, expected):
+    assert Solution().movingCount(*args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    m = 2
-    n = 3
-    k = 1
-    print(sol.movingCount(m, n, k))
-    print(sol.movingCount(11, 11, 5))
-    print(sol.movingCount(3, 1, 0))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

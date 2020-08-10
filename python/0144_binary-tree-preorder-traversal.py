@@ -26,6 +26,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -62,13 +64,12 @@ class Solution:
         return ans
 
 
-if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([1, None, 2, 3], [(2, 3)], [(0, 2)]),
-        ([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)])
+@pytest.mark.parametrize("args,expected", [
+    (TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7))), [3, 9, 20, 15, 7])
+])
+def test_solutions(args, expected):
+    assert Solution().preorderTraversal(args) == expected
 
-    ]
-    lists = [TreeNode.initTreeSimple(*x) for x in samples]
-    res = [sol.preorderTraversal(x) for x in lists]
-    print(res)
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

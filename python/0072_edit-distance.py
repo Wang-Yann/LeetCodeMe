@@ -45,10 +45,12 @@
 #  👍 978 👎 0
 
 """
+import pytest
 
 
 class Solution:
     """我们用 D[i][j] 表示 A 的前 i 个字母和 B 的前 j 个字母之间的编辑距离。"""
+
     def minDistance(self, word1: str, word2: str) -> int:
         n = len(word1)
         m = len(word2)
@@ -79,8 +81,14 @@ class Solution:
 
         return D[n][m]
 
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(word1="horse", word2="ros"), 3],
+    [dict(word1="intention", word2="execution"), 5],
+])
+def test_solutions(kw, expected):
+    assert Solution().minDistance(**kw) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample="abcd"
-    sample1="aed"
-    print(sol.minDistance(sample,sample1))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -27,32 +27,37 @@
 #  👍 564 👎 0
 
 """
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
-    def isPalindromeS(self, head: ListNode) -> bool:
+    def isPalindrome(self, head: ListNode) -> bool:
         l = []
         cur = head
         while cur:
             l.append(cur.val)
             cur = cur.next
-        return reversed(l) == l
+        return list(reversed(l)) == l
 
-    def isPalindromeSS(self, head: ListNode) -> bool:
+
+class Solution1:
+    def isPalindrome(self, head: ListNode) -> bool:
         reverse, fast = None, head
         while fast and fast.next:
             fast = fast.next.next
             head.next, reverse, head = reverse, head, head.next
         # If the number of the nodes is odd,
         # set the head of the tail list to the next of the median node.
-        print("Fast", fast)
+        # print("Fast", fast)
 
         tail = head.next if fast else head
-        print(head)
-        print(reverse)
-        print(tail)
+        # print(head)
+        # print(reverse)
+        # print(tail)
 
         while reverse:
             if reverse.val != tail.val:
@@ -61,6 +66,8 @@ class Solution:
             tail = tail.next
         return True
 
+
+class Solution2:
     def isPalindrome(self, head: ListNode) -> bool:
         self.front_pointer = head
 
@@ -76,11 +83,16 @@ class Solution:
         return recursively_check()
 
 
+@pytest.mark.parametrize("args,expected", [
+    (ListNode.initList([1, 2, 3, 4, 5]), False),
+    (ListNode.initList([1, 2, 3, 2, 1]), True),
+    (ListNode.initList([1, 2, 3, 3, 2, 1]), True),
+])
+def test_solutions(args, expected):
+    assert Solution().isPalindrome(copy.deepcopy(args)) == expected
+    assert Solution1().isPalindrome(copy.deepcopy(args)) == expected
+    assert Solution2().isPalindrome(copy.deepcopy(args)) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample0 = ListNode.init_list_from_str("1->2->3->4->5")
-    sample1 = ListNode.init_list_from_str("1->2->3->2->1")
-    sample2 = ListNode.init_list_from_str("1->2->3->3->2->1")
-    print(sol.isPalindrome(sample0))
-    print(sol.isPalindrome(sample1))
-    print(sol.isPalindrome(sample2))
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

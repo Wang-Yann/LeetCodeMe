@@ -56,8 +56,9 @@
 
 import bisect
 from random import randint
-
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -72,13 +73,16 @@ class Solution:
         return bisect.bisect_right(self.__prefix_sum, target)
 
 
-if __name__ == '__main__':
+def test_solution():
     obj = Solution([1, 3])
     # ops_list = ["Solution","pick","pick","pick"]
     # args_list =[[[[1,1,5,5]]],[],[],[]]
     ops_list = ["Solution", "pickIndex", "pickIndex", "pickIndex", "pickIndex", "pickIndex"]
     args_list = [[[1, 3]], [], [], [], [], []]
-
     for i in range(1, len(ops_list)):
         method, args = ops_list[i], args_list[i]
         print(getattr(obj, method)(*args))
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

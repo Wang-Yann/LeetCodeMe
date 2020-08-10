@@ -50,6 +50,8 @@
 #  👍 22 👎 0
 
 """
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -77,15 +79,20 @@ class CBTInserter:
         return self._tree[0]
 
 
-if __name__ == '__main__':
+def test_solution():
     root = TreeNode(12)
     obj = CBTInserter(root)
-    param_1 = obj.insert(3)
-    param_3 = obj.insert(4)
+    obj.insert(3)
+    obj.insert(4)
     param_2 = obj.get_root()
+    assert param_2
 
     root1 = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6)))
     ob1 = CBTInserter(root1)
     ob1.insert(7)
     ob1.insert(8)
     print(ob1.get_root())
+
+
+if __name__ == '__main__':
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

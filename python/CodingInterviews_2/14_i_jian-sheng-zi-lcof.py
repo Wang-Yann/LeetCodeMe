@@ -32,6 +32,7 @@
 #  注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
 #  Related Topics 数学 动态规划
 #  👍 77 👎 0
+import pytest
 
 
 class Solution:
@@ -51,10 +52,14 @@ class Solution:
         return dp[n]
 
 
+@pytest.mark.parametrize("args,expected", [
+    (2, 1),
+    (4, 4),
+    (10, 36),
+])
+def test_solutions(args, expected):
+    assert Solution().cuttingRope(args) == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        2, 4, 10
-    ]
-    res = [sol.cuttingRope(args) for args in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

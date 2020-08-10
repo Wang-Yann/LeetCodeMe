@@ -37,13 +37,16 @@
 #
 #  Related Topics 排序 链表
 #  👍 192 👎 0
+import copy
+
+import pytest
 
 from common_utils import ListNode
 
 
 class Solution:
 
-    def insertionSortListOrigin(self, head: ListNode) -> ListNode:
+    def insertionSortList(self, head: ListNode) -> ListNode:
         # 找个排头 TODO
         dummy = ListNode(-1)
         pre = dummy
@@ -58,45 +61,41 @@ class Solution:
             # 进行插入操作
             cur.next = pre.next
             pre.next = cur
-            pre= dummy
+            pre = dummy
             cur = tmp
         return dummy.next
 
+
+class Solution1:
     def insertionSortList(self, head: ListNode) -> ListNode:
         """TODO"""
-        if not (head and head.next):return head
+        if not (head and head.next): return head
 
         dummy = ListNode(None)
         dummy.next = head
-        cur,sorted_tail = head.next,head
+        cur, sorted_tail = head.next, head
 
         while cur:
             prev = dummy
             while prev.next.val < cur.val:
-                prev =prev.next
-            if prev ==sorted_tail:
-                cur,sorted_tail =cur.next,cur
+                prev = prev.next
+            if prev == sorted_tail:
+                cur, sorted_tail = cur.next, cur
             else:
-                cur.next ,prev.next,sorted_tail.next = prev.next,cur,cur.next
+                cur.next, prev.next, sorted_tail.next = prev.next, cur, cur.next
                 cur = sorted_tail.next
         return dummy.next
 
 
-
-
-
-
+@pytest.mark.parametrize("kw,expected", [
+    [dict(head=ListNode.init_list_from_str("4->2->1->3")), ListNode.initList([1, 2, 3, 4])],
+    [dict(head=ListNode.init_list_from_str("-1->5->3->4->0")), ListNode.initList([-1, 0, 3, 4, 5])],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    assert repr(Solution().insertionSortList(**kw)) == repr(expected)
+    assert repr(Solution1().insertionSortList(**kw1)) == repr(expected)
 
 
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        "4->2->1->3",
-        # "-1->5->3->4->0",
-        # "3"
-
-    ]
-    lists = [ListNode.init_list_from_str(x) for x in samples]
-    # res = [sol.insertionSortList(x) for x in lists]
-    res = [sol.insertionSortListOrigin(x) for x in lists]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

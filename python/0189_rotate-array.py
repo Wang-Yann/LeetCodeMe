@@ -38,7 +38,10 @@
 #  👍 627 👎 0
 
 """
+import copy
 from typing import List
+
+import pytest
 
 
 class Solution:
@@ -55,7 +58,9 @@ class Solution:
             v = nums.pop()
             nums.insert(0, v)
 
-    def rotateReverse(self, nums: List[int], k: int) -> None:
+
+class Solution1:
+    def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
@@ -76,8 +81,17 @@ class Solution:
             end -= 1
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(nums=[1, 2, 3, 4, 5, 6, 7], k=3), [5, 6, 7, 1, 2, 3, 4]],
+    [dict(nums=[-1, -100, 3, 99], k=2), [3, 99, -1, -100]],
+])
+def test_solutions(kw, expected):
+    kw1 = copy.deepcopy(kw)
+    Solution().rotate(**kw)
+    Solution1().rotate(**kw1)
+    assert kw["nums"] == expected
+    assert kw1["nums"] == expected
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    sample = [1, 2, 3, 4, 5, 6, 7]
-    print(sol.rotateReverse(sample, 3))
-    print(sample)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

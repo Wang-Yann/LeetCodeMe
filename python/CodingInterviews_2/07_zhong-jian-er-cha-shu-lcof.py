@@ -7,8 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
-
 # 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 #
 #
@@ -41,6 +39,8 @@
 
 from typing import List
 
+import pytest
+
 from common_utils import TreeNode
 
 
@@ -49,8 +49,9 @@ class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         if not preorder and inorder:
             return None
-        lookup = {v:idx for idx, v in enumerate(inorder)}
+        lookup = {v: idx for idx, v in enumerate(inorder)}
         length = len(inorder)
+
         ##左闭右开
         def buildRecu(in_start, in_end):
             if in_start == in_end:
@@ -58,19 +59,22 @@ class Solution:
             val = preorder.pop(0)
             root = TreeNode(val)
             idx = lookup[val]
-            root.left = buildRecu(in_start, idx )
+            root.left = buildRecu(in_start, idx)
             root.right = buildRecu(idx + 1, in_end)
             return root
 
         return buildRecu(0, length)
 
 
+@pytest.mark.parametrize("kw,expected", [
+    [dict(preorder=[3, 9, 20, 15, 7], inorder=[9, 3, 15, 20, 7]),
+     TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+     ],
+    [dict(preorder=[1], inorder=[1]), TreeNode(1)],
+])
+def test_solutions(kw, expected):
+    assert repr(Solution().buildTree(**kw)) == repr(expected)
+
+
 if __name__ == '__main__':
-    sol = Solution()
-    samples = [
-        ([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]),
-        ([1], [1]),
-        ([], []),
-    ]
-    res = [sol.buildTree(*x) for x in samples]
-    print(res)
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
