@@ -99,15 +99,15 @@ class Solution2:
         """
         if not prices:
             return 0
-        n = len(prices)
+        N = len(prices)
         s_range = (0, 1)
-        dp = [[0] * len(s_range) for _ in range(n)]
+        dp = [[0] * len(s_range) for _ in range(N)]
         dp[-1][1] = - float('inf')
-        for i in range(0, n):
+        for i in range(0, N):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
             dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
 
-        return dp[n - 1][0]
+        return dp[N - 1][0]
 
 
 @pytest.mark.parametrize("args,expected", [

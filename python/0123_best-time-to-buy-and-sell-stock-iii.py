@@ -46,7 +46,8 @@ class Solution:
         """
         贪心算法
         &&&&&&&&&&&
-        https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/solution/yi-ge-tong-yong-fang-fa-tuan-mie-6-dao-gu-piao-wen/
+
+        
             dp[i][k][0 or 1]
             0 <= i <= n-1, 1 <= k <= K
             n 为天数，大 K 为最多交易数
@@ -55,20 +56,21 @@ class Solution:
         """
         if not prices:
             return 0
-        n = len(prices)
+        N = len(prices)
         max_k = 2
         k_range = (0, 1, 2)
         s_range = (0, 1)
-        dp = [[[0] * len(s_range) for _ in k_range] for __ in range(0, n)]
+        dp = [[[0] * len(s_range) for _ in k_range] for __ in range(N)]
         for ki in k_range:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
-        for i in range(0, n):
-            for k in range(max_k, 0, -1):
+        for i in range(N):
+            # for k in range(max_k, 0, -1):
+            for k in range(1, max_k + 1):
                 dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])
                 dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i])
 
-        return dp[n - 1][max_k][0]
+        return dp[N - 1][max_k][0]
 
 
 @pytest.mark.parametrize("args,expected", [

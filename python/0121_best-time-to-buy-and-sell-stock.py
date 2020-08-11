@@ -63,44 +63,40 @@ class Solution1:
         # print(dp_array)
         if not prices:
             return 0
-        n = len(prices)
+        N = len(prices)
 
         k_range = (0, 1)
         s_range = (0, 1)
-        dp = [[[0] * len(s_range)] * len(k_range) for x in range(0, n)]
+        dp = [[[0] * len(s_range) for _ in k_range] for __ in range(N)]
         for row in dp:
             for col in row:
                 col[1] = float("-inf")
-            row[0][1] = float("-inf")
-        for i in range(0, n):
+        # print(dp)
+        for i in range(N):
             for k in k_range:
                 dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])
                 dp[i][k][1] = max(dp[i - 1][k][1], -prices[i])
 
-        return dp[n - 1][1][0]
+        return dp[N - 1][1][0]
 
 
 class Solution2:
     def maxProfit(self, prices: List[int]) -> int:
         """
-            dp[i][k][0 or 1]
-            0 <= i <= n-1, 1 <= k <= K
-            n 为天数，大 K 为最多交易数
             1 表示持有，0 表示没有持有
-            此问题共 n × K × 2 种状态，全部穷举
         """
         if not prices:
             return 0
-        n = len(prices)
+        N = len(prices)
         s_range = (0, 1)
-        dp = [[0] * len(s_range) for x in range(0, n)]
+        dp = [[0] * len(s_range) for _ in range(N)]
         dp[-1][1] = - float('inf')
-        for i in range(0, n):
+        for i in range(N):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
             dp[i][1] = max(dp[i - 1][1], -prices[i])
         # print(dp)
 
-        return dp[n - 1][0]
+        return dp[N - 1][0]
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -110,6 +106,8 @@ class Solution2:
 ])
 def test_solutions(args, expected):
     assert Solution().maxProfit(args) == expected
+    assert Solution1().maxProfit(args) == expected
+    assert Solution2().maxProfit(args) == expected
 
 
 if __name__ == '__main__':

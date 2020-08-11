@@ -39,7 +39,7 @@ import pytest
 
 
 class Solution:
-    """TODO"""
+
     def maxProfitInf(self, prices: List[int]) -> int:
         if not prices:
             return 0
@@ -53,25 +53,30 @@ class Solution:
         return dp[n - 1][0]
 
     def maxProfit(self, k: int, prices: List[int]) -> int:
+        """
+        TODO
+        https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/Most-consistent-ways-of-dealing-with-the-series-of-stock-problems
+        """
         if not prices:
             return 0
         max_k = k
-        n = len(prices)
-        if max_k > n // 2:
+        N = len(prices)
+        if max_k > N // 2:
             return self.maxProfitInf(prices)
 
         k_range = range(max_k + 1)
         s_range = (0, 1)
-        dp = [[[0] * len(s_range) for _ in k_range] for _ in range(0, n)]
+        dp = [[[0] * len(s_range) for _ in k_range] for _ in range(N)]
         for ki in k_range:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
-        for i in range(0, n):
-            for k in range(max_k, 0, -1):
+        for i in range(N):
+            # for k in range(max_k, 0, -1):
+            for k in range(1, max_k + 1):
                 dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])
                 dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i])
 
-        return dp[n - 1][max_k][0]
+        return dp[N - 1][max_k][0]
 
 
 class Solution1(object):
