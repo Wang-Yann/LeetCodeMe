@@ -81,6 +81,39 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+    def solve(self, board: List[List[str]]) -> None:
+        if not board:
+            return
+
+        R, C = len(board), len(board[0])
+
+        def dfs(x, y):
+            if not 0 <= x < R or not 0 <= y < C or board[x][y] != 'O':
+                return
+
+            board[x][y] = "V"
+            dfs(x + 1, y)
+            dfs(x - 1, y)
+            dfs(x, y + 1)
+            dfs(x, y - 1)
+
+        for i in range(R):
+            dfs(i, 0)
+            dfs(i, C - 1)
+
+        for i in range(C - 1):
+            dfs(0, i)
+            dfs(R - 1, i)
+
+        for i in range(R):
+            for j in range(C):
+                if board[i][j] == "V":
+                    board[i][j] = "O"
+                elif board[i][j] == "O":
+                    board[i][j] = "X"
+
+
 def test_solutions():
     board = [
         ["X", "X", "X", "X"],
@@ -94,7 +127,8 @@ def test_solutions():
         ["X", "X", "X", "X"],
         ["X", "O", "X", "X"],
     ]
-    Solution().solve(board)
+    # Solution().solve(board)
+    Solution1().solve(board)
     assert board == expected
 
 
