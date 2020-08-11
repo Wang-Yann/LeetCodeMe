@@ -133,6 +133,11 @@ class Solution3(object):
             for i in range(N + 1 - l):
                 j = l + i - 1
                 # // 先手选择最左边或最右边的分数
+                # 我作为先手，面对 piles[i...j] 时，有两种选择：
+                # # 要么我选择最左边的那一堆石头，然后面对 piles[i+1...j]
+                # # 但是此时轮到对方，相当于我变成了后手；
+                # # 要么我选择最右边的那一堆石头，然后面对 piles[i...j-1]
+                # # 但是此时轮到对方，相当于我变成了后手。
                 left = piles[i] + dp[i + 1][j].sec
                 right = piles[j] + dp[i][j - 1].sec
                 if left > right:
