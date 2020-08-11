@@ -52,34 +52,34 @@ class Solution:
     """我们用 D[i][j] 表示 A 的前 i 个字母和 B 的前 j 个字母之间的编辑距离。"""
 
     def minDistance(self, word1: str, word2: str) -> int:
-        n = len(word1)
-        m = len(word2)
+        N1 = len(word1)
+        N2 = len(word2)
 
         # 有一个字符串为空串
-        if n * m == 0:
-            return n + m
+        if N1 * N2 == 0:
+            return N1 + N2
 
         # DP 数组
-        D = [[0] * (m + 1) for _ in range(n + 1)]
+        dp = [[0] * (N2 + 1) for _ in range(N1 + 1)]
 
         # 边界状态初始化
-        for i in range(n + 1):
-            D[i][0] = i
-        for j in range(m + 1):
-            D[0][j] = j
+        for i in range(N1 + 1):
+            dp[i][0] = i
+        for j in range(N2 + 1):
+            dp[0][j] = j
 
         # 计算所有 DP 值
 
-        for i in range(1, n + 1):
-            for j in range(1, m + 1):
-                delete = D[i - 1][j] + 1
-                insert = D[i][j - 1] + 1
-                replace = D[i - 1][j - 1]
+        for i in range(1, N1 + 1):
+            for j in range(1, N2 + 1):
+                delete = dp[i - 1][j] + 1
+                insert = dp[i][j - 1] + 1
+                replace = dp[i - 1][j - 1]
                 if word1[i - 1] != word2[j - 1]:
                     replace += 1
-                D[i][j] = min(insert, delete, replace)
+                dp[i][j] = min(insert, delete, replace)
 
-        return D[n][m]
+        return dp[N1][N2]
 
 
 @pytest.mark.parametrize("kw,expected", [

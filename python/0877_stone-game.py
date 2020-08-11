@@ -45,7 +45,6 @@
 #  👍 153 👎 0
 
 """
-
 import functools
 from typing import List
 
@@ -71,12 +70,14 @@ class Solution:
 class Solution1:
 
     def stoneGame(self, piles: List[int]) -> bool:
-        """DP GOOD TODO  `lru_cache`
+        """DP GOOD
+        TODO  `lru_cache`
         https://leetcode-cn.com/problems/stone-game/solution/shi-zi-you-xi-by-leetcode/
         令 dp(i, j) 为亚历克斯可以获得的最大分数,其中剩下的堆中的石子数是 piles[i], piles[i+1], ..., piles[j]
         """
         N = len(piles)
-        #缓存递归调用
+
+        # 缓存递归调用
         @functools.lru_cache(None)
         def dp(i, j):
             # print("DP(%d,%d)"%(i,j))
@@ -86,29 +87,62 @@ class Solution1:
             # // j - i - N; but +x = -x (mod 2)
             parity = (j + i + N) % 2
             if parity == 1:  # first player
-                return max(piles[i] + dp(i + 1, j), piles[j] + dp(i,j-1))
+                return max(piles[i] + dp(i + 1, j), piles[j] + dp(i, j - 1))
             else:
                 return min(-piles[i] + dp(i + 1, j), -piles[j] + dp(i, j - 1))
 
         return dp(0, N - 1) > 0
 
 
-
 class Solution2(object):
     def stoneGame(self, piles):
-        """
-        :type piles: List[int]
-        :rtype: bool
-        """
-        if len(piles) % 2 == 0 or len(piles) == 1:
+        N = len(piles)
+        if N % 2 == 0 or N == 1:
             return True
 
-        dp = [0] * len(piles)
-        for i in reversed(range(len(piles))):
+        dp = [0] * N
+        for i in range(N - 1, -1, -1):
             dp[i] = piles[i]
-            for j in range(i+1, len(piles)):
+            for j in range(i + 1, N):
                 dp[j] = max(piles[i] - dp[j], piles[j] - dp[j - 1])
-        return dp[-1] >= 0
+        return dp[N - 1] >= 0
+
+
+class Pair(object):
+    __slots__ = "fir", "sec"
+
+    def __init__(self, fir, sec):
+        self.fir = fir
+        self.sec = sec
+
+
+class Solution3(object):
+    """
+    二维通用
+        dp[i][j].fir 表示，对于 piles[i...j] 这部分石头堆，先手能获得的最高分数。
+        dp[i][j].sec 表示，对于 piles[i...j] 这部分石头堆，后手能获得的最高分数
+
+    """
+
+    def stoneGame(self, piles):
+        N = len(piles)
+        dp = [[Pair(0, 0)] * (N + 1) for _ in range(N + 1)]
+        for i in range(N):
+            dp[i][i].fir = piles[i]
+        for l in range(2, N + 1):
+            for i in range(N + 1 - l):
+                j = l + i - 1
+                # // 先手选择最左边或最右边的分数
+                left = piles[i] + dp[i + 1][j].sec
+                right = piles[j] + dp[i][j - 1].sec
+                if left > right:
+                    dp[i][j].fir = left
+                    dp[i][j].sec = dp[i + 1][j].fir
+                else:
+                    dp[i][j].fir = right
+                    dp[i][j].sec = dp[i][j - 1].fir
+        return dp[0][N].fir - dp[0][N].sec > 0
+
 
 @pytest.mark.parametrize("args,expected", [
     ([5, 3, 4, 5], True),
@@ -117,6 +151,7 @@ def test_solutions(args, expected):
     assert Solution().stoneGame(args) == expected
     assert Solution1().stoneGame(args) == expected
     assert Solution2().stoneGame(args) == expected
+    assert Solution3().stoneGame(args) == expected
 
 
 if __name__ == '__main__':

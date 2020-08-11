@@ -74,9 +74,10 @@ class Solution:
             # is the sum of C(n, k), k = 1..K
             total, c = 0, 1
             for k in range(1, K + 1):
-                c *= n - k + 1
+                c *= (n - k + 1)
                 c //= k
                 total += c
+                # print(n,k,total)
                 if total >= N:
                     return True
             return False
@@ -89,6 +90,24 @@ class Solution:
             else:
                 left = mid + 1
         return left
+
+
+class Solution0:
+    def superEggDrop(self, K, N):
+        """
+        dp[M][K]means that, given K eggs and M moves,
+        what is the maximum number of floor that we can check
+
+        which means we take 1 move to a floor,
+        if egg breaks, then we can check dp[m - 1][k - 1] floors.
+        if egg doesn't breaks, then we can check dp[m - 1][k] floors.
+        """
+        dp = [[0] * (K + 1) for _ in range(N + 1)]
+        for m in range(1, N + 1):
+            for k in range(1, K + 1):
+                dp[m][k] = dp[m - 1][k - 1] + dp[m - 1][k] + 1
+            if dp[m][K] >= N:
+                return m
 
 
 class Solution1:
@@ -117,18 +136,18 @@ class Solution1:
                 lo, hi = 1, n
                 # keep a gap of 2 X values to manually check later
                 while lo + 1 < hi:
-                    x = (lo + hi) // 2
-                    t1 = dp(k - 1, x - 1)
-                    t2 = dp(k, n - x)
+                    mid = (lo + hi) // 2
+                    t1 = dp(k - 1, mid - 1)
+                    t2 = dp(k, n - mid)
 
                     if t1 < t2:
-                        lo = x
+                        lo = mid
                     elif t1 > t2:
-                        hi = x
+                        hi = mid
                     else:
-                        lo = hi = x
+                        lo = hi = mid
                 # print([k,n],lo,hi)
-                ans = 1 + min(max(dp(k - 1, x - 1), dp(k, n - x)) for x in (lo, hi))
+                ans = 1 + max(dp(k - 1, lo - 1), dp(k, n - lo))
             return ans
 
         return dp(K, N)
@@ -141,6 +160,7 @@ class Solution1:
 ])
 def test_solutions(kw, expected):
     assert Solution().superEggDrop(**kw) == expected
+    assert Solution0().superEggDrop(**kw) == expected
     assert Solution1().superEggDrop(**kw) == expected
 
 

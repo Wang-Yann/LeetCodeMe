@@ -55,22 +55,24 @@ import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
+
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        length1, length2 = map(len, (text1, text2))
-        if not length1 or not length2:
+        N1, N2 = map(len, (text1, text2))
+        if not (N1 and N2):
             return 0
-        dp = [[0] * (length2 + 1) for _ in range(length1 + 1)]
-        for i in range(1,length1 + 1):
-            for j in range(1,length2 + 1):
+        dp = [[0] * (N2 + 1) for _ in range(N1 + 1)]
+        for i in range(1, N1 + 1):
+            for j in range(1, N2 + 1):
                 if text1[i - 1] == text2[j - 1]:
                     dp[i][j] = dp[i - 1][j - 1] + 1
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-        return dp[length1][length2]
+        return dp[N1][N2]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(text1="abcde", text2="ace"), 3],
     [dict(text1="abc", text2="abc"), 3],

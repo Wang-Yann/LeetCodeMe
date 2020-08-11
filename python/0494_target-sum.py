@@ -37,7 +37,7 @@
 #  Related Topics 深度优先搜索 动态规划
 
 """
-
+import functools
 from typing import List
 
 import pytest
@@ -55,6 +55,11 @@ class Solution:
         那么可以求得sum(a) = (sum(nums)+S) /2
         即在数组nums中取子集，满足子集的和为(sum(nums)+S) /2，看看这样的条件有多少种
         转化为　0-1 背包
+
+        二维的话
+        dp[i][j] = x 表示，若只在前 i 个物品中选择，若当前背包的容量为 j，则最多有 x 种方法可以恰好装满背包
+        dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i-1]];
+
         """
         total = sum(nums)
         if total < S:
@@ -64,7 +69,7 @@ class Solution:
             return 0
         target = tmp // 2
         dp = [0] * (target + 1)
-        dp[0]=1
+        dp[0] = 1
         for num in nums:
             for v in range(target, num - 1, -1):
                 dp[v] += dp[v - num]
@@ -75,20 +80,23 @@ class Solution:
 
 class Solution1:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-        """超时"""
-        self.cnt = 0
-        length = len(nums)
+        """
+        初始版本　 超时
+        优化后可以过
+        """
+        N = len(nums)
 
+        @functools.lru_cache(None)
         def dfs(i, cur_sum):
-            if i == length:
+            ans = 0
+            if i == N:
                 if cur_sum == S:
-                    self.cnt += 1
+                    return 1
             else:
-                dfs(i + 1, cur_sum + nums[i])
-                dfs(i + 1, cur_sum - nums[i])
+                ans += dfs(i + 1, cur_sum + nums[i]) + dfs(i + 1, cur_sum - nums[i])
+            return ans
 
-        dfs(0, 0)
-        return self.cnt
+        return dfs(0, 0)
 
 
 @pytest.mark.parametrize("kw,expected", [
