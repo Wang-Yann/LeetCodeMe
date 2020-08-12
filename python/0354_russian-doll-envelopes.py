@@ -26,7 +26,7 @@
 #  👍 169 👎 0
 
 """
-
+import bisect
 from typing import List
 
 import pytest
@@ -50,21 +50,44 @@ class Solution:
                 LIS.append(target)
             else:
                 LIS[l] = target
+
         # sort increasing in first dimension and decreasing on second
-        envelopes.sort(key=lambda x:(x[0],-x[1]))
+        envelopes.sort(key=lambda x: (x[0], -x[1]))
         for envelope in envelopes:
             insert(envelope[1])
         # print(LIS )
         return len(LIS)
 
 
+class Solution1:
+
+    def maxEnvelopes(self, arr: List[List[int]]) -> int:
+        # sort increasing in first dimension and decreasing on second
+        arr.sort(key=lambda x: (x[0], -x[1]))
+
+        def lis(nums):
+            dp = []
+            for i in range(len(nums)):
+                idx = bisect.bisect_left(dp, nums[i])
+                if idx == len(dp):
+                    dp.append(nums[i])
+                else:
+                    dp[idx] = nums[i]
+            return len(dp)
+
+        # extract the second dimension and run the LIS
+        heights = [i[1] for i in arr]
+        return lis(heights)
+
+
 @pytest.mark.parametrize("args,expected", [
     ([[5, 4], [6, 4], [6, 7], [2, 3]], 3),
-    pytest.param([[1,2]], 1),
+    pytest.param([[1, 2]], 1),
 ])
 def test_solutions(args, expected):
-    sol = Solution()
-    assert sol.maxEnvelopes(args) == expected
+    assert Solution().maxEnvelopes(args) == expected
+    assert Solution1().maxEnvelopes(args) == expected
+
 
 if __name__ == '__main__':
     pytest.main(["-q", "--color=yes", __file__])

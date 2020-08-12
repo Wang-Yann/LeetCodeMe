@@ -59,6 +59,7 @@ class Solution:
 
 @pytest.mark.parametrize("kwargs,expected", [
     (dict(num1="2", num2="3"), "6"),
+    (dict(num1="0", num2="0"), "0"),
     pytest.param(dict(num1="123", num2="456"), "56088"),
 ])
 def test_solutions(kwargs, expected):

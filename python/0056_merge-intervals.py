@@ -37,12 +37,12 @@ class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort(key=lambda x: x[0])
         res = []
-        for i in range(0, len(intervals)):
-            v = intervals[i]
-            if i > 0 and v[0] <= res[-1][1]:
-                res[-1][1] = max(res[-1][1], v[1])
+        for i in range(len(intervals)):
+            interval = intervals[i]
+            if i > 0 and interval[0] <= res[-1][1]:
+                res[-1][1] = max(res[-1][1], interval[1])
             else:
-                res.append(v)
+                res.append(interval)
         return res
 
 
