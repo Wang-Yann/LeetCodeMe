@@ -48,37 +48,57 @@ import pytest
 class Solution:
 
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        need = collections.Counter(s1)
+        target = collections.Counter(s1)
         window = collections.Counter()
         left, right = 0, 0
-        length = len(s2)
-        valid = 0
-        while right < length:
+        N = len(s2)
+        satisfied = 0
+        while right < N:
             char = s2[right]
             right += 1
-            if need[char]:
+            if target[char]:
                 window[char] += 1
-                if window[char] == need[char]:
-                    valid += 1
-            while right >= len(s1) + left:
-                if valid == len(need):
-                    return True
-                char_d = s2[left]
+                if window[char] == target[char]:
+                    satisfied += 1
+            while right - left > len(s1):
+                char_l = s2[left]
                 left += 1
-                if need[char_d]:
-                    if window[char_d] == need[char_d]:
-                        valid -= 1
-                    window[char_d] -= 1
+                if target[char_l]:
+                    if window[char_l] == target[char_l]:
+                        satisfied -= 1
+                    window[char_l] -= 1
+            if satisfied == len(target):
+                return True
         return False
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+
+class Solution1:
+    def checkInclusion(self, s1, s2):
+
+        target = collections.Counter(s1)
+        N = len(s1)
+        window = collections.Counter()
+        for r, char in enumerate(s2):
+            window[char] += 1
+            if r >= N:
+                l_char = s2[r - N]
+                window[l_char] -= 1
+                if window[l_char] == 0:
+                    window.pop(l_char)
+            if window == target:
+                return True
+        return False
+
+
 @pytest.mark.parametrize("kwargs,expected", [
     (dict(s1="ab", s2="eidbaooo"), True),
     pytest.param(dict(s1="ab", s2="eidboaoo"), False),
 ])
 def test_solutions(kwargs, expected):
     assert Solution().checkInclusion(**kwargs) == expected
+    assert Solution1().checkInclusion(**kwargs) == expected
 
 
 if __name__ == '__main__':

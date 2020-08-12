@@ -59,6 +59,14 @@ class Solution:
 class Solution1:
 
     def search(self, nums: List[int], target: int) -> int:
+        """
+        while(left <= right) 的终止条件是 left == right + 1，写成区间的形式就是 [right + 1, right]，或者带个具体的数字进去 [3, 2]，可见这时候区间为空
+
+        while(left < right) 的终止条件是 left == right，写成区间的形式就是 [left, right]，或者带个具体的数字进去 [2, 2]，这时候区间非空，
+        还有一个数 2，但此时 while 循环终止了。也就是说这区间 [2, 2] 被漏掉了，索引 2 没有被搜索，如果这时候直接返回 -1 就是错误的。
+
+        """
+
         def binary_search(l, r):
             if l > r:
                 return -1

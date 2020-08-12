@@ -56,8 +56,6 @@ from typing import List
 import pytest
 
 
-
-
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     """
@@ -93,16 +91,17 @@ class Solution:
     }
 
     """
+
     def findAnagrams(self, s: str, p: str) -> List[int]:
         """Good"""
         result = []
-        cnts = collections.Counter(p)
+        counter = collections.Counter(p)
         left, right = 0, 0
         while right < len(s):
-            cnts[s[right]] -= 1
-            # print("window: [%d, %d)" %(left, right),cnts)
-            while left <= right and cnts[s[right]] < 0:
-                cnts[s[left]] += 1
+            counter[s[right]] -= 1
+            # print("window: [%d, %d)" %(left, right),counter)
+            while counter[s[right]] < 0:
+                counter[s[left]] += 1
                 left += 1
             if right - left + 1 == len(p):
                 result.append(left)
@@ -111,8 +110,27 @@ class Solution:
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+
+class Solution0:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        res = []
+        p_counter = collections.Counter(p)
+        window = collections.Counter(s[:len(p) - 1])
+        for i in range(len(p) - 1, len(s)):
+            window[s[i]] += 1  # include a new char in the window
+            if window == p_counter:  # This step is O(1), since there are at most 26 English letters
+                res.append(i - len(p) + 1)  # append the starting index
+            window[s[i - len(p) + 1]] -= 1  # decrease the count of oldest char in the window
+            if window[s[i - len(p) + 1]] == 0:
+                del window[s[i - len(p) + 1]]  # remove the count if it is 0
+        return res
+
+
 class Solution1:
-    """超时"""
+    """
+    超时
+    TLE
+    """
 
     def findAnagrams(self, s: str, p: str) -> List[int]:
         len_s, len_p = len(s), len(p)
@@ -130,11 +148,12 @@ class Solution1:
 
 @pytest.mark.parametrize("kw,expected", [
     [dict(s="cbaebabacd", p="abc"), [0, 6]],
-    # [dict(s="abab", p="ab"), [0, 1, 2]],
+    [dict(s="abab", p="ab"), [0, 1, 2]],
 ])
 def test_solutions(kw, expected):
     assert Solution().findAnagrams(**kw) == expected
-    # assert Solution1().findAnagrams(**kw) == expected
+    assert Solution0().findAnagrams(**kw) == expected
+    assert Solution1().findAnagrams(**kw) == expected
 
 
 if __name__ == '__main__':

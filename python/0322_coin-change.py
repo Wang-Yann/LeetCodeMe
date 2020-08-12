@@ -41,6 +41,7 @@ import pytest
 class Solution:
     """DP
     完全背包
+    凑零钱问题的暴力解法就是遍历一棵 N 叉树
     """
 
     def coinChange(self, coins: List[int], amount: int) -> int:

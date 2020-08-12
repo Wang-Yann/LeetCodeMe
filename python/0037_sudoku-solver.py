@@ -99,7 +99,7 @@ class Solution1:
         self.sudoku_solved = False
         # init rows, columns and boxes
 
-        box_index = lambda row, col:(row // 3) * 3 + col // 3
+        box_index = lambda row, col: (row // 3) * 3 + col // 3
 
         def could_place(d, row, col):
             if d in rows[row] or d in columns[col] or d in boxes[box_index(row, col)]:
@@ -119,15 +119,15 @@ class Solution1:
             board[row][col] = '.'
 
         def place_next_number(row, col):
-            if col == N - 1 and row == N - 1:
+            if row == col == N - 1:
                 self.sudoku_solved = True
             else:
                 if col == N - 1:
-                    backtack(row + 1, 0)
+                    backtrack(row + 1, 0)
                 else:
-                    backtack(row, col + 1)
+                    backtrack(row, col + 1)
 
-        def backtack(row=0, col=0):
+        def backtrack(row=0, col=0):
             if board[row][col] == ".":
                 for d in range(1, N + 1):
                     if could_place(d, row, col):
@@ -138,15 +138,15 @@ class Solution1:
             else:
                 place_next_number(row, col)
 
-        rows = [collections.defaultdict(int) for i in range(N)]
-        columns = [collections.defaultdict(int) for i in range(N)]
-        boxes = [collections.defaultdict(int) for i in range(N)]
+        rows = [collections.defaultdict(int) for _ in range(N)]
+        columns = [collections.defaultdict(int) for _ in range(N)]
+        boxes = [collections.defaultdict(int) for _ in range(N)]
         for i in range(N):
             for j in range(N):
                 if board[i][j] != ".":
                     d = int(board[i][j])
                     place_number(d, i, j)
-        backtack(0, 0)
+        backtrack(0, 0)
 
 
 class Solution2:
@@ -187,21 +187,27 @@ class Solution2:
         helper(0, 0)
 
 
-test_params = [
-    ([["5", "3", ".", ".", "7", ".", ".", ".", "."], ["6", ".", ".", "1", "9", "5", ".", ".", "."],
-      [".", "9", "8", ".", ".", ".", ".", "6", "."], ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-      ["4", ".", ".", "8", ".", "3", ".", ".", "1"], ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-      [".", "6", ".", ".", ".", ".", "2", "8", "."], [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+@pytest.mark.parametrize("board,expected", [
+    ([["5", "3", ".", ".", "7", ".", ".", ".", "."],
+      ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+      [".", "9", "8", ".", ".", ".", ".", "6", "."],
+      ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+      ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+      ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+      [".", "6", ".", ".", ".", ".", "2", "8", "."],
+      [".", ".", ".", "4", "1", "9", ".", ".", "5"],
       [".", ".", ".", ".", "8", ".", ".", "7", "9"]],
-     [["5", "3", "4", "6", "7", "8", "9", "1", "2"], ["6", "7", "2", "1", "9", "5", "3", "4", "8"],
-      ["1", "9", "8", "3", "4", "2", "5", "6", "7"], ["8", "5", "9", "7", "6", "1", "4", "2", "3"],
-      ["4", "2", "6", "8", "5", "3", "7", "9", "1"], ["7", "1", "3", "9", "2", "4", "8", "5", "6"],
-      ["9", "6", "1", "5", "3", "7", "2", "8", "4"], ["2", "8", "7", "4", "1", "9", "6", "3", "5"],
+
+     [["5", "3", "4", "6", "7", "8", "9", "1", "2"],
+      ["6", "7", "2", "1", "9", "5", "3", "4", "8"],
+      ["1", "9", "8", "3", "4", "2", "5", "6", "7"],
+      ["8", "5", "9", "7", "6", "1", "4", "2", "3"],
+      ["4", "2", "6", "8", "5", "3", "7", "9", "1"],
+      ["7", "1", "3", "9", "2", "4", "8", "5", "6"],
+      ["9", "6", "1", "5", "3", "7", "2", "8", "4"],
+      ["2", "8", "7", "4", "1", "9", "6", "3", "5"],
       ["3", "4", "5", "2", "8", "6", "1", "7", "9"]]),
-]
-
-
-@pytest.mark.parametrize("board,expected", test_params)
+])
 def test_solutions(board, expected):
     board0 = copy.deepcopy(board)
     board1 = copy.deepcopy(board)

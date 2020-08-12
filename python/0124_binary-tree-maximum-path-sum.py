@@ -67,9 +67,9 @@ class Solution:
 
 
 @pytest.mark.parametrize("args,expected", [
-    (TreeNode.initTreeSimple([1, None, 2, 3], [(2, 3)], [(0, 2)]), 6),
-    pytest.param(TreeNode.initTreeSimple([3, 9, 20, None, None, 15, 7], [(0, 1), (2, 5)], [(0, 2), (2, 6)]), 47),
-    pytest.param(TreeNode.initTreeSimple([1], [], []), 1),
+    (TreeNode(1, TreeNode(2), TreeNode(3)), 6),
+    pytest.param(TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7))), 47),
+    pytest.param(TreeNode(1), 1),
 ])
 def test_solutions(args, expected):
     assert Solution().maxPathSum(args) == expected

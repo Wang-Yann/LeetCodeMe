@@ -53,6 +53,9 @@ class Solution:
 
 class Solution1:
     def permute(self, nums):
+        """
+        解决一个回溯问题，实际上就是一个决策树的遍历过程
+        """
 
         def backtrack(first=0):
             # if all integers are used up
@@ -73,6 +76,30 @@ class Solution1:
         return output
 
 
+class Solution2(object):
+    """标准思路"""
+
+    def permute(self, num):
+        result = []
+        used = [False] * len(num)
+
+        def backtrack(cur):
+            if len(cur) == len(num):
+                result.append(cur[:])
+                return
+            for i in range(len(num)):
+                if used[i]:
+                    continue
+                used[i] = True
+                cur.append(num[i])
+                backtrack(cur)
+                cur.pop()
+                used[i] = False
+
+        backtrack([])
+        return result
+
+
 @pytest.mark.parametrize("args,expected", [
     ([1, 2, 3],
      [
@@ -88,6 +115,7 @@ def test_solutions(args, expected):
     assert sorted(Solution().permute(args)) == sorted(expected)
     assert sorted(Solution().permute1(args)) == sorted(expected)
     assert sorted(Solution1().permute(args)) == sorted(expected)
+    assert sorted(Solution2().permute(args)) == sorted(expected)
 
 
 if __name__ == '__main__':

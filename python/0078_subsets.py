@@ -83,27 +83,6 @@ class Solution2:
 
 
 class Solution3:
-    def backtrack2(self, nums, output, k, n, first, curr):
-        if len(curr) == k:
-            output.append(curr[:])
-        for i in range(first, n):
-            # add nums[i] into the current combination
-            curr.append(nums[i])
-            # use next integers to complete the combination
-            self.backtrack2(nums, output, k, n, i + 1, curr)
-            # backtrack
-            curr.pop()
-
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        """ 回溯2"""
-        output = []
-        n = len(nums)
-        for k in range(n + 1):
-            self.backtrack2(nums, output, k, n, 0, [])
-        return output
-
-
-class Solution4:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         """
         BIT法
@@ -115,7 +94,6 @@ class Solution4:
             # generate bitmask, from 0..00 to 1..11
             bitmask = bin(i)[3:]
             # print(bitmask,bin(i))
-
             # append subset corresponding to that bitmask
             output.append([nums[j] for j in range(n) if bitmask[j] == '1'])
 
@@ -126,7 +104,7 @@ class Solution4:
     ([1, 2, 3], [[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]])
 ])
 @pytest.mark.parametrize("SolutionCLS", [
-    Solution, Solution1, Solution2, Solution3, Solution4
+    Solution, Solution1, Solution2, Solution3
 ])
 def test_solutions(args, expected, SolutionCLS):
     assert sorted(SolutionCLS().subsets(args)) == sorted(expected)

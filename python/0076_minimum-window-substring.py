@@ -30,7 +30,8 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
-    """滑动窗口
+    """
+    滑动窗口
     https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-suan-fa-tong-yong-si-xiang-by-/
     """
 
@@ -104,22 +105,24 @@ class Solution1:
 class Solution2:
 
     def minWindow(self, s: str, t: str) -> str:
-        """https://leetcode-cn.com/problems/minimum-window-substring/solution/python-jian-ji-hua-dong-chuang-kou-xiang-jie-by-am/"""
+        """
+        https://leetcode-cn.com/problems/minimum-window-substring/solution/python-jian-ji-hua-dong-chuang-kou-xiang-jie-by-am/
+        """
         counter = collections.Counter(t)
-        ans = ''
-        n = 0  # 当前我满足了 t 中的字母的种数
+        ans = ""
+        cnt = 0  # 当前我满足了 t 中的字母的种数
         l = 0
-        for r, ch in enumerate(s):
-            if ch not in counter:
+        for r, r_char in enumerate(s):
+            if r_char not in counter:
                 continue
-            counter[ch] -= 1
-            if counter[ch] == 0:
-                n += 1
+            counter[r_char] -= 1
+            if counter[r_char] == 0:
+                cnt += 1
             while s[l] not in counter or counter[s[l]] < 0:  # 看看当前 l 处的字母是否必要，没必要 l 就加以
                 if s[l] in counter:
                     counter[s[l]] += 1
                 l += 1
-            if n == len(counter):
+            if cnt == len(counter):
                 if not ans or len(ans) > r - l + 1:
                     ans = s[l: r + 1]
         return ans

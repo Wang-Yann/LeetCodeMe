@@ -25,14 +25,10 @@
 #  Related Topics 数组 哈希表
 
 """
-import pytest
-import math, fractions, operator
+import collections
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
-
-
+import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
@@ -44,13 +40,13 @@ class Solution:
 
         """
         result = 0
-        accumulated_sum =0
-        lookup=collections.defaultdict(int)
-        lookup[0]+=1
+        accumulated_sum = 0
+        lookup = collections.defaultdict(int)
+        lookup[0] += 1
         for num in nums:
-            accumulated_sum+=num
-            result+=lookup[accumulated_sum-k]
-            lookup[accumulated_sum]+=1
+            accumulated_sum += num
+            result += lookup[accumulated_sum - k]
+            lookup[accumulated_sum] += 1
         return result
 
 
@@ -59,33 +55,29 @@ class Solution:
 class Solution1:
     """前缀和
 
-    超时
+    超时 TLE
     """
+
     def subarraySum(self, nums: List[int], k: int) -> int:
         cnt = 0
-        length =len(nums)
-        accumulated_sums=[0]
-        for i in range(1,length+1):
-            accumulated_sums.append(accumulated_sums[i-1]+nums[i-1])
+        length = len(nums)
+        accumulated_sums = [0]
+        for i in range(1, length + 1):
+            accumulated_sums.append(accumulated_sums[i - 1] + nums[i - 1])
         for start in range(length):
-            for end in range(start+1,length+1):
-                if accumulated_sums[end]-accumulated_sums[start]==k:
-                    cnt+=1
+            for end in range(start + 1, length + 1):
+                if accumulated_sums[end] - accumulated_sums[start] == k:
+                    cnt += 1
         return cnt
 
 
-
 @pytest.mark.parametrize("kwargs,expected", [
-    (dict(nums = [1,1,1], k = 2), 2),
+    (dict(nums=[1, 1, 1], k=2), 2),
 ])
 def test_solutions(kwargs, expected):
     assert Solution().subarraySum(**kwargs) == expected
     assert Solution1().subarraySum(**kwargs) == expected
 
 
-
-
-
-
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -44,7 +44,8 @@ import pytest
 class Solution1:
 
     def calculate(self, s: str) -> int:
-        """重点 顺序
+        """
+        重点 顺序
         """
         operator_map = {"+": operator.add, "*": operator.mul,
                         "-": operator.sub, "/": operator.floordiv}
@@ -100,8 +101,7 @@ class Solution(object):
             elif s[i] == ')' or s[i] == '*' or s[i] == '/':
                 operators.append(s[i])
             elif s[i] == '+' or s[i] == '-':
-                while operators and \
-                    (operators[-1] == '*' or operators[-1] == '/'):
+                while operators and (operators[-1] == '*' or operators[-1] == '/'):
                     self.compute(operands, operators)
                 operators.append(s[i])
             elif s[i] == '(':

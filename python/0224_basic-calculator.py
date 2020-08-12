@@ -48,8 +48,8 @@ class Solution:
 
     def calculate(self, s: str) -> int:
         """
-        如果我们使用栈并从左到右读取表达式的元素，则最终我们会从右到左计算表达式。就会出现 (A-B)-C(A−B)−C 等于
-        (C-B)-A(C−B)−A 的情况，这是不正确的。减法即不遵循结合律也不遵循交换律。
+        如果我们使用栈并从左到右读取表达式的元素，则最终我们会从右到左计算表达式。就会出现 (A-B)-C 等于
+        (C-B)-A的情况，这是不正确的。减法即不遵循结合律也不遵循交换律。
         """
 
         def compute():
@@ -63,8 +63,8 @@ class Solution:
 
         val_stack = []
         op_stack = []
-        length = len(s)
-        i = length - 1
+        N = len(s)
+        i = N - 1
         while i >= 0:
             if s[i] == " ":
                 i -= 1
@@ -91,6 +91,37 @@ class Solution:
         return val_stack[0]
 
 
+class Solution1(object):
+    def calculate(self, s):
+        operands, operators = [], []
+        operand = ""
+        for i in reversed(range(len(s))):
+            if s[i].isdigit():
+                operand += s[i]
+                if i == 0 or not s[i - 1].isdigit():
+                    operands.append(int(operand[::-1]))
+                    operand = ""
+            elif s[i] == ')' or s[i] == '+' or s[i] == '-':
+                operators.append(s[i])
+            elif s[i] == '(':
+                while operators[-1] != ')':
+                    self.compute(operands, operators)
+                operators.pop()
+
+        while operators:
+            self.compute(operands, operators)
+
+        return operands[-1]
+
+    def compute(self, operands, operators):
+        left, right = operands.pop(), operands.pop()
+        op = operators.pop()
+        if op == '+':
+            operands.append(left + right)
+        elif op == '-':
+            operands.append(left - right)
+
+
 @pytest.mark.parametrize("args,expected", [
     ["1 + 11", 12],
     [" 2-1 + 2 ", 3],
@@ -102,6 +133,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().calculate(args) == expected
+    assert Solution1().calculate(args) == expected
 
 
 if __name__ == '__main__':

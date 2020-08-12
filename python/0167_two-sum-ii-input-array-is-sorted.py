@@ -56,19 +56,18 @@ class Solution1:
 
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         """双指针"""
-        length = len(numbers)
-        if length < 2:
+        N = len(numbers)
+        if N < 2:
             return []
-        low = 0
-        high = length - 1
-        while low < high:
-            sum_v = numbers[low] + numbers[high]
+        l, r = 0, N - 1
+        while l < r:
+            sum_v = numbers[l] + numbers[r]
             if sum_v == target:
-                return [low + 1, high + 1]
+                return [l + 1, r + 1]
             elif sum_v < target:
-                low += 1
+                l += 1
             else:
-                high -= 1
+                r -= 1
         return []
 
 

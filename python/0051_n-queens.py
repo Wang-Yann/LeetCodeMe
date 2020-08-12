@@ -84,9 +84,9 @@ class Solution:
         res = []
 
         def is_valid(cur_path, cur_row, cur_col):
-            return  not any(cur_col == col or
-                             abs(cur_row-row) == abs(cur_col-col)
-                            for row,col in enumerate(cur_path))
+            return not any(cur_col == col or
+                           abs(cur_row - row) == abs(cur_col - col)
+                           for row, col in enumerate(cur_path))
             # for row, col in enumerate(cur_path):
             #     if cur_col == col or abs(cur_row - row) == abs(cur_col - col):
             #         return False
@@ -109,15 +109,15 @@ class Solution:
 class Solution1(object):
     """
 
-# For any point (x,y), if we want the new point (p,q) don't share the same row, column, or diagonal.
-# then there must have ```p+q != x+y``` and ```p-q!= x-y```
-# the former focus on eliminate 'left bottom right top' diagonal
-# the latter focus on eliminate 'left top right bottom' diagonal
+        # For any point (x,y), if we want the new point (p,q) don't share the same row, column, or diagonal.
+        # then there must have ```p+q != x+y``` and ```p-q!= x-y```
+        # the former focus on eliminate 'left bottom right top' diagonal
+        # the latter focus on eliminate 'left top right bottom' diagonal
 
-# - col_per_row: the list of column index per row
-# - cur_row：current row we are searching for valid column
-# - xy_diff：the list of x-y
-# - xy_sum：the list of x+y
+        # - col_per_row: the list of column index per row
+        # - cur_row：current row we are searching for valid column
+        # - xy_diff：the list of x-y
+        # - xy_sum：the list of x+y
 
     """
 

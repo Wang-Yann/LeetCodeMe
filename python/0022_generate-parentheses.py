@@ -35,49 +35,51 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         if n <= 0:
             return []
-        res = []
-        self.helper(res, "", n, n)
-        return list(res)
 
-    def helper(self, result, current, left, right):
-        if left == 0 and right == 0:
-            result.append(current)
-        if left > 0:
-            self.helper(result, current + "(", left - 1, right)
-        if left < right:
-            self.helper(result, current + ")", left, right - 1)
+        def helper(current, left, right):
+            if left == 0 and right == 0:
+                res.append(current)
+            if left > 0:
+                helper(current + "(", left - 1, right)
+            if left < right:
+                helper(current + ")", left, right - 1)
+
+        res = []
+        helper("", n, n)
+        return res
 
 
 class Solution1:
     def generateParenthesis(self, n: int) -> List[str]:
+        """Me"""
         if n <= 0:
             return []
-        res = set()
-        # self.dfs(res_set,"",n,n)
-        self.dfs(res, "", n, n)
-        return list(res)
+        res = []
 
-    def dfs(self, res_set, path, ln, rn):
-        if ln > rn or ln < 0 or rn < 0:
-            return
-        elif ln < rn:
-            self.dfs(res_set, path + ")", ln, rn - 1)
-            self.dfs(res_set, path + "(", ln - 1, rn)
-        else:
-            if ln == rn == 0:
-                res_set.add(path)
+        def dfs(path, ln, rn):
+            if ln > rn or ln < 0 or rn < 0:
+                return
+            elif ln < rn:
+                dfs(path + ")", ln, rn - 1)
+                dfs(path + "(", ln - 1, rn)
             else:
-                self.dfs(res_set, path + "(", ln - 1, rn)
+                if ln == rn == 0:
+                    res.append(path[:])
+                else:
+                    dfs(path + "(", ln - 1, rn)
+
+        dfs("", n, n)
+        return list(res)
 
 
 @pytest.mark.parametrize("CLS", [
     Solution, Solution1
 ])
 @pytest.mark.parametrize("kw,expected", [
-    [dict(n=4),
+    (dict(n=4),
      ['(((())))', '((()()))', '((())())', '((()))()', '(()(()))', '(()()())', '(()())()',
       '(())(())', '(())()()', '()((()))', '()(()())', '()(())()', '()()(())', '()()()()']
-     ],
+     ),
 ])
 def test_solutions(kw, expected, CLS):
     assert sorted(CLS().generateParenthesis(**kw)) == sorted(expected)

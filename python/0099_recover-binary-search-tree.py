@@ -57,6 +57,7 @@
 #  Related Topics 树 深度优先搜索
 #  👍 250 👎 0
 import copy
+import math
 
 import pytest
 
@@ -133,23 +134,62 @@ class Solution1:
             broken[1] = cur
 
 
-@pytest.mark.parametrize("kwargs,expected", [
-    [dict(root=TreeNode(1, left=TreeNode(3, right=TreeNode(2)))),
-     TreeNode(3, left=TreeNode(1, right=TreeNode(2)))],
+class Solution2:
+    def recoverTree(self, root: TreeNode) -> None:
 
-    [dict(root=TreeNode(3, left=TreeNode(1), right=TreeNode(4, left=TreeNode(2))
-                        )),
-     TreeNode(2, left=TreeNode(1), right=TreeNode(4, left=TreeNode(3))
-              )],
+        first_node = None
+        second_node = None
+        pre_node = TreeNode(-math.inf)
+
+        def in_order(node):
+            nonlocal first_node, second_node, pre_node
+            if not node:
+                return
+            in_order(node.left)
+            if first_node is None and pre_node.val >= node.val:
+                first_node = pre_node
+            if first_node and pre_node.val >= node.val:
+                second_node = node
+            pre_node = node
+            in_order(node.right)
+
+        in_order(root)
+        first_node.val, second_node.val = second_node.val, first_node.val
+
+
+@pytest.mark.parametrize("kwargs,expected", [
+    [dict(
+        root=TreeNode(1,
+                      left=TreeNode(3, right=TreeNode(2)))
+    ),
+        TreeNode(3,
+                 left=TreeNode(1, right=TreeNode(2))
+                 )
+    ],
+
+    [dict(
+        root=TreeNode(3,
+                      left=TreeNode(1),
+                      right=TreeNode(4, left=TreeNode(2))
+                      )
+    ),
+        TreeNode(2,
+                 left=TreeNode(1),
+                 right=TreeNode(4, left=TreeNode(3))
+                 )
+    ],
 
 ])
 def test_solutions(kwargs, expected):
     root = kwargs["root"]
     root1 = copy.deepcopy(root)
+    root2 = copy.deepcopy(root)
     Solution().recoverTree(root)
     Solution1().recoverTree(root1)
+    Solution2().recoverTree(root2)
     assert repr(expected) == repr(root)
     assert repr(expected) == repr(root1)
+    assert repr(expected) == repr(root2)
 
 
 if __name__ == '__main__':

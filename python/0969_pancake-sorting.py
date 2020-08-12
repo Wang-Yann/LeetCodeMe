@@ -49,8 +49,7 @@
 #  👍 59 👎 0
 
 """
-
-
+import copy
 from typing import List
 
 import pytest
@@ -59,28 +58,60 @@ import pytest
 class Solution:
 
     def pancakeSort(self, A: List[int]) -> List[int]:
-        """TODO 20200503 官方解答错误,题目有问题"""
+        """
+        TODO
+        20200503 官方解答错误,题目有问题
+        """
         ans = []
 
         N = len(A)
-        B = sorted(range(1, N+1), key = lambda i: -A[i-1])
+        B = sorted(range(1, N + 1), key=lambda i: -A[i - 1])
         for i in B:
             for f in ans:
                 if i <= f:
-                    i = f+1 - i
+                    i = f + 1 - i
             ans.extend([i, N])
             N -= 1
 
         return ans
 
 
+class Solution0:
+
+    def pancakeSort(self, A: List[int]) -> List[int]:
+        res = []
+        for x in range(len(A), 0, -1):
+            i = A.index(x)
+            res.extend([i + 1, x])
+            A = A[:i:-1] + A[:i]
+            # print(A,res)
+        return res
+
+
+class Solution1(object):
+    def pancakeSort(self, A):
+        def reverse(l, begin, end):
+            for i in range((end - begin) // 2):
+                l[begin + i], l[end - 1 - i] = l[end - 1 - i], l[begin + i]
+
+        result = []
+        for n in range(len(A), 0, -1):
+            i = A.index(n)
+            reverse(A, 0, i + 1)
+            result.append(i + 1)
+            reverse(A, 0, n)
+            result.append(n)
+        return result
+
 
 @pytest.mark.parametrize("args,expected", [
-    ([3, 2, 4, 1], [3,4,2,3,1,2,1,1]),
-    ([1, 2, 3], [3,3,2,2,1,1]),
+    ([3, 2, 4, 1], [3, 4, 2, 3, 1, 2, 1, 1]),
+    ([1, 2, 3], [3, 3, 2, 2, 1, 1]),
 ])
 def test_solutions(args, expected):
-    assert Solution().pancakeSort(args) == expected
+    assert Solution().pancakeSort(copy.deepcopy(args)) == expected
+    assert Solution0().pancakeSort(copy.deepcopy(args)) == expected
+    assert Solution1().pancakeSort(copy.deepcopy(args)) == expected
 
 
 if __name__ == '__main__':
