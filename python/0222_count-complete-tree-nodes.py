@@ -32,9 +32,11 @@ from common_utils import TreeNode
 
 
 class Solution:
+
     def countNodes(self, root: TreeNode) -> int:
         ans = []
-        if not root: return 0
+        if not root:
+            return 0
         stack = [root]
         while stack:
             node = stack.pop()
@@ -46,15 +48,50 @@ class Solution:
         return len(ans)
 
 
+class Solution1:
+
+    def countNodes(self, root):
+        """
+        如果左右子树深度相同，那么说明右子数是满二叉树，左子树是完全二叉树
+        """
+        left_depth = self.get_depth(root, True)
+        right_depth = self.get_depth(root, False)
+
+        if left_depth == right_depth:
+            return 2 ** left_depth - 1
+        else:
+            return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+
+    def get_depth(self, root, isLeft):
+        if root is None:
+            return 0
+        if isLeft:
+            return 1 + self.get_depth(root.left, isLeft)
+        else:
+            return 1 + self.get_depth(root.right, isLeft)
+
+
+class Solution2:
+
+    def countNodes(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        return 1 + self.countNodes(root.right) + self.countNodes(root.left)
+
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(
-        root=TreeNode(1, left=TreeNode(2, TreeNode(4), TreeNode(5)),
-                      right=TreeNode(3, left=TreeNode(6))
-                      )
+        root=TreeNode(
+            1,
+            left=TreeNode(2, TreeNode(4), TreeNode(5)),
+            right=TreeNode(3, left=TreeNode(6))
+        )
     ), 6],
 ])
 def test_solutions(kw, expected):
     assert Solution().countNodes(**kw) == expected
+    assert Solution1().countNodes(**kw) == expected
+    assert Solution2().countNodes(**kw) == expected
 
 
 if __name__ == '__main__':

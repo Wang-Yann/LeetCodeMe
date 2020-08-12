@@ -39,82 +39,82 @@
 
 """
 
+import collections
+
 import pytest
-import math, fractions, operator
-from typing import List
-import collections, bisect, heapq
-import functools, itertools
+
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class DoubleListNode(object):
-    def __init__(self,key,val):
-        self.key=key
-        self.val=val
-        self.next=None
-        self.prev=None
+
+    def __init__(self, key, val):
+        self.key = key
+        self.val = val
+        self.next = None
+        self.prev = None
+
 
 class LinkedList(object):
+
     def __init__(self):
-        self.head=None
-        self.tail=None
+        self.head = None
+        self.tail = None
 
-    def insert(self,node):
+    def insert(self, node):
         # make node clean
-        node.next,node.prev=None,None
+        node.next, node.prev = None, None
         if self.head is None:
-            self.head=node
+            self.head = node
         else:
-            self.tail.next=node
-            node.prev=self.tail
-        self.tail=node
+            self.tail.next = node
+            node.prev = self.tail
+        self.tail = node
 
-    def delete(self,node):
+    def delete(self, node):
         if node.prev:
-            node.prev.next=node.next
+            node.prev.next = node.next
         else:
-            self.head=node.next
+            self.head = node.next
         if node.next:
-            node.next.prev=node.prev
+            node.next.prev = node.prev
         else:
-            self.tail=node.prev
+            self.tail = node.prev
         # make node clean
-        node.next,node.prev=None,None
-
+        node.next, node.prev = None, None
 
 
 class LRUCache:
 
     def __init__(self, capacity: int):
-        self.__list=LinkedList()
-        self.__dict={}
+        self.__list = LinkedList()
+        self.__dict = {}
         self.__capacity = capacity
 
-    def _insert(self,key,val):
-        node=DoubleListNode(key,val)
+    def _insert(self, key, val):
+        node = DoubleListNode(key, val)
         self.__list.insert(node)
-        self.__dict[key]=node
-
+        self.__dict[key] = node
 
     def get(self, key: int) -> int:
-        if key  in self.__dict:
-            val=self.__dict[key].val
+        if key in self.__dict:
+            val = self.__dict[key].val
             self.__list.delete(self.__dict[key])
-            self._insert(key,val)
-            return  val
+            self._insert(key, val)
+            return val
 
         return -1
-
-
 
     def put(self, key: int, value: int) -> None:
         if key in self.__dict:
             self.__list.delete(self.__dict[key])
-        elif len(self.__dict)==self.__capacity:
+        elif len(self.__dict) == self.__capacity:
             self.__dict.pop(self.__list.head.key)
             self.__list.delete(self.__list.head)
-        self._insert(key,value)
+        self._insert(key, value)
 
     # Your LRUCache object will be instantiated and called as such:
+
+
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
@@ -123,31 +123,37 @@ class LRUCache:
 class LRUCache1:
 
     def __init__(self, capacity: int):
-        self.__capacity=capacity
-        self.__cache=collections.OrderedDict()
-
-
+        self.__capacity = capacity
+        self.__cache = collections.OrderedDict()
 
     def get(self, key: int) -> int:
         if key not in self.__cache:
             return -1
-        val=self.__cache.pop(key)
-        self.__cache[key]=val
+        val = self.__cache.pop(key)
+        self.__cache[key] = val
         return val
-
-
 
     def put(self, key: int, value: int) -> None:
         if key in self.__cache:
             self.__cache.pop(key)
-        elif len(self.__cache)==self.__capacity:
+        elif len(self.__cache) == self.__capacity:
             self.__cache.popitem(last=False)
-        self.__cache[key]=value
+        self.__cache[key] = value
+
+
+@pytest.mark.parametrize("CLS", [LRUCache, LRUCache1])
+def test_solution(CLS):
+    cache = LRUCache(2)
+    cache.put(1, 1)
+    cache.put(2, 2)
+    assert cache.get(1) == 1  # // 返回  1
+    cache.put(3, 3)  # 该操作会使得密钥 2 作废
+    assert cache.get(2) == -1  # // 返回 -1 (未找到)
+    cache.put(4, 4)  # // 该操作会使得密钥 1 作废
+    assert cache.get(1) == -1  # // 返回 -1 (未找到)
+    assert cache.get(3) == 3  # // 返回  3
+    assert cache.get(4) == 4  # // 返回  4
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
