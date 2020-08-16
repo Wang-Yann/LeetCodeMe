@@ -49,10 +49,10 @@ import pytest
 class Solution:
 
     def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
-        m, n = len(image), len(image[0])
+        R, C = len(image), len(image[0])
 
         def dfs(i, j):
-            if not (0 <= i <= m - 1 and 0 <= j <= n - 1 and image[i][j] == old_color):
+            if not (0 <= i <= R - 1 and 0 <= j <= C - 1 and image[i][j] == old_color):
                 return
             image[i][j] = newColor
             for x, y in [(0, -1), (0, 1), (-1, 0), (1, 0)]:

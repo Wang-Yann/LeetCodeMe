@@ -64,9 +64,10 @@ class Solution:
 
     def minEatingSpeed(self, piles: List[int], H: int) -> int:
         """ Math.ceil(p / K) = ((p-1) // K) + 1"""
+
         def possible(K):
             # Can Koko eat all bananas in H hours with eating speed K?
-            return sum([math.ceil(p/K) for p in piles]) <= H
+            return sum([math.ceil(p / K) for p in piles]) <= H
 
         l, r = 1, max(piles)
         while l <= r:

@@ -24,6 +24,8 @@
 #  👍 349 👎 0
 
 """
+import copy
+
 import pytest
 
 from common_utils import ListNode
@@ -46,12 +48,29 @@ class Solution:
         return dummy.next
 
 
+class Solution1(object):
+
+    def deleteDuplicates(self, head):
+        if not head:
+            return head
+        slow = head
+        fast = head.next
+        while fast:
+            if fast.val != slow.val:
+                slow.next = fast
+                slow = slow.next
+            fast = fast.next
+        slow.next = None
+        return head
+
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(head=ListNode.initList([1, 2, 3, 4, 5, 5])), ListNode.initList([1, 2, 3, 4, 5])],
     [dict(head=ListNode.initList([1, 1, 1, 2, 3])), ListNode.initList([1, 2, 3])],
 ])
 def test_solutions(kw, expected):
-    assert repr(Solution().deleteDuplicates(**kw)) == repr(expected)
+    assert repr(Solution().deleteDuplicates(**copy.deepcopy(kw))) == repr(expected)
+    assert repr(Solution1().deleteDuplicates(**copy.deepcopy(kw))) == repr(expected)
 
 
 if __name__ == '__main__':

@@ -45,6 +45,8 @@
 #  👍 978 👎 0
 
 """
+import functools
+
 import pytest
 
 
@@ -82,12 +84,38 @@ class Solution:
         return dp[N1][N2]
 
 
+class Solution1:
+
+    @functools.lru_cache(None)
+    def minDistance(self, word1, word2) -> int:
+
+        def dp(i, j):
+            # base case
+            if i == -1:
+                return j + 1
+            if j == -1:
+                return i + 1
+
+            if word1[i] == word2[j]:
+                return dp(i - 1, j - 1)  # 啥都不做
+            else:
+                return min(
+                    dp(i, j - 1) + 1,  # 插入
+                    dp(i - 1, j) + 1,  # 删除
+                    dp(i - 1, j - 1) + 1  # 替换
+                )
+
+        # i，j 初始化指向最后一个索引
+        return dp(len(word1) - 1, len(word2) - 1)
+
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(word1="horse", word2="ros"), 3],
     [dict(word1="intention", word2="execution"), 5],
 ])
 def test_solutions(kw, expected):
     assert Solution().minDistance(**kw) == expected
+    assert Solution1().minDistance(**kw) == expected
 
 
 if __name__ == '__main__':

@@ -50,13 +50,13 @@ import pytest
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     """
-    元素  dp[l][r][k] ,l 表示起始下标，r 表示结束下表，k 表示与第 r 个元素相似的元素个数，可以在最后一起合并并得到最终的分数存入 dp[l][r][k]
 
-
-    https://leetcode-cn.com/problems/remove-boxes/solution/yi-chu-he-zi-by-leetcode/
+    所以我们的dp数组应该是一个三维数组dp[i][j][k]，表示区间[i, j]中能获得的最大积分，当boxes[i]左边有k个数字跟其相等
+    https://www.jiuzhang.com/solution/remove-boxes#tag-lang-python
     """
 
     def removeBoxes(self, boxes: List[int]) -> int:
+        # 已知boxes[k]有n个的情况下，boxes[l:r]能获得的最大积分
         @functools.lru_cache(None)
         def dfs(l, r, k):
             if l > r:
@@ -64,9 +64,11 @@ class Solution:
             while l < r and boxes[l + 1] == boxes[l]:
                 l += 1
                 k += 1
+            #l位置箱子和前[左]面k个一起移除
             res = dfs(l + 1, r, 0) + (k + 1) ** 2
             for i in range(l + 1, r + 1):
                 if boxes[i] == boxes[l]:
+                    #移除l和i的箱子需要先移除[l+1,i-1]内的箱子，l左面有k个箱子，i左面就有k+1个
                     res = max(res, dfs(l + 1, i - 1, 0) + dfs(i, r, k + 1))
             return res
 

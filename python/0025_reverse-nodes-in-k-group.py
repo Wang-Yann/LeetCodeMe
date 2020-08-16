@@ -35,6 +35,8 @@
 #  👍 638 👎 0
 
 """
+import copy
+
 import pytest
 
 from common_utils import ListNode
@@ -58,14 +60,14 @@ class Solution:
                 count -= 1
             # 注意,目前tmp所在k+1位置
             # 说明剩下的链表不够k个,跳出循环
-            if count :
+            if count:
                 p.next = head
                 break
             # 翻转操作
             while stack:
                 p.next = stack.pop()
                 p = p.next
-            #与剩下链表连接起来
+            # 与剩下链表连接起来
             p.next = tmp
             # print("tmp",tmp,"|   head",head,"P",dummy)
             head = tmp
@@ -73,7 +75,9 @@ class Solution:
         return dummy.next
 
 
-    def reverseKGroupRec(self, head: ListNode, k: int) -> ListNode:
+class Solution1:
+
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         """
         TODO :
         尾插法。
@@ -88,7 +92,7 @@ class Solution:
             cnt += 1
         # print("cur before recurse | ",head,cur,k)
         if cnt == k:
-            cur = self.reverseKGroupRec(cur, k)
+            cur = self.reverseKGroup(cur, k)
             # print("cur after recurse HEAD |",head,"\t\tCUR",cur)
             while cnt:
                 tmp = head.next
@@ -99,8 +103,10 @@ class Solution:
             head = cur
         return head
 
-class Solution1:
+
+class Solution2:
     """ 官方"""
+
     # 翻转一个子链表，并且返回新的头与尾
     def reverse(self, head: ListNode, tail: ListNode):
         prev = tail.next
@@ -135,30 +141,14 @@ class Solution1:
         return hair.next
 
 
-
 @pytest.mark.parametrize("args,expected", [
     ((ListNode.initList([1, 2, 3, 4, 5]), 2), ListNode.initList([2, 1, 4, 3, 5])),
-    ((ListNode.initList([1, 2, 3, 4, 5]), 3), ListNode.initList([3,2,1,4,5])),
+    ((ListNode.initList([1, 2, 3, 4, 5]), 3), ListNode.initList([3, 2, 1, 4, 5])),
 ])
 def test_solutions(args, expected):
-    assert repr(Solution().reverseKGroup(*args)) == repr(expected)
-
-
-
-@pytest.mark.parametrize("args,expected", [
-    ((ListNode.initList([1, 2, 3, 4, 5]), 2), ListNode.initList([2, 1, 4, 3, 5])),
-    ((ListNode.initList([1, 2, 3, 4, 5]), 3), ListNode.initList([3,2,1,4,5])),
-])
-def test_solutions1(args, expected):
-    assert repr(Solution().reverseKGroupRec(*args)) == repr(expected)
-
-
-@pytest.mark.parametrize("args,expected", [
-    ((ListNode.initList([1, 2, 3, 4, 5]), 2), ListNode.initList([2, 1, 4, 3, 5])),
-    ((ListNode.initList([1, 2, 3, 4, 5]), 3), ListNode.initList([3,2,1,4,5])),
-])
-def test_solutions1(args, expected):
-    assert repr(Solution1().reverseKGroup(*args)) == repr(expected)
+    assert repr(Solution().reverseKGroup(*copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution1().reverseKGroup(*copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution2().reverseKGroup(*copy.deepcopy(args))) == repr(expected)
 
 
 

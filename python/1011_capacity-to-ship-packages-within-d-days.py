@@ -67,7 +67,6 @@
 
 """
 
-
 from typing import List
 
 import pytest
@@ -88,7 +87,7 @@ class Solution:
         l, r = max(weights), sum(weights)
         while l <= r:
             mid = (l + r) >> 1
-            if is_possible(mid ):
+            if is_possible(mid):
                 r = mid - 1
             else:
                 l = mid + 1

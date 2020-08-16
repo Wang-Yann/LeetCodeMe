@@ -27,6 +27,7 @@ import pytest
 
 
 class Solution:
+
     def trap(self, height: List[int]) -> int:
         """单调栈"""
         ans = 0
@@ -45,6 +46,7 @@ class Solution:
 
 
 class Solution1:
+
     def trap(self, height: List[int]) -> int:
         """DP"""
         ans = 0
@@ -63,6 +65,7 @@ class Solution1:
 
 
 class Solution2:
+
     def trap(self, height: List[int]) -> int:
         left = 0
         right = len(height) - 1
