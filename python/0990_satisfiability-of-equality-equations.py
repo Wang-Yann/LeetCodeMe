@@ -94,7 +94,7 @@ class Solution:
         for eqn in equations:
             x = ord(eqn[0]) - ord("a")
             y = ord(eqn[3]) - ord("a")
-            if eqn[1] == "=":
+            if eqn[1:3] == "==":
                 uf.union_set(x, y)
         for eqn in equations:
             x = ord(eqn[0]) - ord("a")

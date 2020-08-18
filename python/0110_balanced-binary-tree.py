@@ -49,37 +49,41 @@ import pytest
 from common_utils import TreeNode
 
 
-class Solution:
-    def isBalancedRecursive(self, root: TreeNode) -> bool:
+class Solution1:
+    def isBalanced(self, root: TreeNode) -> bool:
 
-        def height(root):
-            if not root: return 0
-            return max(height(root.left), height(root.right)) + 1
+        def height(node):
+            if not node:
+                return 0
+            return max(height(node.left), height(node.right)) + 1
 
-        if not root: return True
+        if not root:
+            return True
 
         if abs(height(root.left) - height(root.right)) > 1:
             return False
-        return self.isBalancedRecursive(root.left) and self.isBalancedRecursive(root.right)
+        return self.isBalanced(root.left) and self.isBalanced(root.right)
 
+
+class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
         """
             # Return whether or not the tree at root is balanced while also returning
             # the tree's height
         """
 
-        def helper(root) -> (bool, int):
-            if not root: return True, 0
-            left_isbalanced, leftHeight = helper(root.left)
-            if not left_isbalanced:
+        def helper(node):
+            if not node:
+                return True, 0
+            left_balanced, left_height = helper(node.left)
+            if not left_balanced:
                 return False, 0
-            right_isbalanced, rightHeight = helper(root.right)
-            if not right_isbalanced:
+            right_balanced, right_height = helper(node.right)
+            if not right_balanced:
                 return False, 0
-            return (abs(leftHeight - rightHeight) <= 1), 1 + max(leftHeight, rightHeight)
+            return abs(left_height - right_height) <= 1, 1 + max(left_height, right_height)
 
         return helper(root)[0]
-
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -88,7 +92,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().isBalanced(args) == expected
-    assert Solution().isBalancedRecursive(args) == expected
+    assert Solution1().isBalanced(args) == expected
 
 
 if __name__ == '__main__':

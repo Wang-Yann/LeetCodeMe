@@ -151,6 +151,7 @@ class Solution3(object):
 
 @pytest.mark.parametrize("args,expected", [
     ([5, 3, 4, 5], True),
+    ([5, 3, 4, 5, 9, 7], True),
 ])
 def test_solutions(args, expected):
     assert Solution().stoneGame(args) == expected

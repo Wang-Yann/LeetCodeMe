@@ -74,7 +74,8 @@ class Solution:
     "args,expected", list(zip(
         ["()", "", "()[]{}", "(]", "([)]", "{[]}"],
         [True, True, True, False, False, True]
-    )))
+    ))
+)
 def test_solutions(args, expected):
     assert Solution().isValid(args) == expected
 

@@ -26,11 +26,10 @@
 
 """
 
-import pytest
-import math, fractions, operator
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
+
+import pytest
+
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
@@ -41,34 +40,33 @@ class Solution:
         然后遍历数组，若当前数组元素 nums[i] 为负数，说明我们在数组中存在数字 i+1。
         """
         for i in range(len(nums)):
-            new_index=abs(nums[i])-1
-            if nums[new_index]>0:
-                nums[new_index]*=-1
+            new_index = abs(nums[i]) - 1
+            if nums[new_index] > 0:
+                nums[new_index] *= -1
         res = []
-        for i in range(1,len(nums)+1):
-            if nums[i-1]>0:
+        for i in range(1, len(nums) + 1):
+            if nums[i - 1] > 0:
                 res.append(i)
         return res
-        
+
+
 # leetcode submit region end(Prohibit modification and deletion)
 class Solution1:
     """
     O(N)不符合要求
     """
+
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        return list(set(range(1,len(nums)+1))-set(nums))
+        return list(set(range(1, len(nums) + 1)) - set(nums))
 
-@pytest.mark.parametrize("args,expected",[
-   ( [4,3,2,7,8,2,3,1],[5,6])
+
+@pytest.mark.parametrize("args,expected", [
+    ([4, 3, 2, 7, 8, 2, 3, 1], [5, 6])
 ])
-def test_solutions(args,expected):
-    assert sorted(Solution().findDisappearedNumbers(args))==sorted(expected)
-
+def test_solutions(args, expected):
+    assert sorted(Solution().findDisappearedNumbers(args)) == sorted(expected)
+    assert sorted(Solution1().findDisappearedNumbers(args)) == sorted(expected)
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -37,12 +37,12 @@ import pytest
 
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        arr = [0] * (n + 1)
+        N = len(nums)
+        arr = [0] * (N + 1)
         dup, missing = -1, 1
         for v in nums:
             arr[v] += 1
-        for i in range(1, n + 1):
+        for i in range(1, N + 1):
             if arr[i] == 0:
                 missing = i
             elif arr[i] == 2:
@@ -52,10 +52,6 @@ class Solution:
 
 class Solution1(object):
     def findErrorNums(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         x_xor_y = 0
         for i in range(len(nums)):
             x_xor_y ^= nums[i] ^ (i + 1)

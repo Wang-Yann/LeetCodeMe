@@ -36,29 +36,37 @@ from common_utils import ListNode
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        l = []
-        cur = head
-        while cur:
-            l.append(cur.val)
-            cur = cur.next
-        return list(reversed(l)) == l
+        """
+        借助二叉树后序遍历的思路，不需要显式反转原始链表 倒序遍历链表
+        """
+        left = head
+
+        def traversal(right):
+            nonlocal left
+            if not right:
+                return True
+            res = traversal(right.next)
+            res = res and right.val == left.val
+            left = left.next
+            return res
+
+        return traversal(head)
 
 
 class Solution1:
     def isPalindrome(self, head: ListNode) -> bool:
         reverse, fast = None, head
+        # Reverse the first half part of the list.
         while fast and fast.next:
             fast = fast.next.next
             head.next, reverse, head = reverse, head, head.next
         # If the number of the nodes is odd,
         # set the head of the tail list to the next of the median node.
-        # print("Fast", fast)
-
         tail = head.next if fast else head
-        # print(head)
-        # print(reverse)
-        # print(tail)
+        # print(head,reverse,tail)
 
+        # Compare the reversed first half list with the second half list.
+        # And restore the reversed first half list.
         while reverse:
             if reverse.val != tail.val:
                 return False
@@ -71,7 +79,7 @@ class Solution2:
     def isPalindrome(self, head: ListNode) -> bool:
         self.front_pointer = head
 
-        def recursively_check(current_node=head):
+        def recursively_check(current_node):
             if current_node is not None:
                 if not recursively_check(current_node.next):
                     return False
@@ -80,7 +88,17 @@ class Solution2:
                 self.front_pointer = self.front_pointer.next
             return True
 
-        return recursively_check()
+        return recursively_check(head)
+
+
+class Solution3:
+    def isPalindrome(self, head: ListNode) -> bool:
+        l = []
+        cur = head
+        while cur:
+            l.append(cur.val)
+            cur = cur.next
+        return list(reversed(l)) == l
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -92,6 +110,7 @@ def test_solutions(args, expected):
     assert Solution().isPalindrome(copy.deepcopy(args)) == expected
     assert Solution1().isPalindrome(copy.deepcopy(args)) == expected
     assert Solution2().isPalindrome(copy.deepcopy(args)) == expected
+    assert Solution3().isPalindrome(copy.deepcopy(args)) == expected
 
 
 if __name__ == '__main__':

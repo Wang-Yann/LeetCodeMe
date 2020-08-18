@@ -61,11 +61,20 @@ class ExamRoom:
         if not self.students:
             student = 0
         else:
+            # Tenatively, dist is the distance to the closest student,
+            # which is achieved by sitting in the position 'student'.
+            # We start by considering the left-most seat.
+
             dist, student = self.students[0], 0
             for i, s in enumerate(self.students):
                 if i:
                     prev = self.students[i - 1]
+                    # For each pair of adjacent students in positions (prev, s),
+                    # d is the distance to the closest student;
+                    # achieved at position prev + d.
+
                     d = (s - prev) // 2
+                    # Considering the right-most seat.
                     if d > dist:
                         dist, student = d, prev + d
             d = self.N - 1 - self.students[-1]

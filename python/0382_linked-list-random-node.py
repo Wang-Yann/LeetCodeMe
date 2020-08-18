@@ -58,17 +58,15 @@ class Solution:
     def getRandom(self) -> int:
         """
         Returns a random node's value.
+        当你遇到第 i 个元素时，应该有 1/i 的概率选择该元素，1 - 1/i 的概率保持原有的选择
         """
-        cnt = 0
-        res = 0
-        cur = self.__head
-        while cur:
-            cnt += 1
-            rand = random.randint(1, cnt)
-            if rand == cnt:
-                res = cur.val
-            cur = cur.next
-        return res
+        reservoir = -1
+        curr, n = self.__head, 0
+        while curr:
+            if random.randint(1, n + 1) == 1:
+                reservoir = curr.val
+            curr, n = curr.next, n + 1
+        return reservoir
 
 
 # Your Solution object will be instantiated and called as such:

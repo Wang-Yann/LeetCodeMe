@@ -86,10 +86,11 @@ class Solution:
         target = tuple(list(range(1, M * N)) + [0])
         target_wrong = tuple(list(range(1, M * N - 2)) + [M * N - 1, M * N - 2, 0])
 
-        cost = {start_board:0}
+        cost = {start_board: 0}
         expected = {
-            (N * r + c + 1) % (M * N):(r, c) for r in range(M) for c in range(N)
+            (N * r + c + 1) % (M * N): (r, c) for r in range(M) for c in range(N)
         }
+        # print(target_wrong,expected)
 
         # 预估代价 曼哈顿距离
         def heuristic(board):

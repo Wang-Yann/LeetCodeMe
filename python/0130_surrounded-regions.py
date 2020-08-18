@@ -114,7 +114,8 @@ class Solution1:
                     board[i][j] = "X"
 
 
-def test_solutions():
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(SolutionCLS):
     board = [
         ["X", "X", "X", "X"],
         ["X", "O", "O", "X"],
@@ -127,8 +128,7 @@ def test_solutions():
         ["X", "X", "X", "X"],
         ["X", "O", "X", "X"],
     ]
-    # Solution().solve(board)
-    Solution1().solve(board)
+    SolutionCLS().solve(board)
     assert board == expected
 
 
