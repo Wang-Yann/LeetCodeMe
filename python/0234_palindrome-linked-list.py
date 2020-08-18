@@ -35,6 +35,7 @@ from common_utils import ListNode
 
 
 class Solution:
+
     def isPalindrome(self, head: ListNode) -> bool:
         """
         借助二叉树后序遍历的思路，不需要显式反转原始链表 倒序遍历链表
@@ -54,6 +55,7 @@ class Solution:
 
 
 class Solution1:
+
     def isPalindrome(self, head: ListNode) -> bool:
         reverse, fast = None, head
         # Reverse the first half part of the list.
@@ -76,6 +78,7 @@ class Solution1:
 
 
 class Solution2:
+
     def isPalindrome(self, head: ListNode) -> bool:
         self.front_pointer = head
 
@@ -92,6 +95,7 @@ class Solution2:
 
 
 class Solution3:
+
     def isPalindrome(self, head: ListNode) -> bool:
         l = []
         cur = head

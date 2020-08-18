@@ -96,7 +96,7 @@ class Solution:
                     q.append((nei, step + 1))
         return step
 
-    # leetcode submit region end(Prohibit modification and deletion)
+# leetcode submit region end(Prohibit modification and deletion)
 
 
 @pytest.mark.parametrize("kwargs,expected", [
