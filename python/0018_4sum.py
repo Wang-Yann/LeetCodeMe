@@ -32,62 +32,27 @@
 import collections
 from typing import List
 
-#
 import pytest
 
 
 class Solution:
-
-    def fourSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
-        nums.sort()
-        res = []
-        for i in range(len(nums) - 3):
-            if i and nums[i] == nums[i - 1]:
-                continue
-            for j in range(i + 1, len(nums) - 2):
-                if j != i + 1 and nums[j] == nums[j - 1]:
-                    continue
-                sum = target - nums[i] - nums[j]
-                left, right = j + 1, len(nums) - 1
-                while left < right:
-                    if nums[left] + nums[right] == sum:
-                        res.append([nums[i], nums[j], nums[left], nums[right]])
-                        right -= 1
-                        left += 1
-                        while left < right and nums[left] == nums[left - 1]:
-                            left += 1
-                        while left < right and nums[right] == nums[right + 1]:
-                            right -= 1
-                    elif nums[left] + nums[right] > sum:
-                        right -= 1
-                    else:
-                        left += 1
-        return res
-
-
-class Solution1:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         #  i j k
         nums.sort()
-        length = len(nums)
+        N = len(nums)
         res = []
         i = 0
-        while i < length - 3:
+        while i < N - 3:
             if i and nums[i] == nums[i - 1]:
                 i += 1
                 continue
             j = i + 1
-            while j < length - 2:
+            while j < N - 2:
                 if j != i + 1 and nums[j] == nums[j - 1]:
                     j += 1
                     continue
                 v_sum = target - nums[i] - nums[j]
-                left, right = j + 1, length - 1
+                left, right = j + 1, N - 1
                 while left < right:
                     if nums[left] + nums[right] < v_sum:
                         left += 1
@@ -106,7 +71,7 @@ class Solution1:
 
 
 # Space: O(n^2)
-class Solution2(object):
+class Solution1(object):
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
         for i in range(0, len(nums) - 1):
@@ -118,12 +83,99 @@ class Solution2(object):
                 for x in lookup[i]:
                     for y in lookup[target - i]:
                         [a, b], [c, d] = x, y
-                        if a is not c and a is not d and \
-                            b is not c and b is not d:
+                        if a is not c and a is not d and b is not c and b is not d:
                             quad = sorted([nums[a], nums[b], nums[c], nums[d]])
                             if quad not in result:
                                 result.append(quad)
         return sorted(result)
+
+
+class Solution0:
+    """推导规律"""
+
+    def twoSumTarget(self, nums: List[int], start: int, target: int) -> List[List[int]]:
+        lo, hi = start, len(nums) - 1
+        res = []
+        while lo < hi:
+            sum_val = nums[lo] + nums[hi]
+            left, right = nums[lo], nums[hi]
+            if sum_val < target:
+                while lo < hi and nums[lo] == left:
+                    lo += 1
+            elif sum_val > target:
+                while lo < hi and nums[hi] == right:
+                    hi -= 1
+            else:
+                res.append([left, right])
+                while lo < hi and nums[lo] == left:
+                    lo += 1
+                while lo < hi and nums[hi] == right:
+                    hi -= 1
+        return res
+
+    def threeSumTarget(self, nums: List[int], start: int, target: int) -> List[List[int]]:
+        res = []
+        N = len(nums)
+        i = start
+        while i < N:
+            tuples = self.twoSumTarget(nums, i + 1, target - nums[i])
+            for tp in tuples:
+                res.append([nums[i]] + tp)
+            while i < N - 1 and nums[i] == nums[i + 1]:
+                i += 1
+            i += 1
+        return res
+
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        res = []
+        nums.sort()
+        N = len(nums)
+        i = 0
+        while i < N:
+            tuples = self.threeSumTarget(nums, i + 1, target - nums[i])
+            for tp in tuples:
+                res.append([nums[i]] + tp)
+            while i < N - 1 and nums[i] == nums[i + 1]:
+                i += 1
+            i += 1
+        return res
+
+
+class Solution00:
+    def nSumTarget(self, n, nums, start, target):
+        res = []
+        N = len(nums)
+        if n == 2:
+            lo, hi = start, N - 1
+            while lo < hi:
+                sum_val = nums[lo] + nums[hi]
+                left, right = nums[lo], nums[hi]
+                if sum_val < target:
+                    while lo < hi and nums[lo] == left:
+                        lo += 1
+                elif sum_val > target:
+                    while lo < hi and nums[hi] == right:
+                        hi -= 1
+                else:
+                    res.append([left, right])
+                    while lo < hi and nums[lo] == left:
+                        lo += 1
+                    while lo < hi and nums[hi] == right:
+                        hi -= 1
+        else:
+            i = start
+            while i < N:
+                tuples = self.nSumTarget(n - 1, nums, i + 1, target - nums[i])
+                for tp in tuples:
+                    res.append([nums[i]] + tp)
+                while i < N - 1 and nums[i] == nums[i + 1]:
+                    i += 1
+                i += 1
+        return res
+
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        nums.sort()
+        return self.nSumTarget(4, nums, 0, target)
 
 
 @pytest.mark.parametrize("kw,expected", [
@@ -131,7 +183,7 @@ class Solution2(object):
     [dict(nums=[1, 0, -1, 0, -2, 2], target=0), [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]],
 ])
 @pytest.mark.parametrize("SolutionCLS", [
-    Solution, Solution1, Solution2
+    Solution, Solution1, Solution0, Solution00
 ])
 def test_solutions(kw, expected, SolutionCLS):
     assert sorted(SolutionCLS().fourSum(**kw)) == sorted(expected)

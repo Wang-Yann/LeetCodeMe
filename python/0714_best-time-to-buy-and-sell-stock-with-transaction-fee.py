@@ -58,13 +58,24 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+    def maxProfit(self, prices: List[int], fee: int) -> int:
+        N = len(prices)
+        if not N:
+            return 0
+        dp = [[0, -0x80000000] for _ in range(N)]
+        for i in range(N):
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+            dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i] - fee)
+        return dp[N - 1][0]
+
+
 @pytest.mark.parametrize("kwargs,expected", [
-    (dict(
-        prices=[1, 3, 2, 8, 4, 9], fee=2
-    ), 8),
+    (dict(prices=[1, 3, 2, 8, 4, 9], fee=2), 8),
 ])
 def test_solutions(kwargs, expected):
     assert Solution().maxProfit(**kwargs) == expected
+    assert Solution1().maxProfit(**kwargs) == expected
 
 
 if __name__ == '__main__':

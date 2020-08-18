@@ -24,13 +24,14 @@
 #
 #  Related Topics 深度优先搜索 链表
 #  👍 256 👎 0
+import copy
+
 import pytest
 
 from common_utils import ListNode, TreeNode
 
 
 class Solution:
-    head = None
 
     def sortedListToBST(self, head: ListNode) -> TreeNode:
         """ 前序方式"""
@@ -52,12 +53,29 @@ class Solution:
         return current
 
 
+class Solution1:
+    def sortedListToBST(self, head: ListNode) -> TreeNode:
+        if not head:
+            return None
+        if not head.next:
+            return TreeNode(head.val)
+        slow, fast, pre = head, head, None
+        while fast and fast.next:
+            pre, slow, fast = slow, slow.next, fast.next.next
+        pre.next = None  # cut off the left half
+
+        root = TreeNode(slow.val)
+        root.left = self.sortedListToBST(head)
+        root.right = self.sortedListToBST(slow.next)
+        return root
+
+
 @pytest.mark.parametrize("args,expected", [
-    (ListNode.initList([-10, -3, 0, 5, 9]),
-     ['0', '-3', '9', '-10', '#', '5'])
+    (ListNode.initList([-10, -3, 0, 5, 9]), ['0', '-3', '9', '-10', '#', '5'])
 ])
 def test_solutions(args, expected):
-    assert repr(Solution().sortedListToBST(args)) == repr(expected)
+    assert repr(Solution().sortedListToBST(copy.deepcopy(args))) == repr(expected)
+    assert repr(Solution1().sortedListToBST(copy.deepcopy(args))) == repr(expected)
 
 
 if __name__ == '__main__':

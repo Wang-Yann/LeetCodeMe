@@ -39,6 +39,8 @@ import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
+
+
 class Solution:
 
     def calculate(self, s: str) -> int:
@@ -126,16 +128,52 @@ class Solution1:
         return self.parseExpr(s)
 
 
+class Solution00(object):
+    def calculate(self, s):
+        def helper(chars):
+            stack = []
+            sign = '+'
+            num = 0
+
+            while len(chars) > 0:
+                c = chars.pop(0)
+                if c.isdigit():
+                    num = 10 * num + int(c)
+                # 遇到左括号开始递归计算 num
+                if c == '(':
+                    num = helper(chars)
+
+                if c in ("+", "-", "*", "/", ")") or not chars:
+                    if sign == '+':
+                        stack.append(num)
+                    elif sign == '-':
+                        stack.append(-num)
+                    elif sign == '*':
+                        stack[-1] = stack[-1] * num
+                    elif sign == '/':
+                        # python 除法向 0 取整的写法
+                        stack[-1] = int(stack[-1] // float(num))
+                    num = 0
+                    sign = c
+                # 遇到右括号返回递归结果
+                if c == ')':
+                    break
+
+            return sum(stack)
+
+        # 需要把字符串转成列表方便操作
+        return helper(list(s))
+
+
 @pytest.mark.parametrize("args,expected", [
     ("1 + 1", 2),
     (" 6-4 / 2 ", 4),
     ("2*(5+5*2)/3+(6/2+8)", 21),
-    ("(2+6* 3+5- (3*14/7+2)*5)+3", -12)
-
+    ("(2+6* 3+5- (3*14/7+2)*5)+3", -12),
 ])
-def test_solutions(args, expected):
-    assert Solution().calculate(args) == expected
-    assert Solution1().calculate(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution, Solution00])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().calculate(args) == expected
 
 
 if __name__ == '__main__':

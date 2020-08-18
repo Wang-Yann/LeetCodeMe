@@ -44,7 +44,38 @@ import operator
 import pytest
 
 
-class Solution:
+class Solution(object):
+    def calculate(self, s):
+        operands, operators = [], []
+        operand = ""
+        for i in reversed(range(len(s))):
+            if s[i].isdigit():
+                operand += s[i]
+                if i == 0 or not s[i - 1].isdigit():
+                    operands.append(int(operand[::-1]))
+                    operand = ""
+            elif s[i] == ')' or s[i] == '+' or s[i] == '-':
+                operators.append(s[i])
+            elif s[i] == '(':
+                while operators[-1] != ')':
+                    self.compute(operands, operators)
+                operators.pop()
+
+        while operators:
+            self.compute(operands, operators)
+
+        return operands[-1]
+
+    def compute(self, operands, operators):
+        left, right = operands.pop(), operands.pop()
+        op = operators.pop()
+        if op == '+':
+            operands.append(left + right)
+        elif op == '-':
+            operands.append(left - right)
+
+
+class Solution1:
 
     def calculate(self, s: str) -> int:
         """
@@ -91,35 +122,47 @@ class Solution:
         return val_stack[0]
 
 
-class Solution1(object):
+class Solution00(object):
     def calculate(self, s):
-        operands, operators = [], []
-        operand = ""
-        for i in reversed(range(len(s))):
-            if s[i].isdigit():
-                operand += s[i]
-                if i == 0 or not s[i - 1].isdigit():
-                    operands.append(int(operand[::-1]))
-                    operand = ""
-            elif s[i] == ')' or s[i] == '+' or s[i] == '-':
-                operators.append(s[i])
-            elif s[i] == '(':
-                while operators[-1] != ')':
-                    self.compute(operands, operators)
-                operators.pop()
+        """TLE"""
 
-        while operators:
-            self.compute(operands, operators)
+        def helper(chars):
+            stack = []
+            sign = '+'
+            num = 0
 
-        return operands[-1]
+            while len(chars) > 0:
+                c = chars.pop(0)
+                if c.isdigit():
+                    num = 10 * num + int(c)
+                # 遇到左括号开始递归计算 num
+                if c == '(':
+                    num = helper(chars)
 
-    def compute(self, operands, operators):
-        left, right = operands.pop(), operands.pop()
-        op = operators.pop()
-        if op == '+':
-            operands.append(left + right)
-        elif op == '-':
-            operands.append(left - right)
+                # bool1= c in ("+", "-", "*", "/",")") or len(chars)==0
+                # bool2= (not c.isdigit() and c != ' ') or len(chars) == 0
+                # if bool1!=bool2:
+                #     print(c,chars,bool1,bool2)
+                if c in ("+", "-", "*", "/", ")") or not chars:
+                    if sign == '+':
+                        stack.append(num)
+                    elif sign == '-':
+                        stack.append(-num)
+                    elif sign == '*':
+                        stack[-1] = stack[-1] * num
+                    elif sign == '/':
+                        # python 除法向 0 取整的写法
+                        stack[-1] = int(stack[-1] // float(num))
+                    num = 0
+                    sign = c
+                # 遇到右括号返回递归结果
+                if c == ')':
+                    break
+
+            return sum(stack)
+
+        # 需要把字符串转成列表方便操作
+        return helper(list(s))
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -131,9 +174,9 @@ class Solution1(object):
     ["2-4-(8+2-6+(8+4-1+8-10))", -15],
     ["2-4-(8+2-6+(8+4-(1)+8-10))", -15],
 ])
-def test_solutions(args, expected):
-    assert Solution().calculate(args) == expected
-    assert Solution1().calculate(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution, Solution00])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().calculate(args) == expected
 
 
 if __name__ == '__main__':

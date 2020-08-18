@@ -90,11 +90,12 @@ class Solution1(object):
     所以打印A和粘贴的次数要接近，最简单的方法就是遍历所有的情况然后取最大值，打印A的次数在[1, N-3]之间，
     粘贴的次数为N-2-i，加上打印出的部分，就是N-1-i了
     """
+
     @functools.lru_cache(None)
     def maxA(self, N):
         res = N
         for i in range(1, N - 2):
-            res = max(res, self.maxA(i) * ((N - 2 - i)+1))
+            res = max(res, self.maxA(i) * ((N - 2 - i) + 1))
         return res
 
 
@@ -111,15 +112,54 @@ class Solution2:
         return dp[N % 6]
 
 
+class Solution00(object):
+    """
+    TLE
+    第⼀个状态是剩余的按键次数，⽤ n 表⽰；
+    第⼆个状态是当前屏幕上字符 A 的数量，⽤ a_num 表⽰；
+    第三个状态 是剪切板中字符 A 的数量，⽤ copy_num 表⽰。
+
+    """
+
+    def maxA(self, N):
+        @functools.lru_cache(None)
+        def dp(n, a_num, copy_num):
+            if n <= 0:
+                return a_num
+            return max(
+                dp(n - 1, a_num + 1, copy_num),  # A
+                dp(n - 1, a_num + copy_num, copy_num),  # C-v
+                dp(n - 2, a_num, a_num),  # C-A,C-c
+            )
+
+        return dp(N, 0, 0)
+
+
+class Solution01:
+    def maxA(self, N: int) -> int:
+        """
+        dp(n)　n为剩余敲击次数
+        """
+        dp = [0] * (N + 1)
+        for i in range(1, N + 1):
+            # 按下A键盘
+            dp[i] = dp[i - 1] + 1
+            for j in range(2, i):
+                # // 全选 & 复制 dp[j-2]，连续粘贴 i - j 次, 屏幕上共 dp[j - 2] * (i - j + 1) 个 A
+                dp[i] = max(dp[i], dp[j - 2] * (i - j + 1))
+        return dp[N]
+
+
 @pytest.mark.parametrize("kw,expected", [
     [dict(N=3), 3],
     [dict(N=6), 6],
     [dict(N=7), 9],
+    [dict(N=39), 65536],
 ])
-def test_solutions(kw, expected):
-    assert Solution().maxA(**kw) == expected
-    assert Solution1().maxA(**kw) == expected
-    assert Solution2().maxA(**kw) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2,
+                                         Solution00, Solution01])
+def test_solutions(kw, expected, SolutionCLS):
+    assert SolutionCLS().maxA(**kw) == expected
 
 
 if __name__ == '__main__':

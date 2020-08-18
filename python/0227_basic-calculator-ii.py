@@ -40,51 +40,9 @@ import operator
 
 import pytest
 
+from sample_datas import BIG_CASE
 
-class Solution1:
 
-    def calculate(self, s: str) -> int:
-        """
-        重点 顺序
-        """
-        operator_map = {"+": operator.add, "*": operator.mul,
-                        "-": operator.sub, "/": operator.floordiv}
-        val_stack = []
-        op_stack = []
-        length = len(s)
-        i = 0
-        while i <= length - 1:
-            if s[i] == " ":
-                i += 1
-                continue
-            elif s[i] in ("*", "/"):
-                op_stack.append(s[i])
-                i += 1
-            elif s[i] in ("+", "-", "*", "/"):
-                op_stack.append(s[i])
-                i += 1
-            else:
-                j = i
-                while j <= length - 1 and s[j].isdigit():
-                    j += 1
-                token = s[i:j]
-                val_stack.append(int(token))
-                while op_stack and op_stack[-1] in '*/':
-                    right = val_stack.pop()
-                    left = val_stack.pop()
-                    op = op_stack.pop()
-                    if op in operator_map:
-                        val_stack.append(operator_map[op](left, right))
-                i = j
-        val_stack.reverse()
-        op_stack.reverse()
-        while op_stack:
-            left = val_stack.pop()
-            right = val_stack.pop()
-            op = op_stack.pop()
-            if op in operator_map:
-                val_stack.append(operator_map[op](left, right))
-        return val_stack[0]
 
 
 class Solution(object):
@@ -128,6 +86,94 @@ class Solution(object):
             operands.append(left // right)
 
 
+class Solution1:
+
+    def calculate(self, s: str) -> int:
+        """
+        ME
+        重点 顺序
+        """
+        operator_map = {"+": operator.add, "*": operator.mul,
+                        "-": operator.sub, "/": operator.floordiv}
+        val_stack = []
+        op_stack = []
+        length = len(s)
+        i = 0
+        while i <= length - 1:
+            if s[i] == " ":
+                i += 1
+                continue
+            elif s[i] in ("*", "/"):
+                op_stack.append(s[i])
+                i += 1
+            elif s[i] in ("+", "-", "*", "/"):
+                op_stack.append(s[i])
+                i += 1
+            else:
+                j = i
+                while j <= length - 1 and s[j].isdigit():
+                    j += 1
+                token = s[i:j]
+                val_stack.append(int(token))
+                while op_stack and op_stack[-1] in '*/':
+                    right = val_stack.pop()
+                    left = val_stack.pop()
+                    op = op_stack.pop()
+                    if op in operator_map:
+                        val_stack.append(operator_map[op](left, right))
+                i = j
+        val_stack.reverse()
+        op_stack.reverse()
+        while op_stack:
+            left = val_stack.pop()
+            right = val_stack.pop()
+            op = op_stack.pop()
+            if op in operator_map:
+                val_stack.append(operator_map[op](left, right))
+        return val_stack[0]
+
+
+class Solution00(object):
+    """TLE"""
+
+    def calculate(self, s):
+        def helper(chars):
+            stack = []
+            sign = '+'
+            num = 0
+
+            while len(chars) > 0:
+                c = chars.pop(0)
+                if c.isdigit():
+                    num = 10 * num + int(c)
+                # 遇到左括号开始递归计算 num
+                if c == '(':
+                    num = helper(chars)
+
+                if c in ("+", "-", "*", "/", ")") or not chars:
+                    if sign == '+':
+                        stack.append(num)
+                    elif sign == '-':
+                        stack.append(-num)
+                    elif sign == '*':
+                        stack[-1] = stack[-1] * num
+                    elif sign == '/':
+                        # python 除法向 0 取整的写法
+                        # stack[-1] = stack[-1] // num
+                        # print(stack,num,stack[-1] // num,int(stack[-1] / float(num)))
+                        stack[-1] = int(stack[-1] / num)
+                    num = 0
+                    sign = c
+                # 遇到右括号返回递归结果
+                if c == ')':
+                    break
+
+            return sum(stack)
+
+        # 需要把字符串转成列表方便操作
+        return helper(list(s))
+
+
 @pytest.mark.parametrize(
     "args,expected",
     list(zip(
@@ -139,13 +185,16 @@ class Solution(object):
             " 3/2 ",
             " 3+5 / 2 ",
             "14/3*2",
-            "1+1+1"
+            "1+1+1",
+            "14-3/2",
+            BIG_CASE.BIG_227
 
-        ], [1, 3, 1, 2, 1, 5, 8, 3]
+        ], [1, 3, 1, 2, 1, 5, 8, 3, 13, 199]
     ))
 )
-def test_solutions(args, expected):
-    assert Solution().calculate(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution00, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().calculate(args) == expected
 
 
 if __name__ == '__main__':

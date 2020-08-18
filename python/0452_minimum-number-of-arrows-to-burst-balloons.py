@@ -29,43 +29,34 @@
 
 """
 
-import pytest
-import math, fractions, operator
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
-
-
+import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
-        points.sort(key=lambda x:x[1])
-        ans =0
+        points.sort(key=lambda x: x[1])
+        ans = 0
         last_end = float("-inf")
         for pnt in points:
-            if pnt[0]>last_end:
-                ans+=1
-                last_end=pnt[1]
+            if pnt[0] > last_end:
+                ans += 1
+                last_end = pnt[1]
         return ans
 
-        
+
 # leetcode submit region end(Prohibit modification and deletion)
 
 
 @pytest.mark.parametrize("args,expected", [
-    ([[10,16], [2,8], [1,6], [7,12]], 2),
-    ([[-0x80000000,0x7fffffff]], 1),
+    ([[10, 16], [2, 8], [1, 6], [7, 12]], 2),
+    ([[-0x80000000, 0x7fffffff]], 1),
 ])
 def test_solutions(args, expected):
     assert Solution().findMinArrowShots(args) == expected
 
 
-
-
-
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

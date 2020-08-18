@@ -38,12 +38,12 @@ class Solution:
 
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        length = len(nums)
+        N = len(nums)
         res = []
         i = 0
-        while i < length - 2:
+        while i < N - 2:
             if i == 0 or nums[i] != nums[i - 1]:
-                j, k = i + 1, length - 1
+                j, k = i + 1, N - 1
                 while j < k:
                     if nums[i] + nums[j] + nums[k] < 0:
                         j += 1
@@ -58,30 +58,6 @@ class Solution:
                             k -= 1
             i += 1
         return res
-
-    def threeSum0(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) < 3:
-            return []
-        nums.sort()
-        length = len(nums)
-        res = []
-        for i in range(0, length):
-            v_i = nums[i]
-            if v_i > 0:
-                break
-            for j in range(i + 1, length):
-                v_j = nums[j]
-                sum_ij = v_i + v_j
-                if sum_ij > 0:
-                    break
-                for k in range(j + 1, length):
-                    if sum_ij + nums[k] > 0:
-                        break
-                    if sum_ij + nums[k] == 0:
-                        if [nums[i], nums[j], nums[k]] not in res:
-                            res.append([nums[i], nums[j], nums[k]])
-
-        return list(res)
 
 
 class Solution1:
@@ -116,6 +92,44 @@ class Solution1:
         return ans
 
 
+class Solution00:
+    def twoSumTarget(self, nums: List[int], start: int, target: int) -> List[List[int]]:
+        # nums.sort()
+        lo, hi = start, len(nums) - 1
+        res = []
+        while lo < hi:
+            sum_val = nums[lo] + nums[hi]
+            left, right = nums[lo], nums[hi]
+            if sum_val < target:
+                while lo < hi and nums[lo] == left:
+                    lo += 1
+            elif sum_val > target:
+                while lo < hi and nums[hi] == right:
+                    hi -= 1
+            else:
+                res.append([left, right])
+                while lo < hi and nums[lo] == left:
+                    lo += 1
+                while lo < hi and nums[hi] == right:
+                    hi -= 1
+        return res
+
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        target = 0
+        res = []
+        nums.sort()
+        N = len(nums)
+        i = 0
+        while i < N:
+            tuples = self.twoSumTarget(nums, i + 1, target - nums[i])
+            for tp in tuples:
+                res.append([nums[i]] + tp)
+            while i < N - 1 and nums[i] == nums[i + 1]:
+                i += 1
+            i += 1
+        return res
+
+
 @pytest.mark.parametrize("args,expected", [
     ([-1, 0, 1, 2, -1, -4], [[-1, -1, 2], [-1, 0, 1]]),
     ([1, -2, -5, -13, -10, -11, 0, -12, -11, 13, -4, 9, 8, 10, -7, 3, -9, -12, -7, 8, -2, -12, 1, -10, -15, -8,
@@ -140,12 +154,9 @@ class Solution1:
       [-1, 0, 1]]),
 ])
 def test_solutions(args, expected):
-    res = Solution().threeSum(args)
-    res0 = Solution().threeSum0(args)
-    res1 = Solution1().threeSum(args)
-    assert sorted(res) == sorted(expected)
-    assert sorted(res0) == sorted(expected)
-    assert sorted(res1) == sorted(expected)
+    assert sorted(Solution().threeSum(args)) == sorted(expected)
+    assert sorted(Solution1().threeSum(args)) == sorted(expected)
+    assert sorted(Solution00().threeSum(args)) == sorted(expected)
 
 
 if __name__ == '__main__':

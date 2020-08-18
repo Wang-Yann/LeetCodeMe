@@ -57,20 +57,20 @@ class Solution:
         if not prices:
             return 0
         N = len(prices)
-        max_k = 2
-        k_range = (0, 1, 2)
-        s_range = (0, 1)
-        dp = [[[0] * len(s_range) for _ in k_range] for __ in range(N)]
-        for ki in k_range:
+        MAX_K = 2
+        k_choices = (0, 1, 2)
+        states = (0, 1)
+        dp = [[[0] * len(states) for _ in k_choices] for __ in range(N)]
+        for ki in k_choices:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
         for i in range(N):
             # for k in range(max_k, 0, -1):
-            for k in range(1, max_k + 1):
+            for k in range(1, MAX_K + 1):
                 dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])
                 dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i])
 
-        return dp[N - 1][max_k][0]
+        return dp[N - 1][MAX_K][0]
 
 
 @pytest.mark.parametrize("args,expected", [

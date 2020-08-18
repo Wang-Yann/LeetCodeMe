@@ -39,12 +39,12 @@ class Solution:
         倒序数组存储一个单调栈
         如果当前数比栈顶小，那么栈顶一定是当前数所能发现的第一个最大值
         """
-        length = len(nums)
-        result = [0] * length
+        N = len(nums)
+        result = [0] * N
         stack = []
 
-        for i in range(length * 2 - 1, -1, -1):
-            idx = i % length
+        for i in range(N * 2 - 1, -1, -1):
+            idx = i % N
             while stack and stack[-1] <= nums[idx]:
                 stack.pop()
             result[idx] = stack[-1] if stack else -1

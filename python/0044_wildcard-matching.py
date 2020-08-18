@@ -66,6 +66,7 @@
 #  Related Topics 贪心算法 字符串 动态规划 回溯算法
 
 """
+import functools
 
 import pytest
 
@@ -78,6 +79,7 @@ class Solution:
 
     def isMatch(self, s: str, p: str) -> bool:
         start_idx = -1
+        #  match stores the position of the previous matched char in s after a *
         match = 0
         p_i = s_i = 0
         NP, NS = len(p), len(s)
@@ -86,7 +88,7 @@ class Solution:
             if p_i < NP and (p[p_i] == "?" or p[p_i] == s[s_i]):
                 p_i += 1
                 s_i += 1
-                # // * found, only advancing pattern pointer
+            # // * found, only advancing pattern pointer
             elif p_i < NP and p[p_i] == "*":
                 start_idx = p_i
                 match = s_i
@@ -115,57 +117,48 @@ class Solution1:
     """
 
     def isMatch(self, s: str, p: str) -> bool:
-        dp = [[False for _ in range(len(p) + 1)] for _ in range(len(s) + 1)]
+        NP, NS = len(p), len(s)
+        dp = [[False for _ in range(NP + 1)] for _ in range(NS + 1)]
 
         dp[0][0] = True
-        for i in range(1, len(p) + 1):
+        for i in range(1, NP + 1):
             if p[i - 1] == '*':
                 dp[0][i] = dp[0][i - 1]
-        for i in range(1, len(s) + 1):
+        for i in range(1, NS + 1):
             dp[i][0] = False
-            for j in range(1, len(p) + 1):
+            for j in range(1, NP + 1):
                 if p[j - 1] != '*':
                     dp[i][j] = dp[i - 1][j - 1] and (s[i - 1] == p[j - 1] or p[j - 1] == '?')
                 else:
                     dp[i][j] = dp[i][j - 1] or dp[i - 1][j]
 
-        return dp[len(s)][len(p)]
+        return dp[NS][NP]
 
 
-class Solution4(object):
-    """官方　带记忆的递归"""
+class Solution2(object):
+    """
+    官方　带记忆的递归
+    执行用时： 1932 ms , 在所有 Python3 提交中击败了 5.02% 的用户
+    内存消耗： 742.7 MB , 在所有 Python3 提交中击败了 5.06% 的用户
+    """
 
-    def remove_duplicate_stars(self, p):
-        if p == '':
-            return p
-        p1 = [p[0], ]
-        for x in p[1:]:
-            if p1[-1] != '*' or p1[-1] == '*' and x != '*':
-                p1.append(x)
-        return ''.join(p1)
-
+    @functools.lru_cache(None)
     def helper(self, s, p):
-        dp = self.dp
-        if (s, p) in dp:
-            return dp[(s, p)]
 
         if p == s or p == '*':
-            dp[(s, p)] = True
+            return True
         elif p == '' or s == '':
-            dp[(s, p)] = False
+            return False
         elif p[0] == s[0] or p[0] == '?':
-            dp[(s, p)] = self.helper(s[1:], p[1:])
+            return self.helper(s[1:], p[1:])
         elif p[0] == '*':
-            dp[(s, p)] = self.helper(s, p[1:]) or self.helper(s[1:], p)
+            return self.helper(s, p[1:]) or self.helper(s[1:], p)
         else:
-            dp[(s, p)] = False
-
-        return dp[(s, p)]
+            return False
 
     def isMatch(self, s, p):
-        p = self.remove_duplicate_stars(p)
-        # memorization hashmap to be used during the recursion
-        self.dp = {}
+        while "**" in p:
+            p = p.replace("**", "*")
         return self.helper(s, p)
 
 
@@ -177,10 +170,9 @@ class Solution4(object):
     ("acdcb", "a*c?b", False),
     ("", "*", True),
 ])
-def test_solutions(s, p, expected):
-    # assert Solution1().isMatch(s, p) == expected
-    # assert Solution4().isMatch(s, p) == expected
-    assert Solution().isMatch(s, p) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2])
+def test_solutions(s, p, expected, SolutionCLS):
+    assert SolutionCLS().isMatch(s, p) == expected
 
 
 if __name__ == '__main__':

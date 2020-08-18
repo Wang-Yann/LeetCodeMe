@@ -43,14 +43,14 @@ class Solution:
     def maxProfitInf(self, prices: List[int]) -> int:
         if not prices:
             return 0
-        n = len(prices)
-        s_range = (0, 1)
-        dp = [[0] * len(s_range) for _ in range(0, n)]
+        N = len(prices)
+        states = (0, 1)
+        dp = [[0] * len(states) for _ in range(N)]
         dp[-1][1] = - math.inf
-        for i in range(0, n):
+        for i in range(N):
             dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
             dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
-        return dp[n - 1][0]
+        return dp[N - 1][0]
 
     def maxProfit(self, k: int, prices: List[int]) -> int:
         """
@@ -59,24 +59,24 @@ class Solution:
         """
         if not prices:
             return 0
-        max_k = k
+        MAX_K = k
         N = len(prices)
-        if max_k > N // 2:
+        if MAX_K > N // 2:
             return self.maxProfitInf(prices)
 
-        k_range = range(max_k + 1)
-        s_range = (0, 1)
-        dp = [[[0] * len(s_range) for _ in k_range] for _ in range(N)]
-        for ki in k_range:
+        k_choices = range(MAX_K + 1)
+        states = (0, 1)
+        dp = [[[0] * len(states) for _ in k_choices] for _ in range(N)]
+        for ki in k_choices:
             dp[0][ki][1] = float("-inf")
             dp[-1][ki][1] = float("-inf")
         for i in range(N):
             # for k in range(max_k, 0, -1):
-            for k in range(1, max_k + 1):
+            for k in range(1, MAX_K + 1):
                 dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i])
                 dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i])
 
-        return dp[N - 1][max_k][0]
+        return dp[N - 1][MAX_K][0]
 
 
 class Solution1(object):

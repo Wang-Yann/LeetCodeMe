@@ -78,6 +78,7 @@ class Solution1:
 
         for num in nums:
             insert(num)
+        print(LIS)
         return len(LIS)
 
 
@@ -90,4 +91,4 @@ def test_solutions(args, expected):
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes", __file__])
+    pytest.main(["-q", "--color=yes", "--capture=tee-sys", __file__])

@@ -82,6 +82,7 @@ class Solution:
             while dq and nums[i] >= nums[dq[-1]]:
                 dq.pop()
             dq.append(i)
+            # print(dq)
             # compute max in nums[:k]
             if i >= k - 1:
                 result.append(nums[dq[0]])
@@ -94,13 +95,10 @@ class TestSolutions:
         kw = dict(nums=[1, 3, -1, -3, 5, 3, 6, 7], k=3)
         assert Solution().maxSlidingWindow(**kw) == [3, 3, 5, 5, 6, 7]
 
-    def testmaxSlidingWindow_1(self):
-        kw = dict(nums=[3, 6, 7], k=3)
-        assert Solution().maxSlidingWindow(**kw) == [7]
-
 
 @pytest.mark.parametrize("test_input,expected", [
     (([1, 3, -1, -3, 5, 3, 6, 7], 3), [3, 3, 5, 5, 6, 7]),
+    (([3, 6, 7], 3), [7]),
     pytest.param(([1, 3, -1, -3, 5, 3, 6, 7], 3), [42], marks=pytest.mark.xfail),
 ])
 def test_eval(test_input, expected):
@@ -124,5 +122,5 @@ def test_xpass():
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "-v", "--color=yes", __file__])
+    pytest.main(["-q", "--color=yes", "--capture=tee-sys", __file__])
     # pytest.main(["-q","-l","-v","--color=yes","--pdb"])

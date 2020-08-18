@@ -23,8 +23,6 @@
 # 解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出] 
 #  Related Topics 动态规划
 
-TODO　重点
-https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-lab/
 """
 
 from typing import List
@@ -36,6 +34,9 @@ import pytest
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         """
+
+        TODO　重点
+        https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-lab/
         0 空仓　１持有
         注意初始值的含义有效性
         dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
@@ -60,7 +61,7 @@ class Solution:
     ([1], 0),
     ([1, 10], 9),
     ([10, 3, 1], 0),
-    ([1,4,2], 3)
+    ([1, 4, 2], 3)
 ])
 def test_solutions(args, expected):
     assert Solution().maxProfit(args) == expected

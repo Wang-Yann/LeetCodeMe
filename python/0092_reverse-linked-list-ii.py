@@ -173,9 +173,10 @@ class Solution3:
 
 @pytest.mark.parametrize("kw,expected", [
     (dict(
-        head=ListNode.init_list_from_str("1->2->3->4->5"), m=2, n=4
-    ), ListNode.initList([1, 4, 3, 2, 5])
-    )
+        head=ListNode.initList([1, 2, 3, 4, 5]),
+        m=2,
+        n=4
+    ), ListNode.initList([1, 4, 3, 2, 5]))
 ])
 def test_solutions(kw, expected):
     kw1 = copy.deepcopy(kw)
