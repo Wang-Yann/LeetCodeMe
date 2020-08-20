@@ -79,6 +79,7 @@
 #  Related Topics 深度优先搜索 广度优先搜索
 
 """
+import copy
 from typing import List
 
 import pytest
@@ -92,7 +93,7 @@ class Solution:
         TODO TODO
         """
         row, col = click
-        m, n = len(board), len(board[0])
+        R, C = len(board), len(board[0])
         if board[row][col] == "M":
             board[row][col] = "X"
         else:
@@ -102,7 +103,7 @@ class Solution:
                     if i == 0 and j == 0:
                         continue
                     r, c = row + i, col + j
-                    if not (0 <= r <= m - 1 and 0 <= c <= n - 1):
+                    if not (0 <= r <= R - 1 and 0 <= c <= C - 1):
                         continue
                     if board[r][c] == "M" or board[r][c] == "X":
                         count += 1
@@ -115,7 +116,7 @@ class Solution:
                         if i == 0 and j == 0:
                             continue
                         r, c = row + i, col + j
-                        if not (0 <= r <= m - 1 and 0 <= c <= n - 1):
+                        if not (0 <= r <= R - 1 and 0 <= c <= C - 1):
                             continue
                         if board[r][c] == "E":
                             self.updateBoard(board, [r, c])
@@ -124,31 +125,77 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1(object):
+    def updateBoard(self, board, click):
+        DIRECTIONS = [(-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0)]
+
+        R, C = len(board), len(board[0])
+        i, j = click
+
+        def dfs(x, y):
+            if board[x][y] != 'E':
+                return
+            mine_count = 0
+            for dx, dy in DIRECTIONS:
+                ni, nj = x + dx, y + dy
+                if 0 <= ni < R and 0 <= nj < C and board[ni][nj] == 'M':
+                    mine_count += 1
+
+            if mine_count == 0:
+                board[x][y] = 'B'
+            else:
+                board[x][y] = str(mine_count)
+                return
+
+            for dx, dy in DIRECTIONS:
+                ni, nj = x + dx, y + dy
+                if 0 <= ni < R and 0 <= nj < C:
+                    dfs(ni, nj)
+
+        if not board:
+            return []
+
+        # If a mine ('M') is revealed, then the game is over - change it to 'X'.
+        if board[i][j] == 'M':
+            board[i][j] = 'X'
+            return board
+
+        # run dfs to reveal the board
+        dfs(i, j)
+        return board
+
 
 @pytest.mark.parametrize("kwargs,expected", [
-    (dict(board=
-          [['E', 'E', 'E', 'E', 'E'],
-           ['E', 'E', 'M', 'E', 'E'],
-           ['E', 'E', 'E', 'E', 'E'],
-           ['E', 'E', 'E', 'E', 'E']]
-        , click=[3, 0]),
+    (dict(
+        board=
+        [['E', 'E', 'E', 'E', 'E'],
+         ['E', 'E', 'M', 'E', 'E'],
+         ['E', 'E', 'E', 'E', 'E'],
+         ['E', 'E', 'E', 'E', 'E']]
+        , click=[3, 0]
+    ),
      [['B', '1', 'E', '1', 'B'],
       ['B', '1', 'M', '1', 'B'],
       ['B', '1', '1', '1', 'B'],
       ['B', 'B', 'B', 'B', 'B']]
-
-     ),
-    (dict(board=[['B', '1', 'E', '1', 'B'], ['B', '1', 'M', '1', 'B'], ['B', '1', '1', '1', 'B'], ['B', 'B', 'B', 'B', 'B']], click=[1, 2]),
+    ),
+    (dict(
+        board=
+        [['B', '1', 'E', '1', 'B'],
+         ['B', '1', 'M', '1', 'B'],
+         ['B', '1', '1', '1', 'B'],
+         ['B', 'B', 'B', 'B', 'B']],
+        click=[1, 2]
+    ),
      [['B', '1', 'E', '1', 'B'],
       ['B', '1', 'X', '1', 'B'],
       ['B', '1', '1', '1', 'B'],
       ['B', 'B', 'B', 'B', 'B']]
-
-     ),
+    ),
 ])
 def test_solutions(kwargs, expected):
-    assert Solution().updateBoard(**kwargs) == expected
-    # assert Solution2().updateBoard(**kwargs) == expected
+    assert Solution().updateBoard(**copy.deepcopy(kwargs)) == expected
+    assert Solution1().updateBoard(**copy.deepcopy(kwargs)) == expected
 
 
 if __name__ == '__main__':

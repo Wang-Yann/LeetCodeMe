@@ -62,15 +62,20 @@ while p <= max_num:
         if min_factor[p] == 1:
             break
         p += 1
+
+
 # print(min_factor[:122])
 
 class Solution:
-    """ XX这题目还要素数打表"""
+    """ XX这题目还要素数打表
+    f[i] 的定义：f[i]  代表这个数组新增一个质数 i 后的最少分组数。 
+
+    """
 
     def splitArray(self, nums) -> int:
 
         f = {}
-        n = len(nums)
+        N = len(nums)
 
         x = nums[0]
         while True:
@@ -82,7 +87,7 @@ class Solution:
             x //= min_factor[x]
 
         min_prev = 1
-        for i in range(1, n):
+        for i in range(1, N):
             x = nums[i]
 
             min_cur = INF
@@ -97,6 +102,7 @@ class Solution:
                 x //= min_factor[x]
 
             min_prev = min_cur
+        # print(f)
 
         return min_prev
 
@@ -106,7 +112,6 @@ class Solution:
 
 @pytest.mark.parametrize("kwargs,expected", [
     [dict(nums=[2, 3, 3, 2, 3, 3]), 2],
-
     pytest.param(dict(nums=[2, 3, 5, 7]), 4),
 ])
 def test_solutions(kwargs, expected):
