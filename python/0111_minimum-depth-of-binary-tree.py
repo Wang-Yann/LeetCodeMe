@@ -25,6 +25,8 @@
 #  返回它的最小深度 2.
 #  Related Topics 树 深度优先搜索 广度优先搜索
 #  👍 292 👎 0
+import collections
+
 import pytest
 
 from common_utils import TreeNode
@@ -45,20 +47,33 @@ class Solution1:
     def minDepth(self, root: TreeNode) -> int:
         if not root:
             return 0
-        queue = [(root, 1)]
-        levels = []
-        while queue:
-            level_length = len(queue)
-            for i in range(level_length):
-                node, level = queue.pop(0)
-                if not node.left and not node.right:
-                    levels.append(level)
-                    continue
-                if node.left:
-                    queue.append((node.left, level + 1))
-                if node.right:
-                    queue.append((node.right, level + 1))
-        return min(levels)
+
+        que = collections.deque([(root, 1)])
+        while que:
+            node, depth = que.popleft()
+            if not node.left and not node.right:
+                return depth
+            if node.left:
+                que.append((node.left, depth + 1))
+            if node.right:
+                que.append((node.right, depth + 1))
+
+
+class Solution2:
+    def minDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
+        if not root.left and not root.right:
+            return 1
+
+        min_depth = 10 ** 9
+        if root.left:
+            min_depth = min(self.minDepth(root.left), min_depth)
+        if root.right:
+            min_depth = min(self.minDepth(root.right), min_depth)
+
+        return min_depth + 1
 
 
 @pytest.mark.parametrize("kw,expected", [
@@ -68,6 +83,7 @@ class Solution1:
 def test_solutions(kw, expected):
     assert Solution().minDepth(**kw) == expected
     assert Solution1().minDepth(**kw) == expected
+    assert Solution2().minDepth(**kw) == expected
 
 
 if __name__ == '__main__':
