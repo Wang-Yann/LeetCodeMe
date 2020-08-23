@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Author        : Rock Wayne 
+# @Author        : Rock Wayne
 # @Created       : 2020-08-22 20:35:06
 # @Last Modified : 2020-08-22 20:35:06
 # @Mail          : lostlorder@gamil.com
@@ -31,8 +31,20 @@ class Solution1:
 
 
 @pytest.mark.skip
-@pytest.mark.parametrize("kwargs,expected", [[dict(n=4, rounds=[1, 3, 1, 2]), [1, 2]], [dict(n=2, rounds=[2, 1, 2, 1, 2, 1, 2, 1, 2]), [2]],
-                                             [dict(n=7, rounds=[1, 3, 5, 7]), [1, 2, 3, 4, 5, 6, 7]], ])
+@pytest.mark.parametrize(
+    "kwargs,expected", [
+        [
+            dict(
+                n=4, rounds=[
+                    1, 3, 1, 2]), [
+            1, 2]], [
+            dict(
+                n=2, rounds=[
+                    2, 1, 2, 1, 2, 1, 2, 1, 2]), [2]], [
+            dict(
+                n=7, rounds=[
+                    1, 3, 5, 7]), [
+                1, 2, 3, 4, 5, 6, 7]], ])
 def test_solutions1(kwargs, expected):
     assert Solution1().mostVisited(**kwargs) == expected
 
@@ -183,9 +195,8 @@ class Solution4:
 
 
 # @pytest.mark.skip
-@pytest.mark.parametrize("kwargs,expected", [[dict(stoneValue=[6, 2, 3, 4, 5, 5]), 18], [dict(stoneValue=[7, 7, 7, 7, 7, 7, 7]), 28], [dict(stoneValue=[4]), 0],
-
-                                             ])
+@pytest.mark.parametrize("kwargs,expected", [[dict(stoneValue=[6, 2, 3, 4, 5, 5]), 18], [
+    dict(stoneValue=[7, 7, 7, 7, 7, 7, 7]), 28], [dict(stoneValue=[4]), 0], ])
 def test_solutions4(kwargs, expected):
     assert Solution4().stoneGameV(**kwargs) == expected
 
