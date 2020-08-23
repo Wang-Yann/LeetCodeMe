@@ -43,19 +43,19 @@ import pytest
 class Solution:
 
     def judgePoint24(self, nums: List[int]) -> bool:
-        length = len(nums)
-        if not length:
+        N = len(nums)
+        if N == 0:
             return False
-        if length == 1:
+        elif N == 1:
             return abs(nums[0] - 24) < 1e-6
-        for i in range(length):
-            for j in range(length):
+        for i in range(N):
+            for j in range(N):
                 if i == j:
                     continue
-                next_nums = [nums[k] for k in range(length) if i != k != j]
+                next_nums = [nums[k] for k in range(N) if i != k != j]
                 for op in [operator.add, operator.sub, operator.mul, operator.truediv]:
                     if ((op is operator.add or op is operator.mul) and j > i) \
-                            or (op == operator.truediv and nums[j] == 0):
+                        or (op == operator.truediv and nums[j] == 0):
                         continue
                     next_nums.append(op(nums[i], nums[j]))
                     if self.judgePoint24(next_nums):
@@ -65,14 +65,82 @@ class Solution:
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+class Solution1:
+
+    def judgePoint24(self, nums):
+        TARGET = 24
+        EPSILON = 1e-6
+        ADD, MULTIPLY, SUBTRACT, DIVIDE = 0, 1, 2, 3
+
+        def solve(nums_lst):
+            if not nums_lst:
+                return False
+            if len(nums_lst) == 1:
+                return abs(nums_lst[0] - TARGET) < EPSILON
+            for i, x in enumerate(nums_lst):
+                for j, y in enumerate(nums_lst):
+                    if i != j:
+                        newNums = list()
+                        for k, z in enumerate(nums_lst):
+                            if k != i and k != j:
+                                newNums.append(z)
+                        for k in range(4):
+                            if k < 2 and i > j:
+                                continue
+                            if k == ADD:
+                                newNums.append(x + y)
+                            elif k == MULTIPLY:
+                                newNums.append(x * y)
+                            elif k == SUBTRACT:
+                                newNums.append(x - y)
+                            elif k == DIVIDE:
+                                if abs(y) < EPSILON:
+                                    continue
+                                newNums.append(x / y)
+                            if solve(newNums):
+                                return True
+                            newNums.pop()
+            return False
+
+        return solve(nums)
+
+
+class Solution2:
+
+    def judgePoint24(self, nums: List[int]) -> bool:
+        if not nums:
+            return False
+
+        def helper(arr):
+            if len(arr) == 1:
+                return abs(arr[0] - 24) < 1e-6
+            for i in range(len(arr)):
+                for j in range(i + 1, len(arr)):
+                    new_nums = [arr[k] for k in range(len(arr)) if i != k != j]
+                    if helper(new_nums + [arr[i] + arr[j]]):
+                        return True
+                    if helper(new_nums + [arr[i] * arr[j]]):
+                        return True
+                    if helper(new_nums + [arr[i] - arr[j]]):
+                        return True
+                    if helper(new_nums + [arr[j] - arr[i]]):
+                        return True
+                    if arr[j] != 0 and helper(new_nums + [arr[i] / arr[j]]):
+                        return True
+                    if arr[i] != 0 and helper(new_nums + [arr[j] / arr[i]]):
+                        return True
+            return False
+
+        return helper(nums)
 
 
 @pytest.mark.parametrize("args,expected", [
     ([4, 1, 8, 7], True),
     pytest.param([1, 2, 1, 2], False),
 ])
-def test_solutions(args, expected):
-    assert Solution().judgePoint24(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().judgePoint24(args) == expected
 
 
 if __name__ == '__main__':

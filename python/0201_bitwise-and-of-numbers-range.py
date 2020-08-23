@@ -27,13 +27,29 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+
     def rangeBitwiseAnd(self, m: int, n: int) -> int:
-        while m<n:
-            n&=n-1
+        """
+        对所有数字执行按位与运算的结果是所有对应二进制字符串的公共前缀再用零补上后面的剩余位
+        计算两个二进制字符串的公共前缀
+        """
+        while m < n:
+            n &= (n - 1)
         return n
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+
+class Solution1:
+
+    def rangeBitwiseAnd(self, m: int, n: int) -> int:
+        shift = 0
+        # 找到公共前缀
+        while m < n:
+            m = m >> 1
+            n = n >> 1
+            shift += 1
+        return m << shift
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -42,6 +58,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().rangeBitwiseAnd(*args) == expected
+    assert Solution1().rangeBitwiseAnd(*args) == expected
 
 
 if __name__ == '__main__':
