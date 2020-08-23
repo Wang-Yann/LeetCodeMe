@@ -140,20 +140,20 @@ class Solution4:
 
     def minCost(self, n: int, cuts: List[int]) -> int:
         """结束后AC"""
-        cuts=[0]+cuts+[n]
+        cuts = [0] + cuts + [n]
         cuts.sort()
 
         @functools.lru_cache(None)
         def dp(l, r):
-            if   l >= r - 1:
+            if l >= r - 1:
                 return 0
             ans = math.inf
-            for k in range(l+1,r):
+            for k in range(l + 1, r):
                 new_v = dp(l, k) + dp(k, r) + cuts[r] - cuts[l]
                 ans = min(ans, new_v)
             return ans if ans != math.inf else 0
 
-        return dp(0, len(cuts)-1)
+        return dp(0, len(cuts) - 1)
 
 
 # @pytest.mark.skip

@@ -8,6 +8,7 @@
 import bisect
 import collections
 import functools
+import json
 from typing import List
 
 import pytest
@@ -134,12 +135,13 @@ class Solution31:
 #
 # @pytest.mark.skip
 @pytest.mark.parametrize("kwargs,expected", [
-    
+
     [dict(arr=[3, 5, 1, 2, 4], m=1), 4],
     [dict(arr=[3, 1, 5, 4, 2], m=2), -1],
     [dict(arr=[1], m=1), 1],
     [dict(arr=[2, 1], m=2), 2],
-    [dict(arr=[2, 1], m=2), 2],
+    # 大文本直接塞到py文件有问题  TODO
+    [dict(arr=json.load(open("./findLatestStepTestcase.json", "rt")), m=75198), -1],
 
 ])
 def test_solutions3(kwargs, expected):
