@@ -126,6 +126,7 @@ class Solution31:
             lenToCnt[right] -= right
             lenToCnt[newlen] += newlen
             # print(iToLen,lenToCnt)
+
             if lenToCnt[m] > 0:
                 # 如果仍有连续1长度为m的部分, 更新最终结果为当前arr下标+1
                 res = index + 1
