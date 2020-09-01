@@ -58,8 +58,10 @@ class Solution:
         dp(i,i)=nums[i]
         """
         N = len(nums)
-        dp = [[0] * N for _ in range(N + 1)]
-        for i in range(N, -1, -1):
+        dp = [[0] * N for _ in range(N)]
+        for i, num in enumerate(nums):
+            dp[i][i] = num
+        for i in range(N - 1, -1, -1):
             for j in range(i + 1, N):
                 a = nums[i] - dp[i + 1][j]
                 b = nums[j] - dp[i][j - 1]
@@ -71,6 +73,7 @@ class Solution:
 
 @pytest.mark.parametrize("args,expected", [
     ([1, 5, 2], False),
+    ([1, 5, 2, 4, 6], True),
     pytest.param([1, 5, 233, 7], True),
 ])
 def test_solutions(args, expected):
