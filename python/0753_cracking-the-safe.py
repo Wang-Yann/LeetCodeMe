@@ -7,7 +7,6 @@
 # @Version       : alpha-1.0
 
 
-
 """
 # 有一个需要密码才能打开的保险箱。密码是 n 位数, 密码的每一位是 k 位序列 0, 1, ..., k-1 中的一个 。
 #
@@ -59,32 +58,32 @@ class Solution:
     def crackSafe(self, n: int, k: int) -> str:
         """题意?
         Hierholzer 算法可以在一个欧拉图中找出欧拉回路。
-        我们从任意节点 u 开始，任意地经过未经过的边，直到我们“无路可走”。可以发现，我们最终一定会停在节点 u，这是因为所有节点的入度和出度都相等
-
+        我们从任意节点 u 开始，任意地经过未经过的边，直到我们“无路可走”。
+        可以发现，我们最终一定会停在节点 u，这是因为所有节点的入度和出度都相等
+            https://leetcode-cn.com/problems/cracking-the-safe/solution/po-jie-bao-xian-xiang-by-leetcode/
         """
         seen = set()
-        ans = []
+        self.ans = "0" * (n - 1)
 
         def dfs(node):
             # print(node )
-            for x in map(str, range(k)):
-                neighbor = node + x
+            for digit in map(str, range(k)):
+                neighbor = node + digit
                 if neighbor not in seen:
                     seen.add(neighbor)
                     dfs(neighbor[1:])
-                    ans.append(x)
+                    self.ans += digit
 
         dfs("0" * (n - 1))
-        # print(ans)
-        return "".join(ans) + "0" * (n - 1)
+        return self.ans
 
 
 @pytest.mark.parametrize("kwargs,expected", [
-    # (dict(n=1, k=2), ["01", "10"]),
+    (dict(n=1, k=2), ["01", "10"]),
     pytest.param(dict(n=2, k=2), ["01100", "10011", "11001", "00110"]),
 ])
 def test_solutions(kwargs, expected):
-    assert Solution().crackSafe(**kwargs) in  expected
+    assert Solution().crackSafe(**kwargs) in expected
 
 
 if __name__ == '__main__':

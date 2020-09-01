@@ -7,13 +7,13 @@
 # @Version       : alpha-1.0
 
 """
-# 给定一个机票的字符串二维数组 [from, to]，子数组中的两个成员分别表示飞机出发和降落的机场地点，对该行程进行重新规划排序。所有这些机票都属于一个从J
-# FK（肯尼迪国际机场）出发的先生，所以该行程必须从 JFK 出发。 
+# 给定一个机票的字符串二维数组 [from, to],子数组中的两个成员分别表示飞机出发和降落的机场地点,对该行程进行重新规划排序。所有这些机票都属于一个从J
+# FK（肯尼迪国际机场）出发的先生,所以该行程必须从 JFK 出发。 
 # 
 #  说明: 
 # 
 #  
-#  如果存在多种有效的行程，你可以按字符自然排序返回最小的行程组合。例如，行程 ["JFK", "LGA"] 与 ["JFK", "LGB"] 相比就更小，排
+#  如果存在多种有效的行程,你可以按字符自然排序返回最小的行程组合。例如,行程 ["JFK", "LGA"] 与 ["JFK", "LGB"] 相比就更小,排
 # 序更靠前 
 #  所有的机场都用三个大写字母表示（机场代码）。 
 #  假定所有机票至少存在一种合理的行程。 
@@ -72,6 +72,7 @@ class Solution:
         dfs(origin, len(tickets))
         return ans
 
+
 # leetcode submit region end(Prohibit modification and deletion)
 
 
@@ -79,25 +80,32 @@ class Solution1:
     """
     欧拉通路
     https://leetcode-cn.com/problems/reconstruct-itinerary/solution/332-zhong-xin-an-pai-xing-cheng-shen-sou-hui-su-by/
-    首先先把图的邻接表存进字典，并且按字典序排序，然后从‘JFK’开始深搜，每前进一层就减去一条路径，直到某个起点不存在路径的时候就会跳出while循环进行回溯，相对先找不到路径的一定是放在相对后面，所以当前搜索的起点from会插在当前输出路径的第一个位置
+    首先先把图的邻接表存进字典,并且按字典序排序,然后从‘JFK’开始深搜,每前进一层就减去一条路径,
+    直到某个起点不存在路径的时候就会跳出while循环进行回溯,相对先找不到路径的一定是放在相对后面,
+    所以当前搜索的起点from会插在当前输出路径的第一个位置
+
+    Hierholzer 算法用于在连通图中寻找欧拉路径，其流程如下：
+        从起点出发，进行深度优先搜索。
+        每次沿着某条边从某个顶点移动到另外一个顶点的时候，都需要删除这条边。
+        如果没有可移动的路径，则将所在节点加入到栈中，并返回。
 
     """
 
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        d = collections.defaultdict(list)  # 邻接表
+        G = collections.defaultdict(list)  # 邻接表
         for f, t in tickets:
-            d[f] += [t]  # 路径存进邻接表
-        for f in d:
-            d[f].sort()  # 邻接表排序
+            G[f].append(t)  # 路径存进邻接表
+        for f in G:
+            G[f].sort()  # 邻接表排序
         ans = []
 
-        def dfs(f):  # 深搜函数
-            while d[f]:
-                dfs(d[f].pop(0))  # 路径检索
-            ans.insert(0, f)  # 放在最前
+        def dfs(node):  # 深搜函数
+            while G[node]:
+                dfs(G[node].pop(0))  # 路径检索
+            ans.append(node)
 
         dfs('JFK')
-        return ans
+        return ans[::-1]
 
 
 @pytest.mark.parametrize("args,expected", [
