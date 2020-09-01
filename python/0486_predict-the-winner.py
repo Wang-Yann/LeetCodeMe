@@ -57,14 +57,14 @@ class Solution:
         dp(i,j) = max(nums[i]-dp(i+1,j),nums[j]-dp(i,j-1))
         dp(i,i)=nums[i]
         """
-        length = len(nums)
-        dp = [[0] * length for _ in range(length + 1)]
-        for i in range(length, -1, -1):
-            for j in range(i + 1, length):
+        N = len(nums)
+        dp = [[0] * N for _ in range(N + 1)]
+        for i in range(N, -1, -1):
+            for j in range(i + 1, N):
                 a = nums[i] - dp[i + 1][j]
                 b = nums[j] - dp[i][j - 1]
                 dp[i][j] = max(a, b)
-        return dp[0][length - 1] >= 0
+        return dp[0][N - 1] >= 0
 
 
 # leetcode submit region end(Prohibit modification and deletion)
