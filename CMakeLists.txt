@@ -13,7 +13,7 @@ find_package(GTest REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 include_directories(${GTEST_INCLUDE_DIR})
 
-
+LINK_LIBRARIES(m)
 add_subdirectory(include)
 
 add_subdirectory(test)

@@ -17,6 +17,7 @@ TEST(kidsWithCandies, test1) {
     int returnSize;
     bool expected[]={true,true,true,false,true};
     bool *res = kidsWithCandies(candies, candiesSize, extraCandies, &returnSize);
+    sleep(30);
     ASSERT_EQ(returnSize,candiesSize);
 //    ASSERT_EQ(sizeof(expected), sizeof(res));
     for (int i = 0; i < returnSize; ++i) {
