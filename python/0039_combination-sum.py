@@ -62,20 +62,43 @@ import pytest
 class Solution:
 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        def dfs(start, path, cur_target):
+            if cur_target == 0:
+                result.append(list(path))
+            while start < len(candidates) and candidates[start] <= cur_target:
+                path.append(candidates[start])
+                dfs(start, path, cur_target - candidates[start])
+                path.pop()
+                start += 1
+
         candidates.sort()
         result = []
-        self.dfs(candidates, result, 0, [], target)
+        dfs(0, [], target)
         return result
 
-    def dfs(self, candidates: List[int], result: List[List[int]],
-            start: int, intermediate: List[int], target: int) -> None:
-        if target == 0:
-            result.append(list(intermediate))
-        while start < len(candidates) and candidates[start] <= target:
-            intermediate.append(candidates[start])
-            self.dfs(candidates, result, start, intermediate, target - candidates[start])
-            intermediate.pop()
-            start += 1
+
+class Solution1:
+
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        def dfs(idx, path, cur_target):
+            if idx == N:
+                return
+            if cur_target == 0:
+                result.append(path[:])
+                return
+                # // 直接跳过
+            dfs(idx + 1, path, cur_target)
+            # // 选择当前数
+            if candidates[idx] <= cur_target:
+                path.append(candidates[idx])
+                dfs(idx, path, cur_target - candidates[idx])
+                path.pop()
+
+        N = len(candidates)
+        candidates.sort()
+        result = []
+        dfs(0, [], target)
+        return result
 
 
 @pytest.mark.parametrize("kw,expected", [
@@ -93,6 +116,7 @@ class Solution:
 ])
 def test_solutions(kw, expected):
     assert sorted(Solution().combinationSum(**kw)) == sorted(expected)
+    assert sorted(Solution1().combinationSum(**kw)) == sorted(expected)
 
 
 if __name__ == '__main__':
