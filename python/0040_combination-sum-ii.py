@@ -45,62 +45,52 @@
 """
 
 from typing import List
-
-# prev = 0
-# while start < len(candidates) and candidates[start] <= target:
-#     if prev!=candidates[start]:
-#         intermediate.append(candidates[start])
-#         self.dfs(candidates, result, start+1, intermediate, target - candidates[start])
-#         intermediate.pop()
-#         prev=candidates[start]
-#     start += 1
 import pytest
 
 
 class Solution:
 
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        def dfs(idx, path, cur_target):
+            if cur_target == 0:
+                result.append(list(path))
+            begin = idx
+            while idx < N and candidates[idx] <= cur_target:
+                if idx > begin and candidates[idx] == candidates[idx - 1]:
+                    idx += 1
+                    continue
+                path.append(candidates[idx])
+                dfs(idx + 1, path, cur_target - candidates[idx])
+                path.pop()
+                idx += 1
+
+        N = len(candidates)
         candidates.sort()
         result = []
-        self.dfs(candidates, result, 0, [], target)
+        dfs(0, [], target)
         return result
-
-    def dfs(self, candidates: List[int], result: List[List[int]],
-            start: int, intermediate: List[int], target: int) -> None:
-        if target == 0:
-            result.append(list(intermediate))
-        begin = start
-        while start < len(candidates) and candidates[start] <= target:
-            if start > begin and candidates[start] == candidates[start - 1]:
-                start += 1
-                continue
-            intermediate.append(candidates[start])
-            self.dfs(candidates, result, start + 1, intermediate, target - candidates[start])
-            intermediate.pop()
-            # prev=candidates[start]
-            start += 1
 
 
 class Solution1:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        if target == 0 or len(candidates) == 0:
-            return []
-        result = []
-
-        def helper(tar, idx, cur):
-            if tar == 0:  # 终止条件
-                result.append(cur[:])
+        def helper(cur_target, idx, path):
+            if cur_target == 0:  # 终止条件
+                result.append(path[:])
                 return
-            for i in range(idx, len(candidates)):
-                if candidates[i] > tar:
+            for i in range(idx, N):
+                if candidates[i] > cur_target:
                     break
                 if i > idx and candidates[i] == candidates[i - 1]:
                     continue
-                cur.append(candidates[i])
+                path.append(candidates[i])
                 # 下面调用helper时，第二个参数的位置是i+1，一定是从当前一位的下一位开始找(开始的时候写成了idx，一直无法减枝)
-                helper(tar - candidates[i], i + 1, cur)
-                cur.pop()  # 回溯记得恢复状态
+                helper(cur_target - candidates[i], i + 1, path)
+                path.pop()  # 回溯记得恢复状态
 
+        N = len(candidates)
+        if target == 0 or N == 0:
+            return []
+        result = []
         candidates.sort()
         helper(target, 0, [])
         return result
