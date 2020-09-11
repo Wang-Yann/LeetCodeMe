@@ -41,30 +41,52 @@ import pytest
 class Solution:
 
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
+        def dfs(path, start, cur_k, cur_target):
+            if cur_k == 0 and cur_target == 0:
+                result.append(list(path))
+                return
+            elif cur_k < 0:
+                return
+            # while start < 10 and start * k + k * (k - 1) / 2 <= target:
+            while start < 10:
+                path.append(start)
+                dfs(path, start + 1, cur_k - 1, cur_target - start)
+                path.pop()
+                start += 1
+
         result = []
-        self.helper(result, [], 1, k, n)
+        dfs([], 1, k, n)
         return result
 
-    def helper(self, result: List[List[int]], intermediate: List[int],
-               start: int, k: int, target: int) -> None:
-        if k == 0 and target == 0:
-            result.append(list(intermediate))
-        elif k < 0:
-            return
-        # while start < 10 and start * k + k * (k - 1) / 2 <= target:
-        while start < 10:
-            intermediate.append(start)
-            self.helper(result, intermediate, start + 1, k - 1, target - start)
-            intermediate.pop()
-            start += 1
+
+class Solution1:
+
+    def combinationSum3(self, k: int, n: int) -> List[List[int]]:
+        def dfs(start, path, cur_size, cur_target):
+            if cur_size > k or cur_size + N - start + 1 < k:
+                return
+            if cur_size == k and cur_target == 0:
+                result.append(path[:])
+                return
+            path.append(start)
+            dfs(start + 1, path, cur_size + 1, cur_target - start)
+            path.pop()
+            dfs(start + 1, path, cur_size, cur_target)
+
+        N = 9
+        result = []
+        dfs(1, [], 0, n)
+        return result
 
 
 @pytest.mark.parametrize("kw,expected", [
     [dict(k=3, n=7), [[1, 2, 4]]],
     [dict(k=3, n=9), [[1, 2, 6], [1, 3, 5], [2, 3, 4]]],
+    [dict(k=2, n=18), []],
 ])
 def test_solutions(kw, expected):
     assert Solution().combinationSum3(**kw) == expected
+    assert Solution1().combinationSum3(**kw) == expected
 
 
 if __name__ == '__main__':
