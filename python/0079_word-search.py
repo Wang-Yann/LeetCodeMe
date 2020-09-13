@@ -54,26 +54,23 @@ class Solution:
             return False
         if not word:
             return True
-        m, n = len(board), len(board[0])
+        R, C = len(board), len(board[0])
 
         def need_walk_pos(i, j, visited):
-            return 0 <= i <= m - 1 and 0 <= j <= n - 1 and (i, j) not in visited
+            return 0 <= i <= R - 1 and 0 <= j <= C - 1 and (i, j) not in visited
 
-        def dfs(pos_x, pox_y, curr, visited, k):
-            # print(pos_x, pox_y, curr, visited)
+        def dfs(px, py, curr, visited, k):
             if curr == word:
                 return True
-            for x, y in [
-                (pos_x, pox_y - 1), (pos_x, pox_y + 1),
-                (pos_x - 1, pox_y), (pos_x + 1, pox_y)]:
+            for x, y in [(px, py - 1), (px, py + 1), (px - 1, py), (px + 1, py)]:
                 if need_walk_pos(x, y, visited) and board[x][y] == word[k + 1]:
                     visited.append((x, y))
                     if dfs(x, y, curr + board[x][y], visited, k + 1):
                         return True
                     visited.pop()
 
-        for i in range(m):
-            for j in range(n):
+        for i in range(R):
+            for j in range(C):
                 if board[i][j] != word[0]:
                     continue
                 res = dfs(i, j, word[0], [(i, j)], 0)
@@ -83,31 +80,36 @@ class Solution:
 
 
 class Solution1:
-    def exist(self, board, word):
-        visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
 
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if self.existRecu(board, word, 0, i, j, visited):
+    def exist(self, board, word):
+        def dfs(cur, i, j):
+            if cur == len(word):
+                return True
+
+            if not (0 <= i <= R - 1
+                    and 0 <= j <= C - 1
+                    and not visited[i][j]
+                    and board[i][j] == word[cur]):
+                return False
+
+            visited[i][j] = True
+            result = dfs(cur + 1, i + 1, j) or \
+                     dfs(cur + 1, i - 1, j) or \
+                     dfs(cur + 1, i, j + 1) or \
+                     dfs(cur + 1, i, j - 1)
+            visited[i][j] = False
+
+            return result
+
+        R, C = len(board), len(board[0])
+        visited = [[False] * C for i in range(R)]
+
+        for i in range(R):
+            for j in range(C):
+                if dfs(0, i, j):
                     return True
 
         return False
-
-    def existRecu(self, board, word, cur, i, j, visited):
-        if cur == len(word):
-            return True
-
-        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or visited[i][j] or board[i][j] != word[cur]:
-            return False
-
-        visited[i][j] = True
-        result = self.existRecu(board, word, cur + 1, i + 1, j, visited) or \
-                 self.existRecu(board, word, cur + 1, i - 1, j, visited) or \
-                 self.existRecu(board, word, cur + 1, i, j + 1, visited) or \
-                 self.existRecu(board, word, cur + 1, i, j - 1, visited)
-        visited[i][j] = False
-
-        return result
 
 
 @pytest.mark.parametrize("board", [
@@ -123,7 +125,6 @@ class Solution1:
     ["ABCB", False],
 ])
 def test_solutions(board, word, expected):
-    # print(board,word)
     assert Solution().exist(board, word) == expected
     assert Solution1().exist(board, word) == expected
 
