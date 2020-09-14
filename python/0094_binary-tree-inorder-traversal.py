@@ -40,14 +40,14 @@ class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         ans = []
 
-        def inorderTraversalRecursive(node, result):
+        def helper(node, result):
             if node is None:
                 return
-            inorderTraversalRecursive(node.left, result)
+            helper(node.left, result)
             result.append(node.val)
-            inorderTraversalRecursive(node.right, result)
+            helper(node.right, result)
 
-        inorderTraversalRecursive(root, ans)
+        helper(root, ans)
         return ans
 
 

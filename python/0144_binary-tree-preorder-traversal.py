@@ -35,14 +35,14 @@ class Solution0:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
 
-        def preorderTraversalRecursive(node, result):
+        def helper(node, result):
             if node is None:
                 return
             result.append(node.val)
-            preorderTraversalRecursive(node.left, result)
-            preorderTraversalRecursive(node.right, result)
+            helper(node.left, result)
+            helper(node.right, result)
 
-        preorderTraversalRecursive(root, res)
+        helper(root, res)
         return res
 
 

@@ -35,14 +35,14 @@ class Solution1:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
 
-        def postorderTraversalRecursive(node, result):
+        def helper(node, result):
             if node is None:
                 return
-            postorderTraversalRecursive(node.left, result)
-            postorderTraversalRecursive(node.right, result)
+            helper(node.left, result)
+            helper(node.right, result)
             result.append(node.val)
 
-        postorderTraversalRecursive(root, res)
+        helper(root, res)
         return res
 
 
@@ -52,10 +52,12 @@ class Solution0:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         """
        TODO
-       在做迭代前序遍历和中序遍历的时候，发现root经过的路径都是左根右，对于前序和中序来说，访问路径基本上跟经过路径是一致的。但是在后序遍历中，我们先经过根节点，但是我们不会去访问它，
+       在做迭代前序遍历和中序遍历的时候，发现root经过的路径都是左根右，对于前序和中序来说，访问路径基本上跟经过路径是一致的。
+       但是在后序遍历中，我们先经过根节点，但是我们不会去访问它，
        而是会选择先访问它的右子节点。所以在这种情况下，我们会将根节点留在栈中不弹出，等到需要访问它的时候再出。
 
-        那我们什么情况下才能访问根节点？是从右节点回溯到根节点，而不是从左节点回溯到根节点，所以我们需要记录之前结点和当前节点的关系，来确定是否访问当前节点。总结起来，我们什么时候才能访问节点。有如下两种情况：
+        那我们什么情况下才能访问根节点？是从右节点回溯到根节点，而不是从左节点回溯到根节点，所以我们需要记录之前结点和当前节点的关系，
+        来确定是否访问当前节点。总结起来，我们什么时候才能访问节点。有如下两种情况：
 
         当前经过节点是叶子节点。
         当前经过节点的右子节点是上一次访问的节点。
@@ -90,15 +92,15 @@ class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         result, stack = [], [(root, False)]
         while stack:
-            root, is_visited = stack.pop()
-            if root is None:
+            node, is_visited = stack.pop()
+            if node is None:
                 continue
             if is_visited:
-                result.append(root.val)
+                result.append(node.val)
             else:
-                stack.append((root, True))
-                stack.append((root.right, False))
-                stack.append((root.left, False))
+                stack.append((node, True))
+                stack.append((node.right, False))
+                stack.append((node.left, False))
 
         return result
 
