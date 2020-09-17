@@ -85,22 +85,24 @@ class Solution:
             先不将C->B加入并查集中，若不能构成环，则C->B是需要删除的点边，反之，则A->B是删除的边(去掉C->B还能构成环，则C->B一定不是要删除的边)
 
         """
-        n = len(edges)
-        cand1, cand2 = [], []
+        N = len(edges)
+        uf = UnionFind(N + 1)
+        last = []
         parent = {}
-        for st, ed in edges:
-            if ed in parent:
-                cand1 = [parent[ed], ed]
-                cand2 = [st, ed]
+        candidates = []
+        for s, e in edges:
+            if e in parent:
+                candidates.append([parent[e], e])
+                candidates.append([s, e])
             else:
-                parent[ed] = st
-        uf = UnionFind(n + 1)
-        for edge in edges:
-            if edge == cand2:
-                continue
-            if not uf.union_set(*edge):
-                return cand1 if cand2 else edge
-        return cand2
+                parent[e] = s
+                if uf.union_set(s, e):
+                    last = [s, e]
+
+        if not candidates:
+            return last
+
+        return candidates[0] if last else candidates[1]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
