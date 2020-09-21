@@ -55,7 +55,7 @@ class Solution0:
         return root
 
 
-class Solution:
+class Solution1:
     def convertBST(self, root: TreeNode) -> TreeNode:
         """从右向左的中序遍历"""
         cur = root
@@ -72,13 +72,31 @@ class Solution:
         return root
 
 
+class Solution:
+    def convertBST(self, root: TreeNode) -> TreeNode:
+        """ 反序中序遍历该二叉搜索树"""
+        self.accu = 0
+
+        def dfs(node):
+            if node:
+                dfs(node.right)
+                self.accu += node.val
+                node.val = self.accu
+                dfs(node.left)
+
+        dfs(root)
+        return root
+
+
 @pytest.mark.parametrize("kw,expected", [
-    [dict(root=TreeNode(5, TreeNode(2), TreeNode(13))), TreeNode(18, TreeNode(20), TreeNode(13))],
+    [dict(root=TreeNode(5, TreeNode(2), TreeNode(13))),
+     TreeNode(18, TreeNode(20), TreeNode(13))],
 ])
-def test_solutions(kw, expected):
-    kw1 = copy.deepcopy(kw)
-    assert repr(Solution().convertBST(**kw)) == repr(expected)
-    assert repr(Solution0().convertBST(**kw1)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [
+    Solution, Solution0, Solution1
+])
+def test_solutions(kw, expected, SolutionCLS):
+    assert repr(SolutionCLS().convertBST(**copy.deepcopy(kw))) == repr(expected)
 
 
 if __name__ == '__main__':
