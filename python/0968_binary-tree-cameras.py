@@ -60,56 +60,70 @@ from common_utils import TreeNode
 
 class Solution:
     def minCameraCover(self, root: TreeNode) -> int:
-        """后序遍历"""
-        COVERED, UNCOVERED, CAMERA = range(3)
-        ans = 0
+        """
+        后序遍历
+        贪心算法
+        Return 0 if it's a leaf.
+        Return 1 if it's a parent of a leaf, with a camera on this node.
+        Return 2 if it's coverd, without a camera on this node.
+        """
+        UNCOVERED, CAMERA, COVERED = range(3)
+        self.ans = 0
+        dummy = TreeNode(-1)
+        dummy.left = root
 
         def dfs(node):
-            nonlocal ans
-            left = dfs(node.left) if node.left else COVERED
-            right = dfs(node.right) if node.right else COVERED
-            if left == UNCOVERED or right == UNCOVERED:
-                ans += 1
-                return CAMERA
-            if left == CAMERA or right == CAMERA:
+            if not node:
                 return COVERED
-            return UNCOVERED
+            left = dfs(node.left)
+            right = dfs(node.right)
+            if left == UNCOVERED or right == UNCOVERED:
+                self.ans += 1
+                return CAMERA
+            elif left == CAMERA or right == CAMERA:
+                return COVERED
+            else:
+                return UNCOVERED
 
-        if dfs(root) == UNCOVERED:
-            ans += 1
-        return ans
+        dfs(dummy)
+        return self.ans
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 class Solution1(object):
     """官方
-    难写出
+       难写出
     """
 
     def minCameraCover(self, root):
-        def solve(node):
-            # 0: Strict ST; All nodes below this are covered, but not this one
-            # 1: Normal ST; All nodes below and incl this are covered - no camera
-            # 2: Placed camera; All nodes below this are covered, plus camera here
+        """
+        状态 a： root 必须放置摄像头的情况下，覆盖整棵树需要的摄像头数目。
+        状态 b：覆盖整棵树需要的摄像头数目，无论  root 是否放置摄像头。
+        状态 c：覆盖两棵子树需要的摄像头数目，无论节点  root 本身是否被监控到。
+        根据它们的定义，一定有 a≥b≥c
 
+        """
+
+        def dfs(node):
             if not node:
-                return 0, 0, float('inf')
-            L = solve(node.left)
-            R = solve(node.right)
+                return float("inf"), 0, 0
 
-            dp0 = L[1] + R[1]
-            dp1 = min(L[2] + min(R[1:]), R[2] + min(L[1:]))
-            dp2 = 1 + min(L) + min(R)
+            la, lb, lc = dfs(node.left)
+            ra, rb, rc = dfs(node.right)
+            a = lc + rc + 1
+            b = min(a, la + rb, ra + lb)
+            c = min(a, lb + rb)
+            return a, b, c
 
-            return dp0, dp1, dp2
-
-        return min(solve(root)[1:])
+        a, b, c = dfs(root)
+        return b
 
 
 @pytest.mark.parametrize("args,expected", [
     (TreeNode(0, left=TreeNode(0, TreeNode(0), TreeNode(0))), 1),
     (TreeNode(0, left=TreeNode(0, left=TreeNode(0, left=TreeNode(0, right=TreeNode(0))))), 2),
+    (TreeNode(0), 1),
 ])
 def test_solutions(args, expected):
     assert Solution().minCameraCover(args) == expected
