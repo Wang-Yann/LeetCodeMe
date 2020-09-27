@@ -40,7 +40,7 @@
 #
 #  Related Topics 树
 #  👍 335 👎 0
-
+from typing import List
 
 import pytest
 
@@ -49,9 +49,11 @@ from common_utils import TreeNode
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        if not root: return None
-        if not p: return q
-        if not q: return p
+        if not root: return root
+        if not p:
+            return q
+        if not q:
+            return p
         cur = root
         p_val, q_val = (p.val, q.val) if p.val < q.val else (q.val, p.val)
         while cur:
@@ -64,9 +66,35 @@ class Solution:
         return cur
 
 
+class Solution1:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+        def getPath(root: TreeNode, target: TreeNode) -> List[TreeNode]:
+            path = list()
+            node = root
+            while node != target:
+                path.append(node)
+                if target.val < node.val:
+                    node = node.left
+                else:
+                    node = node.right
+            path.append(node)
+            return path
 
-def test_solutions():
-    sol = Solution()
+        path_p = getPath(root, p)
+        path_q = getPath(root, q)
+        ancestor = None
+        for u, v in zip(path_p, path_q):
+            if u == v:
+                ancestor = u
+            else:
+                break
+
+        return ancestor
+
+
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(SolutionCLS):
+    sol = SolutionCLS()
     p1A = TreeNode(2,
                    left=TreeNode(0),
                    right=TreeNode(4, TreeNode(3), TreeNode(5))
