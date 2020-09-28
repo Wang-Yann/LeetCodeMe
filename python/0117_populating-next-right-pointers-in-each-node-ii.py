@@ -86,11 +86,32 @@ class Solution:
         return root
 
 
+class Solution1:
+
+    def connect(self, root: 'Node') -> 'Node':
+        if not root:
+            return root
+        queue = [root]
+        while queue:
+            size = len(queue)
+            for i in range(size - 1):
+                queue[i].next = queue[i + 1]
+            for i in range(size):
+                node = queue.pop(0)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+        return root
+
+
 @pytest.mark.parametrize("args,expected", [
-    (Node(1, Node(2, None, Node(5), None), Node(3, None, Node(7), None), None), [1, 2, 3, '#', 5, '#', 7])
+    (Node(1, Node(2, None, Node(5), None), Node(3, None, Node(7), None), None),
+     [1, 2, 3, '#', 5, '#', 7])
 ])
-def test_solutions(args, expected):
-    assert repr(Solution().connect(args)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert repr(SolutionCLS().connect(args)) == repr(expected)
 
 
 if __name__ == '__main__':
