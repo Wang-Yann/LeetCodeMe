@@ -36,6 +36,7 @@ import pytest
 
 
 class Solution:
+
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         #  i j k
         nums.sort()
@@ -72,6 +73,7 @@ class Solution:
 
 # Space: O(n^2)
 class Solution1(object):
+
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
         for i in range(0, len(nums) - 1):
@@ -142,6 +144,7 @@ class Solution0:
 
 
 class Solution00:
+
     def nSumTarget(self, n, nums, start, target):
         res = []
         N = len(nums)

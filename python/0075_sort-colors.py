@@ -38,15 +38,15 @@ import pytest
 
 
 class Solution:
+
     def sortColors(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         三向切分
         """
-        length = len(nums)
-        lo, hi = 0, length - 1
-        lt, gt = lo, hi
-        i = lo
+        N = len(nums)
+        lt, gt = 0, N - 1
+        i = lt
         MID_V = 1
         while i <= gt:
             if nums[i] < MID_V:

@@ -78,7 +78,23 @@ class Solution:
     def sumOfDistancesInTree(self, N: int, edges: List[List[int]]) -> List[int]:
         """
         官方解法
-        https://leetcode-cn.com/problems/sum-of-distances-in-tree/solution/shu-zhong-ju-chi-zhi-he-by-leetcode/
+        https://leetcode.com/problems/sum-of-distances-in-tree/discuss/130583/C%2B%2BJavaPython-Pre-order-and-Post-order-DFS-O(N)
+
+        Let's solve it with node 0 as root.
+
+        Initial an array of hashset tree, tree[i] contains all connected nodes to i.
+        Initial an array count, count[i] counts all nodes in the subtree i.
+        Initial an array of res, res[i] counts sum of distance in subtree i.
+
+        Post order dfs traversal, update count and res:
+        count[root] = sum(count[i]) + 1
+        res[root] = sum(res[i]) + sum(count[i])
+
+        Pre order dfs traversal, update res:
+        When we move our root from parent to its child i, count[i] points get 1 closer to root, n - count[i] nodes get 1 futhur to root.
+        res[i] = res[root] - count[i] + N - count[i]
+
+        return res, done.
         深度优先搜索 + 子树计数
         """
         graph = collections.defaultdict(list)
