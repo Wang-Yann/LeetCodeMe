@@ -59,3 +59,4 @@ def test_solutions(args, expected):
 
 if __name__ == '__main__':
     pytest.main(["-q", "--color=yes", "--capture=no", __file__])
+l
