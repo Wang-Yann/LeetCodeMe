@@ -6,7 +6,7 @@
 #define LEETCODE_FUNCTIONS_H
 
 #include "common.h"
-
+#define ELLIPSIS 1e-5
 
 //0002
 int *twoSum(int *nums, int numsSize, int target, int *returnSize);

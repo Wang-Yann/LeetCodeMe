@@ -48,7 +48,9 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+
     def canPartition(self, nums: List[int]) -> bool:
+        """0-1背包"""
         total = sum(nums)
         if total & 0b1:
             return False
@@ -56,15 +58,15 @@ class Solution:
         dp = [False] * (target + 1)
         dp[0] = True
         for num in nums:
-            for v in range(target, 0, -1):
-                if num <= v:
-                    dp[v] = dp[v] or dp[v - num]
+            for v in range(target, num - 1, -1):
+                dp[v] = dp[v] or dp[v - num]
         # print(dp)
         return dp[-1]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 class Solution1:
+
     def canPartition(self, nums: List[int]) -> bool:
         """
         状态定义：dp[i][j]表示从数组的 [0, i] 这个子区间内挑选一些正整数，每个数只能用一次，使得这些数的和恰好等于 j

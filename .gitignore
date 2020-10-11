@@ -181,3 +181,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+*.pytest_cache
+*/tmp/
+__pychache

@@ -5,12 +5,6 @@
  * @Description    : units_test.h	
  
 */
-
-#ifndef LEETCODEPYC_UNITS_TEST_H
-#define LEETCODEPYC_UNITS_TEST_H
 #include <check.h>
-#include <stdlib.h>
 
-Suite *make_a_suite(void);
-#endif
-//LEETCODEPYC_UNITS_TEST_H
+Suite * make_a_suite(void);

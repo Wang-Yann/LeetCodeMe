@@ -1,24 +1,46 @@
-message("SOURCE_DIR:\t" ${PROJECT_SOURCE_DIR} "\t Binary Out:"
-        ${PROJECT_BINARY_DIR} "[Cur Project Dir]" ${CMAKE_CURRENT_LIST_DIR})
-include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
+enable_language(C)
 
-ADD_SUBDIRECTORY(include)
-file(GLOB_RECURSE C_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/test/*.c)
+include_directories(
+        ${CMAKE_CURRENT_LIST_DIR}/include
+)
+
+add_subdirectory(include)
+file(GLOB_RECURSE C_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/tests/*.c)
+#AUX_SOURCE_DIRECTORY(./tests C_SRC_LIST)
 foreach (V ${C_SRC_LIST})
     get_filename_component(EV ${V} NAME_WE)
-    message("\n--------------------------EXE----------------------\n" ${EV} " --> " ${V})
-    if(${EV} MATCHES "main_test")
+    message("-------------------------EXE----------------------\n" ${EV} " --> " ${V})
+    if (${EV} MATCHES "main_test")
         continue()
-    endif()
-    set(TST_TARGET TST_${EV})
-    add_executable(${TST_TARGET} test/main_test.c ${V})
-    target_link_libraries(${TST_TARGET}
-        PRIVATE
-        rock_lt_c
-        check
-        rt
-        m
-        subunit
-    )
-endforeach ()
+    endif ()
 
+    if (${EV} MATCHES "^zz_")
+        string(REPLACE "zz_" "" TV ${EV})
+        add_executable(${TV} ${V})
+        target_link_libraries(${TV} rock_lt_c check)
+        continue()
+    endif ()
+    string(REPLACE "test" "T" TST_TARGET ${EV})
+    message(${EV})
+    add_executable(${EV} tests/main_test.c ${V})
+    target_link_libraries(${EV}
+            PRIVATE
+            rock_lt_c
+            check
+            rt
+            m
+            subunit
+            )
+    message("------------------------------------------------\n")
+endforeach ()
+#
+#add_executable(main_test tests/main_test.c tests/test_0002.c tests/test_0009.c)
+#    target_link_libraries(main_test
+#            PRIVATE
+#            rock_lt_c
+#            check
+#            pthread
+#            rt
+#            m
+#            subunit
+#            )

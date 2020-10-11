@@ -29,9 +29,9 @@ void vtest2(){
 
 }
 
-//
-//int main(int argc, char **argv)
-//{
-//    vtest1();
-//    return 0;
-//}
+
+int main(int argc, char **argv)
+{
+    vtest1();
+    return 0;
+}
