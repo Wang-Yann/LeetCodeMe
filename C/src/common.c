@@ -19,6 +19,7 @@ ListNode *initNodeList(int *nums, int size) {
 };
 bool checkListEqual(ListNode *res, ListNode *expected){
     while (expected != NULL && res != NULL) {
+//        printf("%d-%d\t", res->val, expected->val);
         if (res->val != expected->val){
             return false;
         }

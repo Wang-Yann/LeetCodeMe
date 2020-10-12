@@ -38,6 +38,8 @@
 #
 #  Related Topics 树
 #  👍 121 👎 0
+import math
+
 import pytest
 
 from common_utils import TreeNode
@@ -63,7 +65,6 @@ class Solution:
             return res
 
         results = in_order_traversal(root)
-        # print(results)
         if len(results) <= 1:
             return 0
         else:
@@ -72,12 +73,30 @@ class Solution:
                 delta = min(abs(results[i] - results[i - 1]), delta)
             return delta
 
+class Solution1:
+
+    def getMinimumDifference(self, root: TreeNode) -> int:
+        self.pre=self.diff=math.inf
+        def dfs(root):
+            if not root:
+                return
+
+            dfs(root.left)
+            self.diff = min(self.diff, abs(self.pre - root.val))
+            self.pre = root.val
+            dfs(root.right)
+        dfs(root)
+
+        return self.diff
+
+
 
 @pytest.mark.parametrize("args,expected", [
     (TreeNode(1, right=TreeNode(3, TreeNode(2))), 1)
 ])
 def test_solutions(args, expected):
     assert Solution().getMinimumDifference(args) == expected
+    assert Solution1().getMinimumDifference(args) == expected
 
 
 if __name__ == '__main__':

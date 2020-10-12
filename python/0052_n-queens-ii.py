@@ -50,6 +50,7 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+
     def totalNQueens(self, n: int) -> int:
         """
         Me
@@ -65,7 +66,7 @@ class Solution:
         def dfs(cur_row, cur_path):
             nonlocal ans
             if len(cur_path) == n:
-                ans+=1
+                ans += 1
             for i in range(cur_row, n):
                 for j in range(n):
                     if is_valid(cur_path, i, j):
@@ -78,13 +79,64 @@ class Solution:
 # leetcode submit region end(Prohibit modification and deletion)
 
 
+class Solution1:
+
+    def totalNQueens(self, n: int) -> int:
+        def backtrack(row: int) -> int:
+            if row == n:
+                return 1
+            else:
+                count = 0
+                for i in range(n):
+                    if i in columns or row - i in diagonal1 or row + i in diagonal2:
+                        continue
+                    columns.add(i)
+                    diagonal1.add(row - i)
+                    diagonal2.add(row + i)
+                    count += backtrack(row + 1)
+                    columns.remove(i)
+                    diagonal1.remove(row - i)
+                    diagonal2.remove(row + i)
+                return count
+
+        columns = set()
+        diagonal1 = set()
+        diagonal2 = set()
+        return backtrack(0)
+
+
+class Solution2:
+    """
+    x & (−x) 可以获得 xx 的二进制表示中的最低位的 1 的位置；
+    x & (x−1) 可以将 xx 的二进制表示中的最低位的 1 置成 0。
+    每次获得可以放置皇后的位置中的最低位，并将该位的值置成 0
+    ，尝试在该位置放置皇后。这样即可遍历每个可以放置皇后的位置
+    """
+
+    def totalNQueens(self, n: int) -> int:
+        def solve(row: int, columns: int, diagonals1: int, diagonals2: int) -> int:
+            if row == n:
+                return 1
+            else:
+                count = 0
+                availablePositions = ((1 << n) - 1) & (~(columns | diagonals1 | diagonals2))
+                while availablePositions:
+                    position = availablePositions & (-availablePositions)
+                    availablePositions = availablePositions & (availablePositions - 1)
+                    count += solve(row + 1, columns | position, (diagonals1 | position) << 1, (diagonals2 | position) >> 1)
+                return count
+
+        return solve(0, 0, 0, 0)
+
+
 @pytest.mark.parametrize("args,expected", [
     (4, 2),
     (1, 1),
     (2, 0),
 ])
-def test_solutions(args, expected):
-    assert Solution().totalNQueens(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().totalNQueens(args) == expected
 
 
 if __name__ == '__main__':

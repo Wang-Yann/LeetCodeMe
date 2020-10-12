@@ -106,6 +106,7 @@ class Solution:
 
 
 # leetcode submit region end(Prohibit modification and deletion)
+
 class Solution1(object):
     """
 
