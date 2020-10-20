@@ -43,9 +43,9 @@ class Solution:
 
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         count, repeat = 0, 0
-        m, n = len(grid), len(grid[0])
-        for i in range(m):
-            for j in range(n):
+        R, C = len(grid), len(grid[0])
+        for i in range(R):
+            for j in range(C):
                 if grid[i][j] == 1:
                     count += 1
                     if i != 0 and grid[i - 1][j] == 1:
@@ -59,12 +59,12 @@ class Solution:
 
 
 @pytest.mark.parametrize("args,expected", [
-    (
-            [[0, 1, 0, 0],
-             [1, 1, 1, 0],
-             [0, 1, 0, 0],
-             [1, 1, 0, 0]]
-            , 16),
+    ([
+         [0, 1, 0, 0],
+         [1, 1, 1, 0],
+         [0, 1, 0, 0],
+         [1, 1, 0, 0]
+     ], 16),
 ])
 def test_solutions(args, expected):
     assert Solution().islandPerimeter(args) == expected

@@ -42,6 +42,8 @@
 # 因此，数字总和 = 495 + 491 + 40 = 1026.
 #  Related Topics 树 深度优先搜索
 #  👍 155 👎 0
+import functools
+
 import pytest
 
 from common_utils import TreeNode
@@ -71,6 +73,7 @@ class Solution0:
 
 class Solution:
     def sumNumbers(self, root: TreeNode) -> int:
+        @functools.lru_cache(None)
         def helper(node, path_sum):
             if not node: return 0
             if not node.left and not node.right:
@@ -83,7 +86,7 @@ class Solution:
 
 @pytest.mark.parametrize("kw,expected", [
     [dict(
-        root=TreeNode(1, TreeNode(2, ),TreeNode(3))
+        root=TreeNode(1, TreeNode(2, ), TreeNode(3))
     ), 25],
     [dict(
         root=TreeNode(

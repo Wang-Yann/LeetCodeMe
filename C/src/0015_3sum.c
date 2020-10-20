@@ -10,7 +10,7 @@ int cmp(const void *a, const void *b) {
 }
 
 //https://leetcode-cn.com/problems/3sum/solution/cyu-yan-shi-xian-qian-hou-jia-ji-by-dodo-12/
-int ** threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes) {
+int **threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes) {
     *returnSize = 0;
     if (numsSize < 3) {
         return NULL;

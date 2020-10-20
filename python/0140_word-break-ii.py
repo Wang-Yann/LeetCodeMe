@@ -54,7 +54,7 @@
 #  Related Topics 动态规划 回溯算法
 
 """
-
+import functools
 from typing import List
 
 import pytest
@@ -64,34 +64,33 @@ import pytest
 
 
 class Solution:
+
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         """
         记忆化DFS
         """
-        memo = {}
-        return self.dfs(s, memo, wordDict)
 
-    def dfs(self, s, memo, wordDict):
-        if s in memo:
-            return memo[s]
-        if s == '':
-            return []
-        res = []
-        for word in wordDict:
-            if not s.startswith(word):
-                continue
-            # 循环到最后而且匹配，则append
-            if len(word) == len(s):
-                res.append(word)
-            # 匹配但是没有循环到最后，于是继续往下，之后需要对返回的结果分别加上当前的word
-            else:
-                rest = self.dfs(s[len(word):], memo, wordDict)
-                for item in rest:
-                    item = word + ' ' + item
-                    res.append(item)
-        # 保存当前s的结果
-        memo[s] = res
-        return res
+        @functools.lru_cache(None)
+        def dfs(cur):
+            if cur == '':
+                return []
+            res = []
+            for word in wordDict:
+                if not cur.startswith(word):
+                    continue
+                # 循环到最后而且匹配，则append
+                if len(word) == len(cur):
+                    res.append(word)
+                # 匹配但是没有循环到最后，于是继续往下，之后需要对返回的结果分别加上当前的word
+                else:
+                    rest = dfs(cur[len(word):])
+                    for item in rest:
+                        item = word + ' ' + item
+                        res.append(item)
+            # 保存当前s的结果
+            return res
+
+        return dfs(s)
 
 
 # leetcode submit region end(Prohibit modification and deletion)
@@ -156,7 +155,7 @@ class Solution1:
 ])
 def test_solutions(kw, expected):
     assert sorted(Solution().wordBreak(**kw)) == sorted(expected)
-    # assert sorted(Solution1().wordBreak(**kw)) == sorted(expected)
+    assert sorted(Solution1().wordBreak(**kw)) == sorted(expected)
 
 
 if __name__ == '__main__':

@@ -24,6 +24,8 @@
 #  👍 253 👎 0
 
 """
+import copy
+
 import pytest
 
 from common_utils import ListNode
@@ -58,21 +60,48 @@ class Solution:
             current.next, current, l2 = l2, l2, l2.next
             # print(dummy, current, l1, l2, sep="\t")
 
-        return dummy.next
+        # return dummy.next
+
+
+class Solution1:
+
+    def reorderList(self, head: ListNode) -> None:
+        if not head:
+            return
+
+        vec = list()
+        node = head
+        while node:
+            vec.append(node)
+            node = node.next
+
+        i, j = 0, len(vec) - 1
+        while i < j:
+            vec[i].next = vec[j]
+            i += 1
+            if i == j:
+                break
+            vec[j].next = vec[i]
+            j -= 1
+
+        vec[i].next = None
 
 
 @pytest.mark.parametrize("args,expected", [
     (
-        ListNode.init_list_from_str("1->2->3->4"),
-        ListNode.init_list_from_str("1->4->2->3"),
+            ListNode.init_list_from_str("1->2->3->4"),
+            ListNode.init_list_from_str("1->4->2->3"),
     ),
     (
-        ListNode.init_list_from_str("1->2->3->4->5"),
-        ListNode.init_list_from_str("1->5->2->4->3"),
+            ListNode.init_list_from_str("1->2->3->4->5"),
+            ListNode.init_list_from_str("1->5->2->4->3"),
     ),
 ])
-def test_solutions(args, expected):
-    assert repr(Solution().reorderList(args)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    h = copy.deepcopy(args)
+    SolutionCLS().reorderList(h)
+    assert repr(h) == repr(expected)
 
 
 if __name__ == '__main__':
