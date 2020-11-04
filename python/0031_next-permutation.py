@@ -21,7 +21,7 @@
 #  👍 574 👎 0
 
 """
-
+import copy
 from typing import List
 
 import pytest
@@ -30,31 +30,19 @@ import pytest
 class Solution:
 
     def nextPermutation(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-
-        length = len(nums)
-        i = length - 2
-        while i >= 0 and nums[i + 1] <= nums[i]:
+        N = len(nums)
+        i = N - 2
+        while i >= 0 and nums[i] >= nums[i + 1]:
             i -= 1
         if i >= 0:
-            j = length - 1
-            while j >= i and nums[j] <= nums[i]:
+            j = N - 1
+            while j >= 0 and nums[i] >= nums[j]:
                 j -= 1
-            self.swap(nums, i, j)
-        self.reverse(nums, i + 1)
+            nums[i], nums[j] = nums[j], nums[i]
 
-    def swap(self, nums: List[int], i: int, j: int) -> None:
-        tmp = nums[i]
-        nums[i] = nums[j]
-        nums[j] = tmp
-
-    def reverse(self, nums: List[int], start: int) -> None:
-        left = start
-        right = len(nums) - 1
+        left, right = i + 1, N - 1
         while left < right:
-            self.swap(nums, left, right)
+            nums[left], nums[right] = nums[right], nums[left]
             left += 1
             right -= 1
 
@@ -64,10 +52,13 @@ class Solution:
     ([1, 8, 7, 3, 5, 6], [1, 8, 7, 3, 6, 5]),
     ([3, 2, 1], [1, 2, 3]),
     ([3, 2, 1, 4, 5, 2], [3, 2, 1, 5, 2, 4]),
+    ([4, 5, 2, 6, 3, 1], [4, 5, 3, 1, 2, 6]),
 ])
-def test_solutions(args, expected):
-    Solution().nextPermutation(args)
-    assert args == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution])
+def test_solutions(args, expected, SolutionCLS):
+    arr = copy.deepcopy(args)
+    SolutionCLS().nextPermutation(arr)
+    assert arr == expected
 
 
 if __name__ == '__main__':

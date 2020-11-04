@@ -24,8 +24,7 @@
 #  👍 104 👎 0
 
 """
-
-
+import bisect
 from typing import List
 
 import pytest
@@ -36,7 +35,7 @@ class Solution:
 
     def countRangeSum(self, nums: List[int], lower: int, upper: int) -> int:
         def countAndMergeSort(sums, start, end):
-            #左闭右开
+            # 左闭右开
             # The size of range [start, end) less than 2 is always with count 0.
             if end - start <= 1:
                 return 0
@@ -45,7 +44,7 @@ class Solution:
                     countAndMergeSort(sums, mid, end)
             Upper, Lower, rPos = mid, mid, mid
             tmp = []
-            l =start
+            l = start
             for i in range(l, mid):
                 # Count the number of range sums that lie in [lower, upper].
                 while Lower < end and sums[Lower] - sums[i] < lower:
@@ -69,15 +68,44 @@ class Solution:
         return countAndMergeSort(sums, 0, len(sums))
 
 
+class Solution1:
+
+    def countRangeSum(self, nums, lower, upper):
+        N = len(nums)
+        Sum, BITree = [0] * (N + 1), [0] * (N + 2)
+
+        def count(x):
+            s = 0
+            while x:
+                s += BITree[x]
+                x -= (x & -x)
+            return s
+
+        def update(x):
+            while x <= N + 1:
+                BITree[x] += 1
+                x += (x & -x)
+
+        for i in range(N):
+            Sum[i + 1] = Sum[i] + nums[i]
+        sortSum, res = sorted(Sum), 0
+        for sum_j in Sum:
+            sum_i_count = count(bisect.bisect_right(sortSum, sum_j - lower)) - count(bisect.bisect_left(sortSum, sum_j - upper))
+            res += sum_i_count
+            update(bisect.bisect_left(sortSum, sum_j) + 1)
+        return res
+
+
 @pytest.mark.parametrize("args,expected", [
     (([-2, 5, -1], -2, 2), 3)
 ])
-def test_solutions(args, expected):
-    assert Solution().countRangeSum(*args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().countRangeSum(*args) == expected
 
 
 if __name__ == '__main__':
     # pytest -s            # disable all capturing
     # pytest --capture=sys # replace sys.stdout/stderr with in-mem files
     # pytest --capture=fd  # also point filedescriptors 1 and 2 to temp file
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])

@@ -58,29 +58,29 @@ class Solution:
 
 
 class Solution1:
+
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
-        res = []
-        length = len(intervals)
-        idx = 0
-        new_start, new_end = newInterval
-        while idx <= length - 1 and new_start > intervals[idx][0]:
-            res.append(intervals[idx])
-            idx += 1
-        if not res or res[-1][1] < new_start:
-            res.append(newInterval)
-        else:
-            res[-1][1] = max(res[-1][1], new_end)
-
-        while idx <= length - 1:
-            interval = intervals[idx]
-            start, end = interval
-            if res[-1][1] < start:
-                res.append(interval)
+        left, right = newInterval
+        placed = False
+        ans = list()
+        for li, ri in intervals:
+            if li > right:
+                # 在插入区间的右侧且无交集
+                if not placed:
+                    ans.append([left, right])
+                    placed = True
+                ans.append([li, ri])
+            elif ri < left:
+                # 在插入区间的左侧且无交集
+                ans.append([li, ri])
             else:
-                res[-1][1] = max(res[-1][1], end)
-            idx += 1
+                # 与插入区间有交集，计算它们的并集
+                left = min(left, li)
+                right = max(right, ri)
 
-        return res
+        if not placed:
+            ans.append([left, right])
+        return ans
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -90,6 +90,7 @@ class Solution1:
     [([[2, 3], [6, 9]], [11, 12]), [[2, 3], [6, 9], [11, 12]]],
     [([[2, 3], [6, 9]], [8, 12]), [[2, 3], [6, 12]]],
     [([[2, 3], [6, 9]], [0, 0]), [[0, 0], [2, 3], [6, 9]]],
+    [([[1, 2], [3, 8], [8, 10], [12, 16]], [4, 8]), [[1, 2], [3, 10], [12, 16]]],
 ])
 def test_solutions(args, expected):
     assert Solution().insert(*args) == expected

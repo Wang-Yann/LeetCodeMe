@@ -37,24 +37,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if not nums:
-            return
-        start, end = 0, len(nums) - 1
-        while True:
-            while start < end and nums[start] != 0:
-                start += 1
-            while start < end and nums[end] == 0:
-                end -= 1
-            if start >= end:
-                break
-            cur_index = start
-            while cur_index <= end - 1:
-                nums[cur_index] = nums[cur_index + 1]
-                cur_index += 1
-            nums[cur_index] = 0
+
+        N = len(nums)
+        left = right = 0
+        while right < N:
+            if nums[right] != 0:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+            right += 1
 
 
 class Solution1:
+
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
