@@ -39,6 +39,7 @@ import pytest
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
+
     def monotoneIncreasingDigits(self, N: int) -> int:
         """ 贪心　
         对于 N 的每一位数字，我们构建答案 ans 的下一位数字。我们找到数字 d，其中 d 满足 ans + (d repeating) > N（按字符串比较）
@@ -60,6 +61,24 @@ class Solution:
 
 # leetcode submit region end(Prohibit modification and deletion)
 
+class Solution1:
+
+    def monotoneIncreasingDigits(self, N: int) -> int:
+        A = list(int(x) for x in str(N))
+        i = 1
+        while i < len(A) and A[i - 1] <= A[i]:
+            i += 1
+        if i < len(A):
+            while i > 0 and A[i - 1] > A[i]:
+                A[i - 1] -= 1
+                i -= 1
+            pos = i + 1
+            for i in range(pos, len(A)):
+                A[i] = 9
+
+        return int("".join(map(str, A)))
+
+
 @pytest.mark.parametrize("args,expected", [
     (10, 9),
     (1234, 1234),
@@ -68,6 +87,7 @@ class Solution:
 ])
 def test_solutions(args, expected):
     assert Solution().monotoneIncreasingDigits(args) == expected
+    assert Solution1().monotoneIncreasingDigits(args) == expected
 
 
 if __name__ == '__main__':

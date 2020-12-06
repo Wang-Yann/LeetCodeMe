@@ -43,8 +43,8 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
 
 
-        length_s, length_t = map(len, (s, t))
-        if length_s != length_t:
+        NS, NT = map(len, (s, t))
+        if NS != NT:
             return False
         s2t,t2s = {},{}
         for sw,tw in zip(s,t):

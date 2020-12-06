@@ -41,14 +41,28 @@ class Solution:
             return []
         res = [[1]]
         for i in range(1, numRows):
-            cur_row = []
-            cur_row.append(1)
+            cur_row = [1]
             prev = res[i - 1]
-            for i in range(0, i - 1):
-                cur_row.append(prev[i] + prev[i + 1])
+            for j in range(0, i - 1):
+                cur_row.append(prev[j] + prev[j + 1])
             cur_row.append(1)
             res.append(cur_row)
         return res
+
+
+class Solution1:
+
+    def generate(self, numRows: int) -> List[List[int]]:
+        ret = list()
+        for i in range(numRows):
+            row = list()
+            for j in range(0, i + 1):
+                if j == 0 or j == i:
+                    row.append(1)
+                else:
+                    row.append(ret[i - 1][j] + ret[i - 1][j - 1])
+            ret.append(row)
+        return ret
 
 
 @pytest.mark.parametrize("args,expected", [
@@ -56,8 +70,9 @@ class Solution:
     (2, [[1], [1, 1]]),
     (7, [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1]])
 ])
-def test_solutions(args, expected):
-    assert Solution().generate(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().generate(args) == expected
 
 
 if __name__ == '__main__':

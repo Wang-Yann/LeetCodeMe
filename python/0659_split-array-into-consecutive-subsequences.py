@@ -77,7 +77,7 @@ class Solution:
             else:
                 min_len = heapq.heappop(chains[v - 1])
                 heapq.heappush(chains[v], min_len + 1)
-        # print(chains)
+        print(chains)
         for chain in chains.values():
             if chain and chain[0] < 3:
                 return False
@@ -127,7 +127,7 @@ class Solution1(object):
 ])
 def test_solutions(args, expected):
     assert Solution().isPossible(args) == expected
-    assert Solution1().isPossible(args) == expected
+    # assert Solution1().isPossible(args) == expected
 
 
 if __name__ == '__main__':
