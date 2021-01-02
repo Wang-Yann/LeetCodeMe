@@ -48,6 +48,7 @@
 #  👍 450 👎 0
 
 import collections
+import heapq
 from typing import List
 
 import pytest
@@ -89,9 +90,26 @@ class Solution:
         return result
 
 
+class Solution1:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        N = len(nums)
+        # 注意 Python 默认的优先队列是小根堆
+        hp = [(-nums[i], i) for i in range(k)]
+        heapq.heapify(hp)
+
+        ans = [-hp[0][0]]
+        for i in range(k, N):
+            heapq.heappush(hp, (-nums[i], i))
+            while hp[0][1] <= i - k:
+                heapq.heappop(hp)
+            ans.append(-hp[0][0])
+
+        return ans
+
+
 class TestSolutions:
 
-    def testmaxSlidingWindow(self):
+    def testMaxSlidingWindow(self):
         kw = dict(nums=[1, 3, -1, -3, 5, 3, 6, 7], k=3)
         assert Solution().maxSlidingWindow(**kw) == [3, 3, 5, 5, 6, 7]
 
@@ -101,15 +119,9 @@ class TestSolutions:
     (([3, 6, 7], 3), [7]),
     pytest.param(([1, 3, -1, -3, 5, 3, 6, 7], 3), [42], marks=pytest.mark.xfail),
 ])
-def test_eval(test_input, expected):
-    assert Solution().maxSlidingWindow(*test_input) == expected
-
-
-@pytest.mark.parametrize("test_input,expected", [
-    pytest.param(dict(nums=[1, 3, -1, -3, 5, 3, 6, 7], k=3), [3, 3, 5, 5, 6, 7])
-])
-def test_eval(test_input, expected):
-    assert Solution().maxSlidingWindow(**test_input) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution,Solution1])
+def test_eval(test_input, expected,SolutionCLS):
+    assert SolutionCLS().maxSlidingWindow(*test_input) == expected
 
 
 def test_skip():
@@ -117,7 +129,7 @@ def test_skip():
 
 
 @pytest.mark.xfail
-def test_xpass():
+def test_x_pass():
     assert 1 + 1 > 2
 
 
