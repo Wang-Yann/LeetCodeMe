@@ -97,6 +97,7 @@ import pytest
 
 
 class Solution:
+
     def regionsBySlashes(self, grid: List[str]) -> int:
         """
         提供一个巧妙的思路。将 / 转为
@@ -151,36 +152,11 @@ class Solution:
 
 
 @pytest.mark.parametrize("args,expected", [
-    (
-            [
-                " /",
-                "/ "
-            ], 2
-    ),
-    (
-            [
-                " /",
-                "  "
-            ], 1
-    ),
-    (
-            [
-                "\\/",
-                "/\\"
-            ], 4
-    ),
-    (
-            [
-                "/\\",
-                "\\/"
-            ], 5
-    ),
-    (
-            [
-                "//",
-                "/ "
-            ], 3
-    )
+    ([" /", "/ "], 2),
+    ([" /", "  "], 1),
+    (["\\/", "/\\"], 4),
+    (["/\\", "\\/"], 5),
+    (["//", "/ "], 3)
 ])
 def test_solutions(args, expected):
     assert Solution().regionsBySlashes(args) == expected
