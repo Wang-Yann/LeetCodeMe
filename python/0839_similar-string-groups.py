@@ -79,7 +79,7 @@ class Solution:
         官方解答
         """
 
-        def similiar(word1, word2):
+        def similar(word1, word2):
             diff = 0
             for x, y in zip(word1, word2):
                 if x != y:
@@ -93,7 +93,7 @@ class Solution:
         # If few words, then check for pairwise similarity: O(N^2 W)
         if N < W * W:
             for (i1, word1), (i2, word2) in itertools.combinations(enumerate(A), 2):
-                if similiar(word1, word2):
+                if similar(word1, word2):
                     uf.union_set(i1, i2)
         # If short words, check all neighbors: O(N W^3)
         else:
@@ -113,11 +113,45 @@ class Solution:
 # leetcode submit region end(Prohibit modification and deletion)
 
 
+class Solution1:
+    def numSimilarGroups(self, strs: List[str]) -> int:
+        n = len(strs)
+        m = len(strs[0])
+        f = list(range(n))
+
+        def find(x: int) -> int:
+            if f[x] == x:
+                return x
+            f[x] = find(f[x])
+            return f[x]
+
+        def check(a: str, b: str) -> bool:
+            num = 0
+            for ac, bc in zip(a, b):
+                if ac != bc:
+                    num += 1
+                    if num > 2:
+                        return False
+            return True
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                fi, fj = find(i), find(j)
+                if fi == fj:
+                    continue
+                if check(strs[i], strs[j]):
+                    f[fi] = fj
+
+        ret = sum(1 for i in range(n) if f[i] == i)
+        return ret
+
+
 @pytest.mark.parametrize("args,expected", [
     (["tars", "rats", "arts", "star"], 2)
 ])
-def test_solutions(args, expected):
-    assert Solution().numSimilarGroups(args) == expected
+@pytest.mark.parametrize("SolutionCLS",[Solution,Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().numSimilarGroups(args) == expected
 
 
 if __name__ == '__main__':
