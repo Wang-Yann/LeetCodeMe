@@ -49,13 +49,13 @@ import pytest
 class Solution:
 
     def characterReplacement(self, s: str, k: int) -> int:
-        length = len(s)
+        N = len(s)
         counter = collections.defaultdict(int)
         ans = 0
         right = 0
         max_freq = 0
-        for left in range(length):
-            while right < length and right - left - max_freq <= k:
+        for left in range(N):
+            while right < N and right - left - max_freq <= k:
                 counter[s[right]] += 1
                 max_freq = max(max_freq, counter[s[right]])
                 right += 1
@@ -73,14 +73,30 @@ class Solution:
 # leetcode submit region end(Prohibit modification and deletion)
 
 
+class Solution1:
+    def characterReplacement(self, s: str, k: int) -> int:
+        num = [0] * 26
+        N = len(s)
+        max_n = left = right = 0
+
+        while right < N:
+            num[ord(s[right]) - ord("A")] += 1
+            max_n = max(max_n, num[ord(s[right]) - ord("A")])
+            if right - left + 1 - max_n > k:
+                num[ord(s[left]) - ord("A")] -= 1
+                left += 1
+            right += 1
+
+        return right - left
+
+
 @pytest.mark.parametrize("kwargs,expected", [
-    (dict(
-        s="ABAB", k=2
-    ), 4),
+    (dict(s="ABAB", k=2), 4),
     pytest.param(dict(s="AABABBA", k=1), 4),
 ])
-def test_solutions(kwargs, expected):
-    assert Solution().characterReplacement(**kwargs) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution,Solution])
+def test_solutions(kwargs, expected,SolutionCLS):
+    assert SolutionCLS().characterReplacement(**kwargs) == expected
 
 
 if __name__ == '__main__':
