@@ -36,38 +36,29 @@
 
 """
 
-import pytest
-import math, fractions, operator
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
 
-
-
+import pytest
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def transpose(self, A: List[List[int]]) -> List[List[int]]:
-        ans =[list(ele) for ele in   zip(*A)]
+        ans = [list(ele) for ele in zip(*A)]
         return ans
-        
+
+
 # leetcode submit region end(Prohibit modification and deletion)
 
 
-
 @pytest.mark.parametrize("args,expected", [
-    (
-            [[1,2,3],[4,5,6],[7,8,9]]
-     ,[[1,4,7],[2,5,8],[3,6,9]]),
-    pytest.param([[1,2,3],[4,5,6]], [[1,4],[2,5],[3,6]]),
+    ([[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+     , [[1, 4, 7], [2, 5, 8], [3, 6, 9]]),
+    pytest.param([[1, 2, 3], [4, 5, 6]], [[1, 4], [2, 5], [3, 6]]),
 ])
 def test_solutions(args, expected):
     assert Solution().transpose(args) == expected
 
 
-
-
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
