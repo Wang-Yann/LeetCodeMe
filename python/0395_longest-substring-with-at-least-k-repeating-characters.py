@@ -49,17 +49,17 @@ class Solution:
 
             counter = collections.Counter(s[start:end])
             max_len = 0
-            i = start
-            while i < end:
-                while i < end and counter[s[i]] < k:
-                    i += 1
-                j = i
-                while j < end and counter[s[j]] >= k:
-                    j += 1
-                if i == start and  j == end:
+            l = start
+            while l < end:
+                while l < end and counter[s[l]] < k:
+                    l += 1
+                r = l
+                while r < end and counter[s[r]] >= k:
+                    r += 1
+                if l == start and r == end:
                     return end - start
-                max_len = max(max_len, helper(i, j))
-                i = j
+                max_len = max(max_len, helper(l, r))
+                l = r
             return max_len
 
         return helper(0, len(s))
@@ -84,9 +84,9 @@ class Solution1:
     (dict(s="aaabb", k=3), 3),
     pytest.param(dict(s="ababbc", k=2), 5),
 ])
-def test_solutions(kwargs, expected):
-    assert Solution().longestSubstring(**kwargs) == expected
-    assert Solution1().longestSubstring(**kwargs) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(kwargs, expected, SolutionCLS):
+    assert SolutionCLS().longestSubstring(**kwargs) == expected
 
 
 if __name__ == '__main__':
