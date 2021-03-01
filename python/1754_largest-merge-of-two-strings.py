@@ -75,13 +75,26 @@ import pytest
 class Solution:
 
     def largestMerge(self, word1: str, word2: str) -> str:
+        ans = ""
+        while word1 and word2:
+            if word1 > word2:
+                ans += word1[0]
+                word1 = word1[1:]
+            else:
+                ans += word2[0]
+                word2 = word2[1:]
+
+        return ans + word1 + word2
+
+
+# leetcode submit region end(Prohibit modification and deletion)
+class Solution1:
+
+    def largestMerge(self, word1: str, word2: str) -> str:
         """AC"""
         ans = ""
         chars1, chars2 = list(word1), list(word2)
         while chars1 and chars2:
-            # c1 = chars1[0]
-            # c2 = chars2[0]
-            # if c1 > c2 or (c1 == c2 and chars1 > chars2):
             if chars1 > chars2:
                 ans += chars1.pop(0)
             else:
@@ -90,15 +103,12 @@ class Solution:
         return ans + "".join(chars1) + "".join(chars2)
 
 
-# leetcode submit region end(Prohibit modification and deletion)
-
-
 @pytest.mark.parametrize("kw,expected", [
     [dict(word1="cabaa", word2="bcaaa"), "cbcabaaaaa"],
     [dict(word1="abcabc", word2="abdcaba"), "abdcabcabcaba"],
 
 ])
-@pytest.mark.parametrize("SolutionCLS", [Solution, ])
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
 def test_solutions(kw, expected, SolutionCLS):
     res = SolutionCLS().largestMerge(**kw)
     assert res == expected
