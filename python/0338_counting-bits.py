@@ -30,11 +30,10 @@
 
 """
 
-import pytest
-import math, fractions, operator
 from typing import List
-import collections, bisect, heapq
-import functools, itertools
+
+import pytest
+
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
@@ -44,43 +43,41 @@ class Solution:
     使用最后设置位。 最后设置位是从右到左第一个为1的位。使用 x &= x - 1 将该位设置为0
 
     """
+
     def countBits(self, num: int) -> List[int]:
-        dp=[0]*(num+1)
-        for i in range(1,num+1):
-            dp[i]=dp[i&(i-1)]+1
+        dp = [0] * (num + 1)
+        for i in range(1, num + 1):
+            dp[i] = dp[i & (i - 1)] + 1
         return dp
 
 
-        
 # leetcode submit region end(Prohibit modification and deletion)
 class Solution1:
     """
+    最低有效位
     DP
     P(x)=P(x/2)+(x mod 2)
     x/2 ==> x>>1
     x mod 2 ==> x & 1
     """
+
     def countBits(self, num: int) -> List[int]:
-        res=[0]
-        for i in range(1,num+1):
-            res.append((i&0b1) + res[i>>1])
-        return  res
+        res = [0]
+        for i in range(1, num + 1):
+            res.append((i & 0b1) + res[i >> 1])
+        return res
 
 
-
-@pytest.mark.parametrize("args,expected",[
-   (0, [0] ),
-   (2, [0,1,1] ),
-   (5,[0,1,1,2,1,2]) ,
-   (17,[0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1, 2])
+@pytest.mark.parametrize("args,expected", [
+    (0, [0]),
+    (2, [0, 1, 1]),
+    (5, [0, 1, 1, 2, 1, 2]),
+    (17, [0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1, 2])
 ])
-def test_solutions(args,expected):
-    assert Solution().countBits(args)==expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().countBits(args) == expected
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "--color=yes","--capture=no", __file__])
-
-
-
-
+    pytest.main(["-q", "--color=yes", "--capture=no", __file__])
