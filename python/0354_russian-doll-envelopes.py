@@ -61,9 +61,9 @@ class Solution:
 
 class Solution1:
 
-    def maxEnvelopes(self, arr: List[List[int]]) -> int:
+    def maxEnvelopes(self, envelopes: List[List[int]]) -> int:
         # sort increasing in first dimension and decreasing on second
-        arr.sort(key=lambda x: (x[0], -x[1]))
+        envelopes.sort(key=lambda x: (x[0], -x[1]))
 
         def lis(nums):
             dp = []
@@ -76,17 +76,18 @@ class Solution1:
             return len(dp)
 
         # extract the second dimension and run the LIS
-        heights = [i[1] for i in arr]
+        heights = [i[1] for i in envelopes]
         return lis(heights)
 
 
 @pytest.mark.parametrize("args,expected", [
     ([[5, 4], [6, 4], [6, 7], [2, 3]], 3),
+    ([[4, 5], [4, 6], [6, 7], [2, 3], [1, 1]], 4),
     pytest.param([[1, 2]], 1),
 ])
-def test_solutions(args, expected):
-    assert Solution().maxEnvelopes(args) == expected
-    assert Solution1().maxEnvelopes(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().maxEnvelopes(args) == expected
 
 
 if __name__ == '__main__':
