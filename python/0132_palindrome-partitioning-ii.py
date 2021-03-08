@@ -30,27 +30,56 @@ class Solution:
         """
         dp[i]：表示前缀子串 s[0:i] 分割成若干个回文子串所需要最小分割次数
         """
-        def is_palindrome(left, right):
-            return s[left:right + 1] == s[left:right + 1][::-1]
 
-        size = len(s)
-        if size < 2:
+        def is_palindrome(l, r):
+            return s[l:r + 1] == s[l:r + 1][::-1]
+
+        N = len(s)
+        if N < 2:
             return 0
-        dp = [0]*size
-        for i in range(1, size):
+        dp = [0] * N
+        for i in range(1, N):
             if is_palindrome(0, i):
                 dp[i] = 0
                 continue
-            dp[i] = min([dp[j] + 1 for j in range(i) if is_palindrome(j + 1, i )])
-        return dp[size - 1]
+            dp[i] = min([dp[j] + 1 for j in range(i) if is_palindrome(j + 1, i)])
+        return dp[N - 1]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
-@pytest.mark.parametrize("args,expected", [
-    ("aab", 1),
+class Solution1:
+    def minCut(self, s: str) -> int:
+        """
+        dp_g(i,j) 表示 s[i..j] 是否为回文串
+        """
+        N = len(s)
+        dp_g = [[True] * N for _ in range(N)]
+
+        for i in range(N - 1, -1, -1):
+            for j in range(i + 1, N):
+                dp_g[i][j] = (s[i] == s[j]) and dp_g[i + 1][j - 1]
+
+        dp = [0x7fffffff] * N
+        for i in range(N):
+            if dp_g[0][i]:
+                dp[i] = 0
+            else:
+                for j in range(i):
+                    if dp_g[j + 1][i]:
+                        dp[i] = min(dp[i], dp[j] + 1)
+
+        return dp[N - 1]
+
+
+@pytest.mark.parametrize("kw,expected", [
+    [dict(s="aab"), 1],
+    [dict(s="a"), 0],
+    [dict(s="ab"), 1],
+    [dict(s="leet"), 2],
 ])
-def test_solutions(args, expected):
-    assert Solution().minCut(args) == expected
+@pytest.mark.parametrize("SolutionCls", [Solution, Solution1])
+def test_solutions(kw, expected, SolutionCls):
+    assert SolutionCls().minCut(**kw) == expected
 
 
 if __name__ == '__main__':
