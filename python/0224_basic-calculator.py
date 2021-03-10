@@ -46,6 +46,8 @@ import pytest
 
 class Solution(object):
     def calculate(self, s):
+        if s.startswith("-"):
+            s = "0" + s
         operands, operators = [], []
         operand = ""
         for i in reversed(range(len(s))):
@@ -92,6 +94,8 @@ class Solution1:
             if op in operator_map:
                 val_stack.append(operator_map[op](left, right))
 
+        if s.startswith("-"):
+            s = "0" + s
         val_stack = []
         op_stack = []
         N = len(s)
@@ -139,10 +143,6 @@ class Solution00(object):
                 if c == '(':
                     num = helper(chars)
 
-                # bool1= c in ("+", "-", "*", "/",")") or len(chars)==0
-                # bool2= (not c.isdigit() and c != ' ') or len(chars) == 0
-                # if bool1!=bool2:
-                #     print(c,chars,bool1,bool2)
                 if c in ("+", "-", "*", "/", ")") or not chars:
                     if sign == '+':
                         stack.append(num)
@@ -173,6 +173,7 @@ class Solution00(object):
     ["1+5-4", 2],
     ["2-4-(8+2-6+(8+4-1+8-10))", -15],
     ["2-4-(8+2-6+(8+4-(1)+8-10))", -15],
+    ["-2+1", -1],
 ])
 @pytest.mark.parametrize("SolutionCLS", [Solution1, Solution, Solution00])
 def test_solutions(args, expected, SolutionCLS):
