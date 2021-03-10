@@ -46,7 +46,7 @@ import pytest
 
 class Solution(object):
     def calculate(self, s):
-        if s.startswith("-"):
+        if s.strip().startswith("-"):
             s = "0" + s
         operands, operators = [], []
         operand = ""
@@ -94,7 +94,7 @@ class Solution1:
             if op in operator_map:
                 val_stack.append(operator_map[op](left, right))
 
-        if s.startswith("-"):
+        if s.strip().startswith("-"):
             s = "0" + s
         val_stack = []
         op_stack = []
@@ -122,11 +122,10 @@ class Solution1:
 
         while op_stack:
             compute()
-        # print("after", val_stack, op_stack)
         return val_stack[0]
 
 
-class Solution00(object):
+class Solution2(object):
     def calculate(self, s):
         """TLE"""
 
@@ -174,8 +173,9 @@ class Solution00(object):
     ["2-4-(8+2-6+(8+4-1+8-10))", -15],
     ["2-4-(8+2-6+(8+4-(1)+8-10))", -15],
     ["-2+1", -1],
+    [" -2+1", -1],
 ])
-@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution, Solution00])
+@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution, Solution2])
 def test_solutions(args, expected, SolutionCLS):
     assert SolutionCLS().calculate(args) == expected
 
