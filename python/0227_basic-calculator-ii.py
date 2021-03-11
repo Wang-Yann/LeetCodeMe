@@ -43,8 +43,6 @@ import pytest
 from sample_datas import BIG_CASE
 
 
-
-
 class Solution(object):
 
     def calculate(self, s: str) -> int:
@@ -59,7 +57,7 @@ class Solution(object):
             elif s[i] == ')' or s[i] == '*' or s[i] == '/':
                 operators.append(s[i])
             elif s[i] == '+' or s[i] == '-':
-                while operators and (operators[-1] == '*' or operators[-1] == '/'):
+                while operators and operators[-1] in '*/':
                     self.compute(operands, operators)
                 operators.append(s[i])
             elif s[i] == '(':
@@ -73,8 +71,7 @@ class Solution(object):
         return operands[0]
 
     def compute(self, operands, operators):
-        left = operands.pop()
-        right = operands.pop()
+        left, right = operands.pop(), operands.pop()
         op = operators.pop()
         if op == '+':
             operands.append(left + right)
@@ -133,7 +130,7 @@ class Solution1:
         return val_stack[0]
 
 
-class Solution00(object):
+class Solution2(object):
     """TLE"""
 
     def calculate(self, s):
@@ -158,8 +155,7 @@ class Solution00(object):
                     elif sign == '*':
                         stack[-1] = stack[-1] * num
                     elif sign == '/':
-                        # python 除法向 0 取整的写法
-                        # stack[-1] = stack[-1] // num
+                        # python 除法向 0 取整的写法 stack[-1] = stack[-1] // num
                         # print(stack,num,stack[-1] // num,int(stack[-1] / float(num)))
                         stack[-1] = int(stack[-1] / num)
                     num = 0
@@ -174,8 +170,7 @@ class Solution00(object):
         return helper(list(s))
 
 
-@pytest.mark.parametrize(
-    "args,expected",
+@pytest.mark.parametrize("args,expected",
     list(zip(
         [
             "1 -1+1",
@@ -192,7 +187,7 @@ class Solution00(object):
         ], [1, 3, 1, 2, 1, 5, 8, 3, 13, 199]
     ))
 )
-@pytest.mark.parametrize("SolutionCLS", [Solution, Solution00, Solution1])
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution2, Solution1])
 def test_solutions(args, expected, SolutionCLS):
     assert SolutionCLS().calculate(args) == expected
 

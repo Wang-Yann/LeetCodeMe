@@ -55,9 +55,10 @@ from typing import List
 import numpy
 import pytest
 
-# leetcode submit region begin(Prohibit modification and deletion)
 from common_utils import memory_limit
 
+
+# leetcode submit region begin(Prohibit modification and deletion)
 
 class Solution:
     def minChanges(self, nums: List[int], k: int) -> int:
@@ -89,12 +90,12 @@ class Solution:
 
 
 ###限制内存和超时
-@memory_limit(int(16e8))
-@pytest.mark.xfail
+@pytest.mark.xfail(raises=MemoryError, reason="Unable to allocate.")
+@memory_limit(16 * 10 ** 8)
 def test_allocate():
-    a = [numpy.arange(10 ** 8, dtype='u8') for i in range(10)]
+    a = [numpy.arange(10 ** 8, dtype='u8') for _ in range(10)]
     x = numpy.arange(3 * 10 ** 8, dtype='u8')
-    print("Should fail")
+    print("Should fail", x.size, len(a))
 
 
 @pytest.mark.timeout(12)
