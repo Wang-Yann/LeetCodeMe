@@ -86,10 +86,9 @@ class Solution2:
 @pytest.mark.parametrize("args,expected", [
     ([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1], 6)
 ])
-def test_solutions(args, expected):
-    assert Solution().trap(args) == expected
-    assert Solution1().trap(args) == expected
-    assert Solution2().trap(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().trap(args) == expected
 
 
 if __name__ == '__main__':

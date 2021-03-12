@@ -65,11 +65,11 @@ class Solution:
     def possibleBipartition(self, N: int, dislikes: List[List[int]]) -> bool:
         graph = collections.defaultdict(list)
         for src, dest in dislikes:
-            graph[src-1].append(dest-1)
-            graph[dest-1].append(src-1)
-        color = [0]*N
-        for idx,v in enumerate(color):
-            if v!=0:
+            graph[src - 1].append(dest - 1)
+            graph[dest - 1].append(src - 1)
+        color = [0] * N
+        for idx, v in enumerate(color):
+            if v != 0:
                 continue
             q = collections.deque([idx])
             color[0] = 1
@@ -112,17 +112,16 @@ class Solution1:
         return True
 
 
-
 @pytest.mark.parametrize("kwargs,expected", [
     (dict(N=4, dislikes=[[1, 2], [1, 3], [2, 4]]), True),
     (dict(N=5, dislikes=[[1, 2], [2, 3], [3, 4], [4, 5], [1, 5]]), False),
     pytest.param(dict(N=3, dislikes=[[1, 2], [1, 3], [2, 3]]), False),
     # 有环 的情况  sublime text ans wrong
-    pytest.param(dict(N=5, dislikes=[[1,2],[3,4],[4,5],[3,5]]), False),
+    pytest.param(dict(N=5, dislikes=[[1, 2], [3, 4], [4, 5], [3, 5]]), False),
 ])
-def test_solutions(kwargs, expected):
-    assert Solution().possibleBipartition(**kwargs) == expected
-    assert Solution1().possibleBipartition(**kwargs) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(kwargs, expected, SolutionCLS):
+    assert SolutionCLS().possibleBipartition(**kwargs) == expected
 
 
 if __name__ == '__main__':

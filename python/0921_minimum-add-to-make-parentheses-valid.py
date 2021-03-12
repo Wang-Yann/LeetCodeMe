@@ -64,6 +64,10 @@ import pytest
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def minAddToMakeValid(self, S: str) -> int:
+        """
+        add 左括号   需求
+        balance右括号
+        """
         add, balance = 0, 0
         for char in S:
             if char == "(":
@@ -72,7 +76,7 @@ class Solution:
                 balance -= 1
             if balance == -1:
                 add += 1
-                balance += 1
+                balance = 0
         # print(add, balance)
         return add + balance
 
@@ -94,9 +98,9 @@ class Solution1:
     ("()", 0),
     ("()))((", 4),
 ])
-def test_solutions(args, expected):
-    assert Solution().minAddToMakeValid(args) == expected
-    assert Solution1().minAddToMakeValid(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().minAddToMakeValid(args) == expected
 
 
 if __name__ == '__main__':

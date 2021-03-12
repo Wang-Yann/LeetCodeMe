@@ -208,16 +208,11 @@ class Solution2:
       ["2", "8", "7", "4", "1", "9", "6", "3", "5"],
       ["3", "4", "5", "2", "8", "6", "1", "7", "9"]]),
 ])
-def test_solutions(board, expected):
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1, Solution2])
+def test_solutions(board, expected, SolutionCLS):
     board0 = copy.deepcopy(board)
-    board1 = copy.deepcopy(board)
-    board2 = copy.deepcopy(board)
-    Solution().solveSudoku(board0)
-    Solution1().solveSudoku(board1)
-    Solution2().solveSudoku(board2)
+    SolutionCLS().solveSudoku(board0)
     assert board0 == expected
-    assert board1 == expected
-    assert board2 == expected
 
 
 if __name__ == '__main__':

@@ -124,9 +124,31 @@ class Solution5470:
         return ans
 
 
+class Solution2:
+
+    def minInsertions(self, s: str) -> int:
+        """
+            need 记录需右括号的需求量
+            res 左括号
+
+        """
+        res = need = 0
+        for char in s:
+            if char == "(":
+                need += 2
+                if need % 2 == 1:
+                    res += 1
+                    need -= 1
+            elif char == ")":
+                need -= 1
+                if need == -1:
+                    res += 1
+                    need = 1
+        return res + need
+
+
 @pytest.mark.parametrize("kwargs,expected", [
     [dict(s="(()))"), 1],
-
     pytest.param(dict(s="())"), 0),
     pytest.param(dict(s="))())("), 3),
     pytest.param(dict(s="(((((("), 12),
@@ -134,9 +156,9 @@ class Solution5470:
     pytest.param(dict(s="(()))(()))()())))"), 4),
     pytest.param(dict(s="((())))))"), 0),
 ])
-def test_solutions5470(kwargs, expected):
-    assert Solution5470().minInsertions(**kwargs) == expected
-    assert Solution().minInsertions(**kwargs) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution5470, Solution2])
+def test_solutions(kwargs, expected, SolutionCLS):
+    assert SolutionCLS().minInsertions(**kwargs) == expected
 
 
 if __name__ == '__main__':
