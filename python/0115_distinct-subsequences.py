@@ -62,28 +62,24 @@ import pytest
 class Solution:
 
     def numDistinct(self, s: str, t: str) -> int:
-        len_s = len(s)
-        len_t=len(t)
-        dp = [[0 for _ in range(len_t+1)] for _ in range(len_s+1)]
-        for i in range(len_s+1):
-            dp[i][0]=1
-        for i in range(len_s):
-            for j in range(len_t):
-                if s[i]==t[j]:
-                    dp[i+1][j+1] = dp[i][j+1] +dp[i][j]
+        NS, NT = len(s), len(t)
+        dp = [[0] * (NT + 1) for _ in range(NS + 1)]
+        for i in range(NS + 1):
+            dp[i][0] = 1
+        for i in range(NS):
+            for j in range(NT):
+                if s[i] == t[j]:
+                    dp[i + 1][j + 1] = dp[i][j + 1] + dp[i][j]
                 else:
-                    dp[i+1][j+1]=dp[i][j+1]
-        return dp[len_s][len_t]
-
+                    dp[i + 1][j + 1] = dp[i][j + 1]
+        return dp[NS][NT]
 
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 
 @pytest.mark.parametrize("kwargs,expected", [
-    (dict(
-        s="rabbbit", t="rabbit"
-    ), 3),
+    (dict(s="rabbbit", t="rabbit"), 3),
     pytest.param(dict(s="babgbag", t="bag"), 5),
 ])
 def test_solutions(kwargs, expected):

@@ -20,14 +20,14 @@
 # 示例： 
 # 
 #  MyHashMap hashMap = new MyHashMap();
-# hashMap.put(1, 1);          
-# hashMap.put(2, 2);         
-# hashMap.get(1);            // 返回 1
-# hashMap.get(3);            // 返回 -1 (未找到)
-# hashMap.put(2, 1);         // 更新已有的值
-# hashMap.get(2);            // 返回 1 
-# hashMap.remove(2);         // 删除键为2的数据
-# hashMap.get(2);            // 返回 -1 (未找到) 
+# hashMap.put(1, 1);     
+# hashMap.put(2, 2);     
+# hashMap.get(1);      // 返回 1
+# hashMap.get(3);      // 返回 -1 (未找到)
+# hashMap.put(2, 1);     // 更新已有的值
+# hashMap.get(2);      // 返回 1 
+# hashMap.remove(2);     // 删除键为2的数据
+# hashMap.get(2);      // 返回 -1 (未找到) 
 #  
 # 
 #  

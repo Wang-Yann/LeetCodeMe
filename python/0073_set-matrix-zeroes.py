@@ -52,13 +52,14 @@
 #  👍 252 👎 0
 
 """
-
+import copy
 from typing import List
 
 import pytest
 
 
 class Solution:
+
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
@@ -83,35 +84,50 @@ class Solution:
                 matrix[row][j] = 0
 
 
+class Solution1:
+
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        m, n = len(matrix), len(matrix[0])
+        row, col = [False] * m, [False] * n
+
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    row[i] = col[j] = True
+
+        for i in range(m):
+            for j in range(n):
+                if row[i] or col[j]:
+                    matrix[i][j] = 0
+
+
 @pytest.mark.parametrize("args,expected", [
-    (
-        [
-            [1, 1, 1],
-            [1, 0, 1],
-            [1, 1, 1]
-        ],
-        [
-            [1, 0, 1],
-            [0, 0, 0],
-            [1, 0, 1]
-        ]
-    ),
-    (
-        [
-            [0, 1, 2, 0],
-            [3, 4, 5, 2],
-            [1, 3, 1, 5]
-        ],
-        [
-            [0, 0, 0, 0],
-            [0, 4, 5, 0],
-            [0, 3, 1, 0]
-        ]
-    )
+    ([
+         [1, 1, 1],
+         [1, 0, 1],
+         [1, 1, 1]
+     ],
+     [
+         [1, 0, 1],
+         [0, 0, 0],
+         [1, 0, 1]
+     ]),
+    ([
+         [0, 1, 2, 0],
+         [3, 4, 5, 2],
+         [1, 3, 1, 5]
+     ],
+     [
+         [0, 0, 0, 0],
+         [0, 4, 5, 0],
+         [0, 3, 1, 0]
+     ])
 ])
-def test_solutions(args, expected):
-    Solution().setZeroes(args)
-    assert args == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    mt = copy.deepcopy(args)
+    SolutionCLS().setZeroes(mt)
+    assert mt == expected
 
 
 if __name__ == '__main__':

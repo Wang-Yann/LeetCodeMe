@@ -67,13 +67,28 @@ class Solution:
         return matrix
 
 
+class Solution1:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        dirs = [(0, 1), [1, 0], (0, -1), (-1, 0)]
+        matrix = [[0] * n for _ in range(n)]
+        row, col, di = 0, 0, 0
+        for i in range(n * n):
+            matrix[row][col] = i + 1
+            dx, dy = dirs[di]
+            r, c = row + dx, col + dy
+            if r < 0 or r >= n or c < 0 or c >= n or matrix[r][c] > 0:
+                di = (di + 1) % 4  # 顺时针旋转至下一个方向
+                dx, dy = dirs[di]
+            row, col = row + dx, col + dy
+
+        return matrix
+
+
 @pytest.mark.parametrize("args,expected", [
     (1, [[1]]),
-    (3, [
-        [1, 2, 3],
-        [8, 9, 4],
-        [7, 6, 5]
-    ]
+    (3, [[1, 2, 3],
+         [8, 9, 4],
+         [7, 6, 5]]
      ),
     (4, [[1, 2, 3, 4],
          [12, 13, 14, 5],
@@ -81,8 +96,9 @@ class Solution:
          [10, 9, 8, 7]]
      ),
 ])
-def test_solutions(args, expected):
-    assert Solution().generateMatrix(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().generateMatrix(args) == expected
 
 
 if __name__ == '__main__':

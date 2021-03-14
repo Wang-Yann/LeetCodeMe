@@ -68,8 +68,7 @@
 #
 #  Related Topics 栈
 #  👍 167 👎 0
-
-
+import operator
 from typing import List
 
 import pytest
@@ -107,13 +106,38 @@ class Solution:
         return int(stack.pop())
 
 
+class Solution1:
+
+    def evalRPN(self, tokens: List[str]) -> int:
+        op_to_binary_fn = {
+            "+": operator.add,
+            "-": operator.sub,
+            "*": operator.mul,
+            "/": lambda x, y: int(x / y),  # 需要注意 python 中负数除法的表现与题目不一致
+        }
+
+        stack = list()
+        for token in tokens:
+            try:
+                num = int(token)
+            except ValueError:
+                num2 = stack.pop()
+                num1 = stack.pop()
+                num = op_to_binary_fn[token](num1, num2)
+            finally:
+                stack.append(num)
+
+        return stack[0]
+
+
 @pytest.mark.parametrize("args,expected", [
     (["2", "1", "+", "3", "*"], 9),
     (["4", "13", "5", "/", "+"], 6),
     (["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"], 22),
 ])
-def test_solutions(args, expected):
-    assert Solution().evalRPN(args) == expected
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(args, expected, SolutionCLS):
+    assert SolutionCLS().evalRPN(args) == expected
 
 
 if __name__ == '__main__':

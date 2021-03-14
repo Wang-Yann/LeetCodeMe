@@ -28,30 +28,6 @@ import pytest
 from common_utils import ListNode
 
 
-class Solution:
-
-    def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
-        i = 0
-        dummy = ListNode(-1)
-        dummy.next = head
-        cur = dummy
-        while i < m - 1:
-            cur = cur.next
-            i += 1
-        left_end = cur
-        mid_stack = []
-        while i < n:
-            cur = cur.next
-            mid_stack.append(ListNode(cur.val))
-            i += 1
-        right_part = cur.next
-        for node in mid_stack[::-1]:
-            left_end.next = node
-            left_end = left_end.next
-        left_end.next = right_part
-        return dummy.next
-
-
 class Solution1:
 
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
@@ -74,33 +50,11 @@ class Solution1:
 
         return dummy.next
 
-    def reverseList(self, head):
-        """
-        TODO 示范写法
-        """
-        dummy = ListNode(-1)
-        while head:
-            # print("Before", head, dummy.next, head.next, sep="\t")
-            dummy.next, head.next, head = head, dummy.next, head.next
-            # print("After",dummy.next, head.next, head,sep="\t")
-        return dummy.next
-
-    def reverseListRec(self, head):
-        """
-         示范写法
-        """
-        if head.next is None:
-            return head
-        last = self.reverseListRec(head.next)
-        head.next.next = last
-        head.next = None
-        return
-
 
 class Solution2:
 
     def reverseBetween(self, head, m, n):
-
+        """官方解答"""
         if not head:
             return head
 
@@ -109,7 +63,6 @@ class Solution2:
 
         def recurseAndReverse(right_node, m, n):
             nonlocal left, stop
-
             # base case. Don't proceed any further
             if n == 1:
                 return
@@ -121,20 +74,16 @@ class Solution2:
             # from where the reversal is to start.
             if m > 1:
                 left = left.next
-
             # Recurse with m and n reduced.
             recurseAndReverse(right_node, m - 1, n - 1)
-
             # In case both the pointers cross each other or become equal, we
             # stop i.e. don't swap data any further. We are done reversing at this
             # point.
             if left == right_node or right_node.next == left:
                 stop = True
-
             # Until the boolean stop is false, swap data between the two pointers
             if not stop:
                 left.val, right_node.val = right_node.val, left.val
-
                 # Move left one step to the right.
                 # The right pointer moves one step back via backtracking.
                 left = left.next
@@ -172,20 +121,12 @@ class Solution3:
 
 
 @pytest.mark.parametrize("kw,expected", [
-    (dict(
-        head=ListNode.initList([1, 2, 3, 4, 5]),
-        m=2,
-        n=4
-    ), ListNode.initList([1, 4, 3, 2, 5]))
+    (dict(head=ListNode.initList([1, 2, 3, 4, 5]), m=2, n=4),
+     ListNode.initList([1, 4, 3, 2, 5]))
 ])
-def test_solutions(kw, expected):
-    kw1 = copy.deepcopy(kw)
-    kw2 = copy.deepcopy(kw)
-    kw3 = copy.deepcopy(kw)
-    assert repr(Solution().reverseBetween(**kw)) == repr(expected)
-    assert repr(Solution1().reverseBetween(**kw1)) == repr(expected)
-    assert repr(Solution2().reverseBetween(**kw2)) == repr(expected)
-    assert repr(Solution3().reverseBetween(**kw3)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution2, Solution3])
+def test_solutions(kw, expected, SolutionCLS):
+    assert repr(SolutionCLS().reverseBetween(**copy.deepcopy(kw))) == repr(expected)
 
 
 if __name__ == '__main__':
