@@ -6,8 +6,9 @@
 # @Mail          : rock@get.com.mm
 # @Version       : alpha-1.0
 import collections
-import resource, os, psutil
-
+import os
+import psutil
+import resource
 
 DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
@@ -49,6 +50,28 @@ class ListNode:
         if not (self and other):
             return False
         return self.val < other.val
+
+    @classmethod
+    def reverseList(cls, head):
+        """
+        TODO 示范写法
+        """
+        dummy = ListNode(-1)
+        while head:
+            dummy.next, head.next, head = head, dummy.next, head.next
+        return dummy.next
+
+    @classmethod
+    def reverseListRec(cls, head):
+        """
+         示范写法
+        """
+        if head.next is None:
+            return head
+        last = cls.reverseListRec(head.next)
+        head.next.next = last
+        head.next = None
+        return
 
 
 class TrieNode(object):
@@ -205,8 +228,6 @@ class TreeNodeWithNext:
             return repr(serial)
         else:
             return None
-
-
 
 
 class UnionFind(object):
@@ -393,7 +414,6 @@ class Interval:
     __repr__ = __str__
 
 
-
 def memory_limit(max_mem):
     def decorator(f):
         def wrapper(*args, **kwargs):
@@ -403,6 +423,7 @@ def memory_limit(max_mem):
             result = f(*args, **kwargs)
             resource.setrlimit(resource.RLIMIT_AS, prev_limits)
             return result
-        return wrapper
-    return decorator
 
+        return wrapper
+
+    return decorator

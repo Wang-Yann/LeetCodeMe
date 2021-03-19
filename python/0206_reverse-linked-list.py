@@ -74,12 +74,9 @@ class Solution2:
     [dict(head=ListNode.initList([1, 2])), ListNode.initList([2, 1])],
     [dict(head=ListNode.initList([1])), ListNode.initList([1])],
 ])
-def test_solutions(kw, expected):
-    kw1 = copy.deepcopy(kw)
-    kw2 = copy.deepcopy(kw)
-    assert repr(Solution().reverseList(**kw)) == repr(expected)
-    assert repr(Solution1().reverseList(**kw1)) == repr(expected)
-    assert repr(Solution2().reverseList(**kw2)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [Solution1, Solution2, Solution])
+def test_solutions(kw, expected, SolutionCLS):
+    assert repr(SolutionCLS().reverseList(**copy.deepcopy(kw))) == repr(expected)
 
 
 if __name__ == '__main__':
