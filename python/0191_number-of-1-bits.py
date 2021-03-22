@@ -89,10 +89,9 @@ class Solution1:
     (0b00000000000000000000000010000000, 1),
     (0b11111111111111111111111111111101, 31),
 ])
-def test_solutions(args, expected):
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution0, Solution1])
+def test_solutions(args, expected, SolutionCLS):
     assert Solution().hammingWeight(args) == expected
-    assert Solution1().hammingWeight(args) == expected
-    assert Solution0().hammingWeight(args) == expected
 
 
 if __name__ == '__main__':
