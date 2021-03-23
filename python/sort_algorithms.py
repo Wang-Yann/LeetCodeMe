@@ -60,17 +60,18 @@ class SortAll(object):
 
     @staticmethod
     def shell_sort(nums: List[int]) -> List[int]:
-        n = len(nums)
-        gap = n // 2
+        N = len(nums)
+        gap = N // 2
         while gap:
-            for i in range(gap, n):
+            for i in range(gap, N):
                 while i - gap >= 0 and nums[i - gap] > nums[i]:
                     nums[i - gap], nums[i] = nums[i], nums[i - gap]
                     i -= gap
             gap //= 2
         return nums
 
-    def merge_sort_t2b(self, nums: List[int]) -> List[int]:
+    @staticmethod
+    def merge_sort_t2b(nums: List[int]) -> List[int]:
         def merge(lo, mid, hi):
             i = lo
             j = mid + 1
@@ -122,13 +123,13 @@ class SortAll(object):
         if len(nums) <= 1:
             return nums
         mid = len(nums) // 2
-        left = self.merge_sort00(nums[:mid])
-        right = self.merge_sort00(nums[mid:])
-        return merge(left, right)
+        l = self.merge_sort00(nums[:mid])
+        r = self.merge_sort00(nums[mid:])
+        return merge(l, r)
 
     @staticmethod
     def quick_sort(nums: List[int]) -> List[int]:
-        n = len(nums)
+        N = len(nums)
 
         def quick(left, right):
             if left >= right:
@@ -147,7 +148,7 @@ class SortAll(object):
             quick(j + 1, right)
             return nums
 
-        return quick(0, n - 1)
+        return quick(0, N - 1)
 
     @staticmethod
     def quick_sort3(nums: List[int]) -> List[int]:
@@ -206,18 +207,18 @@ class SortAll(object):
         def sink(k, endpos):
             while 2 * k <= endpos:
                 j = 2 * k
-                if j < endpos and nums[j-1] < nums[j ]:
+                if j < endpos and nums[j - 1] < nums[j]:
                     j += 1
-                if not nums[k-1] < nums[j-1]:
+                if not nums[k - 1] < nums[j - 1]:
                     break
-                nums[k-1], nums[j-1] = nums[j-1], nums[k-1]
+                nums[k - 1], nums[j - 1] = nums[j - 1], nums[k - 1]
                 k = j
 
         N = len(nums)
         for i in range(N // 2, 0, -1):
             sink(i, N)
         while N > 1:
-            nums[0], nums[N-1] = nums[N-1], nums[0]
+            nums[0], nums[N - 1] = nums[N - 1], nums[0]
             N -= 1
             sink(1, N)
 
@@ -273,26 +274,31 @@ class SortAll(object):
         return nums
 
 
-@pytest.mark.parametrize("args,expected", [
+solAll = SortAll()
+
+
+@pytest.mark.parametrize("nums,expected", [
     ([5, 2, 3, 1], [1, 2, 3, 5]),
     ([3, -1], [-1, 3]),
     ([-4, 0, 7, 4, 9, -5, -1, 0, -7, -1], [-7, -5, -4, -1, -1, 0, 0, 4, 7, 9]),
     pytest.param([5, 1, 1, 2, 0, 0], [0, 0, 1, 1, 2, 5]),
 ])
-def test_solutions(args, expected):
-    solAll = SortAll()
-    assert solAll.insertion_sort(args[:]) == expected
-    assert solAll.selection_sort(args[:]) == expected
-    assert solAll.bubble_sort(args[:]) == expected
-    assert solAll.shell_sort(args[:]) == expected
-    assert solAll.shell_sort3(args[:]) == expected
-    assert solAll.quick_sort(args[:]) == expected
-    assert solAll.quick_sort3(args[:]) == expected
-    assert solAll.merge_sort00(args[:]) == expected
-    assert solAll.merge_sort_t2b(args[:]) == expected
-    assert solAll.heap_sort_0(args[:]) == expected
-    assert solAll.heap_sort(args[:]) == expected
-    assert solAll.bucket_sort(args[:]) == expected
+@pytest.mark.parametrize("sort_func", [
+    solAll.insertion_sort,
+    solAll.selection_sort,
+    solAll.bubble_sort,
+    solAll.shell_sort,
+    solAll.shell_sort3,
+    solAll.quick_sort,
+    solAll.quick_sort3,
+    solAll.merge_sort00,
+    solAll.merge_sort_t2b,
+    solAll.heap_sort_0,
+    solAll.heap_sort,
+    solAll.bucket_sort,
+])
+def test_solutions(nums, expected, sort_func):
+    assert sort_func(nums[:]) == expected
     # assert solAll.radix_sort(args[:]) == expected
 
 
