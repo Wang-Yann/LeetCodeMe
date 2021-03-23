@@ -29,27 +29,7 @@
 #  👍 127 👎 0
 import pytest
 
-
-class NestedInteger:
-    def isInteger(self) -> bool:
-        """
-        @return True if this NestedInteger holds a single integer, rather than a nested list.
-        """
-        return True
-
-    def getInteger(self) -> int:
-        """
-        @return the single integer that this NestedInteger holds, if it holds a single integer
-        Return None if this NestedInteger holds a nested list
-        """
-        return 0
-
-    def getList(self) -> ['NestedInteger']:
-        """
-        @return the nested list that this NestedInteger holds, if it holds a nested list
-        Return None if this NestedInteger holds a single integer
-        """
-        return []
+from common_utils import NestedInteger
 
 
 class NestedIterator:
@@ -71,7 +51,7 @@ class NestedIterator:
         try:
             self.v = next(self.generator)
             return True
-        except Exception as e:
+        except StopIteration as e:
             return False
 
 
