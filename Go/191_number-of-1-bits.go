@@ -1,12 +1,9 @@
 package main
 
-import "fmt"
-
-// @Author        : Rock Wayne 
+// @Author        : Rock Wayne
 // @Created       : 2021-03-22 23:00:59
 // @Last Modified : 2021-03-22 23:00:59
- 
- 
+
 //编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 '1' 的个数（也被称为汉明重量）。 
 //
 // 
@@ -65,10 +62,6 @@ import "fmt"
 // Related Topics 位运算 
 // 👍 322 👎 0
 
-
-
-
-
 //leetcode submit region begin(Prohibit modification and deletion)
 func hammingWeight(num uint32) int {
 	var ones int = 0
@@ -80,11 +73,7 @@ func hammingWeight(num uint32) int {
 
 }
 
+
 //leetcode submit region end(Prohibit modification and deletion)
 
-func main() {
-	var num uint32= 00000000000000000000000000001011
 
-	fmt.Println(hammingWeight(num))
-
-}
