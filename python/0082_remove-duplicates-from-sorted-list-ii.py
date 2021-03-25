@@ -35,50 +35,45 @@ class Solution:
 
     def deleteDuplicates(self, head: ListNode) -> ListNode:
         dummy = ListNode(-1)
-        left = dummy
-        cur = head
+        pre, cur = dummy, head
         while cur:
             if cur.next and cur.val == cur.next.val:
                 while cur.next and cur.val == cur.next.val:
                     cur = cur.next
                 cur = cur.next
             else:
-                left.next = cur
-                left = cur
+                pre.next = cur
+                pre = cur
                 cur = cur.next
-        left.next = None
+        pre.next = None
         return dummy.next
 
 
 class Solution1:
-    def deleteDuplicates(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
         dummy = ListNode(-1)
-        pre, cur = dummy, head
-        while cur:
-            if cur.next and cur.next.val == cur.val:
-                val = cur.val
-                while cur and cur.val == val:
-                    cur = cur.next
-                pre.next = cur
+        dummy.next = head
+
+        cur = dummy
+        while cur.next and cur.next.next:
+            if cur.next.val == cur.next.next.val:
+                x = cur.next.val
+                while cur.next and cur.next.val == x:
+                    cur.next = cur.next.next
             else:
-                pre.next = cur
-                pre = cur
                 cur = cur.next
+
         return dummy.next
 
 
 @pytest.mark.parametrize("kw,expected", [
     [dict(head=ListNode.initList([1, 2, 3, 3, 4, 4, 5])), ListNode.initList([1, 2, 5])],
     [dict(head=ListNode.initList([1, 1, 1, 2, 3])), ListNode.initList([2, 3])],
+    [dict(head=ListNode.initList([3, 1, 1, 1, 2, 2, 2])), ListNode.initList([3])],
 ])
-def test_solutions(kw, expected):
-    kw1 = copy.deepcopy(kw)
-    assert repr(Solution().deleteDuplicates(**kw)) == repr(expected)
-    assert repr(Solution1().deleteDuplicates(**kw1)) == repr(expected)
+@pytest.mark.parametrize("SolutionCLS", [Solution, Solution1])
+def test_solutions(kw, expected, SolutionCLS):
+    assert repr(SolutionCLS().deleteDuplicates(**copy.deepcopy(kw))) == repr(expected)
 
 
 if __name__ == '__main__':
