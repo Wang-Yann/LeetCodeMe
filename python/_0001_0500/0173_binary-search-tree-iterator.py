@@ -19,15 +19,15 @@
 #
 #
 #  BSTIterator iterator = new BSTIterator(root);
-# iterator.next();    // 返回 3
-# iterator.next();    // 返回 7
-# iterator.hasNext(); // 返回 true
-# iterator.next();    // 返回 9
-# iterator.hasNext(); // 返回 true
-# iterator.next();    // 返回 15
-# iterator.hasNext(); // 返回 true
-# iterator.next();    // 返回 20
-# iterator.hasNext(); // 返回 false
+# iterator.next()== 3
+# iterator.next()== 7
+# iterator.hasNext()== true
+# iterator.next()== 9
+# iterator.hasNext()== true
+# iterator.next()== 15
+# iterator.hasNext()== true
+# iterator.next()== 20
+# iterator.hasNext()== false
 #
 #
 #
@@ -41,12 +41,12 @@
 #  👍 213 👎 0
 
 """
+import pytest
 
 from common_utils import TreeNode
 
 
 class BSTIterator1:
-    """LeetCode 运行有问题"""
 
     def __init__(self, root: TreeNode):
         self.stack = []
@@ -64,7 +64,8 @@ class BSTIterator1:
 
     def hasNext(self) -> bool:
 
-        return self.cur is not None or self.stack
+        return bool(self.cur is not None or self.stack)
+
 
 class BSTIterator:
 
@@ -72,7 +73,7 @@ class BSTIterator:
         self.vals = []
         if root:
             self._inorder_traversal(root)
-        self.cnt =len(self.vals)
+        self.cnt = len(self.vals)
 
     def _inorder_traversal(self, root):
         stack = []
@@ -90,26 +91,32 @@ class BSTIterator:
         @return the next smallest number
         """
         if self.cnt:
-            self.cnt-=1
+            self.cnt -= 1
             return self.vals.pop(0)
 
     def hasNext(self) -> bool:
         """
         @return whether we have a next smallest number
         """
-        return  self.cnt>0
+        return self.cnt > 0
 
+
+@pytest.mark.parametrize("SolutionCLS", [
+    BSTIterator, BSTIterator1
+])
+def test_solution(SolutionCLS):
+    root = TreeNode(7, TreeNode(3), TreeNode(15, TreeNode(9), TreeNode(20)))
+    iterator = SolutionCLS(root)
+    assert iterator.next() == 3
+    assert iterator.next() == 7
+    assert iterator.hasNext() == True
+    assert iterator.next() == 9
+    assert iterator.hasNext() == True
+    assert iterator.next() == 15
+    assert iterator.hasNext() == True
+    assert iterator.next() == 20
+    assert iterator.hasNext() == False
 
 
 if __name__ == '__main__':
-    root = TreeNode(7, TreeNode(3), TreeNode(15, TreeNode(9), TreeNode(20)))
-    iterator = BSTIterator(root)
-    iterator.next()
-    iterator.next()
-    iterator.hasNext()
-    iterator.next()
-    iterator.hasNext()
-    iterator.next()
-    iterator.hasNext()
-    iterator.next()
-    iterator.hasNext()
+    pytest.main(["-q", "--color=yes", "--capture=tee-sys", __file__])
