@@ -16,16 +16,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @Description:
  */
 public class Solution1000toTest {
-    static Stream<Arguments> testSolution() {
+    
+    private static final Solution1035 solution1035 = new Solution1035();
+    
+    static Stream<Arguments> testSolution1035() {
         return Stream.of(
-                Arguments.of(new int[]{0, 1, 3, 5, 6, 8, 12, 17}, true),
-                Arguments.of(new int[]{0, 1, 2, 3, 4, 8, 9, 11}, false)
+                Arguments.of(new int[]{1, 4, 2}, new int[]{1, 2, 4}, 2),
+                Arguments.of(new int[]{2, 5, 1, 2, 5}, new int[]{10, 5, 2, 1, 5, 2}, 3),
+                Arguments.of(new int[]{1, 3, 7, 1, 7, 5}, new int[]{1, 9, 2, 5, 1}, 2)
         );
     }
     
     @ParameterizedTest
     @MethodSource
-    void testSolution(int[] stones, Boolean res) {
+    void testSolution1035(int[] nums1, int[] nums2, int res) {
+        assertEquals(solution1035.maxUncrossedLines(nums1, nums2), res);
+        
     }
     
     
