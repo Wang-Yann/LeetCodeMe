@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LeetCodeRockPyC.iml" filepath="$PROJECT_DIR$/.idea/LeetCodeRockPyC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/C/C.iml" filepath="$PROJECT_DIR$/C/C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Go/Go.iml" filepath="$PROJECT_DIR$/Go/Go.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MySQL/MySQL.iml" filepath="$PROJECT_DIR$/MySQL/MySQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shell/Shell.iml" filepath="$PROJECT_DIR$/Shell/Shell.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/ltc.iml" filepath="$PROJECT_DIR$/Java/ltc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/python/python.iml" filepath="$PROJECT_DIR$/python/python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tmp/tmp.iml" filepath="$PROJECT_DIR$/tmp/tmp.iml" />
     </modules>
   </component>
 </project>
