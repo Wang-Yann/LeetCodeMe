@@ -16,12 +16,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class Solution1to1000Test {
     private final Solution0403 solution0403 = new Solution0403();
+    private final Solution0810 solution0810 = new Solution0810();
     private final Solution0993 solution0993 = new Solution0993();
     
     static Stream<Arguments> testSolution0443() {
         return Stream.of(
                 Arguments.of(new int[]{0, 1, 3, 5, 6, 8, 12, 17}, true),
                 Arguments.of(new int[]{0, 1, 2, 3, 4, 8, 9, 11}, false)
+        );
+    }
+    
+    
+    static Stream<Arguments> testSolution0810() {
+        return Stream.of(
+                Arguments.of(new int[]{1, 1, 2}, false)
         );
     }
     
@@ -48,5 +56,10 @@ public class Solution1to1000Test {
         assertEquals(solution0403.canCross(stones), res);
     }
     
+    @ParameterizedTest
+    @MethodSource
+    void testSolution0810(int[] nums, Boolean res) {
+        assertEquals(solution0810.xorGame(nums), res);
+    }
     
 }
