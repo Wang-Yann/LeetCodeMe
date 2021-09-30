@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>1.17</java.version>
         <jmh.version>1.26</jmh.version>
         <gson.latest.version>2.8.6</gson.latest.version>
         <jmh.version>1.23</jmh.version>
@@ -47,8 +47,8 @@
                 <configuration>
                     <!-- 一般而言，target与source是保持一致的，但是，有时候为了让程序能在其他版本的jdk中运行(对于低版本目标jdk，
                     源代码中不能使用低版本jdk中不支持的语法)，会存在target不同于source的情况 -->
-                    <source>1.8</source> <!-- 源代码使用的JDK版本 -->
-                    <target>1.8</target> <!-- 需要生成的目标class文件的编译版本 -->
+                    <source>16</source> <!-- 源代码使用的JDK版本 -->
+                    <target>16</target> <!-- 需要生成的目标class文件的编译版本 -->
                     <encoding>UTF-8</encoding><!-- 字符集编码 -->
                     <verbose>false</verbose>
                     <showWarnings>true</showWarnings>
